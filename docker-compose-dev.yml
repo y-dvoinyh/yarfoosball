@@ -1,0 +1,15 @@
+version: "3"
+services:
+  frontend:
+    container_name: frontend_container
+    build: frontend
+    image: dockerize-quasar-dev
+    volumes:
+      - /app/node_modules
+      - ./frontend/src:/app/src
+      - ./frontend/.quasar:/app/.quasar
+      - ./frontend/quasar.config.js:/app/quasar.config.js
+    ports:
+       - "9000:9000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
