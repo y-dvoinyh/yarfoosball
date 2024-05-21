@@ -28,6 +28,8 @@ services:
       - yarfoosball-network
     depends_on:
       - backend
+    ports:
+      - "9000:9000"
 
   nginx:
     image: nginx:stable-alpine
