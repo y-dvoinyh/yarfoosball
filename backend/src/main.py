@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-
 from src.config.project_config import settings
 
 
