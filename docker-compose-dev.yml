@@ -8,6 +8,8 @@ services:
     command: [ "./docker/app-dev.sh" ]
     volumes:
       - ./backend/src:/app/src
+    env_file:
+      - ./backend/.env-dev
     networks:
       - yarfoosball-network
     ports:
