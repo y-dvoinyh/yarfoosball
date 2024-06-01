@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.config.project_config import settings
-from src.routes import get_apps_router
+from src.core.routes import get_apps_router
 
 
 def get_application() -> FastAPI:
@@ -23,8 +23,3 @@ def get_application() -> FastAPI:
 
 
 app = get_application()
-
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}

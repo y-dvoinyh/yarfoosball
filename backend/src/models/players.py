@@ -1,7 +1,7 @@
 from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column
 
-from .base_model import BaseModel
+from src.core.model import BaseModel
 
 
 class PlayerModel(BaseModel):

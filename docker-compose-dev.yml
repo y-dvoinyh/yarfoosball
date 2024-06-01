@@ -1,7 +1,7 @@
 version: "3"
 services:
   db:
-    image: postgres:14-alpine
+    image: huecker.io/library/postgres:14-alpine
     container_name: db_container
     restart: on-failure
     command: -p 6432
@@ -16,7 +16,7 @@ services:
 
   pgadmin:
     container_name: pgadmin_container
-    image: dpage/pgadmin4:7
+    image: huecker.io/dpage/pgadmin4:7
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: yaroslav.dvoinyh@gmail.com
@@ -64,7 +64,7 @@ services:
       - "9000:9000"
 
   nginx:
-    image: nginx:stable-alpine
+    image: huecker.io/library/nginx:stable-alpine
     container_name: yarfoosbal-nginx
     ports:
       - "80:80"

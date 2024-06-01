@@ -1,5 +1,5 @@
 # этап сборки (build stage)
-FROM node:lts-alpine
+FROM huecker.io/library/node:lts-alpine
 WORKDIR /app
 
 # создаем слой пакетов, чтобы не переустанавливать в каждом релизе
