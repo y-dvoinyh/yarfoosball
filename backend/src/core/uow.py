@@ -2,7 +2,8 @@ from abc import ABC, abstractmethod
 from typing import Type
 
 from src.config.database.db_halper import db_helper
-from src.modules.players.repository import PlayersRepository
+from src.modules.player.repository import PlayersRepository
+from src.modules.league.repository import LeaguesRepository
 
 
 class IUnitOfWork(ABC):
@@ -35,8 +36,10 @@ class UnitOfWork:
     def __init__(self):
         self.session = db_helper.session_factory()
         self.players = PlayersRepository(self.session)
+        self.leagues = LeaguesRepository(self.session)
         self.rep = {
-            'players': self.players
+            'player': self.players,
+            'league': self.leagues
         }
 
     async def commit(self):
