@@ -6,7 +6,7 @@ from src.modules.player.depends import PlayersDep
 
 
 router = APIRouter(
-    prefix="/player",
+    prefix="/players",
     tags=["Players"],
 )
 

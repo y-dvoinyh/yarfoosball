@@ -1,0 +1,13 @@
+server {
+    listen 80;
+	server_name yarfoosball.ru;
+
+    location / {
+        proxy_pass http://frontend;
+    }
+
+    location /api {
+        proxy_pass http://backend:8000;
+        rewrite ^/api/(.*) /$1 break;
+    }
+}

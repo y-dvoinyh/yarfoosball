@@ -5,6 +5,7 @@ from src.core.model import BaseModel
 
 
 class PlayerModel(BaseModel):
+    """Игрок"""
     __tablename__ = "players"
 
     first_name: Mapped[str] = mapped_column(String(20), unique=False, nullable=False)
