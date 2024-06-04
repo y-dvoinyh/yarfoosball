@@ -36,7 +36,7 @@ services:
 
   db:
     image: huecker.io/library/postgres:14-alpine
-    container_name: db_container
+    container_name: yarfoosball_db_container
     restart: on-failure
     command: -p 6432
     volumes:
