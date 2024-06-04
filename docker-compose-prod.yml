@@ -2,7 +2,7 @@ version: "3"
 services:
   nginx:
     image: huecker.io/library/nginx:stable-alpine
-    container_name: yarfoosbal-nginx
+    container_name: yarfoosbal-nginx-container
     ports:
       - "80:80"
     volumes:
@@ -13,7 +13,7 @@ services:
       - yarfoosball-network
 
   frontend:
-    container_name: frontend_container_prod
+    container_name: yarfoosball-frontend-container
     build:
       context: frontend
       dockerfile: Dockerfile.prod
@@ -23,7 +23,7 @@ services:
       - backend
 
   backend:
-    container_name: backend_container
+    container_name: yarfoosball-backend-container
     build:
       context: ./backend
     command: [ "./docker/app.sh" ]
@@ -36,7 +36,7 @@ services:
 
   db:
     image: huecker.io/library/postgres:14-alpine
-    container_name: yarfoosball_db_container
+    container_name: yarfoosball-db-container
     restart: on-failure
     command: -p 6432
     volumes:
