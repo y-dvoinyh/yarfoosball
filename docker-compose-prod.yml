@@ -1,0 +1,56 @@
+version: "3"
+services:
+  nginx:
+    image: huecker.io/library/nginx:stable-alpine
+    container_name: yarfoosbal-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
+    depends_on:
+      - frontend
+    networks:
+      - yarfoosball-network
+
+  frontend:
+    container_name: frontend_container_prod
+    build:
+      context: frontend
+      dockerfile: Dockerfile.prod
+    networks:
+      - yarfoosball-network
+    depends_on:
+      - backend
+
+  backend:
+    container_name: backend_container
+    build:
+      context: ./backend
+    command: [ "./docker/app.sh" ]
+    env_file:
+      - ./backend/.env-prod
+    networks:
+      - yarfoosball-network
+    depends_on:
+      - db
+
+  db:
+    image: huecker.io/library/postgres:14-alpine
+    container_name: db_container
+    restart: on-failure
+    command: -p 6432
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    env_file:
+      - ./backend/.env-prod
+    expose:
+      - 6432
+    networks:
+      - yarfoosball-network
+
+networks:
+  yarfoosball-network:
+    driver: bridge
+
+volumes:
+  pgdata:
