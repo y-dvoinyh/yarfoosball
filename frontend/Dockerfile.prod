@@ -1,0 +1,19 @@
+# этап сборки (build stage)
+FROM node:lts-alpine as build-stage
+WORKDIR /app
+
+# создаем слой пакетов, чтобы не переустанавливать в каждом релизе
+COPY package*.json ./
+RUN npm install
+RUN npm install -g @quasar/cli
+RUN npm install -g @vue/cli-service@latest
+COPY . .
+ENV BASE_API_URL /api
+RUN npm run build
+
+# этап production (production-stage)
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist/spa /usr/share/nginx/html
+# COPY ./docker/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

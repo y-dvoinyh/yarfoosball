@@ -1,5 +1,55 @@
 version: "3"
 services:
+
+  nginx:
+    image: huecker.io/library/nginx:stable-alpine
+    container_name: yarfoosbal-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf.dev:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend
+    networks:
+      - yarfoosball-network
+
+  frontend:
+    container_name: frontend_container
+    build:
+      context: frontend
+      dockerfile: Dockerfile.dev
+
+    volumes:
+      - /app/node_modules
+      - ./frontend/src:/app/src
+      - ./frontend/.quasar:/app/.quasar
+      - ./frontend/quasar.config.js:/app/quasar.config.js
+    env_file:
+      - ./frontend/.env-dev
+    networks:
+      - yarfoosball-network
+    depends_on:
+      - backend
+    ports:
+      - "9000:9000"
+
+  backend:
+    container_name: backend_container
+    build:
+      context: ./backend
+    command: [ "./docker/app-dev.sh" ]
+    volumes:
+      - ./backend/src:/app/src
+      - ./backend/migrations:/app/migrations
+    env_file:
+      - ./backend/.env-dev
+    networks:
+      - yarfoosball-network
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
   db:
     image: huecker.io/library/postgres:14-alpine
     container_name: db_container
@@ -27,53 +77,6 @@ services:
       - yarfoosball-network
     depends_on:
       - db
-
-  backend:
-    container_name: backend_container
-    build:
-      context: ./backend
-    command: [ "./docker/app-dev.sh" ]
-    volumes:
-      - ./backend/src:/app/src
-      - ./backend/migrations:/app/migrations
-    env_file:
-      - ./backend/.env-dev
-    networks:
-      - yarfoosball-network
-    ports:
-      - "8000:8000"
-    depends_on:
-      - db
-
-  frontend:
-    container_name: frontend_container
-    build: frontend
-    image: dockerize-quasar-dev
-    volumes:
-      - /app/node_modules
-      - ./frontend/src:/app/src
-      - ./frontend/.quasar:/app/.quasar
-      - ./frontend/quasar.config.js:/app/quasar.config.js
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-    networks:
-      - yarfoosball-network
-    depends_on:
-      - backend
-    ports:
-      - "9000:9000"
-
-  nginx:
-    image: huecker.io/library/nginx:stable-alpine
-    container_name: yarfoosbal-nginx
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx/nginx.conf.dev:/etc/nginx/conf.d/default.conf
-    depends_on:
-      - frontend
-    networks:
-      - yarfoosball-network
 
 networks:
   yarfoosball-network:
