@@ -1,7 +1,9 @@
 server {
+    listen 443 ssl;
 
-    listen 80;
 	server_name yarfoosball.ru;
+	ssl_certificate /etc/ssl/yarfoosball.ru.crt;
+	ssl_certificate_key /etc/ssl/yarfoosball.ru.key;
 
     location / {
         proxy_pass http://frontend;
