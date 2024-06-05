@@ -5,11 +5,11 @@ services:
     container_name: yarfoosbal-nginx-container
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./nginx/nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
       - ./nginx/yarfoosball.ru.crt:/etc/ssl/yarfoosball.ru.crt
       - ./nginx/yarfoosball.ru.key:/etc/ssl/yarfoosball.ru.key
-    command: ["sudo chown -R root:root /etc/ssl"]
     depends_on:
       - frontend
     networks:
