@@ -32,7 +32,7 @@ services:
       context: ./backend
     command: [ "./docker/app.sh" ]
     env_file:
-      - ./backend/.env-prod
+      - ./.env-prod
     networks:
       - yarfoosball-network
     depends_on:
@@ -46,7 +46,7 @@ services:
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     env_file:
-      - ./backend/.env-prod
+      - ./.env-prod
     expose:
       - 6432
     networks:

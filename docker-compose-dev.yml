@@ -25,7 +25,7 @@ services:
       - ./frontend/.quasar:/app/.quasar
       - ./frontend/quasar.config.js:/app/quasar.config.js
     env_file:
-      - ./frontend/.env-dev
+      - ./.env-dev
     networks:
       - yarfoosball-network
     depends_on:
@@ -42,7 +42,7 @@ services:
       - ./backend/src:/app/src
       - ./backend/migrations:/app/migrations
     env_file:
-      - ./backend/.env-dev
+      - ./.env-dev
     networks:
       - yarfoosball-network
     ports:
@@ -58,7 +58,7 @@ services:
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     env_file:
-      - ./backend/.env-dev
+      - ./.env-dev
     expose:
       - 6432
     networks:
@@ -68,9 +68,8 @@ services:
     container_name: pgadmin_container
     image: huecker.io/dpage/pgadmin4:7
     restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: yaroslav.dvoinyh@gmail.com
-      PGADMIN_DEFAULT_PASSWORD: Cbyufgeh115
+    env_file:
+      - ./.env-dev
     ports:
       - "5050:80"
     networks:
