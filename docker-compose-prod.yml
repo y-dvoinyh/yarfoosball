@@ -3,6 +3,7 @@ services:
   nginx:
     image: huecker.io/library/nginx:stable-alpine
     container_name: yarfoosbal-nginx-container
+    restart: always
     ports:
       - "80:80"
       - "443:443"
