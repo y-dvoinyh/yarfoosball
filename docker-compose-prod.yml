@@ -8,7 +8,7 @@ services:
     volumes:
       - ./nginx/nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
       - ./nginx/yarfoosball.ru.crt:/etc/ssl/yarfoosball.ru.crt
-      - ./nginx/yarfoosball.ru.key:/etc/ssl/conf.d/yarfoosball.ru.key
+      - ./nginx/yarfoosball.ru.key:/etc/ssl/yarfoosball.ru.key
     depends_on:
       - frontend
     networks:
