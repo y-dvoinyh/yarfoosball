@@ -4,6 +4,10 @@ from typing import Type
 from src.config.database.db_halper import db_helper
 from src.modules.player.repository import PlayersRepository
 from src.modules.league.repository import LeaguesRepository
+from src.modules.tournament.repository import TournamentsRepository
+from src.modules.competition.repository import CompetitionsRepository
+from src.modules.team.repository import TeamsRepository
+from src.modules.match.repository import MatchsRepository, SetRepository
 
 
 class IUnitOfWork(ABC):
@@ -37,10 +41,11 @@ class UnitOfWork:
         self.session = db_helper.session_factory()
         self.players = PlayersRepository(self.session)
         self.leagues = LeaguesRepository(self.session)
-        self.rep = {
-            'player': self.players,
-            'league': self.leagues
-        }
+        self.tournaments = TournamentsRepository(self.session)
+        self.competitions = CompetitionsRepository(self.session)
+        self.teams = TeamsRepository(self.session)
+        self.matches = MatchsRepository(self.session)
+        self.sets = SetRepository(self.session)
 
     async def commit(self):
         await self.session.commit()
