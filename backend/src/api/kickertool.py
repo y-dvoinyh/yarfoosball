@@ -3,8 +3,8 @@ from typing import List
 from fastapi import APIRouter, File
 
 from src.models.enums import CompetitionType
-from src.modules.kickertool.schemas import ResponseDYPCompetition
-from src.modules.kickertool.depends import KickerToolDep
+from src.orx.kickertool.schemas import ResponseDYPCompetition
+from src.orx.kickertool.depends import KickerToolDep
 
 
 router = APIRouter(

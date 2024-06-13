@@ -73,6 +73,8 @@ services:
       - ./.env-dev
     ports:
       - "5050:80"
+    volumes:
+      - ./pgadmin-data:/var/lib/pgadmin
     networks:
       - yarfoosball-network
     depends_on:

@@ -4,6 +4,7 @@ from .tournaments import router as router_tournaments
 from .competitions import router as router_competitions
 
 from .kickertool import router as router_kickertool
+from .team_tournament import router as router_team_tournament
 
 all_routers = [
     router_players,
@@ -11,5 +12,6 @@ all_routers = [
     router_tournaments,
     router_competitions,
 
-    router_kickertool
+    router_kickertool,
+    router_team_tournament
 ]

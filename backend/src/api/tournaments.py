@@ -1,8 +1,8 @@
 from typing import List
 from fastapi import APIRouter
 
-from src.modules.tournament.depends import TournamentsDep
-from src.modules.tournament.schemas import ResponseTournament, CreateTournament
+from src.orx.tournament.depends import TournamentsDep
+from src.orx.tournament.schemas import ResponseTournament, CreateTournament
 
 
 router = APIRouter(

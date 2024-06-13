@@ -10,7 +10,7 @@ class BaseMatch(BaseModel):
     first_team_id: int
     second_team_id: int
     is_qualification: Optional[bool]
-    time_start: Optional[datetime]
+    time_start: Optional[datetime] = None
 
 
 class ResponseMatch(BaseMatch):

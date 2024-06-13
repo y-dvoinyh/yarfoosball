@@ -43,6 +43,11 @@ class BaseService(Generic[CreateSchemaType]):
         await self.uow.commit()
         return result
 
+    async def update_or_create(self, data: UpdateSchemaType, **filters):
+        result = await self.repository.update_or_create(data, **filters)
+        await self.uow.commit()
+        return result
+
     async def delete(self, **filters) -> None:
         await self.repository.delete(**filters)
         await self.uow.commit()

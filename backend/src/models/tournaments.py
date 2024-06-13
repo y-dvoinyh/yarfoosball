@@ -15,9 +15,10 @@ if TYPE_CHECKING:
 class TournametModel(BaseModel):
     """Турнир"""
     __tablename__ = "tournaments"
-
     name: Mapped[str] = mapped_column(String(100), unique=False, nullable=False)
     description: Mapped[str] = mapped_column(Text, nullable=True)
+
+    json_data = mapped_column(JSON)
 
     type: Mapped[TournamentType] = mapped_column(Enum(TournamentType, name='tournament_type_enum'), nullable=False)
 

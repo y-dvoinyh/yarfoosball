@@ -12,7 +12,6 @@ if TYPE_CHECKING:
 class MatchModel(BaseModel):
     """Матч"""
     __tablename__ = "matches"
-    external_id: Mapped[str] = mapped_column(String(30), unique=False, nullable=True)
     order: Mapped[int] = mapped_column(Integer, nullable=False)
     # Соревнование
     competition_id: Mapped[int] = mapped_column(ForeignKey('competitions.id'), nullable=False)
@@ -43,7 +42,6 @@ class MatchModel(BaseModel):
 class MatchSetModel(BaseModel):
     """Сет"""
     __tablename__ = "match_sets"
-    external_id: Mapped[str] = mapped_column(String(30), unique=False, nullable=True)
     order: Mapped[int] = mapped_column(Integer, nullable=False)
     match_id: Mapped[int] = mapped_column(ForeignKey('matches.id'), nullable=False)
     match: Mapped["MatchModel"] = relationship(foreign_keys="MatchSetModel.match_id", lazy='joined')

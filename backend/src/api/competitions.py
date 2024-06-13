@@ -2,8 +2,8 @@ from typing import List
 import json
 from fastapi import APIRouter
 
-from src.modules.competition.depends import CompetitionDep
-from src.modules.competition.schemas import ResponseCompetition
+from src.orx.competition.depends import CompetitionDep
+from src.orx.competition.schemas import ResponseCompetition
 
 
 router = APIRouter(

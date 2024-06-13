@@ -15,7 +15,6 @@ if TYPE_CHECKING:
 class CompetitionModel(BaseModel):
     """Соревнование"""
     __tablename__ = "competitions"
-    external_id: Mapped[str] = mapped_column(String(30), unique=False, nullable=True)
     name: Mapped[str] = mapped_column(Text, unique=True, nullable=False)
     description: Mapped[str] = mapped_column(Text, nullable=True)
     date: Mapped[date] = mapped_column(Date, nullable=False)

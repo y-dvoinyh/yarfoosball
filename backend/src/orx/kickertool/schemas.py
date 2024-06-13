@@ -1,8 +1,8 @@
-from typing import Optional, List
+from typing import Optional, List, Any
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, Json
 
-from src.modules.competition.schemas import BaseCompetition, CreateCompetition, ResponseCompetition
+from src.orx.competition.schemas import BaseCompetition, CreateCompetition, ResponseCompetition
 
 
 class Stats(BaseModel):
@@ -109,7 +109,7 @@ class BaseDYP(BaseCompetition):
 
 
 class CreateDYP(BaseDYP):
-    ...
+    json_data: Json[Any]
 
 
 class ResponseDYPCompetition(BaseDYP):

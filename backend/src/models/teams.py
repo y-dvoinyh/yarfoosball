@@ -11,7 +11,6 @@ if TYPE_CHECKING:
 class TeamModel(BaseModel):
     """Команда"""
     __tablename__ = "teams"
-    external_id: Mapped[str] = mapped_column(String(30), unique=False, nullable=True)
     competition_order: Mapped[int] = mapped_column(Integer, nullable=True)
     # Соревнование
     competition_id: Mapped[int] = mapped_column(ForeignKey('competitions.id'), nullable=False)
