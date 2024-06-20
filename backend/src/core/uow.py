@@ -8,6 +8,7 @@ from src.orx.tournament.repository import TournamentsRepository, TournamentTeams
 from src.orx.competition.repository import CompetitionsRepository
 from src.orx.team.repository import TeamsRepository
 from src.orx.match.repository import MatchsRepository, SetRepository
+from src.orx.rating.repository import RatingRepository, RatingHistoryRepository
 
 
 class IUnitOfWork(ABC):
@@ -47,6 +48,8 @@ class UnitOfWork:
         self.teams = TeamsRepository(self.session)
         self.matches = MatchsRepository(self.session)
         self.sets = SetRepository(self.session)
+        self.ratings = RatingRepository(self.session)
+        self.rating_history = RatingHistoryRepository(self.session)
 
     async def commit(self):
         await self.session.commit()

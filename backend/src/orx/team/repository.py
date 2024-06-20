@@ -1,5 +1,5 @@
 from src.core.repository import SqlAlchemyRepository
-from src.models.teams import TeamModel
+from src.models import TeamModel
 
 from .schemas import CreateTeam, UpdateTeam, PartialTeam
 

@@ -38,3 +38,8 @@ class CompetitionType(Enum):
     COD = "Classic Open Doubles"
     MIXED = "Mixed Doubles"
     PROAM = "Pro-Am"
+
+
+class HistoryRatingLevel(Enum):
+    MATCH = 'MATCH'
+    COMPETITION = 'COMPETITION'

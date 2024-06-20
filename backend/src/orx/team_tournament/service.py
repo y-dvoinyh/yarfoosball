@@ -1,6 +1,6 @@
 import json
 from src.core.service import BaseService
-from src.models.enums import TournamentType, CompetitionType
+from src.models import TournamentType, CompetitionType
 from src.orx.player.schemas import UpdatePlayer
 from src.orx.tournament.schemas import CreateTournamentTeam
 from src.orx.team.schemas import CreateTeam

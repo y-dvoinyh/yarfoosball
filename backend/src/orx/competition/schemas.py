@@ -2,7 +2,7 @@ from typing import Optional, Any
 from datetime import date
 from pydantic import BaseModel, Json
 
-from src.models.enums import CompetitionType
+from src.models import CompetitionType
 
 
 class BaseCompetition(BaseModel):

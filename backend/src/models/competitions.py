@@ -10,6 +10,7 @@ from .enums import CompetitionType
 if TYPE_CHECKING:
     from .tournaments import TournametModel
     from .teams import TeamModel
+    from .matches import MatchModel
 
 
 class CompetitionModel(BaseModel):
@@ -30,10 +31,12 @@ class CompetitionModel(BaseModel):
     )
     tournament: Mapped['TournametModel'] = relationship(
         foreign_keys="CompetitionModel.tournament_id",
-        back_populates="competitions"
+        back_populates="competitions",
+        lazy='joined'
     )
     # Команды
     teams: Mapped[List['TeamModel']] = relationship(back_populates="competition")
+    matches: Mapped[List['MatchModel']] = relationship(back_populates="competition", lazy='selectin')
 
     def __str__(self):
-        return f'Tournament: {self.id} - "{self.name}"'
+        return f'Competition: {str(self.date)} - {self.id} - "{self.name}"'

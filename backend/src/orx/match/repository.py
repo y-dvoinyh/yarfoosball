@@ -1,5 +1,5 @@
 from src.core.repository import SqlAlchemyRepository
-from src.models.matches import MatchModel, MatchSetModel
+from src.models import MatchModel, MatchSetModel
 
 from .schemas import CreateMatch, UpdateMatch, PartialMatch, CreateSet, UpdateSet, PartialSet
 

@@ -1,5 +1,5 @@
 from src.core.repository import SqlAlchemyRepository
-from src.models.competitions import CompetitionModel
+from src.models import CompetitionModel
 
 from .schemas import CreateCompetition, UpdateCompetition, PartialCompetition
 

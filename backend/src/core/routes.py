@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from src.api.routers import all_routers
+from src.api import all_routers
 
 
 def get_apps_router():

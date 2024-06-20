@@ -31,7 +31,7 @@ class Team(BaseScheme):
 
 
 class Set(BaseScheme):
-    scores: List[int]
+    scores: Optional[List[int]] = None
 
 
 class Discipline(BaseScheme):
@@ -48,6 +48,7 @@ class Match(BaseScheme):
     result: List[int]
     is_elimination: Optional[bool] = Field(..., alias='eliminationMatch')
     disciplines: List[Discipline]
+    deactivated: bool
 
 
 class Round(BaseScheme):
@@ -62,7 +63,6 @@ class Qualifying(BaseScheme):
 
 
 class Level(BaseScheme):
-    hash: str
     matches: List[Match]
 
 
@@ -80,28 +80,6 @@ class DYPScheme(BaseScheme):
     created_at: datetime = Field(..., alias='createdAt')
     qualifying: List[Qualifying]
     eliminations: List[Elimination]
-
-    players_dict: Optional[dict] = {}
-    __all_teams: Optional[dict] = None
-
-    def add_player(self, id: str, player):
-        self.players_dict[id] = player
-
-    def get_player(self, id: str):
-        return self.players_dict.get(id)
-
-    @property
-    def all_teams(self) -> List[Team]:
-        return [t for t in self.dict_teams.values()]
-
-    @property
-    def dict_teams(self) -> dict:
-        if self.__all_teams is None:
-            self.__all_teams = {}
-        return self.__all_teams
-
-    def get_team(self, id: str) -> Optional[Team]:
-        return self.dict_teams.get(id)
 
 
 class BaseDYP(BaseCompetition):

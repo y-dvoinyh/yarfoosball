@@ -1,5 +1,5 @@
 from src.core.repository import SqlAlchemyRepository
-from src.models.tournaments import TournametModel, TournametTeamModel
+from src.models import TournametModel, TournametTeamModel
 
 from .schemas import (
     CreateTournament,

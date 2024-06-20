@@ -1,5 +1,5 @@
 from src.core.repository import SqlAlchemyRepository
-from src.models.players import PlayerModel
+from src.models import PlayerModel
 
 from .schemas import CreatePlayer, UpdatePlayer, PartialPlayer
 

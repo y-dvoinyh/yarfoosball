@@ -3,7 +3,7 @@ from typing import List
 import json
 from fastapi import APIRouter, File
 
-from src.models.enums import TournamentType
+from src.models import TournamentType
 
 from src.orx.team_tournament.depends import TeamTournamentDep
 from src.orx.team_tournament.schemas import ResponseTeamTournament

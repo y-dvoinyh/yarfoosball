@@ -1,7 +1,7 @@
 from typing import Optional, Any
 from pydantic import BaseModel, Json
 
-from src.models.enums import TournamentType
+from src.models import TournamentType
 
 
 class BaseTournament(BaseModel):

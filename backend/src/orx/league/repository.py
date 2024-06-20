@@ -1,5 +1,5 @@
 from src.core.repository import SqlAlchemyRepository
-from src.models.leagues import LeagueModel
+from src.models import LeagueModel
 
 from .schemas import CreateLeague, UpdateLeague, PartialLeague
 

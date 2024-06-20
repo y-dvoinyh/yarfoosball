@@ -27,7 +27,7 @@ class TeamModel(BaseModel):
     second_player: Mapped["PlayerModel"] = relationship(foreign_keys="TeamModel.second_player_id", lazy='joined')
 
     def __str__(self):
-        name = f'{self.id} '
+        name = f'TeamModel: {self.id} '
         name += str(self.first_player)
         if self.second_player_id:
             name += f'/{str(self.second_player)}'

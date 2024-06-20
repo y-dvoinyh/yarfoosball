@@ -2,7 +2,7 @@
 from typing import List
 from fastapi import APIRouter, File
 
-from src.models.enums import CompetitionType
+from src.models import CompetitionType
 from src.orx.kickertool.schemas import ResponseDYPCompetition
 from src.orx.kickertool.depends import KickerToolDep
 
