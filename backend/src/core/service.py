@@ -28,14 +28,10 @@ class AbstractService(ABC):
 
 class BaseService(Generic[CreateSchemaType]):
     """Базовый сервис CRUD"""
-    repository_name: str = None
+    repository: SqlAlchemyRepository
 
     def __init__(self, uow: UnitOfWork):
         self.uow = uow
-
-    @property
-    def repository(self) -> SqlAlchemyRepository:
-        return self.uow.rep.get(self.repository_name)
 
     async def create(self, data: CreateSchemaType):
         result = await self.repository.create(data)
@@ -47,11 +43,16 @@ class BaseService(Generic[CreateSchemaType]):
         await self.uow.commit()
         return result
 
+    async def update_or_create(self, data: UpdateSchemaType, **filters):
+        result = await self.repository.update_or_create(data, **filters)
+        await self.uow.commit()
+        return result
+
     async def delete(self, **filters) -> None:
         await self.repository.delete(**filters)
         await self.uow.commit()
 
-    async def get_single(self, **filters) -> Optional[ModelType] | None:
+    async def get(self, **filters) -> Optional[ModelType] | None:
         return await self.repository.get_single(**filters)
 
     async def list(

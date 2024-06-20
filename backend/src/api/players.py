@@ -1,8 +1,8 @@
 from typing import List
 from fastapi import APIRouter
 
-from src.modules.player.schemas import CreatePlayer, ResponsePlayer
-from src.modules.player.depends import PlayersDep
+from src.orx.player.schemas import CreatePlayer, ResponsePlayer
+from src.orx.player.depends import PlayersDep
 
 
 router = APIRouter(

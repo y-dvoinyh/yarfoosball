@@ -1,5 +1,5 @@
 # этап сборки (build stage)
-FROM huecker.io/library/node:lts-alpine
+FROM dockerhub.timeweb.cloud/library/node:lts-alpine
 WORKDIR /app
 
 # создаем слой пакетов, чтобы не переустанавливать в каждом релизе
