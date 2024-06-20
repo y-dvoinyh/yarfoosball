@@ -44,6 +44,7 @@ class SqlAlchemyRepository(
         return instance
 
     async def update(self, data: UpdateSchemaType, **filters) -> ModelType:
+        data = data.model_dump()
         stmt = update(self.model).values(**data).filter_by(**filters).returning(self.model)
         res = await self._session.execute(stmt)
         await self._session.flush()
