@@ -1,0 +1,192 @@
+import json
+from typing import Optional, List, Any
+from src.core.service import BaseService
+
+from src.models import CompetitionType, CompetitionModel, RatingType
+from src.orx.player.schemas import UpdatePlayer
+from src.orx.team.schemas import CreateTeam
+from src.orx.match.schemas import CreateMatch, CreateSet
+from src.orx.rating.schemas import CreateRating
+
+from .schemas import DYPScheme, CreateDYP, Team, Match
+
+
+class DYP:
+    def __init__(self, dyp: DYPScheme):
+        self.scheme = dyp
+        self.data: dict = {}
+        self.competition: Optional[CompetitionModel] = None
+        self.__match_counter = 0
+
+    @property
+    def match_order(self) -> int:
+        self.__match_counter += 1
+        return self.__match_counter
+
+    def add(self, id: Any, obj):
+        self.data[id] = obj
+
+    def get(self, id: Any):
+        return self.data.get(id)
+
+
+class KickerToolDYPService(BaseService):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.repository = self.uow.competitions
+
+    async def load_from_json(self, tournament_id: int, json_data) -> CompetitionModel:
+        """Загрузка дипа из JSON kickertools"""
+        dyp = DYP(DYPScheme(**json.loads(json_data)))
+        competition = await self.update_or_create(CreateDYP(
+            name=dyp.scheme.name,
+            description='Загрузка из Kickertools',
+            date=dyp.scheme.created_at.date(),
+            type=CompetitionType.DYP,
+            json_data=json_data,
+            tournament_id=tournament_id,
+            external_id=dyp.scheme.id
+        ), **{'external_id': dyp.scheme.id})
+
+        dyp.competition = competition
+        await self.__sync_players(dyp)
+        await self.__sync_qualifying(dyp)
+        await self.__sync_elimination(dyp)
+        await self.uow.commit()
+        return competition
+
+    async def __sync_players(self, dyp: DYP):
+        """Синхронизация игроков"""
+        for q in dyp.scheme.qualifying:
+            for p in q.participants:
+                first_name, last_name = p.name.split(' ')
+                p_dict = {'first_name': first_name, 'last_name': last_name}
+                # Игрок
+                player = await self.uow.players.update_or_create(UpdatePlayer(**p_dict), **p_dict)
+                dyp.add(p.id, player)
+                # Записи о рейтингах
+                rating_filter = {
+                    'type': RatingType.PLAYER,
+                    'player_id': player.id
+                }
+                rating = await self.uow.ratings.update_or_create(
+                    CreateRating(
+                        league_id=None,
+                        tournament_id=None,
+                        **rating_filter
+                    ),
+                    **rating_filter
+                )
+                dyp.add((player.id, RatingType.PLAYER), rating)
+                rating_league_filter = {
+                    'type': RatingType.LEAGUE,
+                    'player_id': player.id,
+                    'league_id': dyp.competition.tournament.league_id
+                }
+                rating_league = await self.uow.ratings.update_or_create(
+                    CreateRating(tournament_id=None, **rating_league_filter),
+                    **rating_league_filter
+                )
+                dyp.add((player.id, RatingType.LEAGUE), rating_league)
+                rating_tournament_filter = {
+                    'type': RatingType.TOURNAMENT,
+                    'player_id': player.id,
+                    'league_id': dyp.competition.tournament.league_id,
+                    'tournament_id': dyp.competition.tournament_id
+                }
+                rating_tournament = await self.uow.ratings.update_or_create(
+                    CreateRating(**rating_tournament_filter),
+                    **rating_tournament_filter
+                )
+                dyp.add((player.id, RatingType.TOURNAMENT), rating_tournament)
+
+    async def __sync_qualifying(self, dyp: DYP):
+        """Синхронизация квалификации"""
+        for q in dyp.scheme.qualifying:
+            for r in q.rounds:
+                await self.__sync_matches(dyp, r.matches)
+
+    async def __sync_elimination(self, dyp: DYP):
+        """Синхронизация плей офф"""
+        for e in dyp.scheme.eliminations:
+            # Winners
+            for level in e.levels:
+                await self.__sync_matches(dyp, level.matches)
+            # Loosers
+            for level in reversed(e.left_levels):
+                await self.__sync_matches(dyp, level.matches)
+            # Third
+            await self.__sync_matches(dyp, e.third.matches)
+
+    async def __sync_matches(self, dyp: DYP, matches: List[Match]):
+        """Синхронизация списка матчей"""
+        for match_scheme in matches:
+            if match_scheme.deactivated:
+                continue
+            team1, team2 = await self.__sync_teams(dyp, [match_scheme.team1, match_scheme.team2])
+            if team1 is None or team2 is None:
+                continue
+            if match_scheme.time_start is None and match_scheme.time_end is None:
+                continue
+
+            match = await self.uow.matches.update_or_create(
+                CreateMatch(
+                    external_id=match_scheme.id,
+                    order=dyp.match_order,
+                    competition_id=dyp.competition.id,
+                    first_team_id=team1.id,
+                    second_team_id=team2.id,
+                    is_qualification=not match_scheme.is_elimination,
+                    time_start=(match_scheme.time_start or match_scheme.time_end).replace(tzinfo=None)
+                ),
+                **{'external_id': match_scheme.id}
+            )
+            dyp.add(match_scheme.id, match)
+            await self.__sync_sets(dyp, match_scheme, match.id)
+
+    async def __sync_teams(self, dyp: DYP, teams: List[Team]):
+        """Синхронизация комманд одного матча"""
+        result = []
+        for team_scheme in teams:
+            if team_scheme is None:
+                result.append(None)
+                continue
+            team = dyp.get(team_scheme.id)
+            if team is None:
+                external_first_player_id = team_scheme.players[0].id
+                external_second_player_id = None
+                if len(team_scheme.players) > 1:
+                    external_second_player_id = team_scheme.players[1].id
+
+                first_player = dyp.get(external_first_player_id)
+                second_player = dyp.get(external_second_player_id)
+                team = await self.uow.teams.update_or_create(
+                    CreateTeam(
+                        competition_order=None,
+                        external_id=team_scheme.id,
+                        competition_id=dyp.competition.id,
+                        first_player_id=first_player.id,
+                        second_player_id=second_player.id if second_player else None
+                    ),
+                    **{'external_id': team_scheme.id}
+                )
+                dyp.add(team.external_id, team)
+            result.append(team)
+        return result
+
+    async def __sync_sets(self, dyp: DYP, match_scheme: Match, match_id: int):
+        """Синхронизация сетов"""
+        for discipline in match_scheme.disciplines:
+            for order, s in enumerate(discipline.sets):
+                first_team_score, second_team_score = s.scores
+                set_model = await self.uow.sets.update_or_create(
+                    CreateSet(
+                        external_id=s.id,
+                        order=order,
+                        match_id=match_id,
+                        first_team_score=first_team_score,
+                        second_team_score=second_team_score
+                    ),
+                    **{'external_id': s.id}
+                )
+                dyp.add(s.id, set_model)

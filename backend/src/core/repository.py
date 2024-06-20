@@ -1,7 +1,7 @@
 from typing import Type, Optional, Generic, Sequence
 from abc import ABC, abstractmethod
 
-from sqlalchemy import delete, select, update
+from sqlalchemy import delete, select, update, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from .types import ModelType, CreateSchemaType, UpdateSchemaType, PartialSchemaType
@@ -49,6 +49,21 @@ class SqlAlchemyRepository(
         await self._session.flush()
         return res.scalar_one()
 
+    async def update_or_create(self, data: UpdateSchemaType or PartialSchemaType, **filters) -> ModelType:
+        data = data.model_dump()
+        instance = await self._session.execute(select(self.model).filter_by(**filters))
+        instance = instance .scalar_one_or_none()
+        if instance:
+            for key, value in data.items():
+                if value is not None:
+                    setattr(instance, key, value)
+        else:
+            instance = self.model(**data)
+            self._session.add(instance)
+        await self._session.flush()
+        await self._session.refresh(instance)
+        return instance
+
     async def delete(self, **filters) -> None:
         await self._session.execute(delete(self.model).filter_by(**filters))
         await self._session.flush()
@@ -62,14 +77,19 @@ class SqlAlchemyRepository(
             order: str = "id",
             limit: int = 100,
             offset: int = 0,
-            ** filters
+            **filters
     ) -> Sequence[ModelType]:
         stmt = select(self.model)
-        # if filters:
-        #     stmt = stmt.filter_by(**filters)
+        if filters:
+            stmt = stmt.filter_by(**filters)
 
-        # stmt = stmt.order_by(*order)\
-        #     .limit(limit)\
-        #     .offset(offset)
+        stmt = stmt.order_by(text(order))\
+            .limit(limit)\
+            .offset(offset)
+        result = await self._session.execute(stmt)
+        return result.scalars().all()
+
+    async def all(self, order = "id") -> Sequence[ModelType]:
+        stmt = select(self.model).order_by(text(order))
         result = await self._session.execute(stmt)
         return result.scalars().all()

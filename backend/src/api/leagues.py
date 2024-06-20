@@ -1,8 +1,8 @@
 from typing import List
 from fastapi import APIRouter
 
-from src.modules.league.schemas import CreateLeague, ResponseLeague
-from src.modules.league.depends import LeagueDep
+from src.orx.league.schemas import CreateLeague, ResponseLeague
+from src.orx.league.depends import LeagueDep
 
 
 router = APIRouter(

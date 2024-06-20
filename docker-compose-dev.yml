@@ -2,7 +2,7 @@ version: "3"
 services:
 
   nginx:
-    image: huecker.io/library/nginx:stable-alpine
+    image: dockerhub.timeweb.cloud/library/nginx:stable-alpine
     container_name: yarfoosbal-nginx
     ports:
       - "80:80"
@@ -41,6 +41,7 @@ services:
     volumes:
       - ./backend/src:/app/src
       - ./backend/migrations:/app/migrations
+      - ./backend/kickertool:/app/kickertool
     env_file:
       - ./.env-dev
     networks:
@@ -51,7 +52,7 @@ services:
       - db
 
   db:
-    image: huecker.io/library/postgres:14-alpine
+    image: dockerhub.timeweb.cloud/library/postgres:14-alpine
     container_name: db_container
     restart: on-failure
     command: -p 6432
@@ -66,12 +67,14 @@ services:
 
   pgadmin:
     container_name: pgadmin_container
-    image: huecker.io/dpage/pgadmin4:7
+    image: dockerhub.timeweb.cloud/dpage/pgadmin4:7
     restart: always
     env_file:
       - ./.env-dev
     ports:
       - "5050:80"
+    volumes:
+      - ./pgadmin-data:/var/lib/pgadmin
     networks:
       - yarfoosball-network
     depends_on:

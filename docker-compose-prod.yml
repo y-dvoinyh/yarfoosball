@@ -1,7 +1,7 @@
 version: "3"
 services:
   nginx:
-    image: huecker.io/library/nginx:stable-alpine
+    image: dockerhub.timeweb.cloud/library/nginx:stable-alpine
     container_name: yarfoosbal-nginx-container
     restart: always
     ports:
@@ -37,14 +37,17 @@ services:
       - yarfoosball-network
     depends_on:
       - db
+    # Временно
+    ports:
+      - "8000:8000"
 
   db:
-    image: huecker.io/library/postgres:14-alpine
+    image: dockerhub.timeweb.cloud/library/postgres:14-alpine
     container_name: yarfoosball-db-container
     restart: on-failure
     command: -p 6432
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     env_file:
       - ./.env-prod
     expose:
@@ -55,3 +58,7 @@ services:
 networks:
   yarfoosball-network:
     driver: bridge
+
+volumes:
+  pgdata:
+
