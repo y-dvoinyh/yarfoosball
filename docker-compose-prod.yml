@@ -64,7 +64,7 @@ services:
     ports:
       - "5050:80"
     volumes:
-      - ./pgadmin-data:/var/lib/pgadmin
+      - pgadmin-data:/var/lib/pgadmin
     networks:
       - yarfoosball-network
     depends_on:
@@ -74,4 +74,5 @@ networks:
   yarfoosball-network:
     driver: bridge
 
-
+volumes:
+  pgadmin-data:
