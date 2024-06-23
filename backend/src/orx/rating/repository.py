@@ -25,7 +25,11 @@ class RatingRepository(
                     order_by=[self.model.rating.desc(), self.model.id]
                 ).label('number'),
                 self.model.player_id,
-                self.model.rating
+                self.model.rating,
+                self.model.matches,
+                self.model.wins,
+                self.model.losses,
+                self.model.last_diff
             )
             .where(self.model.type == RatingType.PLAYER)
             .order_by(self.model.rating.desc(), self.model.id)
@@ -39,7 +43,11 @@ class RatingRepository(
                 PlayerModel.id,
                 func.concat_ws(' ', PlayerModel.first_name, PlayerModel.last_name).label('full_name'),
                 rating.number,
-                rating.rating
+                rating.rating,
+                rating.matches,
+                rating.wins,
+                rating.losses,
+                rating.last_diff
             )
             .select_from(PlayerModel)
             .join(rating_subquery, rating.player_id == PlayerModel.id, isouter=True)

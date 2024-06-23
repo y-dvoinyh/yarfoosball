@@ -12,6 +12,11 @@ class BaseRating(BaseModel):
     league_id: Optional[int] = None
     tournament_id: Optional[int] = None
 
+    matches: Optional[int] = 0
+    wins: Optional[int] = 0
+    losses: Optional[int] = 0
+    last_diff: Optional[int] = 0
+
 
 class ResponseRating(BaseRating):
     id: int
@@ -36,10 +41,18 @@ class BaseRatingHistory(BaseModel):
     prev_history_id: Optional[int] = None
     level: HistoryRatingLevel
     player_id: int
-    match_id: Optional[int]
+    competition_id: Optional[int]
+    match_id: Optional[int] = None
 
     rating: int
     diff: int
+
+    matches: Optional[int] = 0
+    matches_diff: Optional[int] = 0
+    wins: Optional[int] = 0
+    wins_diff: Optional[int] = 0
+    losses: Optional[int] = 0
+    losses_diff: Optional[int] = 0
 
 
 class ResponseRatingHistory(BaseRatingHistory):
@@ -59,6 +72,7 @@ class PartialRatingHistory(BaseRatingHistory):
     prev_history_id: Optional[int] = None
     level: Optional[HistoryRatingLevel] = None
     player_id: Optional[int] = None
+    competition_id: Optional[int] = None
     match_id: Optional[int] = None
 
     rating: Optional[int] = None
@@ -66,9 +80,13 @@ class PartialRatingHistory(BaseRatingHistory):
 
 
 class ResponseRatingPlayer(BaseModel):
+    full_name: str
     number: int
     rating: int
-    full_name: str
+    matches: int
+    wins: int
+    losses: int
+    last_diff: Optional[int] = 0
 
 
 class ResponseRatingList(BaseModel):

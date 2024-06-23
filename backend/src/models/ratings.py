@@ -1,5 +1,5 @@
 from typing import TYPE_CHECKING
-from sqlalchemy import ForeignKey, Integer, Enum
+from sqlalchemy import ForeignKey, Integer, Enum, Boolean
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from src.core.constants import DEFAULT_RATING
@@ -31,6 +31,11 @@ class RatingModel(BaseModel):
     tournament: Mapped["TournametModel"] = relationship(foreign_keys="RatingModel.tournament_id", lazy='joined')
 
     rating: Mapped[int] = mapped_column(Integer, default=DEFAULT_RATING, nullable=False)
+    matches: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+    wins: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+    losses: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+
+    last_diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
 
 
 class RatingHistoryModel(BaseModel):
@@ -48,8 +53,23 @@ class RatingHistoryModel(BaseModel):
     player_id: Mapped[int] = mapped_column(ForeignKey('players.id'), nullable=False)
     player: Mapped["PlayerModel"] = relationship(foreign_keys="RatingHistoryModel.player_id", lazy='joined')
 
+    competition_id: Mapped[int] = mapped_column(ForeignKey('competitions.id'), nullable=True)
+    competition: Mapped["CompetitionModel"] = relationship(
+        foreign_keys="RatingHistoryModel.competition_id",
+        back_populates="ratings",
+        lazy='joined'
+    )
+
     match_id: Mapped[int] = mapped_column(ForeignKey('matches.id'), nullable=True)
     match: Mapped["MatchModel"] = relationship(foreign_keys="RatingHistoryModel.match_id", lazy='joined')
 
     rating: Mapped[int] = mapped_column(Integer, unique=False, nullable=False)
     diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=False)
+
+    matches: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+    matches_diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+    wins: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+    wins_diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+    losses: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+    losses_diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+

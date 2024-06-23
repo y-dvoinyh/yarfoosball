@@ -11,6 +11,7 @@ if TYPE_CHECKING:
     from .tournaments import TournametModel
     from .teams import TeamModel
     from .matches import MatchModel
+    from .ratings import RatingHistoryModel
 
 
 class CompetitionModel(BaseModel):
@@ -37,6 +38,7 @@ class CompetitionModel(BaseModel):
     # Команды
     teams: Mapped[List['TeamModel']] = relationship(back_populates="competition")
     matches: Mapped[List['MatchModel']] = relationship(back_populates="competition", lazy='selectin')
+    ratings: Mapped[List["RatingHistoryModel"]] = relationship(back_populates="competition", lazy='selectin')
 
     def __str__(self):
         return f'Competition: {str(self.date)} - {self.id} - "{self.name}"'

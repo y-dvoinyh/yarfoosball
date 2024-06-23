@@ -46,9 +46,10 @@ class SqlAlchemyRepository(
     async def update(self, data: UpdateSchemaType, **filters) -> ModelType:
         data = data.model_dump()
         stmt = update(self.model).values(**data).filter_by(**filters).returning(self.model)
-        res = await self._session.execute(stmt)
+        instance = await self._session.execute(stmt)
         await self._session.flush()
-        return res.scalar_one()
+        await self._session.refresh(instance)
+        return instance.scalar_one()
 
     async def update_or_create(self, data: UpdateSchemaType or PartialSchemaType, **filters) -> ModelType:
         data = data.model_dump()

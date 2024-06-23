@@ -45,7 +45,16 @@ export default defineComponent({
     const columns = [
       { name: 'number', label: '№', align: 'left', field: 'number', sortable: false },
       { name: 'full_name', label: 'Фамилия Имя', align: 'left', field: 'full_name', sortable: false },
-      { name: 'rating', label: 'Рейтинг', align: 'left', field: 'rating', sortable: false }
+      { name: 'rating', label: 'Рейтинг', align: 'left', field: 'rating', sortable: false },
+      { name: 'last_diff', label: ' ', align: 'left', field: 'last_diff', sortable: false,
+        format: (val, row) => `${val > 0 ? '+' : ''}${val}`,
+        style: row => (row.last_diff > 0 ? 'color: green' : 'color: red')
+      },
+
+      { name: 'matches', label: 'Матчей', align: 'left', field: 'matches', sortable: false },
+      { name: 'wins', label: 'Побед', align: 'left', field: 'wins', sortable: false },
+      { name: 'losses', label: 'Поражений', align: 'left', field: 'losses', sortable: false },
+      { name: 'percent_win', label: 'Процент побед', align: 'left', field: 'wins', sortable: false, format: (val, row) => `${Math.round((val/row.matches) * 100)}%`},
     ]
 
     const tableRef = ref()
