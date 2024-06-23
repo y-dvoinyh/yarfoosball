@@ -4,7 +4,8 @@ from collections import defaultdict
 import math
 from src.core.service import BaseService
 from src.core.constants import DEFAULT_RATING, QUALIFICATION_COEFFICIENT
-from src.models import RatingType, HistoryRatingLevel, RatingHistoryModel, MatchModel, CompetitionModel
+from src.models import RatingType, HistoryRatingLevel, RatingHistoryModel, MatchModel, CompetitionModel, \
+    LeagueModel, TournametModel
 
 from .schemas import CreateRatingHistory, CreateRating
 from .repository import RatingRepository
@@ -41,15 +42,18 @@ class RatingService(BaseService):
     async def calculate_rating(self, competition_id: Optional[int]) -> bool:
         competitions = await self.uow.competitions.all(order="date")
         for competition in competitions:
+            tournament = competition.tournament
+            league = tournament.league
             for match in competition.matches:
-                await self.__calculate_match_rating(match)
+                await self.__calculate_match_rating(match, league, tournament)
             await self.__update_competition_rating(competition)
         await self.__update_rating()
         await self.uow.commit()
         return True
 
-    async def __calculate_match_rating(self, match: MatchModel):
+    async def __calculate_match_rating(self, match: MatchModel, league: LeagueModel, tournament: TournametModel):
         # Последние записи в истории рейтингов
+
         winner_first_p_history = self.store.get_history(match.winner.first_player_id)
         winner_second_p_history = self.store.get_history(match.winner.second_player_id)
         looser_first_p_history = self.store.get_history(match.looser.first_player_id)
@@ -78,6 +82,8 @@ class RatingService(BaseService):
         )
         # Записи в историю
         winner_first_player_history = await self.uow.rating_history.update_or_create(CreateRatingHistory(
+            league_id=league.id,
+            tournament_id=tournament.id,
             type=RatingType.PLAYER,
             prev_history_id=winner_first_p_history.id if winner_first_p_history else None,
             level=HistoryRatingLevel.MATCH,
@@ -96,6 +102,8 @@ class RatingService(BaseService):
         self.store.add_history(match.competition_id, winner_first_player_history)
 
         looser_first_player_history = await self.uow.rating_history.update_or_create(CreateRatingHistory(
+            league_id=league.id,
+            tournament_id=tournament.id,
             type=RatingType.PLAYER,
             prev_history_id=looser_first_p_history.id if looser_first_p_history else None,
             level=HistoryRatingLevel.MATCH,
@@ -115,6 +123,8 @@ class RatingService(BaseService):
 
         if not match.is_singles:
             winner_second_player_history = await self.uow.rating_history.update_or_create(CreateRatingHistory(
+                league_id=league.id,
+                tournament_id=tournament.id,
                 type=RatingType.PLAYER,
                 prev_history_id=winner_second_p_history.id if winner_second_p_history else None,
                 level=HistoryRatingLevel.MATCH,
@@ -133,6 +143,8 @@ class RatingService(BaseService):
             self.store.add_history(match.competition_id, winner_second_player_history)
 
             looser_second_player_history = await self.uow.rating_history.update_or_create(CreateRatingHistory(
+                league_id=league.id,
+                tournament_id=tournament.id,
                 type=RatingType.PLAYER,
                 prev_history_id=looser_second_p_history.id if looser_second_p_history else None,
                 level=HistoryRatingLevel.MATCH,
@@ -167,12 +179,16 @@ class RatingService(BaseService):
             ), **{'type': RatingType.PLAYER, 'player_id': player_id})
 
     async def __update_competition_rating(self, competition: CompetitionModel):
+        tournament = competition.tournament
+        league = tournament.league
         competition_ratings = self.store.competition_history(competition.id)
         players = {r.player_id for r in competition_ratings}
         history = dict()
         for player_id in players:
             last_history = self.store.get_history(('competition', player_id))
             history[player_id] = CreateRatingHistory(
+                league_id=league.id,
+                tournament_id=tournament.id,
                 type=RatingType.PLAYER,
                 prev_history_id=last_history.id if last_history else None,
                 level=HistoryRatingLevel.COMPETITION,

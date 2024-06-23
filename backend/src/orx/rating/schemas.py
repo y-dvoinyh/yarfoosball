@@ -41,6 +41,8 @@ class BaseRatingHistory(BaseModel):
     prev_history_id: Optional[int] = None
     level: HistoryRatingLevel
     player_id: int
+    league_id: Optional[int]
+    tournament_id: Optional[int]
     competition_id: Optional[int]
     match_id: Optional[int] = None
 

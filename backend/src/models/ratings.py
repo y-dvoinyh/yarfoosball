@@ -50,6 +50,12 @@ class RatingHistoryModel(BaseModel):
     prev_history: Mapped["RatingHistoryModel"] = relationship(
         foreign_keys="RatingHistoryModel.prev_history_id")
 
+    league_id: Mapped[int] = mapped_column(ForeignKey('leagues.id'), nullable=True)
+    league: Mapped["LeagueModel"] = relationship(foreign_keys="RatingHistoryModel.league_id")
+
+    tournament_id: Mapped[int] = mapped_column(ForeignKey('tournaments.id'), nullable=True)
+    tournament: Mapped["TournametModel"] = relationship(foreign_keys="RatingHistoryModel.tournament_id")
+
     player_id: Mapped[int] = mapped_column(ForeignKey('players.id'), nullable=False)
     player: Mapped["PlayerModel"] = relationship(foreign_keys="RatingHistoryModel.player_id")
 
