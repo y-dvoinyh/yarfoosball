@@ -29,8 +29,7 @@ class TournametModel(BaseModel):
     )
     league: Mapped["LeagueModel"] = relationship(
         foreign_keys="TournametModel.league_id",
-        back_populates="tournaments",
-        lazy='joined'
+        back_populates="tournaments"
     )
     # Соревнования
     competitions: Mapped[List['CompetitionModel']] = relationship(back_populates="tournament")

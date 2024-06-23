@@ -16,15 +16,14 @@ class TeamModel(BaseModel):
     competition_id: Mapped[int] = mapped_column(ForeignKey('competitions.id'), nullable=False)
     competition: Mapped["CompetitionModel"] = relationship(
         foreign_keys="TeamModel.competition_id",
-        back_populates="teams",
-        lazy='joined'
+        back_populates="teams"
     )
     # Игрок 1
     first_player_id: Mapped[int] = mapped_column(ForeignKey('players.id'), nullable=False)
-    first_player: Mapped["PlayerModel"] = relationship(foreign_keys="TeamModel.first_player_id", lazy='joined')
+    first_player: Mapped["PlayerModel"] = relationship(foreign_keys="TeamModel.first_player_id")
     # Игрок 2
     second_player_id: Mapped[int] = mapped_column(ForeignKey('players.id'), nullable=True)
-    second_player: Mapped["PlayerModel"] = relationship(foreign_keys="TeamModel.second_player_id", lazy='joined')
+    second_player: Mapped["PlayerModel"] = relationship(foreign_keys="TeamModel.second_player_id")
 
     def __str__(self):
         name = f'TeamModel: {self.id} '

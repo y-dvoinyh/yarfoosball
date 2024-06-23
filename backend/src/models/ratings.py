@@ -22,13 +22,13 @@ class RatingModel(BaseModel):
     type: Mapped[RatingType] = mapped_column(Enum(RatingType, name='rating_type_enum'), nullable=False)
 
     player_id: Mapped[int] = mapped_column(ForeignKey('players.id'), nullable=False)
-    player: Mapped["PlayerModel"] = relationship(foreign_keys="RatingModel.player_id", lazy='joined')
+    player: Mapped["PlayerModel"] = relationship(foreign_keys="RatingModel.player_id")
 
     league_id: Mapped[int] = mapped_column(ForeignKey('leagues.id'), nullable=True)
-    league: Mapped["LeagueModel"] = relationship(foreign_keys="RatingModel.league_id", lazy='joined')
+    league: Mapped["LeagueModel"] = relationship(foreign_keys="RatingModel.league_id")
 
     tournament_id: Mapped[int] = mapped_column(ForeignKey('tournaments.id'), nullable=True)
-    tournament: Mapped["TournametModel"] = relationship(foreign_keys="RatingModel.tournament_id", lazy='joined')
+    tournament: Mapped["TournametModel"] = relationship(foreign_keys="RatingModel.tournament_id")
 
     rating: Mapped[int] = mapped_column(Integer, default=DEFAULT_RATING, nullable=False)
     matches: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
@@ -48,20 +48,19 @@ class RatingHistoryModel(BaseModel):
 
     prev_history_id: Mapped[int] = mapped_column(ForeignKey('rating_history.id'), nullable=True)
     prev_history: Mapped["RatingHistoryModel"] = relationship(
-        foreign_keys="RatingHistoryModel.prev_history_id", lazy='joined')
+        foreign_keys="RatingHistoryModel.prev_history_id")
 
     player_id: Mapped[int] = mapped_column(ForeignKey('players.id'), nullable=False)
-    player: Mapped["PlayerModel"] = relationship(foreign_keys="RatingHistoryModel.player_id", lazy='joined')
+    player: Mapped["PlayerModel"] = relationship(foreign_keys="RatingHistoryModel.player_id")
 
     competition_id: Mapped[int] = mapped_column(ForeignKey('competitions.id'), nullable=True)
     competition: Mapped["CompetitionModel"] = relationship(
         foreign_keys="RatingHistoryModel.competition_id",
-        back_populates="ratings",
-        lazy='joined'
+        back_populates="ratings"
     )
 
     match_id: Mapped[int] = mapped_column(ForeignKey('matches.id'), nullable=True)
-    match: Mapped["MatchModel"] = relationship(foreign_keys="RatingHistoryModel.match_id", lazy='joined')
+    match: Mapped["MatchModel"] = relationship(foreign_keys="RatingHistoryModel.match_id")
 
     rating: Mapped[int] = mapped_column(Integer, unique=False, nullable=False)
     diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=False)

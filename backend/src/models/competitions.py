@@ -32,13 +32,12 @@ class CompetitionModel(BaseModel):
     )
     tournament: Mapped['TournametModel'] = relationship(
         foreign_keys="CompetitionModel.tournament_id",
-        back_populates="competitions",
-        lazy='joined'
+        back_populates="competitions"
     )
     # Команды
     teams: Mapped[List['TeamModel']] = relationship(back_populates="competition")
-    matches: Mapped[List['MatchModel']] = relationship(back_populates="competition", lazy='selectin')
-    ratings: Mapped[List["RatingHistoryModel"]] = relationship(back_populates="competition", lazy='selectin')
+    matches: Mapped[List['MatchModel']] = relationship(back_populates="competition", lazy='subquery')
+    ratings: Mapped[List["RatingHistoryModel"]] = relationship(back_populates="competition")
 
     def __str__(self):
         return f'Competition: {str(self.date)} - {self.id} - "{self.name}"'

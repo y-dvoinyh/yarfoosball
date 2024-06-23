@@ -91,7 +91,7 @@ class SqlAlchemyRepository(
         result = await self._session.execute(stmt)
         return result.scalars().all()
 
-    async def all(self, order = "id") -> Sequence[ModelType]:
+    async def all(self, order="id") -> Sequence[ModelType]:
         stmt = select(self.model).order_by(text(order))
         result = await self._session.execute(stmt)
         return result.scalars().all()

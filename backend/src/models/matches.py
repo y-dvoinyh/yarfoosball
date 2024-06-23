@@ -16,7 +16,7 @@ class MatchModel(BaseModel):
     # Соревнование
     competition_id: Mapped[int] = mapped_column(ForeignKey('competitions.id'), nullable=False)
     competition: Mapped["CompetitionModel"] = relationship(
-        foreign_keys="MatchModel.competition_id", lazy='joined', back_populates="matches"
+        foreign_keys="MatchModel.competition_id", back_populates="matches"
     )
 
     first_team_id: Mapped[int] = mapped_column(ForeignKey('teams.id'), nullable=False)
@@ -30,7 +30,7 @@ class MatchModel(BaseModel):
 
     time_start: Mapped[datetime] = mapped_column(DateTime, nullable=True)
 
-    sets: Mapped[List['MatchSetModel']] = relationship(back_populates="match", lazy='selectin')
+    sets: Mapped[List['MatchSetModel']] = relationship(back_populates="match", lazy='subquery')
 
     @property
     def teams(self) -> list['TeamModel']:
@@ -93,7 +93,7 @@ class MatchSetModel(BaseModel):
     __tablename__ = "match_sets"
     order: Mapped[int] = mapped_column(Integer, nullable=False)
     match_id: Mapped[int] = mapped_column(ForeignKey('matches.id'), nullable=False)
-    match: Mapped["MatchModel"] = relationship(foreign_keys="MatchSetModel.match_id", lazy='joined')
+    match: Mapped["MatchModel"] = relationship(foreign_keys="MatchSetModel.match_id")
     first_team_score:  Mapped[int] = mapped_column(Integer, nullable=False)
     second_team_score:  Mapped[int] = mapped_column(Integer, nullable=False)
 
