@@ -171,6 +171,7 @@ class RatingService(BaseService):
                 rating=DEFAULT_RATING,
                 diff=0
             )
+        # TODO пересчитывать придется 2 раза. Надо придумать другой способ получения
         for rating_history in competition.ratings:
             if rating_history.level == HistoryRatingLevel.COMPETITION:
                 continue
