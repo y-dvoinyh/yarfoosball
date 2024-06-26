@@ -58,7 +58,7 @@ services:
   pgadmin:
     container_name: pgadmin_container
     image: dockerhub.timeweb.cloud/dpage/pgadmin4:7
-    #restart: always
+    restart: always
     env_file:
       - ./.env-prod
     ports:
