@@ -33,14 +33,23 @@ class MatchModel(BaseModel):
     sets: Mapped[List['MatchSetModel']] = relationship(back_populates="match", lazy='subquery')
 
     @property
+    def __sets(self):
+        return self.sets or []
+
+    @property
     def teams(self) -> list['TeamModel']:
         """Команды матча"""
         return [self.first_team, self.second_team]
 
     @property
+    def is_singles(self) -> bool:
+        """Одиночные команды"""
+        return self.first_team.is_single_player
+
+    @property
     def is_draw(self):
         """Ничья"""
-        return all([set_.is_draw for set_ in self.sets])
+        return all([set_.is_draw for set_ in self.__sets])
 
     @property
     def winner(self) -> 'TeamModel':
@@ -62,27 +71,23 @@ class MatchModel(BaseModel):
 
     @property
     def is_first_team_win(self) -> bool:
-        return sum([1 if set_.is_first_team_win else -1 for set_ in self.sets]) > 0
+        return sum([1 if set_.is_first_team_win else -1 for set_ in self.__sets]) > 0
 
     @property
     def is_single_set(self) -> bool:
-        return len(self.sets) <= 1
+        return len(self.__sets) == 1
 
     @property
     def first_team_score(self):
-        if self.is_single_set:
-            return self.sets[0].first_team_score
-        return sum([1 if set_.first_team_score > set_.second_team_score else 0 for set_ in self.sets])
+        if self.is_single_set and self.__sets:
+            return self.__sets[0].first_team_score
+        return sum([1 if set_.first_team_score > set_.second_team_score else 0 for set_ in self.__sets])
 
     @property
     def second_team_score(self):
         if self.is_single_set:
             return self.sets[0].second_team_score
         return sum([1 if set_.second_team_score > set_.first_team_score else 0 for set_ in self.sets])
-
-    @property
-    def is_singles(self) -> bool:
-        return self.first_team.is_single_player
 
     def __str__(self):
         return f'Match: {str(self.order)} - {self.id}: {str(self.time_start)}"'

@@ -54,7 +54,7 @@ class SqlAlchemyRepository(
     async def update_or_create(self, data: UpdateSchemaType or PartialSchemaType, **filters) -> ModelType:
         data = data.model_dump(exclude_unset=True)
         instance = await self._session.execute(select(self.model).filter_by(**filters))
-        instance = instance .scalar_one_or_none()
+        instance = instance.scalar_one_or_none()
         if instance:
             for key, value in data.items():
                 if value is not None:

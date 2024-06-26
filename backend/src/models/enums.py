@@ -41,5 +41,6 @@ class CompetitionType(Enum):
 
 
 class HistoryRatingLevel(Enum):
+    START = 'START'
     MATCH = 'MATCH'
     COMPETITION = 'COMPETITION'

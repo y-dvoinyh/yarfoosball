@@ -3,12 +3,20 @@ from typing import Optional, Any
 from collections import defaultdict
 import math
 from src.core.service import BaseService
+from src.core.uow import UnitOfWork
 from src.core.constants import DEFAULT_RATING, QUALIFICATION_COEFFICIENT
 from src.models import RatingType, HistoryRatingLevel, RatingHistoryModel, MatchModel, CompetitionModel, \
     LeagueModel, TournametModel
 
 from .schemas import CreateRatingHistory, CreateRating
 from .repository import RatingRepository
+
+
+def calculate_rating_correction():
+    """Рассчитать величину поправки рейтинга игрока"""
+    result = None
+
+    return result
 
 
 class HystoryStore:
@@ -33,6 +41,36 @@ class HystoryStore:
         return self.__data
 
 
+class PlayerRating:
+
+    def __init__(self, player_id: int, uow: UnitOfWork):
+        self.uow = uow
+        self.idx = player_id
+        self.__last_history = None
+
+    @property
+    async def last_history(self) -> HistoryRatingLevel:
+        """Получить предыдущую историю"""
+        if self.__last_history is None:
+            __filter = {
+                'type': RatingType.PLAYER,
+                'level': HistoryRatingLevel.START,
+                'player_id': self.idx
+            }
+            self.__last_history = await self.uow.rating_history.update_or_create(
+                CreateRatingHistory(**__filter),
+                **__filter
+            )
+        return self.__last_history
+
+
+class MatchRating:
+    """Расчет рейтинга участников матча"""
+    def __init__(self, match: MatchModel, uow: UnitOfWork):
+        self.__match = match
+        self.__uow = uow
+
+
 class RatingService(BaseService):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -46,6 +84,7 @@ class RatingService(BaseService):
             league = tournament.league
             for match in competition.matches:
                 await self.__calculate_match_rating(match, league, tournament)
+                # await MatchRating(match, self.store, self.uow).calculate()
             await self.__update_competition_rating(competition)
         await self.__update_rating()
         await self.uow.commit()
@@ -239,7 +278,7 @@ class RatingService(BaseService):
         if coefficients:
             for c in coefficients:
                 result *= c
-        return int(result)
+        return int(round(result))
 
     async def rating_list_with_count(self, limit: int, offset: int, search_string: Optional[str]):
         if search_string is not None:

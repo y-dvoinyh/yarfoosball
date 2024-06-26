@@ -38,16 +38,17 @@ class PartialRating(BaseRating):
 
 class BaseRatingHistory(BaseModel):
     type: RatingType
-    prev_history_id: Optional[int] = None
     level: HistoryRatingLevel
     player_id: int
-    league_id: Optional[int]
-    tournament_id: Optional[int]
-    competition_id: Optional[int]
+
+    prev_history_id: Optional[int] = None
+    league_id: Optional[int] = None
+    tournament_id: Optional[int] = None
+    competition_id: Optional[int] = None
     match_id: Optional[int] = None
 
-    rating: int
-    diff: int
+    rating: Optional[int] = DEFAULT_RATING
+    diff: Optional[int] = 0
 
     matches: Optional[int] = 0
     matches_diff: Optional[int] = 0
