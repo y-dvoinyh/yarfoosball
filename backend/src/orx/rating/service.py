@@ -263,9 +263,9 @@ class RatingService(BaseService):
         looser_rating = st_rating if ft_score > st_score else ft_rating
         w = 1 if ft_score > st_score else -1
         if ft_score == st_score:
-            w = 1 if ft_rating > st_rating else -1
-            winner_rating = ft_rating
-            looser_rating = st_rating
+            w = 1 if ft_rating < st_rating else -1
+            winner_rating = min([st_rating, ft_rating])
+            looser_rating = max([st_rating, ft_rating])
             if ft_rating == st_rating:
                 w = 0
 
