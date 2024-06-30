@@ -41,36 +41,6 @@ class HystoryStore:
         return self.__data
 
 
-class PlayerRating:
-
-    def __init__(self, player_id: int, uow: UnitOfWork):
-        self.uow = uow
-        self.idx = player_id
-        self.__last_history = None
-
-    @property
-    async def last_history(self) -> HistoryRatingLevel:
-        """Получить предыдущую историю"""
-        if self.__last_history is None:
-            __filter = {
-                'type': RatingType.PLAYER,
-                'level': HistoryRatingLevel.START,
-                'player_id': self.idx
-            }
-            self.__last_history = await self.uow.rating_history.update_or_create(
-                CreateRatingHistory(**__filter),
-                **__filter
-            )
-        return self.__last_history
-
-
-class MatchRating:
-    """Расчет рейтинга участников матча"""
-    def __init__(self, match: MatchModel, uow: UnitOfWork):
-        self.__match = match
-        self.__uow = uow
-
-
 class RatingService(BaseService):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -92,114 +62,132 @@ class RatingService(BaseService):
 
     async def __calculate_match_rating(self, match: MatchModel, league: LeagueModel, tournament: TournametModel):
         # Последние записи в истории рейтингов
+        ft_first_p_history = self.store.get_history(match.first_team.first_player_id)
+        ft_second_p_history = self.store.get_history(match.first_team.second_player_id)
+        st_first_p_history = self.store.get_history(match.second_team.first_player_id)
+        st_second_p_history = self.store.get_history(match.second_team.second_player_id)
 
-        winner_first_p_history = self.store.get_history(match.winner.first_player_id)
-        winner_second_p_history = self.store.get_history(match.winner.second_player_id)
-        looser_first_p_history = self.store.get_history(match.looser.first_player_id)
-        looser_second_p_history = self.store.get_history(match.looser.second_player_id)
+        ft_first_p_rating = ft_first_p_history.rating if ft_first_p_history else DEFAULT_RATING
+        ft_second_p_rating = None
+        if match.first_team.second_player_id:
+            ft_second_p_rating = ft_second_p_history.rating if ft_second_p_history else DEFAULT_RATING
 
-        winner_first_p_rating = winner_first_p_history.rating if winner_first_p_history else DEFAULT_RATING
-        winner_second_p_rating = None
-        if match.winner.second_player_id:
-            winner_second_p_rating = winner_second_p_history.rating if winner_second_p_history else DEFAULT_RATING
-
-        looser_first_p_rating = looser_first_p_history.rating if looser_first_p_history else DEFAULT_RATING
-        looser_second_p_rating = None
-        if match.looser.second_player_id:
-            looser_second_p_rating = looser_second_p_history.rating if looser_second_p_history else DEFAULT_RATING
+        st_first_p_rating = st_first_p_history.rating if st_first_p_history else DEFAULT_RATING
+        st_second_p_rating = None
+        if match.second_team.second_player_id:
+            st_second_p_rating = st_second_p_history.rating if st_second_p_history else DEFAULT_RATING
 
         coefficients = [1]
         if match.is_qualification:
             coefficients.append(QUALIFICATION_COEFFICIENT)
 
+        ft_rating = self.__team_rating(list(filter(None, [ft_first_p_rating, ft_second_p_rating])))
+        st_rating = self.__team_rating(list(filter(None, [st_first_p_rating, st_second_p_rating])))
+
         rating_diff = self.__calculate_rating_diff(
-            match.winner_score,
-            match.looser_score,
-            self.__team_rating(list(filter(None, [winner_first_p_rating, winner_second_p_rating]))),
-            self.__team_rating(list(filter(None, [looser_first_p_rating, looser_second_p_rating]))),
+            match.first_team_score,
+            match.second_team_score,
+            ft_rating,
+            st_rating,
             *coefficients
         )
         # Записи в историю
-        winner_first_player_history = await self.uow.rating_history.update_or_create(CreateRatingHistory(
+        ft_first_player_history = await self.uow.rating_history.update_or_create(CreateRatingHistory(
             league_id=league.id,
             tournament_id=tournament.id,
             type=RatingType.PLAYER,
-            prev_history_id=winner_first_p_history.id if winner_first_p_history else None,
+            prev_history_id=ft_first_p_history.id if ft_first_p_history else None,
             level=HistoryRatingLevel.MATCH,
-            player_id=match.winner.first_player_id,
+            player_id=match.first_team.first_player_id,
             competition_id=match.competition_id,
             match_id=match.id,
             diff=rating_diff,
-            rating=winner_first_p_rating + rating_diff,
+            rating=ft_first_p_rating + rating_diff,
             matches_diff=1,
             wins_diff=1,
-            matches=(winner_first_p_history.matches if winner_first_p_history else 0) + 1,
-            wins=(winner_first_p_history.wins if winner_first_p_history else 0) + 1,
-            losses=winner_first_p_history.losses if winner_first_p_history else 0
-        ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.winner.first_player_id, 'match_id': match.id})
-        self.store.set_history(match.winner.first_player_id, winner_first_player_history)
-        self.store.add_history(match.competition_id, winner_first_player_history)
+            matches=(ft_first_p_history.matches if ft_first_p_history else 0) + 1,
+            wins=(ft_first_p_history.wins if ft_first_p_history else 0) + (
+                1 if not match.is_draw and match.first_team_score > match.second_team_score else 0
+            ),
+            losses=(ft_first_p_history.losses if ft_first_p_history else 0) + (
+                1 if not match.is_draw and match.first_team_score < match.second_team_score else 0
+            )
+        ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.first_team.first_player_id, 'match_id': match.id})
+        self.store.set_history(match.first_team.first_player_id, ft_first_player_history)
+        self.store.add_history(match.competition_id, ft_first_player_history)
 
-        looser_first_player_history = await self.uow.rating_history.update_or_create(CreateRatingHistory(
+        st_first_player_history = await self.uow.rating_history.update_or_create(CreateRatingHistory(
             league_id=league.id,
             tournament_id=tournament.id,
             type=RatingType.PLAYER,
-            prev_history_id=looser_first_p_history.id if looser_first_p_history else None,
+            prev_history_id=st_first_p_history.id if st_first_p_history else None,
             level=HistoryRatingLevel.MATCH,
-            player_id=match.looser.first_player_id,
+            player_id=match.second_team.first_player_id,
             competition_id=match.competition_id,
             match_id=match.id,
-            diff=-1 * rating_diff,
-            rating=looser_first_p_rating - rating_diff,
+            diff=-rating_diff,
+            rating=st_first_p_rating - rating_diff,
             matches_diff=1,
             losses_diff=1,
-            matches=(looser_first_p_history.matches if looser_first_p_history else 0) + 1,
-            wins=looser_first_p_history.wins if looser_first_p_history else 0,
-            losses=(looser_first_p_history.losses if looser_first_p_history else 0) + 1
-        ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.looser.first_player_id, 'match_id': match.id})
-        self.store.set_history(match.looser.first_player_id, looser_first_player_history)
-        self.store.add_history(match.competition_id, looser_first_player_history)
+            matches=(st_first_p_history.matches if st_first_p_history else 0) + 1,
+            wins=(st_first_p_history.wins if st_first_p_history else 0) + (
+                1 if not match.is_draw and match.second_team_score > match.first_team_score else 0
+            ),
+            losses=(st_first_p_history.losses if st_first_p_history else 0) + (
+                1 if not match.is_draw and match.second_team_score < match.first_team_score else 0
+            )
+        ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.second_team.first_player_id, 'match_id': match.id})
+        self.store.set_history(match.second_team.first_player_id, st_first_player_history)
+        self.store.add_history(match.competition_id, st_first_player_history)
 
         if not match.is_singles:
-            winner_second_player_history = await self.uow.rating_history.update_or_create(CreateRatingHistory(
+            ft_second_player_history = await self.uow.rating_history.update_or_create(CreateRatingHistory(
                 league_id=league.id,
                 tournament_id=tournament.id,
                 type=RatingType.PLAYER,
-                prev_history_id=winner_second_p_history.id if winner_second_p_history else None,
+                prev_history_id=ft_second_p_history.id if ft_second_p_history else None,
                 level=HistoryRatingLevel.MATCH,
-                player_id=match.winner.second_player_id,
+                player_id=match.first_team.second_player_id,
                 competition_id=match.competition_id,
                 match_id=match.id,
                 diff=rating_diff,
-                rating=winner_second_p_rating + rating_diff,
+                rating=ft_second_p_rating + rating_diff,
                 matches_diff=1,
                 wins_diff=1,
-                matches=(winner_second_p_history.matches if winner_second_p_history else 0) + 1,
-                wins=(winner_second_p_history.wins if winner_second_p_history else 0) + 1,
-                losses=winner_second_p_history.losses if winner_second_p_history else 0
-            ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.winner.second_player_id, 'match_id': match.id})
-            self.store.set_history(match.winner.second_player_id, winner_second_player_history)
-            self.store.add_history(match.competition_id, winner_second_player_history)
+                matches=(ft_second_p_history.matches if ft_second_p_history else 0) + 1,
+                wins=(ft_second_p_history.wins if ft_second_p_history else 0) + (
+                    1 if not match.is_draw and match.first_team_score > match.second_team_score else 0
+                ),
+                losses=(ft_second_p_history.losses if ft_second_p_history else 0) + (
+                    1 if not match.is_draw and match.first_team_score < match.second_team_score else 0
+                )
+            ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.first_team.second_player_id, 'match_id': match.id})
+            self.store.set_history(match.first_team.second_player_id, ft_second_player_history)
+            self.store.add_history(match.competition_id, ft_second_player_history)
 
-            looser_second_player_history = await self.uow.rating_history.update_or_create(CreateRatingHistory(
+            st_second_player_history = await self.uow.rating_history.update_or_create(CreateRatingHistory(
                 league_id=league.id,
                 tournament_id=tournament.id,
                 type=RatingType.PLAYER,
-                prev_history_id=looser_second_p_history.id if looser_second_p_history else None,
+                prev_history_id=st_second_p_history.id if st_second_p_history else None,
                 level=HistoryRatingLevel.MATCH,
-                player_id=match.looser.second_player_id,
+                player_id=match.second_team.second_player_id,
                 competition_id=match.competition_id,
                 match_id=match.id,
-                diff=(-1 * rating_diff),
-                rating=looser_second_p_rating - rating_diff,
+                diff=-rating_diff,
+                rating=st_second_p_rating - rating_diff,
                 matches_diff=1,
                 losses_diff=1,
-                matches=(looser_second_p_history.matches if looser_second_p_history else 0) + 1,
-                wins=looser_second_p_history.wins if looser_second_p_history else 0,
-                losses=(looser_second_p_history.losses if looser_second_p_history else 0) + 1
-            ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.looser.second_player_id, 'match_id': match.id})
-            self.store.set_history(match.looser.second_player_id, looser_second_player_history)
-            self.store.add_history(match.competition_id, looser_second_player_history)
+                matches=(st_second_p_history.matches if st_second_p_history else 0) + 1,
+                wins=(st_second_p_history.wins if st_second_p_history else 0) + (
+                    1 if not match.is_draw and match.second_team_score > match.first_team_score else 0
+                ),
+                losses=(st_second_p_history.losses if st_second_p_history else 0) + (
+                    1 if not match.is_draw and match.second_team_score < match.first_team_score else 0
+                )
+            ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.second_team.second_player_id, 'match_id': match.id})
+            self.store.set_history(match.second_team.second_player_id, st_second_player_history)
+            self.store.add_history(match.competition_id, st_second_player_history)
 
     async def __update_rating(self):
         for player_id, rating_history in self.store.data.items():
@@ -269,11 +257,26 @@ class RatingService(BaseService):
         return int((2 * max(ratings) + min(ratings)) / 3)
 
     @staticmethod
-    def __calculate_rating_diff(winner_score, looser_score, winner_rating, looser_rating, *coefficients):
+    def __calculate_rating_diff(ft_score, st_score, ft_rating, st_rating, *coefficients):
         """Изменение рейтинга победителя"""
-        w = 1 if winner_score > looser_score else -1
-        k = math.fabs(winner_score - looser_score) * 6
-        n = 1 if winner_score > looser_score else 0.1
+        winner_rating = ft_rating if ft_score > st_score else st_rating
+        looser_rating = st_rating if ft_score > st_score else ft_rating
+        w = 1 if ft_score > st_score else -1
+        if ft_score == st_score:
+            w = 1 if ft_rating > st_rating else -1
+            winner_rating = ft_rating
+            looser_rating = st_rating
+            if ft_rating == st_rating:
+                w = 0
+
+        k = math.fabs(ft_score - st_score) * 6
+        if k < 0:
+            k *= -1
+        if k == 0:
+            k = 3
+        # n = 1 if winner_score > looser_score else 0.1
+        n = 1
+
         result = w * k * (1 - (1 / (10 ** ((looser_rating - winner_rating) / 400) + 1))) * n
         if coefficients:
             for c in coefficients:

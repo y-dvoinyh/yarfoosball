@@ -3,6 +3,7 @@ from typing import List, Optional
 from fastapi import APIRouter
 
 from src.orx.rating.depends import RatingDep
+from src.orx.rating.calculate.depends import RatingCalculateDep
 from src.orx.rating.schemas import ResponseRating, ResponseRatingList
 
 
@@ -29,3 +30,9 @@ async def list_ratings(
 async def calculate_rating(service: RatingDep, competition_id: Optional[int] = None) -> bool:
     """Запуск расчета рейтинга игроков"""
     return await service.calculate_rating(competition_id)
+
+
+@router.get("/new_calculate")
+async def new_calculate_rating(service: RatingCalculateDep) -> Optional[bool]:
+    """Запуск расчета рейтинга игроков (Новая версия)"""
+    return await service.calculate()

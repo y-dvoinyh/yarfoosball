@@ -2,7 +2,7 @@
   <q-page>
     <div class="q-pa-md">
       <q-table
-        title="Рейтинг игроков"
+        title="Рейтинг игроков (июль - август 2024)"
         row-key="id"
         :columns="columns"
         :loading="loading"

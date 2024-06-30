@@ -20,10 +20,10 @@ class TeamModel(BaseModel):
     )
     # Игрок 1
     first_player_id: Mapped[int] = mapped_column(ForeignKey('players.id'), nullable=False)
-    first_player: Mapped["PlayerModel"] = relationship(foreign_keys="TeamModel.first_player_id")
+    first_player: Mapped["PlayerModel"] = relationship(foreign_keys="TeamModel.first_player_id", lazy='joined')
     # Игрок 2
     second_player_id: Mapped[int] = mapped_column(ForeignKey('players.id'), nullable=True)
-    second_player: Mapped["PlayerModel"] = relationship(foreign_keys="TeamModel.second_player_id")
+    second_player: Mapped["PlayerModel"] = relationship(foreign_keys="TeamModel.second_player_id", lazy='joined')
 
     def __str__(self):
         name = f'TeamModel: {self.id} '
