@@ -41,7 +41,6 @@ services:
     volumes:
       - ./backend/src:/app/src
       - ./backend/migrations:/app/migrations
-      - ./backend/kickertool:/app/kickertool
     env_file:
       - ./.env-dev
     networks:
