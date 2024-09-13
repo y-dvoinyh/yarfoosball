@@ -77,6 +77,7 @@ class Elimination(BaseScheme):
 
 class DYPScheme(BaseScheme):
     name: str
+    mode: str
     created_at: datetime = Field(..., alias='createdAt')
     qualifying: List[Qualifying]
     eliminations: List[Elimination]

@@ -1,0 +1,4969 @@
+{
+  "_id": "omhFfIc1aT62CQD7mxceQ",
+  "name": "Набег 30.08.2024",
+  "options": {
+    "_id": "vSBTHEW9g7s-JheyZckdk",
+    "numPoints": 6,
+    "fastInput": false,
+    "numSets": 1,
+    "twoAhead": true,
+    "pointsWin": 2,
+    "pointsDraw": 1,
+    "tablesPerPlay": 1,
+    "maxLostGames": 3,
+    "draw": true,
+    "byeRating": false,
+    "multiTableTournament": false,
+    "useCloseGameRating": false,
+    "closeGameDifference": 1,
+    "closeGamePointsWin": 2,
+    "closeGamePointsLoose": 1,
+    "numPlayersPerTeam": 2,
+    "dypMode": false,
+    "tables": [
+      {
+        "_id": "vry8mAyx5LGljNn12bKm1",
+        "name": "1",
+        "deactivated": false
+      }
+    ],
+    "numTables": 1,
+    "hasDisciplines": false,
+    "disciplines": [
+      {
+        "_id": "3fIpbsqAaOqYS4q1wnyPO",
+        "name": null,
+        "numPoints": 6,
+        "fastInput": false,
+        "numSets": 1,
+        "twoAhead": true,
+        "draw": true
+      }
+    ],
+    "tableConfig": [
+      {
+        "_id": "cppg",
+        "property": "corrected_points_per_game",
+        "visible": true,
+        "ignoreSort": false,
+        "renderer": "corrected"
+      },
+      {
+        "_id": "bh1",
+        "property": "bh1",
+        "visible": true,
+        "ignoreSort": false,
+        "renderer": "float"
+      },
+      {
+        "_id": "bh2",
+        "property": "bh2",
+        "visible": false,
+        "ignoreSort": false,
+        "renderer": "float"
+      },
+      {
+        "_id": "goals_diff",
+        "property": "goal_diff",
+        "visible": true,
+        "ignoreSort": false
+      },
+      {
+        "_id": "games",
+        "property": "matches",
+        "visible": true,
+        "ignoreSort": true
+      },
+      {
+        "_id": "player",
+        "property": "name",
+        "visible": true,
+        "ignoreSort": true,
+        "renderer": "name"
+      }
+    ],
+    "startElimination": false,
+    "eliminationThirdPlace": true,
+    "maxParticipants": null,
+    "automaticMode": false,
+    "primaryColor": null,
+    "fairPlayRating": false,
+    "disablePlannedMatchEditing": false,
+    "displayConfigId": null,
+    "attachTablesToGroups": false,
+    "automaticTableScheduling": true,
+    "preventByes": false,
+    "ignoreRemovedParticipantsInStandings": false,
+    "crossGroupSeeding": false,
+    "combinedEliminationStandings": false,
+    "numRoundsPlanned": null,
+    "hash": "0aa9960c8b948d0f6061ce768ad8a1b739d64a06"
+  },
+  "mode": "monster_dyp",
+  "nameType": "monster_dyp",
+  "createdAt": "2024-08-30T16:52:36.377Z",
+  "updatedAt": "2024-08-30T22:19:15.255Z",
+  "eliminations": [
+    {
+      "_id": "PbL5ck0gpq4EL2eCYxme7",
+      "name": "Сетка 1",
+      "double": true,
+      "nameType": "dyp",
+      "finished": true,
+      "size": 8,
+      "thirdPlace": false,
+      "leftLevels": [
+        {
+          "_id": "Ke4Eld-JjoVwCQ_vSM2cs",
+          "name": "THIRD",
+          "matches": [
+            {
+              "_id": "E4CyiH2B6oeTgXRKTCBXa",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "E4CyiH2B6oeTgXRKTCBXa-0",
+                  "playId": "E4CyiH2B6oeTgXRKTCBXa",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "E4CyiH2B6oeTgXRKTCBXa-0-0",
+                      "scores": [
+                        7,
+                        3
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "Ke4Eld-JjoVwCQ_vSM2cs",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725055754612,
+              "timeStart": 1725055317127,
+              "valid": true,
+              "team1": {
+                "_id": "R3PqesvnR5z71pa4W_3XN",
+                "name": "Алёна Набокова | Алёна Безбородова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "oeiz-YL7ZqRbwSf7nqixc",
+                    "name": "Алёна Набокова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+                  },
+                  {
+                    "_id": "ifoiOM5RWKqIoxgaahuMl",
+                    "name": "Алёна Безбородова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c08d651ea98a40f9a138dfa65e4e8a425c2049b7"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "58e480a0e58adf3594d75f97ca33cb6984f717f7"
+              },
+              "team2": {
+                "_id": "4ONLVeEeIVhGVHOMb3IPd",
+                "name": "Ярослав Двойных | Елена Успенская",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "1QlyWv2fAlPurqxYSb2Xj",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "587cc94266914201ff6ef686bcf4261235ca67d4"
+                  },
+                  {
+                    "_id": "p9-stWExr01dYMsltuxee",
+                    "name": "Елена Успенская",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "479e5a88920a8fdb588397e4ff268355d65bdecc"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "506717ece6bfd0531622582286c90107fd2a95cd"
+              },
+              "result": [
+                7,
+                3
+              ],
+              "eliminationMatch": true,
+              "hash": "7155aaad95077e0f3a47a174e88ec1550d19d57b"
+            }
+          ],
+          "hash": "8d84b6554b29cf222da8806bc6dc0d59661e249e"
+        },
+        {
+          "_id": "bVfw9k4Y4_iFZ3-AKTvOz",
+          "name": "3. Loser",
+          "matches": [
+            {
+              "_id": "Zx02WkYZEYIokFrC7QBQt",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "Zx02WkYZEYIokFrC7QBQt-0",
+                  "playId": "Zx02WkYZEYIokFrC7QBQt",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "Zx02WkYZEYIokFrC7QBQt-0-0",
+                      "scores": [
+                        7,
+                        4
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "bVfw9k4Y4_iFZ3-AKTvOz",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725054901905,
+              "timeStart": 1725054290891,
+              "valid": true,
+              "team1": {
+                "_id": "R3PqesvnR5z71pa4W_3XN",
+                "name": "Алёна Набокова | Алёна Безбородова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "oeiz-YL7ZqRbwSf7nqixc",
+                    "name": "Алёна Набокова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+                  },
+                  {
+                    "_id": "ifoiOM5RWKqIoxgaahuMl",
+                    "name": "Алёна Безбородова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c08d651ea98a40f9a138dfa65e4e8a425c2049b7"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "58e480a0e58adf3594d75f97ca33cb6984f717f7"
+              },
+              "team2": {
+                "_id": "3lS1kRAjoyClXaZCcAK31",
+                "name": "Анастасия Кузьмина | Илья Вострилов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "boWJPiNNuYv4tAE7qk3By",
+                    "name": "Анастасия Кузьмина",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5060b3fe070f622649af9df9055c49dd1775b9d8"
+                  },
+                  {
+                    "_id": "lwFytdKzPcv9oSDn9e9M5",
+                    "name": "Илья Вострилов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "20c69ace18120fd7333f125f5cf571341c4f86e1"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "147352110f068743870aff33f3208e2c79739d84"
+              },
+              "result": [
+                7,
+                4
+              ],
+              "eliminationMatch": true,
+              "hash": "70339d70fb53325a8b48dd44841c4331ac29d1c4"
+            }
+          ],
+          "hash": "4b6302e0a5fa08f491b4affa966d9222f7cae767"
+        },
+        {
+          "_id": "LsOKSv2SmG7wtKPaqavaz",
+          "name": "2. Loser",
+          "matches": [
+            {
+              "_id": "f23DsW2uLVV3r5lB1zX9-",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "f23DsW2uLVV3r5lB1zX9--0",
+                  "playId": "f23DsW2uLVV3r5lB1zX9-",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "f23DsW2uLVV3r5lB1zX9--0-0",
+                      "scores": [
+                        7,
+                        5
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "LsOKSv2SmG7wtKPaqavaz",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725053352857,
+              "timeStart": 1725052447779,
+              "valid": true,
+              "team1": {
+                "_id": "R3PqesvnR5z71pa4W_3XN",
+                "name": "Алёна Набокова | Алёна Безбородова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "oeiz-YL7ZqRbwSf7nqixc",
+                    "name": "Алёна Набокова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+                  },
+                  {
+                    "_id": "ifoiOM5RWKqIoxgaahuMl",
+                    "name": "Алёна Безбородова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c08d651ea98a40f9a138dfa65e4e8a425c2049b7"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "58e480a0e58adf3594d75f97ca33cb6984f717f7"
+              },
+              "team2": {
+                "_id": "oVqq7o9X-F83HY2bPmUWn",
+                "name": "Дмитрий Тараканов | Евгений Тихомиров",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "7pwfkZ3NlXSQkH-kXnKg1",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "521b5d15216116024b1efa8cac81f9f13dff34b6"
+                  },
+                  {
+                    "_id": "pu1T2uVNCtHIjcXOLZRV6",
+                    "name": "Евгений Тихомиров",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c6d73ad20484e6edae8704b8c0312c2592936b12"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "18f2abf49de1b5a9c5e1d805ac312dbe5181a4b9"
+              },
+              "result": [
+                7,
+                5
+              ],
+              "eliminationMatch": true,
+              "hash": "6c151ae22ca770c200bd50a00c993ec93377bf88"
+            },
+            {
+              "_id": "hZsfaFm6_giFGA7O71-0a",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "hZsfaFm6_giFGA7O71-0a-0",
+                  "playId": "hZsfaFm6_giFGA7O71-0a",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "hZsfaFm6_giFGA7O71-0a-0-0",
+                      "scores": [
+                        4,
+                        7
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "LsOKSv2SmG7wtKPaqavaz",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725054290844,
+              "timeStart": 1725053352919,
+              "valid": true,
+              "team1": {
+                "_id": "-tQUM1JesKqXLV9JRukZN",
+                "name": "Денис Головко | Кирилл Безбородов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "0k7bG3ifozkkXwXabfwah",
+                    "name": "Денис Головко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "a9174db770821edc27c77546b5ffff17de2de05a"
+                  },
+                  {
+                    "_id": "mUTLz3l6ihl8fdMAg3xmP",
+                    "name": "Кирилл Безбородов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "9679b293e84aeff4bd5263353191011b8745fb14"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "1abf183704933360c5998acefaa1c2b1440e5ba3"
+              },
+              "team2": {
+                "_id": "3lS1kRAjoyClXaZCcAK31",
+                "name": "Анастасия Кузьмина | Илья Вострилов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "boWJPiNNuYv4tAE7qk3By",
+                    "name": "Анастасия Кузьмина",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5060b3fe070f622649af9df9055c49dd1775b9d8"
+                  },
+                  {
+                    "_id": "lwFytdKzPcv9oSDn9e9M5",
+                    "name": "Илья Вострилов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "20c69ace18120fd7333f125f5cf571341c4f86e1"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "147352110f068743870aff33f3208e2c79739d84"
+              },
+              "result": [
+                4,
+                7
+              ],
+              "eliminationMatch": true,
+              "hash": "0611fda7b3a3d90200f7feab4d73ff208ce5abab"
+            }
+          ],
+          "hash": "e47b474ee01fcab373d6279fadd70a82220aaff9"
+        },
+        {
+          "_id": "W5Y6CKt0Nr5QZnUskKRPq",
+          "name": "1. Loser",
+          "matches": [
+            {
+              "_id": "wUf9XlJellO7iFUa5k5EL",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "wUf9XlJellO7iFUa5k5EL-0",
+                  "playId": "wUf9XlJellO7iFUa5k5EL",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "W5Y6CKt0Nr5QZnUskKRPq",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": true,
+              "timeEnd": null,
+              "timeStart": null,
+              "valid": true,
+              "team1": {
+                "_id": "R3PqesvnR5z71pa4W_3XN",
+                "name": "Алёна Набокова | Алёна Безбородова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "oeiz-YL7ZqRbwSf7nqixc",
+                    "name": "Алёна Набокова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+                  },
+                  {
+                    "_id": "ifoiOM5RWKqIoxgaahuMl",
+                    "name": "Алёна Безбородова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c08d651ea98a40f9a138dfa65e4e8a425c2049b7"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "58e480a0e58adf3594d75f97ca33cb6984f717f7"
+              },
+              "team2": null,
+              "result": [
+                0,
+                0
+              ],
+              "eliminationMatch": true,
+              "hash": "ff80b22d13e5bbd18578fd33d6dbc3b016e3ef18"
+            },
+            {
+              "_id": "49Jaug4C4ezooxfx9xCvP",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "49Jaug4C4ezooxfx9xCvP-0",
+                  "playId": "49Jaug4C4ezooxfx9xCvP",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "W5Y6CKt0Nr5QZnUskKRPq",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": true,
+              "timeEnd": null,
+              "timeStart": null,
+              "valid": true,
+              "team1": {
+                "_id": "-tQUM1JesKqXLV9JRukZN",
+                "name": "Денис Головко | Кирилл Безбородов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "0k7bG3ifozkkXwXabfwah",
+                    "name": "Денис Головко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "a9174db770821edc27c77546b5ffff17de2de05a"
+                  },
+                  {
+                    "_id": "mUTLz3l6ihl8fdMAg3xmP",
+                    "name": "Кирилл Безбородов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "9679b293e84aeff4bd5263353191011b8745fb14"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "1abf183704933360c5998acefaa1c2b1440e5ba3"
+              },
+              "team2": null,
+              "result": [
+                0,
+                0
+              ],
+              "eliminationMatch": true,
+              "hash": "0a12395122ebd5c4bad9aee044756a22cf628c10"
+            }
+          ],
+          "hash": "b8097d4430c49792e8587b2c4078eff40fc10afe"
+        }
+      ],
+      "levels": [
+        {
+          "_id": "h5A4tnmhU4rIY5Pnfy_mF",
+          "name": "BASE_ROUND",
+          "matches": [
+            {
+              "_id": "4yWuB7dD5nFyF70bW-rvR",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "4yWuB7dD5nFyF70bW-rvR-0",
+                  "playId": "4yWuB7dD5nFyF70bW-rvR",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "h5A4tnmhU4rIY5Pnfy_mF",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": null,
+              "timeStart": null,
+              "valid": true,
+              "team1": {
+                "_id": "gwrmUtD7jq8HQSQau-Ucl",
+                "name": "Богдан Жаворонков | Николай Шергесов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "Hck3kg79S1ldeI6_5N3mA",
+                    "name": "Богдан Жаворонков",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5bdc6168514d25519acd6aea47fa899f1e54707b"
+                  },
+                  {
+                    "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+                    "name": "Николай Шергесов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c4d81132187dcb5c4bb669ebaf9fc1a7a56da5fd"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "bad6d3a00be1da103839b99d91ade067b3bf1c96"
+              },
+              "team2": null,
+              "result": [
+                0,
+                0
+              ],
+              "eliminationMatch": true,
+              "hash": "f61951cc2911faefc50b59b76697dce879449512"
+            },
+            {
+              "_id": "88iCle30CgiiHCaXN7jh1",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "88iCle30CgiiHCaXN7jh1-0",
+                  "playId": "88iCle30CgiiHCaXN7jh1",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "88iCle30CgiiHCaXN7jh1-0-0",
+                      "scores": [
+                        4,
+                        7
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "h5A4tnmhU4rIY5Pnfy_mF",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725049794429,
+              "timeStart": 1725048949633,
+              "valid": true,
+              "team1": {
+                "_id": "R3PqesvnR5z71pa4W_3XN",
+                "name": "Алёна Набокова | Алёна Безбородова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "oeiz-YL7ZqRbwSf7nqixc",
+                    "name": "Алёна Набокова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+                  },
+                  {
+                    "_id": "ifoiOM5RWKqIoxgaahuMl",
+                    "name": "Алёна Безбородова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c08d651ea98a40f9a138dfa65e4e8a425c2049b7"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "58e480a0e58adf3594d75f97ca33cb6984f717f7"
+              },
+              "team2": {
+                "_id": "3lS1kRAjoyClXaZCcAK31",
+                "name": "Анастасия Кузьмина | Илья Вострилов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "boWJPiNNuYv4tAE7qk3By",
+                    "name": "Анастасия Кузьмина",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5060b3fe070f622649af9df9055c49dd1775b9d8"
+                  },
+                  {
+                    "_id": "lwFytdKzPcv9oSDn9e9M5",
+                    "name": "Илья Вострилов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "20c69ace18120fd7333f125f5cf571341c4f86e1"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "147352110f068743870aff33f3208e2c79739d84"
+              },
+              "result": [
+                4,
+                7
+              ],
+              "eliminationMatch": true,
+              "hash": "2b25b99a7b41d53864374ea68d827161a812cf68"
+            },
+            {
+              "_id": "MiOVi8oZavOu5P-1upl2n",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "MiOVi8oZavOu5P-1upl2n-0",
+                  "playId": "MiOVi8oZavOu5P-1upl2n",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "MiOVi8oZavOu5P-1upl2n-0-0",
+                      "scores": [
+                        7,
+                        5
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "h5A4tnmhU4rIY5Pnfy_mF",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725050978722,
+              "timeStart": 1725049794453,
+              "valid": true,
+              "team1": {
+                "_id": "oVqq7o9X-F83HY2bPmUWn",
+                "name": "Дмитрий Тараканов | Евгений Тихомиров",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "7pwfkZ3NlXSQkH-kXnKg1",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "521b5d15216116024b1efa8cac81f9f13dff34b6"
+                  },
+                  {
+                    "_id": "pu1T2uVNCtHIjcXOLZRV6",
+                    "name": "Евгений Тихомиров",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c6d73ad20484e6edae8704b8c0312c2592936b12"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "18f2abf49de1b5a9c5e1d805ac312dbe5181a4b9"
+              },
+              "team2": {
+                "_id": "-tQUM1JesKqXLV9JRukZN",
+                "name": "Денис Головко | Кирилл Безбородов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "0k7bG3ifozkkXwXabfwah",
+                    "name": "Денис Головко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "a9174db770821edc27c77546b5ffff17de2de05a"
+                  },
+                  {
+                    "_id": "mUTLz3l6ihl8fdMAg3xmP",
+                    "name": "Кирилл Безбородов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "9679b293e84aeff4bd5263353191011b8745fb14"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "1abf183704933360c5998acefaa1c2b1440e5ba3"
+              },
+              "result": [
+                7,
+                5
+              ],
+              "eliminationMatch": true,
+              "hash": "1b3525a07c6f35bcf6743fbeca2bf0d7d193e084"
+            },
+            {
+              "_id": "22mcv7m7zCT4jjAZ1qqaE",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "22mcv7m7zCT4jjAZ1qqaE-0",
+                  "playId": "22mcv7m7zCT4jjAZ1qqaE",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "h5A4tnmhU4rIY5Pnfy_mF",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": null,
+              "timeStart": null,
+              "valid": true,
+              "team1": {
+                "_id": "4ONLVeEeIVhGVHOMb3IPd",
+                "name": "Ярослав Двойных | Елена Успенская",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "1QlyWv2fAlPurqxYSb2Xj",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "587cc94266914201ff6ef686bcf4261235ca67d4"
+                  },
+                  {
+                    "_id": "p9-stWExr01dYMsltuxee",
+                    "name": "Елена Успенская",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "479e5a88920a8fdb588397e4ff268355d65bdecc"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "506717ece6bfd0531622582286c90107fd2a95cd"
+              },
+              "team2": null,
+              "result": [
+                0,
+                0
+              ],
+              "eliminationMatch": true,
+              "hash": "02aa271ee2444a95b003c92cbc591a532aaad785"
+            }
+          ],
+          "hash": "a126e48a73c5fa205f9d48792d214a2bb10d1829"
+        },
+        {
+          "_id": "YvtGcOG7V_oTeckwV8a2E",
+          "name": "1. Winner",
+          "matches": [
+            {
+              "_id": "ad6QLnVC_psTrdrGC4I5u",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "ad6QLnVC_psTrdrGC4I5u-0",
+                  "playId": "ad6QLnVC_psTrdrGC4I5u",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "ad6QLnVC_psTrdrGC4I5u-0-0",
+                      "scores": [
+                        7,
+                        5
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "YvtGcOG7V_oTeckwV8a2E",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725051596496,
+              "timeStart": 1725050978831,
+              "valid": true,
+              "team1": {
+                "_id": "gwrmUtD7jq8HQSQau-Ucl",
+                "name": "Богдан Жаворонков | Николай Шергесов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "Hck3kg79S1ldeI6_5N3mA",
+                    "name": "Богдан Жаворонков",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5bdc6168514d25519acd6aea47fa899f1e54707b"
+                  },
+                  {
+                    "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+                    "name": "Николай Шергесов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c4d81132187dcb5c4bb669ebaf9fc1a7a56da5fd"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "bad6d3a00be1da103839b99d91ade067b3bf1c96"
+              },
+              "team2": {
+                "_id": "3lS1kRAjoyClXaZCcAK31",
+                "name": "Анастасия Кузьмина | Илья Вострилов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "boWJPiNNuYv4tAE7qk3By",
+                    "name": "Анастасия Кузьмина",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5060b3fe070f622649af9df9055c49dd1775b9d8"
+                  },
+                  {
+                    "_id": "lwFytdKzPcv9oSDn9e9M5",
+                    "name": "Илья Вострилов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "20c69ace18120fd7333f125f5cf571341c4f86e1"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "147352110f068743870aff33f3208e2c79739d84"
+              },
+              "result": [
+                7,
+                5
+              ],
+              "eliminationMatch": true,
+              "hash": "5fe5c9d0ea24b92b6606e35a169e636c4d8e116b"
+            },
+            {
+              "_id": "Oeoq-YUTmsj45_cb-CLyE",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "Oeoq-YUTmsj45_cb-CLyE-0",
+                  "playId": "Oeoq-YUTmsj45_cb-CLyE",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "Oeoq-YUTmsj45_cb-CLyE-0-0",
+                      "scores": [
+                        5,
+                        7
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "YvtGcOG7V_oTeckwV8a2E",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725052447744,
+              "timeStart": 1725051596618,
+              "valid": true,
+              "team1": {
+                "_id": "oVqq7o9X-F83HY2bPmUWn",
+                "name": "Дмитрий Тараканов | Евгений Тихомиров",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "7pwfkZ3NlXSQkH-kXnKg1",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "521b5d15216116024b1efa8cac81f9f13dff34b6"
+                  },
+                  {
+                    "_id": "pu1T2uVNCtHIjcXOLZRV6",
+                    "name": "Евгений Тихомиров",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c6d73ad20484e6edae8704b8c0312c2592936b12"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "18f2abf49de1b5a9c5e1d805ac312dbe5181a4b9"
+              },
+              "team2": {
+                "_id": "4ONLVeEeIVhGVHOMb3IPd",
+                "name": "Ярослав Двойных | Елена Успенская",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "1QlyWv2fAlPurqxYSb2Xj",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "587cc94266914201ff6ef686bcf4261235ca67d4"
+                  },
+                  {
+                    "_id": "p9-stWExr01dYMsltuxee",
+                    "name": "Елена Успенская",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "479e5a88920a8fdb588397e4ff268355d65bdecc"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "506717ece6bfd0531622582286c90107fd2a95cd"
+              },
+              "result": [
+                5,
+                7
+              ],
+              "eliminationMatch": true,
+              "hash": "8a9f757b01a7e487ff54a00285f6f65e350cff35"
+            }
+          ],
+          "hash": "79a94dc8d939c5589594e54e85a254fbd72969dd"
+        },
+        {
+          "_id": "oBx0978N0w-EABXQ0JfGm",
+          "name": "2. Winner",
+          "matches": [
+            {
+              "_id": "pvsL-kpvqzHFgguP5J35Z",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "pvsL-kpvqzHFgguP5J35Z-0",
+                  "playId": "pvsL-kpvqzHFgguP5J35Z",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "pvsL-kpvqzHFgguP5J35Z-0-0",
+                      "scores": [
+                        7,
+                        5
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "oBx0978N0w-EABXQ0JfGm",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725055317081,
+              "timeStart": 1725054901967,
+              "valid": true,
+              "team1": {
+                "_id": "gwrmUtD7jq8HQSQau-Ucl",
+                "name": "Богдан Жаворонков | Николай Шергесов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "Hck3kg79S1ldeI6_5N3mA",
+                    "name": "Богдан Жаворонков",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5bdc6168514d25519acd6aea47fa899f1e54707b"
+                  },
+                  {
+                    "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+                    "name": "Николай Шергесов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c4d81132187dcb5c4bb669ebaf9fc1a7a56da5fd"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "bad6d3a00be1da103839b99d91ade067b3bf1c96"
+              },
+              "team2": {
+                "_id": "4ONLVeEeIVhGVHOMb3IPd",
+                "name": "Ярослав Двойных | Елена Успенская",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "1QlyWv2fAlPurqxYSb2Xj",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "587cc94266914201ff6ef686bcf4261235ca67d4"
+                  },
+                  {
+                    "_id": "p9-stWExr01dYMsltuxee",
+                    "name": "Елена Успенская",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "479e5a88920a8fdb588397e4ff268355d65bdecc"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "506717ece6bfd0531622582286c90107fd2a95cd"
+              },
+              "result": [
+                7,
+                5
+              ],
+              "eliminationMatch": true,
+              "hash": "ae9ab692ff2c2ad0c7e167b71eb270091448caf3"
+            }
+          ],
+          "hash": "901d95d0013237f23df0ac524630e68677a53cc4"
+        },
+        {
+          "_id": "kEPa3qGTR2yiHdHEJ_2tj",
+          "name": "FINALS-1-1",
+          "matches": [
+            {
+              "_id": "TlJZqCVfUI2en9BBmMrDD",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "TlJZqCVfUI2en9BBmMrDD-0",
+                  "playId": "TlJZqCVfUI2en9BBmMrDD",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "TlJZqCVfUI2en9BBmMrDD-0-0",
+                      "scores": [
+                        7,
+                        5
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "PbL5ck0gpq4EL2eCYxme7",
+              "roundId": "kEPa3qGTR2yiHdHEJ_2tj",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725056354967,
+              "timeStart": 1725055754679,
+              "valid": true,
+              "team1": {
+                "_id": "gwrmUtD7jq8HQSQau-Ucl",
+                "name": "Богдан Жаворонков | Николай Шергесов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "Hck3kg79S1ldeI6_5N3mA",
+                    "name": "Богдан Жаворонков",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5bdc6168514d25519acd6aea47fa899f1e54707b"
+                  },
+                  {
+                    "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+                    "name": "Николай Шергесов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c4d81132187dcb5c4bb669ebaf9fc1a7a56da5fd"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "bad6d3a00be1da103839b99d91ade067b3bf1c96"
+              },
+              "team2": {
+                "_id": "R3PqesvnR5z71pa4W_3XN",
+                "name": "Алёна Набокова | Алёна Безбородова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "oeiz-YL7ZqRbwSf7nqixc",
+                    "name": "Алёна Набокова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+                  },
+                  {
+                    "_id": "ifoiOM5RWKqIoxgaahuMl",
+                    "name": "Алёна Безбородова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c08d651ea98a40f9a138dfa65e4e8a425c2049b7"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "58e480a0e58adf3594d75f97ca33cb6984f717f7"
+              },
+              "result": [
+                7,
+                5
+              ],
+              "eliminationMatch": true,
+              "hash": "3733fb3868fb3378dbec9eba891236b7a807ce12"
+            }
+          ],
+          "hash": "4469503ee9c470d3ba25638e56fb4eaa0d6abdac"
+        }
+      ],
+      "third": {
+        "_id": "h1-MxPkwFgjt6254J8fgg",
+        "name": "THIRD",
+        "matches": [
+          {
+            "_id": "WnVRNVJ6GsgMSqr20goXS",
+            "deactivated": false,
+            "tables": null,
+            "forcedTables": null,
+            "disciplines": [
+              {
+                "_id": "WnVRNVJ6GsgMSqr20goXS-0",
+                "playId": "WnVRNVJ6GsgMSqr20goXS",
+                "team1Confirmed": false,
+                "team2Confirmed": false
+              }
+            ],
+            "groupId": "PbL5ck0gpq4EL2eCYxme7",
+            "roundId": "h1-MxPkwFgjt6254J8fgg",
+            "skipped": false,
+            "team1bye": false,
+            "team2bye": false,
+            "timeEnd": null,
+            "timeStart": null,
+            "valid": false,
+            "team1": null,
+            "team2": null,
+            "result": [
+              0,
+              0
+            ],
+            "eliminationMatch": true,
+            "hash": "9521f0e814092fb8cfdc1d8ebdee904c4c66143c"
+          }
+        ],
+        "hash": "ce04ee4bf0cc13733c7d391d0508b40b91bfd7e5"
+      },
+      "standings": [
+        {
+          "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+          "name": "Николай Шергесов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 1,
+            "finalResult": true,
+            "matches": 3,
+            "points": 6,
+            "won": 3,
+            "lost": 0,
+            "draws": 0,
+            "sets_won": 3,
+            "sets_lost": 0,
+            "sets_diff": 3,
+            "dis_won": 3,
+            "dis_lost": 0,
+            "dis_draw": 0,
+            "dis_diff": 3,
+            "goals": 21,
+            "goals_in": 15,
+            "w_l": 0,
+            "goal_diff": 6,
+            "lives": 3,
+            "bh1": 0,
+            "bh2": 0,
+            "sb": 0,
+            "points_per_game": 2,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "PbL5ck0gpq4EL2eCYxme7",
+          "hash": "b2a04e77be7809fb2fdce6a474bc2c7c0c394476"
+        },
+        {
+          "_id": "Hck3kg79S1ldeI6_5N3mA",
+          "name": "Богдан Жаворонков",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 1,
+            "finalResult": true,
+            "matches": 3,
+            "points": 6,
+            "won": 3,
+            "lost": 0,
+            "draws": 0,
+            "sets_won": 3,
+            "sets_lost": 0,
+            "sets_diff": 3,
+            "dis_won": 3,
+            "dis_lost": 0,
+            "dis_draw": 0,
+            "dis_diff": 3,
+            "goals": 21,
+            "goals_in": 15,
+            "w_l": 0,
+            "goal_diff": 6,
+            "lives": 3,
+            "bh1": 0,
+            "bh2": 0,
+            "sb": 0,
+            "points_per_game": 2,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "PbL5ck0gpq4EL2eCYxme7",
+          "hash": "b9a2464b2e80aaa5fe6348f09277b9444ee6e7d2"
+        },
+        {
+          "_id": "ifoiOM5RWKqIoxgaahuMl",
+          "name": "Алёна Безбородова",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 2,
+            "finalResult": true,
+            "matches": 5,
+            "points": 6,
+            "won": 3,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 3,
+            "sets_lost": 2,
+            "sets_diff": 1,
+            "dis_won": 3,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": 1,
+            "goals": 30,
+            "goals_in": 26,
+            "w_l": 0,
+            "goal_diff": 4,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "sb": 0,
+            "points_per_game": 1.2,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "PbL5ck0gpq4EL2eCYxme7",
+          "hash": "4705e831961f9e95489bb9b1f991176ac65966c3"
+        },
+        {
+          "_id": "oeiz-YL7ZqRbwSf7nqixc",
+          "name": "Алёна Набокова",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 2,
+            "finalResult": true,
+            "matches": 5,
+            "points": 6,
+            "won": 3,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 3,
+            "sets_lost": 2,
+            "sets_diff": 1,
+            "dis_won": 3,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": 1,
+            "goals": 30,
+            "goals_in": 26,
+            "w_l": 0,
+            "goal_diff": 4,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "sb": 0,
+            "points_per_game": 1.2,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "PbL5ck0gpq4EL2eCYxme7",
+          "hash": "5519eacf37ad7d09a3891176921ca5392a2dca09"
+        },
+        {
+          "_id": "1QlyWv2fAlPurqxYSb2Xj",
+          "name": "Ярослав Двойных",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 3,
+            "finalResult": true,
+            "matches": 3,
+            "points": 2,
+            "won": 1,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 1,
+            "sets_lost": 2,
+            "sets_diff": -1,
+            "dis_won": 1,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": -1,
+            "goals": 15,
+            "goals_in": 19,
+            "w_l": 0,
+            "goal_diff": -4,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "sb": 0,
+            "points_per_game": 0.67,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "PbL5ck0gpq4EL2eCYxme7",
+          "hash": "6f0b1331eb132744171c7ff200c12e215968e540"
+        },
+        {
+          "_id": "p9-stWExr01dYMsltuxee",
+          "name": "Елена Успенская",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 3,
+            "finalResult": true,
+            "matches": 3,
+            "points": 2,
+            "won": 1,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 1,
+            "sets_lost": 2,
+            "sets_diff": -1,
+            "dis_won": 1,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": -1,
+            "goals": 15,
+            "goals_in": 19,
+            "w_l": 0,
+            "goal_diff": -4,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "sb": 0,
+            "points_per_game": 0.67,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "PbL5ck0gpq4EL2eCYxme7",
+          "hash": "412c14af40c1bbde5ce900d1e3829a6f32466a59"
+        },
+        {
+          "_id": "boWJPiNNuYv4tAE7qk3By",
+          "name": "Анастасия Кузьмина",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 4,
+            "finalResult": true,
+            "matches": 4,
+            "points": 4,
+            "won": 2,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 2,
+            "sets_lost": 2,
+            "sets_diff": 0,
+            "dis_won": 2,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": 0,
+            "goals": 23,
+            "goals_in": 22,
+            "w_l": 0,
+            "goal_diff": 1,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "sb": 0,
+            "points_per_game": 1,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "PbL5ck0gpq4EL2eCYxme7",
+          "hash": "49c0c787aec976e9a80373936070a095c6cf6d64"
+        },
+        {
+          "_id": "lwFytdKzPcv9oSDn9e9M5",
+          "name": "Илья Вострилов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 4,
+            "finalResult": true,
+            "matches": 4,
+            "points": 4,
+            "won": 2,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 2,
+            "sets_lost": 2,
+            "sets_diff": 0,
+            "dis_won": 2,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": 0,
+            "goals": 23,
+            "goals_in": 22,
+            "w_l": 0,
+            "goal_diff": 1,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "sb": 0,
+            "points_per_game": 1,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "PbL5ck0gpq4EL2eCYxme7",
+          "hash": "6c2572dd9fda532eb8b51eb7b0e3a1c0f5aefe50"
+        },
+        {
+          "_id": "7pwfkZ3NlXSQkH-kXnKg1",
+          "name": "Дмитрий Тараканов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 5,
+            "finalResult": true,
+            "matches": 3,
+            "points": 2,
+            "won": 1,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 1,
+            "sets_lost": 2,
+            "sets_diff": -1,
+            "dis_won": 1,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": -1,
+            "goals": 17,
+            "goals_in": 19,
+            "w_l": 0,
+            "goal_diff": -2,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "sb": 0,
+            "points_per_game": 0.67,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "PbL5ck0gpq4EL2eCYxme7",
+          "hash": "51b5410205c3ab7d765b441adc0119b07ca4baf3"
+        },
+        {
+          "_id": "pu1T2uVNCtHIjcXOLZRV6",
+          "name": "Евгений Тихомиров",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 5,
+            "finalResult": true,
+            "matches": 3,
+            "points": 2,
+            "won": 1,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 1,
+            "sets_lost": 2,
+            "sets_diff": -1,
+            "dis_won": 1,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": -1,
+            "goals": 17,
+            "goals_in": 19,
+            "w_l": 0,
+            "goal_diff": -2,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "sb": 0,
+            "points_per_game": 0.67,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "PbL5ck0gpq4EL2eCYxme7",
+          "hash": "71a0232da0dbe27cb3e691875985b6a5aca88922"
+        },
+        {
+          "_id": "mUTLz3l6ihl8fdMAg3xmP",
+          "name": "Кирилл Безбородов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 5,
+            "finalResult": true,
+            "matches": 2,
+            "points": 0,
+            "won": 0,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 0,
+            "sets_lost": 2,
+            "sets_diff": -2,
+            "dis_won": 0,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": -2,
+            "goals": 9,
+            "goals_in": 14,
+            "w_l": 0,
+            "goal_diff": -5,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "sb": 0,
+            "points_per_game": 0,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "PbL5ck0gpq4EL2eCYxme7",
+          "hash": "522e7af5e868f88bbe9c80eb09119917038dc89b"
+        },
+        {
+          "_id": "0k7bG3ifozkkXwXabfwah",
+          "name": "Денис Головко",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 5,
+            "finalResult": true,
+            "matches": 2,
+            "points": 0,
+            "won": 0,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 0,
+            "sets_lost": 2,
+            "sets_diff": -2,
+            "dis_won": 0,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": -2,
+            "goals": 9,
+            "goals_in": 14,
+            "w_l": 0,
+            "goal_diff": -5,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "sb": 0,
+            "points_per_game": 0,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "PbL5ck0gpq4EL2eCYxme7",
+          "hash": "502a65bbe3c527ad9c20f3b09063baee00dbf0c3"
+        }
+      ],
+      "options": {
+        "_id": "FhlYsD3IxS1zt27OaNkwc",
+        "numPoints": 7,
+        "fastInput": false,
+        "numSets": 1,
+        "twoAhead": true,
+        "pointsWin": 2,
+        "pointsDraw": 1,
+        "tablesPerPlay": 1,
+        "maxLostGames": 3,
+        "draw": false,
+        "byeRating": false,
+        "multiTableTournament": false,
+        "useCloseGameRating": false,
+        "closeGameDifference": 1,
+        "closeGamePointsWin": 2,
+        "closeGamePointsLoose": 1,
+        "numPlayersPerTeam": 2,
+        "dypMode": true,
+        "tables": [],
+        "numTables": 0,
+        "hasDisciplines": false,
+        "disciplines": [
+          {
+            "_id": "NJIoV_RYXLPsEAUpU5kLz",
+            "name": null,
+            "numPoints": 7,
+            "fastInput": false,
+            "numSets": 1,
+            "twoAhead": true,
+            "draw": true
+          }
+        ],
+        "tableConfig": [],
+        "startElimination": false,
+        "eliminationThirdPlace": true,
+        "maxParticipants": null,
+        "automaticMode": false,
+        "primaryColor": null,
+        "fairPlayRating": false,
+        "disablePlannedMatchEditing": false,
+        "displayConfigId": null,
+        "attachTablesToGroups": false,
+        "automaticTableScheduling": true,
+        "preventByes": false,
+        "ignoreRemovedParticipantsInStandings": false,
+        "crossGroupSeeding": false,
+        "combinedEliminationStandings": false,
+        "numRoundsPlanned": null,
+        "hash": "69396bdafb72eb992bc28ae116cbd54f66c897ed"
+      },
+      "hash": "20de029b594ef3023c31b8d40a6568339198b6d0"
+    }
+  ],
+  "stage": 1,
+  "sport": "table_soccer",
+  "qualifying": [
+    {
+      "_id": "i8kHo3MWOl0zcRvXYp_1w",
+      "name": null,
+      "standings": [
+        {
+          "_id": "Hck3kg79S1ldeI6_5N3mA",
+          "name": "Богдан Жаворонков",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 1,
+            "finalResult": false,
+            "matches": 7,
+            "points": 11,
+            "won": 4,
+            "lost": 0,
+            "draws": 3,
+            "sets_won": 4,
+            "sets_lost": 0,
+            "sets_diff": 4,
+            "dis_won": 4,
+            "dis_lost": 0,
+            "dis_draw": 3,
+            "dis_diff": 4,
+            "goals": 39,
+            "goals_in": 22,
+            "w_l": 0,
+            "goal_diff": 17,
+            "lives": 3,
+            "bh1": 1.96,
+            "bh2": 24.41,
+            "sb": 61.5,
+            "points_per_game": 1.57,
+            "corrected_points_per_game": 1.57,
+            "lastRound": 8
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "55f97fa75a46becfe1efab2d0889b039af295856"
+        },
+        {
+          "_id": "1QlyWv2fAlPurqxYSb2Xj",
+          "name": "Ярослав Двойных",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 2,
+            "finalResult": false,
+            "matches": 7,
+            "points": 8,
+            "won": 3,
+            "lost": 2,
+            "draws": 2,
+            "sets_won": 3,
+            "sets_lost": 2,
+            "sets_diff": 1,
+            "dis_won": 3,
+            "dis_lost": 2,
+            "dis_draw": 2,
+            "dis_diff": 1,
+            "goals": 35,
+            "goals_in": 30,
+            "w_l": 0,
+            "goal_diff": 5,
+            "lives": 1,
+            "bh1": 2.15,
+            "bh2": 25.22,
+            "sb": 50.5,
+            "points_per_game": 1.14,
+            "corrected_points_per_game": 1.14,
+            "lastRound": 8
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "0584fe408cd213473c5587de418268da28a3262c"
+        },
+        {
+          "_id": "boWJPiNNuYv4tAE7qk3By",
+          "name": "Анастасия Кузьмина",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 3,
+            "finalResult": false,
+            "matches": 7,
+            "points": 7,
+            "won": 3,
+            "lost": 3,
+            "draws": 1,
+            "sets_won": 3,
+            "sets_lost": 3,
+            "sets_diff": 0,
+            "dis_won": 3,
+            "dis_lost": 3,
+            "dis_draw": 1,
+            "dis_diff": 0,
+            "goals": 31,
+            "goals_in": 33,
+            "w_l": 0,
+            "goal_diff": -2,
+            "lives": 0,
+            "bh1": 2.11,
+            "bh2": 23.64,
+            "sb": 40.5,
+            "points_per_game": 1,
+            "corrected_points_per_game": 1,
+            "lastRound": 8
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "3491a57de2a018d527ce734626fd1dcbf7a24403"
+        },
+        {
+          "_id": "oeiz-YL7ZqRbwSf7nqixc",
+          "name": "Алёна Набокова",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 4,
+            "finalResult": false,
+            "matches": 7,
+            "points": 7,
+            "won": 3,
+            "lost": 3,
+            "draws": 1,
+            "sets_won": 3,
+            "sets_lost": 3,
+            "sets_diff": 0,
+            "dis_won": 3,
+            "dis_lost": 3,
+            "dis_draw": 1,
+            "dis_diff": 0,
+            "goals": 32,
+            "goals_in": 30,
+            "w_l": 0,
+            "goal_diff": 2,
+            "lives": 0,
+            "bh1": 1.92,
+            "bh2": 24.41,
+            "sb": 37,
+            "points_per_game": 1,
+            "corrected_points_per_game": 1,
+            "lastRound": 8
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "1c354621ed18efd16c31d8ac7abec0f7105afb1f"
+        },
+        {
+          "_id": "7pwfkZ3NlXSQkH-kXnKg1",
+          "name": "Дмитрий Тараканов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 5,
+            "finalResult": false,
+            "matches": 3,
+            "points": 5,
+            "won": 2,
+            "lost": 0,
+            "draws": 1,
+            "sets_won": 2,
+            "sets_lost": 0,
+            "sets_diff": 2,
+            "dis_won": 2,
+            "dis_lost": 0,
+            "dis_draw": 1,
+            "dis_diff": 2,
+            "goals": 17,
+            "goals_in": 12,
+            "w_l": 0,
+            "goal_diff": 5,
+            "lives": 3,
+            "bh1": 2.2,
+            "bh2": 26.62,
+            "sb": 33.5,
+            "points_per_game": 1.67,
+            "corrected_points_per_game": 0.99,
+            "lastRound": 8
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "c5329883fb02b84eb6b2275941a9b99df5719fb5"
+        },
+        {
+          "_id": "0k7bG3ifozkkXwXabfwah",
+          "name": "Денис Головко",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 6,
+            "finalResult": false,
+            "matches": 7,
+            "points": 6,
+            "won": 3,
+            "lost": 4,
+            "draws": 0,
+            "sets_won": 3,
+            "sets_lost": 4,
+            "sets_diff": -1,
+            "dis_won": 3,
+            "dis_lost": 4,
+            "dis_draw": 0,
+            "dis_diff": -1,
+            "goals": 29,
+            "goals_in": 31,
+            "w_l": 0,
+            "goal_diff": -2,
+            "lives": -1,
+            "bh1": 1.99,
+            "bh2": 23.39,
+            "sb": 31,
+            "points_per_game": 0.86,
+            "corrected_points_per_game": 0.86,
+            "lastRound": 8
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "f837da09de18e2086ab47a81701f08735d69ee2b"
+        },
+        {
+          "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+          "name": "Николай Шергесов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 7,
+            "finalResult": false,
+            "matches": 7,
+            "points": 6,
+            "won": 3,
+            "lost": 4,
+            "draws": 0,
+            "sets_won": 3,
+            "sets_lost": 4,
+            "sets_diff": -1,
+            "dis_won": 3,
+            "dis_lost": 4,
+            "dis_draw": 0,
+            "dis_diff": -1,
+            "goals": 26,
+            "goals_in": 35,
+            "w_l": 0,
+            "goal_diff": -9,
+            "lives": -1,
+            "bh1": 1.89,
+            "bh2": 25.58,
+            "sb": 29,
+            "points_per_game": 0.86,
+            "corrected_points_per_game": 0.86,
+            "lastRound": 8
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "4ef8af713909a574616d4fb3e17d7eef64c093bd"
+        },
+        {
+          "_id": "AFwKFxyCQJcha-NyllpYe",
+          "name": "Алёна Шашкова",
+          "guest": false,
+          "deactivated": true,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 8,
+            "finalResult": false,
+            "matches": 6,
+            "points": 5,
+            "won": 2,
+            "lost": 3,
+            "draws": 1,
+            "sets_won": 2,
+            "sets_lost": 3,
+            "sets_diff": -1,
+            "dis_won": 2,
+            "dis_lost": 3,
+            "dis_draw": 1,
+            "dis_diff": -1,
+            "goals": 23,
+            "goals_in": 28,
+            "w_l": 0,
+            "goal_diff": -5,
+            "lives": 0,
+            "bh1": 1.94,
+            "bh2": 25.5,
+            "sb": 29,
+            "points_per_game": 0.83,
+            "corrected_points_per_game": 0.83,
+            "lastRound": 7
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "be0080361dc250309639ba8d169ce5d939b58595"
+        },
+        {
+          "_id": "p9-stWExr01dYMsltuxee",
+          "name": "Елена Успенская",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 9,
+            "finalResult": false,
+            "matches": 5,
+            "points": 4,
+            "won": 2,
+            "lost": 3,
+            "draws": 0,
+            "sets_won": 2,
+            "sets_lost": 3,
+            "sets_diff": -1,
+            "dis_won": 2,
+            "dis_lost": 3,
+            "dis_draw": 0,
+            "dis_diff": -1,
+            "goals": 21,
+            "goals_in": 24,
+            "w_l": 0,
+            "goal_diff": -3,
+            "lives": 0,
+            "bh1": 1.67,
+            "bh2": 24.95,
+            "sb": 14,
+            "points_per_game": 0.8,
+            "corrected_points_per_game": 0.8,
+            "lastRound": 8
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "19b1229f08134a4e5b85f9bbf37e6ecd8516179d"
+        },
+        {
+          "_id": "pu1T2uVNCtHIjcXOLZRV6",
+          "name": "Евгений Тихомиров",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 10,
+            "finalResult": false,
+            "matches": 7,
+            "points": 5,
+            "won": 2,
+            "lost": 4,
+            "draws": 1,
+            "sets_won": 2,
+            "sets_lost": 4,
+            "sets_diff": -2,
+            "dis_won": 2,
+            "dis_lost": 4,
+            "dis_draw": 1,
+            "dis_diff": -2,
+            "goals": 30,
+            "goals_in": 34,
+            "w_l": 0,
+            "goal_diff": -4,
+            "lives": -1,
+            "bh1": 2.23,
+            "bh2": 22.63,
+            "sb": 27.5,
+            "points_per_game": 0.71,
+            "corrected_points_per_game": 0.71,
+            "lastRound": 8
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "e892b94fdc231f6a8c5a85a68bfcbc42413bde57"
+        },
+        {
+          "_id": "MhvNwZew5ihtpJ71QhsHC",
+          "name": "Геннадий Кокурин",
+          "guest": false,
+          "deactivated": true,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 11,
+            "finalResult": false,
+            "matches": 6,
+            "points": 4,
+            "won": 2,
+            "lost": 4,
+            "draws": 0,
+            "sets_won": 2,
+            "sets_lost": 4,
+            "sets_diff": -2,
+            "dis_won": 2,
+            "dis_lost": 4,
+            "dis_draw": 0,
+            "dis_diff": -2,
+            "goals": 24,
+            "goals_in": 32,
+            "w_l": 0,
+            "goal_diff": -8,
+            "lives": 0,
+            "bh1": 1.91,
+            "bh2": 26.68,
+            "sb": 25,
+            "points_per_game": 0.67,
+            "corrected_points_per_game": 0.67,
+            "lastRound": 8
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "fb8bc1e55241aa8d40a0df1d06f9a0d83dd2bf65"
+        },
+        {
+          "_id": "lwFytdKzPcv9oSDn9e9M5",
+          "name": "Илья Вострилов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 12,
+            "finalResult": false,
+            "matches": 3,
+            "points": 4,
+            "won": 1,
+            "lost": 0,
+            "draws": 2,
+            "sets_won": 1,
+            "sets_lost": 0,
+            "sets_diff": 1,
+            "dis_won": 1,
+            "dis_lost": 0,
+            "dis_draw": 2,
+            "dis_diff": 1,
+            "goals": 16,
+            "goals_in": 13,
+            "w_l": 0,
+            "goal_diff": 3,
+            "lives": 3,
+            "bh1": 2.27,
+            "bh2": 26.04,
+            "sb": 26.5,
+            "points_per_game": 1.33,
+            "corrected_points_per_game": 0.65,
+            "lastRound": 8
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "79afd997d9dee3709e19162d3b054ed5c9c92b72"
+        },
+        {
+          "_id": "ifoiOM5RWKqIoxgaahuMl",
+          "name": "Алёна Безбородова",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 13,
+            "finalResult": false,
+            "matches": 2,
+            "points": 4,
+            "won": 2,
+            "lost": 0,
+            "draws": 0,
+            "sets_won": 2,
+            "sets_lost": 0,
+            "sets_diff": 2,
+            "dis_won": 2,
+            "dis_lost": 0,
+            "dis_draw": 0,
+            "dis_diff": 2,
+            "goals": 12,
+            "goals_in": 6,
+            "w_l": 0,
+            "goal_diff": 6,
+            "lives": 3,
+            "bh1": 1.36,
+            "bh2": 24.23,
+            "sb": 19,
+            "points_per_game": 2,
+            "corrected_points_per_game": 0.47,
+            "lastRound": 7
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "daf3d114e1f91e18810a34312c4caef072a14903"
+        },
+        {
+          "_id": "mUTLz3l6ihl8fdMAg3xmP",
+          "name": "Кирилл Безбородов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 14,
+            "finalResult": false,
+            "matches": 2,
+            "points": 0,
+            "won": 0,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 0,
+            "sets_lost": 2,
+            "sets_diff": -2,
+            "dis_won": 0,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": -2,
+            "goals": 7,
+            "goals_in": 12,
+            "w_l": 0,
+            "goal_diff": -5,
+            "lives": 1,
+            "bh1": 2.33,
+            "bh2": 18.86,
+            "sb": 0,
+            "points_per_game": 0,
+            "corrected_points_per_game": -1.53,
+            "lastRound": 8
+          },
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "hash": "6bdf3b6a8a0a71a83185369bf6721074f311ce17"
+        }
+      ],
+      "participants": [
+        {
+          "_id": "Hck3kg79S1ldeI6_5N3mA",
+          "name": "Богдан Жаворонков",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "5bdc6168514d25519acd6aea47fa899f1e54707b"
+        },
+        {
+          "_id": "1QlyWv2fAlPurqxYSb2Xj",
+          "name": "Ярослав Двойных",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "587cc94266914201ff6ef686bcf4261235ca67d4"
+        },
+        {
+          "_id": "boWJPiNNuYv4tAE7qk3By",
+          "name": "Анастасия Кузьмина",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "5060b3fe070f622649af9df9055c49dd1775b9d8"
+        },
+        {
+          "_id": "oeiz-YL7ZqRbwSf7nqixc",
+          "name": "Алёна Набокова",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+        },
+        {
+          "_id": "7pwfkZ3NlXSQkH-kXnKg1",
+          "name": "Дмитрий Тараканов",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "521b5d15216116024b1efa8cac81f9f13dff34b6"
+        },
+        {
+          "_id": "0k7bG3ifozkkXwXabfwah",
+          "name": "Денис Головко",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "a9174db770821edc27c77546b5ffff17de2de05a"
+        },
+        {
+          "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+          "name": "Николай Шергесов",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "c4d81132187dcb5c4bb669ebaf9fc1a7a56da5fd"
+        },
+        {
+          "_id": "AFwKFxyCQJcha-NyllpYe",
+          "name": "Алёна Шашкова",
+          "deactivated": true,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "8d74dce1f4f7128ca94c24df0b2ca02fd7b2e333"
+        },
+        {
+          "_id": "p9-stWExr01dYMsltuxee",
+          "name": "Елена Успенская",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "479e5a88920a8fdb588397e4ff268355d65bdecc"
+        },
+        {
+          "_id": "pu1T2uVNCtHIjcXOLZRV6",
+          "name": "Евгений Тихомиров",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "c6d73ad20484e6edae8704b8c0312c2592936b12"
+        },
+        {
+          "_id": "MhvNwZew5ihtpJ71QhsHC",
+          "name": "Геннадий Кокурин",
+          "deactivated": true,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "0eac254974c2fa92b5fd34298996746b5ab0c3c7"
+        },
+        {
+          "_id": "lwFytdKzPcv9oSDn9e9M5",
+          "name": "Илья Вострилов",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "20c69ace18120fd7333f125f5cf571341c4f86e1"
+        },
+        {
+          "_id": "ifoiOM5RWKqIoxgaahuMl",
+          "name": "Алёна Безбородова",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "c08d651ea98a40f9a138dfa65e4e8a425c2049b7"
+        },
+        {
+          "_id": "mUTLz3l6ihl8fdMAg3xmP",
+          "name": "Кирилл Безбородов",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "9679b293e84aeff4bd5263353191011b8745fb14"
+        }
+      ],
+      "rounds": [
+        {
+          "_id": "i7rFAfok4Pyk3h_zyX-iT",
+          "roundId": "m1bo2zC6vUup9wFnBKGdV",
+          "name": "1",
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "matches": [
+            {
+              "_id": "k1fpZFRmpCK-2NOcs5Nmy",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "k1fpZFRmpCK-2NOcs5Nmy-0",
+                  "playId": "k1fpZFRmpCK-2NOcs5Nmy",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "k1fpZFRmpCK-2NOcs5Nmy-0-0",
+                      "scores": [
+                        6,
+                        2
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "m1bo2zC6vUup9wFnBKGdV",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725039370238,
+              "timeStart": 1725038559041,
+              "valid": true,
+              "team1": {
+                "_id": "JteHdxgzkLgg4oHDWXHM4",
+                "name": "Ярослав Двойных | Анастасия Кузьмина",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "1QlyWv2fAlPurqxYSb2Xj",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "587cc94266914201ff6ef686bcf4261235ca67d4"
+                  },
+                  {
+                    "_id": "boWJPiNNuYv4tAE7qk3By",
+                    "name": "Анастасия Кузьмина",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5060b3fe070f622649af9df9055c49dd1775b9d8"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "5af4e0cd2d55e055d99a7ae466964554a67674cb"
+              },
+              "team2": {
+                "_id": "PLBPccwheIuxJdw2SveAS",
+                "name": "Евгений Тихомиров | Николай Шергесов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "pu1T2uVNCtHIjcXOLZRV6",
+                    "name": "Евгений Тихомиров",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c6d73ad20484e6edae8704b8c0312c2592936b12"
+                  },
+                  {
+                    "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+                    "name": "Николай Шергесов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c4d81132187dcb5c4bb669ebaf9fc1a7a56da5fd"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "62ed8f01dc6825990a6683224c2064a27b7503fa"
+              },
+              "result": [
+                6,
+                2
+              ],
+              "eliminationMatch": false,
+              "hash": "e2eaacfde9d65d764017ffe29647f34388a3ae42"
+            },
+            {
+              "_id": "5dQO3fxg-Kn0qOJhcf8R6",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "5dQO3fxg-Kn0qOJhcf8R6-0",
+                  "playId": "5dQO3fxg-Kn0qOJhcf8R6",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "5dQO3fxg-Kn0qOJhcf8R6-0-0",
+                      "scores": [
+                        6,
+                        0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "m1bo2zC6vUup9wFnBKGdV",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725039016845,
+              "timeStart": null,
+              "valid": true,
+              "team1": {
+                "_id": "GaucyzAKwz-egpSfZQSu9",
+                "name": "Богдан Жаворонков | Алёна Набокова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "Hck3kg79S1ldeI6_5N3mA",
+                    "name": "Богдан Жаворонков",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5bdc6168514d25519acd6aea47fa899f1e54707b"
+                  },
+                  {
+                    "_id": "oeiz-YL7ZqRbwSf7nqixc",
+                    "name": "Алёна Набокова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "96b6c15e51bf245804dd44c825878386befbbad1"
+              },
+              "team2": {
+                "_id": "BjiGFQL4dLGs7eI1jKci0",
+                "name": "Денис Головко | Алёна Шашкова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "0k7bG3ifozkkXwXabfwah",
+                    "name": "Денис Головко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "a9174db770821edc27c77546b5ffff17de2de05a"
+                  },
+                  {
+                    "_id": "AFwKFxyCQJcha-NyllpYe",
+                    "name": "Алёна Шашкова",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "8d74dce1f4f7128ca94c24df0b2ca02fd7b2e333"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "3661c8c8c37964d1e0e02b485cd1f436c114bbfb"
+              },
+              "result": [
+                6,
+                0
+              ],
+              "eliminationMatch": false,
+              "hash": "bc2062648fc1c93e83a449587db992c1817d9aaf"
+            }
+          ],
+          "hash": "b4911354cc37a8d786ccd88fb67029188d5fed25"
+        },
+        {
+          "_id": "whfwbiC9M0EhUAke_-InE",
+          "roundId": "8b8ZKf8L-IEOz393w7amC",
+          "name": "2",
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "matches": [
+            {
+              "_id": "8ebsvqtYWI29PMvUwwAJx",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "8ebsvqtYWI29PMvUwwAJx-0",
+                  "playId": "8ebsvqtYWI29PMvUwwAJx",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "8ebsvqtYWI29PMvUwwAJx-0-0",
+                      "scores": [
+                        6,
+                        1
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "8b8ZKf8L-IEOz393w7amC",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725039763322,
+              "timeStart": 1725039371993,
+              "valid": true,
+              "team1": {
+                "_id": "4A2xYJWyTkCIcxXjKKpqb",
+                "name": "Алёна Шашкова | Богдан Жаворонков",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "AFwKFxyCQJcha-NyllpYe",
+                    "name": "Алёна Шашкова",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "8d74dce1f4f7128ca94c24df0b2ca02fd7b2e333"
+                  },
+                  {
+                    "_id": "Hck3kg79S1ldeI6_5N3mA",
+                    "name": "Богдан Жаворонков",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5bdc6168514d25519acd6aea47fa899f1e54707b"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "054d104dc0ffea5eeab95f59b0d9736d5336709d"
+              },
+              "team2": {
+                "_id": "FyiMWVKTL-O41MVC16JnZ",
+                "name": "Николай Шергесов | Анастасия Кузьмина",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+                    "name": "Николай Шергесов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c4d81132187dcb5c4bb669ebaf9fc1a7a56da5fd"
+                  },
+                  {
+                    "_id": "boWJPiNNuYv4tAE7qk3By",
+                    "name": "Анастасия Кузьмина",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5060b3fe070f622649af9df9055c49dd1775b9d8"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "66c80f71d7fe493b85a77f8126fb2028610c1671"
+              },
+              "result": [
+                6,
+                1
+              ],
+              "eliminationMatch": false,
+              "hash": "920dffffc7b3cbafa857623833b0a7c56d844079"
+            },
+            {
+              "_id": "fyYd3CF6kVVDuQ2Q5sbiv",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "fyYd3CF6kVVDuQ2Q5sbiv-0",
+                  "playId": "fyYd3CF6kVVDuQ2Q5sbiv",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "fyYd3CF6kVVDuQ2Q5sbiv-0-0",
+                      "scores": [
+                        6,
+                        2
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "8b8ZKf8L-IEOz393w7amC",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725040111158,
+              "timeStart": 1725039763660,
+              "valid": true,
+              "team1": {
+                "_id": "BeItG8Rk4M_0vvxy8DGdg",
+                "name": "Ярослав Двойных | Евгений Тихомиров",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "1QlyWv2fAlPurqxYSb2Xj",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "587cc94266914201ff6ef686bcf4261235ca67d4"
+                  },
+                  {
+                    "_id": "pu1T2uVNCtHIjcXOLZRV6",
+                    "name": "Евгений Тихомиров",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c6d73ad20484e6edae8704b8c0312c2592936b12"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "7a043195e35040a61383c65c5f782004f05478b8"
+              },
+              "team2": {
+                "_id": "ADd0D1VKaGRLm_tIZPdyD",
+                "name": "Геннадий Кокурин | Алёна Набокова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "MhvNwZew5ihtpJ71QhsHC",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0eac254974c2fa92b5fd34298996746b5ab0c3c7"
+                  },
+                  {
+                    "_id": "oeiz-YL7ZqRbwSf7nqixc",
+                    "name": "Алёна Набокова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "68ac9b1a42d4aec4065fbb1c94f23517abc98d84"
+              },
+              "result": [
+                6,
+                2
+              ],
+              "eliminationMatch": false,
+              "hash": "4141ba3fe86ebbf727ee176b64e007b3379f1c4e"
+            }
+          ],
+          "hash": "fa5217e9cbf3a20e7808d0ffbb4d52a3fd84230f"
+        },
+        {
+          "_id": "0gXvw3yt32bm-Dnt9qRT9",
+          "roundId": "cIaz_WsFD1_eRqqN0MKQw",
+          "name": "3",
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "matches": [
+            {
+              "_id": "RlhfQDB0npJYO-R8M8-Td",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "RlhfQDB0npJYO-R8M8-Td-0",
+                  "playId": "RlhfQDB0npJYO-R8M8-Td",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "RlhfQDB0npJYO-R8M8-Td-0-0",
+                      "scores": [
+                        6,
+                        2
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "cIaz_WsFD1_eRqqN0MKQw",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725041115424,
+              "timeStart": 1725040134192,
+              "valid": true,
+              "team1": {
+                "_id": "OYGj3XoXGxu8IGpVvNLHx",
+                "name": "Денис Головко | Елена Успенская",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "0k7bG3ifozkkXwXabfwah",
+                    "name": "Денис Головко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "a9174db770821edc27c77546b5ffff17de2de05a"
+                  },
+                  {
+                    "_id": "p9-stWExr01dYMsltuxee",
+                    "name": "Елена Успенская",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "479e5a88920a8fdb588397e4ff268355d65bdecc"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "9bd3e0125270af6425fd4f88ac32eb7e8dbaa2c5"
+              },
+              "team2": {
+                "_id": "ipQNGUeyhG0Eo3cr2kpcG",
+                "name": "Алёна Шашкова | Геннадий Кокурин",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "AFwKFxyCQJcha-NyllpYe",
+                    "name": "Алёна Шашкова",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "8d74dce1f4f7128ca94c24df0b2ca02fd7b2e333"
+                  },
+                  {
+                    "_id": "MhvNwZew5ihtpJ71QhsHC",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0eac254974c2fa92b5fd34298996746b5ab0c3c7"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "0445972dc54dda9623ad446c30f90fe371ca2da3"
+              },
+              "result": [
+                6,
+                2
+              ],
+              "eliminationMatch": false,
+              "hash": "b67a2d4117a6b091c5c24f1cdc4d96b5452ee0cb"
+            },
+            {
+              "_id": "Vc-dBTmR81DtA2oZb13AK",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "Vc-dBTmR81DtA2oZb13AK-0",
+                  "playId": "Vc-dBTmR81DtA2oZb13AK",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "Vc-dBTmR81DtA2oZb13AK-0-0",
+                      "scores": [
+                        5,
+                        5
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "cIaz_WsFD1_eRqqN0MKQw",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725041101214,
+              "timeStart": null,
+              "valid": true,
+              "team1": {
+                "_id": "6dd5xCAhSZHNvpiXRi3de",
+                "name": "Алёна Набокова | Ярослав Двойных",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "oeiz-YL7ZqRbwSf7nqixc",
+                    "name": "Алёна Набокова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+                  },
+                  {
+                    "_id": "1QlyWv2fAlPurqxYSb2Xj",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "587cc94266914201ff6ef686bcf4261235ca67d4"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "f3062733c40357c63780291dd9ffe49cbd9ba30e"
+              },
+              "team2": {
+                "_id": "u5thiG9X_MPTmu1TC6aH-",
+                "name": "Анастасия Кузьмина | Богдан Жаворонков",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "boWJPiNNuYv4tAE7qk3By",
+                    "name": "Анастасия Кузьмина",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5060b3fe070f622649af9df9055c49dd1775b9d8"
+                  },
+                  {
+                    "_id": "Hck3kg79S1ldeI6_5N3mA",
+                    "name": "Богдан Жаворонков",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5bdc6168514d25519acd6aea47fa899f1e54707b"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "7e5dcc0d12b09c44a2f8e5c8efce025fd3e9a8af"
+              },
+              "result": [
+                5,
+                5
+              ],
+              "eliminationMatch": false,
+              "hash": "47f6821a718967a641382b7c3065c5ae5cbcaa64"
+            }
+          ],
+          "hash": "d4e70642252b494609902d98f6133dfadab3cb1d"
+        },
+        {
+          "_id": "HBW84cPRxWmZ1yJ990rKc",
+          "roundId": "QhlZZM3BnaG45W8XAU3cp",
+          "name": "4",
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "matches": [
+            {
+              "_id": "6wvIDRFxq2s8iv7a7vO2H",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "6wvIDRFxq2s8iv7a7vO2H-0",
+                  "playId": "6wvIDRFxq2s8iv7a7vO2H",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "6wvIDRFxq2s8iv7a7vO2H-0-0",
+                      "scores": [
+                        6,
+                        4
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "QhlZZM3BnaG45W8XAU3cp",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725041583145,
+              "timeStart": 1725041153150,
+              "valid": true,
+              "team1": {
+                "_id": "dNJA5k3wjey77z6c44-3P",
+                "name": "Богдан Жаворонков | Николай Шергесов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "Hck3kg79S1ldeI6_5N3mA",
+                    "name": "Богдан Жаворонков",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5bdc6168514d25519acd6aea47fa899f1e54707b"
+                  },
+                  {
+                    "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+                    "name": "Николай Шергесов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c4d81132187dcb5c4bb669ebaf9fc1a7a56da5fd"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "16f5c9155d362d06538749db7664f967aeefbf15"
+              },
+              "team2": {
+                "_id": "wavWF7gXIUGZ_D7QV-05U",
+                "name": "Евгений Тихомиров | Геннадий Кокурин",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "pu1T2uVNCtHIjcXOLZRV6",
+                    "name": "Евгений Тихомиров",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c6d73ad20484e6edae8704b8c0312c2592936b12"
+                  },
+                  {
+                    "_id": "MhvNwZew5ihtpJ71QhsHC",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0eac254974c2fa92b5fd34298996746b5ab0c3c7"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "b1ce2bdd4cebdc0e5168a9cc0292867e26e6ce66"
+              },
+              "result": [
+                6,
+                4
+              ],
+              "eliminationMatch": false,
+              "hash": "402fd265547f5329e773f03eb8371b9565caee6b"
+            },
+            {
+              "_id": "CoAxoc4Ck3HeNAWs1QSfu",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "CoAxoc4Ck3HeNAWs1QSfu-0",
+                  "playId": "CoAxoc4Ck3HeNAWs1QSfu",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "CoAxoc4Ck3HeNAWs1QSfu-0-0",
+                      "scores": [
+                        6,
+                        3
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "QhlZZM3BnaG45W8XAU3cp",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725041969084,
+              "timeStart": 1725041583450,
+              "valid": true,
+              "team1": {
+                "_id": "tpK3WzV-h-yThXU47sa56",
+                "name": "Алёна Набокова | Денис Головко",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "oeiz-YL7ZqRbwSf7nqixc",
+                    "name": "Алёна Набокова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+                  },
+                  {
+                    "_id": "0k7bG3ifozkkXwXabfwah",
+                    "name": "Денис Головко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "a9174db770821edc27c77546b5ffff17de2de05a"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "8f17d63ecf9759103bd46e417e65142f1534df91"
+              },
+              "team2": {
+                "_id": "X9aodQ8xi2EDEBsD35zAH",
+                "name": "Ярослав Двойных | Елена Успенская",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "1QlyWv2fAlPurqxYSb2Xj",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "587cc94266914201ff6ef686bcf4261235ca67d4"
+                  },
+                  {
+                    "_id": "p9-stWExr01dYMsltuxee",
+                    "name": "Елена Успенская",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "479e5a88920a8fdb588397e4ff268355d65bdecc"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "4aefd31e0349eb1323b0dee70d60f7d9f66052b4"
+              },
+              "result": [
+                6,
+                3
+              ],
+              "eliminationMatch": false,
+              "hash": "d46890c737dfd2a3817d0349e6c972698ea56416"
+            }
+          ],
+          "hash": "65ba0887a208d21eb547d37cc81e270193031153"
+        },
+        {
+          "_id": "wEE5Swe2rKA7_snB9otbi",
+          "roundId": "mrnO3of1YLOTQy6hyV9lv",
+          "name": "5",
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "matches": [
+            {
+              "_id": "25wgsVywdXOsKG29wXA9e",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "25wgsVywdXOsKG29wXA9e-0",
+                  "playId": "25wgsVywdXOsKG29wXA9e",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "25wgsVywdXOsKG29wXA9e-0-0",
+                      "scores": [
+                        3,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "mrnO3of1YLOTQy6hyV9lv",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725042496150,
+              "timeStart": 1725042030669,
+              "valid": true,
+              "team1": {
+                "_id": "UKfswJjC-8d7Dm8qWMRVm",
+                "name": "Николай Шергесов | Денис Головко",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+                    "name": "Николай Шергесов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c4d81132187dcb5c4bb669ebaf9fc1a7a56da5fd"
+                  },
+                  {
+                    "_id": "0k7bG3ifozkkXwXabfwah",
+                    "name": "Денис Головко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "a9174db770821edc27c77546b5ffff17de2de05a"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "f48efa1e3f761503c0c74a228bb9cf6b8a9d941a"
+              },
+              "team2": {
+                "_id": "yNxTInJaYsKaaCq66CSER",
+                "name": "Евгений Тихомиров | Илья Вострилов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "pu1T2uVNCtHIjcXOLZRV6",
+                    "name": "Евгений Тихомиров",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c6d73ad20484e6edae8704b8c0312c2592936b12"
+                  },
+                  {
+                    "_id": "lwFytdKzPcv9oSDn9e9M5",
+                    "name": "Илья Вострилов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "20c69ace18120fd7333f125f5cf571341c4f86e1"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "b7386a2700c2949deb4346a662d925018d614a6b"
+              },
+              "result": [
+                3,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "99064e08df051720456b63445c5b152218824315"
+            },
+            {
+              "_id": "YMhdZR_9qBcJ_YH47fRUm",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "YMhdZR_9qBcJ_YH47fRUm-0",
+                  "playId": "YMhdZR_9qBcJ_YH47fRUm",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "YMhdZR_9qBcJ_YH47fRUm-0-0",
+                      "scores": [
+                        6,
+                        4
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "mrnO3of1YLOTQy6hyV9lv",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725043157823,
+              "timeStart": 1725042496454,
+              "valid": true,
+              "team1": {
+                "_id": "J1ZJ5s7N4-OCsEjUtimcO",
+                "name": "Алёна Шашкова | Анастасия Кузьмина",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "AFwKFxyCQJcha-NyllpYe",
+                    "name": "Алёна Шашкова",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "8d74dce1f4f7128ca94c24df0b2ca02fd7b2e333"
+                  },
+                  {
+                    "_id": "boWJPiNNuYv4tAE7qk3By",
+                    "name": "Анастасия Кузьмина",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5060b3fe070f622649af9df9055c49dd1775b9d8"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "efd422e9a2347446678184a2c54afa485790648d"
+              },
+              "team2": {
+                "_id": "V6IdZV46sxLz4zAFqjaev",
+                "name": "Геннадий Кокурин | Елена Успенская",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "MhvNwZew5ihtpJ71QhsHC",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0eac254974c2fa92b5fd34298996746b5ab0c3c7"
+                  },
+                  {
+                    "_id": "p9-stWExr01dYMsltuxee",
+                    "name": "Елена Успенская",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "479e5a88920a8fdb588397e4ff268355d65bdecc"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "2195f31d2b6e1e120717b4b5c477221bd62f019a"
+              },
+              "result": [
+                6,
+                4
+              ],
+              "eliminationMatch": false,
+              "hash": "c1f8a11870928b80bc87cd6e758b35e61a7c1e3f"
+            }
+          ],
+          "hash": "1f42dcfadeeecf11589b7708be2445c343dc6bf5"
+        },
+        {
+          "_id": "fUFp7u1GPQZRyYLyxBpn6",
+          "roundId": "BTbnbCcJPFjPhzX6umkcp",
+          "name": "6",
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "matches": [
+            {
+              "_id": "wT_4CEjnB2yf24YnXWHc4",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "wT_4CEjnB2yf24YnXWHc4-0",
+                  "playId": "wT_4CEjnB2yf24YnXWHc4",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "wT_4CEjnB2yf24YnXWHc4-0-0",
+                      "scores": [
+                        5,
+                        5
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "BTbnbCcJPFjPhzX6umkcp",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725043708389,
+              "timeStart": 1725043188882,
+              "valid": true,
+              "team1": {
+                "_id": "39TKO7X8YjCj1XZyIlLvh",
+                "name": "Богдан Жаворонков | Евгений Тихомиров",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "Hck3kg79S1ldeI6_5N3mA",
+                    "name": "Богдан Жаворонков",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5bdc6168514d25519acd6aea47fa899f1e54707b"
+                  },
+                  {
+                    "_id": "pu1T2uVNCtHIjcXOLZRV6",
+                    "name": "Евгений Тихомиров",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c6d73ad20484e6edae8704b8c0312c2592936b12"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "347c397565cdc5ed26fc77ea05c3c8e973dfa542"
+              },
+              "team2": {
+                "_id": "fo73P17cy7wpHi12L_vjT",
+                "name": "Алёна Шашкова | Илья Вострилов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "AFwKFxyCQJcha-NyllpYe",
+                    "name": "Алёна Шашкова",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "8d74dce1f4f7128ca94c24df0b2ca02fd7b2e333"
+                  },
+                  {
+                    "_id": "lwFytdKzPcv9oSDn9e9M5",
+                    "name": "Илья Вострилов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "20c69ace18120fd7333f125f5cf571341c4f86e1"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "592348f1fed9f4790812138de8328767b3184dd7"
+              },
+              "result": [
+                5,
+                5
+              ],
+              "eliminationMatch": false,
+              "hash": "4fe73ff208a4096553dc0d18de2ec8d674e1ad13"
+            },
+            {
+              "_id": "niYoyd-puxisf_98N5Nvg",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "niYoyd-puxisf_98N5Nvg-0",
+                  "playId": "niYoyd-puxisf_98N5Nvg",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "niYoyd-puxisf_98N5Nvg-0-0",
+                      "scores": [
+                        3,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "BTbnbCcJPFjPhzX6umkcp",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725044289643,
+              "timeStart": 1725043708721,
+              "valid": true,
+              "team1": {
+                "_id": "Wij6uj65e7fofJM3utRrB",
+                "name": "Алёна Набокова | Кирилл Безбородов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "oeiz-YL7ZqRbwSf7nqixc",
+                    "name": "Алёна Набокова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+                  },
+                  {
+                    "_id": "mUTLz3l6ihl8fdMAg3xmP",
+                    "name": "Кирилл Безбородов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "9679b293e84aeff4bd5263353191011b8745fb14"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "ab0de14e183a1328e99642844e2cc041e7ca7f83"
+              },
+              "team2": {
+                "_id": "6YfbcIkKknxcNwFIRzZ-o",
+                "name": "Николай Шергесов | Алёна Безбородова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+                    "name": "Николай Шергесов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c4d81132187dcb5c4bb669ebaf9fc1a7a56da5fd"
+                  },
+                  {
+                    "_id": "ifoiOM5RWKqIoxgaahuMl",
+                    "name": "Алёна Безбородова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c08d651ea98a40f9a138dfa65e4e8a425c2049b7"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "50b64ce2c0bfe96320329572e6da0f68dd112a41"
+              },
+              "result": [
+                3,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "499b2ac0b8e18949c3d31a6ec46d493d9ab9016e"
+            },
+            {
+              "_id": "wcpgNwGN5ZXYq3EIYTb51",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "wcpgNwGN5ZXYq3EIYTb51-0",
+                  "playId": "wcpgNwGN5ZXYq3EIYTb51",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "wcpgNwGN5ZXYq3EIYTb51-0-0",
+                      "scores": [
+                        6,
+                        4
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "BTbnbCcJPFjPhzX6umkcp",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725044773167,
+              "timeStart": 1725044289985,
+              "valid": true,
+              "team1": {
+                "_id": "SxtuDUi7EdpDENqAMPWNA",
+                "name": "Анастасия Кузьмина | Дмитрий Тараканов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "boWJPiNNuYv4tAE7qk3By",
+                    "name": "Анастасия Кузьмина",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5060b3fe070f622649af9df9055c49dd1775b9d8"
+                  },
+                  {
+                    "_id": "7pwfkZ3NlXSQkH-kXnKg1",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "521b5d15216116024b1efa8cac81f9f13dff34b6"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "31d33a9ecd5daf48d4d5d9e0779f80d8539a22fd"
+              },
+              "team2": {
+                "_id": "4cBMUPh1f_5fBEHrCmirF",
+                "name": "Денис Головко | Ярослав Двойных",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "0k7bG3ifozkkXwXabfwah",
+                    "name": "Денис Головко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "a9174db770821edc27c77546b5ffff17de2de05a"
+                  },
+                  {
+                    "_id": "1QlyWv2fAlPurqxYSb2Xj",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "587cc94266914201ff6ef686bcf4261235ca67d4"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "c0d7e7e2dc45f02560318c531dccd5137126d57a"
+              },
+              "result": [
+                6,
+                4
+              ],
+              "eliminationMatch": false,
+              "hash": "fe60413b66cf5df2bc8425b1949566ec40ce91ed"
+            }
+          ],
+          "hash": "02d5e2880c987e69fae0d40551974b594f9168e3"
+        },
+        {
+          "_id": "awgz1OEEvvHa3bFK-jKbr",
+          "roundId": "OTkDtqSgL6Jdv2yhE-I_P",
+          "name": "7",
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "matches": [
+            {
+              "_id": "IyPY_CUhspeczuElcbOUh",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "IyPY_CUhspeczuElcbOUh-0",
+                  "playId": "IyPY_CUhspeczuElcbOUh",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "IyPY_CUhspeczuElcbOUh-0-0",
+                      "scores": [
+                        2,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "OTkDtqSgL6Jdv2yhE-I_P",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725045317891,
+              "timeStart": 1725044859460,
+              "valid": true,
+              "team1": {
+                "_id": "U19UKRaysIYtOzFvFZf9g",
+                "name": "Елена Успенская | Николай Шергесов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "p9-stWExr01dYMsltuxee",
+                    "name": "Елена Успенская",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "479e5a88920a8fdb588397e4ff268355d65bdecc"
+                  },
+                  {
+                    "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+                    "name": "Николай Шергесов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c4d81132187dcb5c4bb669ebaf9fc1a7a56da5fd"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "c7ecd4d67ad7ef423e7e499b018da29e95b4f605"
+              },
+              "team2": {
+                "_id": "SAwDD73VWra75tFgpM-In",
+                "name": "Денис Головко | Богдан Жаворонков",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "0k7bG3ifozkkXwXabfwah",
+                    "name": "Денис Головко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "a9174db770821edc27c77546b5ffff17de2de05a"
+                  },
+                  {
+                    "_id": "Hck3kg79S1ldeI6_5N3mA",
+                    "name": "Богдан Жаворонков",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5bdc6168514d25519acd6aea47fa899f1e54707b"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "dad0a8b7cdbe4a6fc73fb5363c8733fb1d07f4f1"
+              },
+              "result": [
+                2,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "5b9f7f30bc7825fa190ed75a230c29572a6414aa"
+            },
+            {
+              "_id": "WCIiOaLBj_PF4Xa0tF7nv",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "WCIiOaLBj_PF4Xa0tF7nv-0",
+                  "playId": "WCIiOaLBj_PF4Xa0tF7nv",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "WCIiOaLBj_PF4Xa0tF7nv-0-0",
+                      "scores": [
+                        6,
+                        4
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "OTkDtqSgL6Jdv2yhE-I_P",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725046265824,
+              "timeStart": 1725045318224,
+              "valid": true,
+              "team1": {
+                "_id": "4k1SwqT3gM3ArTRqKDMXm",
+                "name": "Геннадий Кокурин | Ярослав Двойных",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "MhvNwZew5ihtpJ71QhsHC",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0eac254974c2fa92b5fd34298996746b5ab0c3c7"
+                  },
+                  {
+                    "_id": "1QlyWv2fAlPurqxYSb2Xj",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "587cc94266914201ff6ef686bcf4261235ca67d4"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "b9f2e3d8887027d06b9c7a420dd587588488fd79"
+              },
+              "team2": {
+                "_id": "KQTTgPw_VkLSodC7Zf552",
+                "name": "Алёна Набокова | Алёна Шашкова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "oeiz-YL7ZqRbwSf7nqixc",
+                    "name": "Алёна Набокова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+                  },
+                  {
+                    "_id": "AFwKFxyCQJcha-NyllpYe",
+                    "name": "Алёна Шашкова",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "8d74dce1f4f7128ca94c24df0b2ca02fd7b2e333"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "5aab93f7be035a8397b83f4b57d55cdf25c4cfbe"
+              },
+              "result": [
+                6,
+                4
+              ],
+              "eliminationMatch": false,
+              "hash": "ee5232cd87d1649771b573007d73a7b19d4c933b"
+            },
+            {
+              "_id": "ekem500ZJyEFwg6Na-pd4",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "ekem500ZJyEFwg6Na-pd4-0",
+                  "playId": "ekem500ZJyEFwg6Na-pd4",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "ekem500ZJyEFwg6Na-pd4-0-0",
+                      "scores": [
+                        6,
+                        3
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "OTkDtqSgL6Jdv2yhE-I_P",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725046866123,
+              "timeStart": 1725046266130,
+              "valid": true,
+              "team1": {
+                "_id": "ZZBslNKLOlWSulZZmwCUf",
+                "name": "Дмитрий Тараканов | Алёна Безбородова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "7pwfkZ3NlXSQkH-kXnKg1",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "521b5d15216116024b1efa8cac81f9f13dff34b6"
+                  },
+                  {
+                    "_id": "ifoiOM5RWKqIoxgaahuMl",
+                    "name": "Алёна Безбородова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c08d651ea98a40f9a138dfa65e4e8a425c2049b7"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "c6d08223be1210eae14863d49d8f2f72d7f89657"
+              },
+              "team2": {
+                "_id": "wzNd9-u3vavaSCpCVsVpn",
+                "name": "Анастасия Кузьмина | Евгений Тихомиров",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "boWJPiNNuYv4tAE7qk3By",
+                    "name": "Анастасия Кузьмина",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5060b3fe070f622649af9df9055c49dd1775b9d8"
+                  },
+                  {
+                    "_id": "pu1T2uVNCtHIjcXOLZRV6",
+                    "name": "Евгений Тихомиров",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c6d73ad20484e6edae8704b8c0312c2592936b12"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "e5f1baec6bbb0a2d2c19ead73f183d6bca4ed5e1"
+              },
+              "result": [
+                6,
+                3
+              ],
+              "eliminationMatch": false,
+              "hash": "79e2b64886f5468d3ca1c829db6546cfa9390fc7"
+            }
+          ],
+          "hash": "447bf01c7780cf45072a1dae823fc93aae84b664"
+        },
+        {
+          "_id": "bLTbAvg84zvA_f2h_7rd-",
+          "roundId": "9gxklR5hOenDBbIBmfhP2",
+          "name": "8",
+          "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+          "matches": [
+            {
+              "_id": "XhX1LycmB3cNE6i1_V6-s",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "XhX1LycmB3cNE6i1_V6-s-0",
+                  "playId": "XhX1LycmB3cNE6i1_V6-s",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "XhX1LycmB3cNE6i1_V6-s-0-0",
+                      "scores": [
+                        5,
+                        5
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "9gxklR5hOenDBbIBmfhP2",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725047673139,
+              "timeStart": 1725046869790,
+              "valid": true,
+              "team1": {
+                "_id": "psRFlNFPS0Iy8bn6xP5a2",
+                "name": "Ярослав Двойных | Дмитрий Тараканов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "1QlyWv2fAlPurqxYSb2Xj",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "587cc94266914201ff6ef686bcf4261235ca67d4"
+                  },
+                  {
+                    "_id": "7pwfkZ3NlXSQkH-kXnKg1",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "521b5d15216116024b1efa8cac81f9f13dff34b6"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "9b4b493cb532ced9c9cf94d21cdb12674a34f812"
+              },
+              "team2": {
+                "_id": "HbIdNQdPVbSPctedfC0sw",
+                "name": "Илья Вострилов | Богдан Жаворонков",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "lwFytdKzPcv9oSDn9e9M5",
+                    "name": "Илья Вострилов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "20c69ace18120fd7333f125f5cf571341c4f86e1"
+                  },
+                  {
+                    "_id": "Hck3kg79S1ldeI6_5N3mA",
+                    "name": "Богдан Жаворонков",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5bdc6168514d25519acd6aea47fa899f1e54707b"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "cacf22c50b17886b0f502226409458dbc97f8a88"
+              },
+              "result": [
+                5,
+                5
+              ],
+              "eliminationMatch": false,
+              "hash": "150befd7261f542a22fd0c35d41b2b6709fb67b3"
+            },
+            {
+              "_id": "2BVofnzWjc92vRCRPWEwq",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "2BVofnzWjc92vRCRPWEwq-0",
+                  "playId": "2BVofnzWjc92vRCRPWEwq",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "2BVofnzWjc92vRCRPWEwq-0-0",
+                      "scores": [
+                        6,
+                        4
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "9gxklR5hOenDBbIBmfhP2",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725048217247,
+              "timeStart": 1725047673442,
+              "valid": true,
+              "team1": {
+                "_id": "G237LfRqCz6fP2ln7-PJP",
+                "name": "Николай Шергесов | Геннадий Кокурин",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "HYb6Z88YIs7_2ZtLYxkNW",
+                    "name": "Николай Шергесов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c4d81132187dcb5c4bb669ebaf9fc1a7a56da5fd"
+                  },
+                  {
+                    "_id": "MhvNwZew5ihtpJ71QhsHC",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0eac254974c2fa92b5fd34298996746b5ab0c3c7"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "cb69da9a065cc790e9c3da2be4474c80569ad641"
+              },
+              "team2": {
+                "_id": "YfzBztFsWJ7AZctjMl7-n",
+                "name": "Анастасия Кузьмина | Денис Головко",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "boWJPiNNuYv4tAE7qk3By",
+                    "name": "Анастасия Кузьмина",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5060b3fe070f622649af9df9055c49dd1775b9d8"
+                  },
+                  {
+                    "_id": "0k7bG3ifozkkXwXabfwah",
+                    "name": "Денис Головко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "a9174db770821edc27c77546b5ffff17de2de05a"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "cf5cb7d6611e56fb01ddd66d71af0aa0f5b4538b"
+              },
+              "result": [
+                6,
+                4
+              ],
+              "eliminationMatch": false,
+              "hash": "599e7017dcbbf653f1d48acce6994edc1f0be9ad"
+            },
+            {
+              "_id": "cEN2S3ByfNcv8GVtT44lw",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "cEN2S3ByfNcv8GVtT44lw-0",
+                  "playId": "cEN2S3ByfNcv8GVtT44lw",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "cEN2S3ByfNcv8GVtT44lw-0-0",
+                      "scores": [
+                        6,
+                        4
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "i8kHo3MWOl0zcRvXYp_1w",
+              "roundId": "9gxklR5hOenDBbIBmfhP2",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1725048816586,
+              "timeStart": 1725048217553,
+              "valid": true,
+              "team1": {
+                "_id": "R_pSfaH7WeEex-kmW6Q3i",
+                "name": "Елена Успенская | Алёна Набокова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "p9-stWExr01dYMsltuxee",
+                    "name": "Елена Успенская",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "479e5a88920a8fdb588397e4ff268355d65bdecc"
+                  },
+                  {
+                    "_id": "oeiz-YL7ZqRbwSf7nqixc",
+                    "name": "Алёна Набокова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "fa469f5a7b4ffbcfc3e3926f6d5cabb26f13c97c"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "95c168bb3631740706fe1619d7b99a60f460a9e5"
+              },
+              "team2": {
+                "_id": "4NxaMBD6rBtiK5FjOEqtY",
+                "name": "Евгений Тихомиров | Кирилл Безбородов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "pu1T2uVNCtHIjcXOLZRV6",
+                    "name": "Евгений Тихомиров",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "c6d73ad20484e6edae8704b8c0312c2592936b12"
+                  },
+                  {
+                    "_id": "mUTLz3l6ihl8fdMAg3xmP",
+                    "name": "Кирилл Безбородов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "9679b293e84aeff4bd5263353191011b8745fb14"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "d7d69441157d18c8c70994956da4b62bebf9ae78"
+              },
+              "result": [
+                6,
+                4
+              ],
+              "eliminationMatch": false,
+              "hash": "12740bfe4d1aeaf74594e267e0937e2fcc6954b7"
+            }
+          ],
+          "hash": "54f77e28c14a690456d538767103ea33dccc5bff"
+        }
+      ],
+      "hash": "821ba8289eee6f953936b21cce1f15fb86f439c7"
+    }
+  ],
+  "version": 14
+}

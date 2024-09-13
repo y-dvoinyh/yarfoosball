@@ -2,7 +2,7 @@ import json
 from typing import Optional, List, Any
 from src.core.service import BaseService
 
-from src.models import CompetitionType, CompetitionModel, RatingType
+from src.models import CompetitionType, CompetitionModel, RatingType, PlayerModel
 from src.orx.player.schemas import UpdatePlayer
 from src.orx.team.schemas import CreateTeam
 from src.orx.match.schemas import CreateMatch, CreateSet
@@ -57,48 +57,58 @@ class KickerToolDYPService(BaseService):
 
     async def __sync_players(self, dyp: DYP):
         """Синхронизация игроков"""
-        for q in dyp.scheme.qualifying:
-            for p in q.participants:
-                first_name, last_name = p.name.split(' ')
-                p_dict = {'first_name': first_name, 'last_name': last_name}
-                # Игрок
-                player = await self.uow.players.update_or_create(UpdatePlayer(**p_dict), **p_dict)
-                dyp.add(p.id, player)
-                # Записи о рейтингах
-                rating_filter = {
-                    'type': RatingType.PLAYER,
-                    'player_id': player.id
-                }
-                rating = await self.uow.ratings.update_or_create(
-                    CreateRating(
-                        league_id=None,
-                        tournament_id=None,
-                        **rating_filter
-                    ),
+
+        def __participants():
+            if dyp.scheme.mode == 'elimination':
+                for e in dyp.scheme.eliminations:
+                    for p in e.standings:
+                        yield p
+            else:
+                for q in dyp.scheme.qualifying:
+                    for p in q.participants:
+                        yield p
+
+        for p in __participants():
+            first_name, last_name = p.name.split(' ')
+            p_dict = {'first_name': first_name, 'last_name': last_name}
+            # Игрок
+            player = await self.uow.players.update_or_create(UpdatePlayer(**p_dict), **p_dict)
+            dyp.add(p.id, player)
+            # Записи о рейтингах
+            rating_filter = {
+                'type': RatingType.PLAYER,
+                'player_id': player.id
+            }
+            rating = await self.uow.ratings.update_or_create(
+                CreateRating(
+                    league_id=None,
+                    tournament_id=None,
                     **rating_filter
-                )
-                dyp.add((player.id, RatingType.PLAYER), rating)
-                rating_league_filter = {
-                    'type': RatingType.LEAGUE,
-                    'player_id': player.id,
-                    'league_id': dyp.competition.tournament.league_id
-                }
-                rating_league = await self.uow.ratings.update_or_create(
-                    CreateRating(tournament_id=None, **rating_league_filter),
-                    **rating_league_filter
-                )
-                dyp.add((player.id, RatingType.LEAGUE), rating_league)
-                rating_tournament_filter = {
-                    'type': RatingType.TOURNAMENT,
-                    'player_id': player.id,
-                    'league_id': dyp.competition.tournament.league_id,
-                    'tournament_id': dyp.competition.tournament_id
-                }
-                rating_tournament = await self.uow.ratings.update_or_create(
-                    CreateRating(**rating_tournament_filter),
-                    **rating_tournament_filter
-                )
-                dyp.add((player.id, RatingType.TOURNAMENT), rating_tournament)
+                ),
+                **rating_filter
+            )
+            dyp.add((player.id, RatingType.PLAYER), rating)
+            rating_league_filter = {
+                'type': RatingType.LEAGUE,
+                'player_id': player.id,
+                'league_id': dyp.competition.tournament.league_id
+            }
+            rating_league = await self.uow.ratings.update_or_create(
+                CreateRating(tournament_id=None, **rating_league_filter),
+                **rating_league_filter
+            )
+            dyp.add((player.id, RatingType.LEAGUE), rating_league)
+            rating_tournament_filter = {
+                'type': RatingType.TOURNAMENT,
+                'player_id': player.id,
+                'league_id': dyp.competition.tournament.league_id,
+                'tournament_id': dyp.competition.tournament_id
+            }
+            rating_tournament = await self.uow.ratings.update_or_create(
+                CreateRating(**rating_tournament_filter),
+                **rating_tournament_filter
+            )
+            dyp.add((player.id, RatingType.TOURNAMENT), rating_tournament)
 
     async def __sync_qualifying(self, dyp: DYP):
         """Синхронизация квалификации"""
@@ -121,9 +131,11 @@ class KickerToolDYPService(BaseService):
     async def __sync_matches(self, dyp: DYP, matches: List[Match]):
         """Синхронизация списка матчей"""
         for match_scheme in matches:
+            print(match_scheme)
             if match_scheme.deactivated:
                 continue
             team1, team2 = await self.__sync_teams(dyp, [match_scheme.team1, match_scheme.team2])
+
             if team1 is None or team2 is None:
                 continue
             if match_scheme.time_start is None and match_scheme.time_end is None:
@@ -151,26 +163,30 @@ class KickerToolDYPService(BaseService):
             if team_scheme is None:
                 result.append(None)
                 continue
-            team = dyp.get(team_scheme.id)
+            team = dyp.get(f'Match_Team-{team_scheme.id}')
+
             if team is None:
-                external_first_player_id = team_scheme.players[0].id
                 external_second_player_id = None
-                if len(team_scheme.players) > 1:
-                    external_second_player_id = team_scheme.players[1].id
+                if team_scheme.players:
+                    external_first_player_id = team_scheme.players[0].id
+                    if len(team_scheme.players) > 1:
+                        external_second_player_id = team_scheme.players[1].id
+                else:
+                    external_first_player_id = team_scheme.id
 
                 first_player = dyp.get(external_first_player_id)
                 second_player = dyp.get(external_second_player_id)
                 team = await self.uow.teams.update_or_create(
                     CreateTeam(
                         competition_order=None,
-                        external_id=team_scheme.id,
+                        external_id=f'Match_Team-{team_scheme.id}',
                         competition_id=dyp.competition.id,
                         first_player_id=first_player.id,
                         second_player_id=second_player.id if second_player else None
                     ),
-                    **{'external_id': team_scheme.id}
+                    **{'external_id': f'Match_Team-{team_scheme.id}'}
                 )
-                dyp.add(team.external_id, team)
+                dyp.add(f'Match_Team-{team.external_id}', team)
             result.append(team)
         return result
 
