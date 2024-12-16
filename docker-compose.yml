@@ -25,6 +25,9 @@ services:
       - yarfoosball-network
     depends_on:
       - backend
+    # Временно
+    ports:
+      - "9000:9000"
 
   backend:
     container_name: yarfoosball-backend-container
