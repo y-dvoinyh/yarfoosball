@@ -12,7 +12,7 @@ server {
     ssl_prefer_server_ciphers   on;
 
     location / {
-        proxy_pass http://frontend:9000;
+        proxy_pass http://frontend;
     }
 
     location /api {
