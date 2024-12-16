@@ -11,10 +11,8 @@ server {
     ssl_protocols               TLSv1 TLSv1.1 TLSv1.2;
     ssl_prefer_server_ciphers   on;
 
-    index index.html;
-
     location / {
-        try_files $uri $uri/ /index.html;
+        proxy_pass http://frontend;
     }
 
     location /api {
