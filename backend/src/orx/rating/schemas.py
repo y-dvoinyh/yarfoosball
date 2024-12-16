@@ -83,6 +83,7 @@ class PartialRatingHistory(BaseRatingHistory):
 
 
 class ResponseRatingPlayer(BaseModel):
+    player_id: int
     full_name: str
     number: int
     rating: int

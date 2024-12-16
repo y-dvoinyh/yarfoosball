@@ -22,7 +22,7 @@ class RatingModel(BaseModel):
     type: Mapped[RatingType] = mapped_column(Enum(RatingType, name='rating_type_enum'), nullable=False)
 
     player_id: Mapped[int] = mapped_column(ForeignKey('players.id'), nullable=False)
-    player: Mapped["PlayerModel"] = relationship(foreign_keys="RatingModel.player_id")
+    player: Mapped["PlayerModel"] = relationship(foreign_keys="RatingModel.player_id", lazy='joined')
 
     league_id: Mapped[int] = mapped_column(ForeignKey('leagues.id'), nullable=True)
     league: Mapped["LeagueModel"] = relationship(foreign_keys="RatingModel.league_id")

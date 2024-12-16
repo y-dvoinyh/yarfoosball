@@ -1,7 +1,7 @@
 version: "3"
 services:
   nginx:
-    image: dockerhub.timeweb.cloud/library/nginx:stable-alpine
+    image: nginx:stable-alpine
     container_name: yarfoosbal-nginx-container
     restart: always
     ports:
@@ -42,7 +42,7 @@ services:
       - "8000:8000"
 
   db:
-    image: dockerhub.timeweb.cloud/library/postgres:14-alpine
+    image: postgres:14-alpine
     container_name: yarfoosball-db-container
     restart: on-failure
     command: -p 6432
@@ -57,7 +57,7 @@ services:
 
   pgadmin:
     container_name: pgadmin_container
-    image: dockerhub.timeweb.cloud/dpage/pgadmin4:7
+    image: pgadmin4:7
     restart: always
     env_file:
       - ./.env-prod

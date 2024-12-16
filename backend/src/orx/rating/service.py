@@ -104,12 +104,17 @@ class RatingService(BaseService):
             diff=rating_diff,
             rating=ft_first_p_rating + rating_diff,
             matches_diff=1,
-            wins_diff=1,
             matches=(ft_first_p_history.matches if ft_first_p_history else 0) + 1,
             wins=(ft_first_p_history.wins if ft_first_p_history else 0) + (
                 1 if not match.is_draw and match.first_team_score > match.second_team_score else 0
             ),
+            wins_diff=(
+                1 if not match.is_draw and match.first_team_score > match.second_team_score else 0
+            ),
             losses=(ft_first_p_history.losses if ft_first_p_history else 0) + (
+                1 if not match.is_draw and match.first_team_score < match.second_team_score else 0
+            ),
+            losses_diff=(
                 1 if not match.is_draw and match.first_team_score < match.second_team_score else 0
             )
         ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.first_team.first_player_id, 'match_id': match.id})
@@ -128,14 +133,20 @@ class RatingService(BaseService):
             diff=-rating_diff,
             rating=st_first_p_rating - rating_diff,
             matches_diff=1,
-            losses_diff=1,
+
             matches=(st_first_p_history.matches if st_first_p_history else 0) + 1,
             wins=(st_first_p_history.wins if st_first_p_history else 0) + (
                 1 if not match.is_draw and match.second_team_score > match.first_team_score else 0
             ),
+            wins_diff=(
+                1 if not match.is_draw and match.second_team_score > match.first_team_score else 0
+            ),
             losses=(st_first_p_history.losses if st_first_p_history else 0) + (
                 1 if not match.is_draw and match.second_team_score < match.first_team_score else 0
-            )
+            ),
+            losses_diff=(
+                1 if not match.is_draw and match.second_team_score < match.first_team_score else 0
+            ),
         ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.second_team.first_player_id, 'match_id': match.id})
         self.store.set_history(match.second_team.first_player_id, st_first_player_history)
         self.store.add_history(match.competition_id, st_first_player_history)
@@ -153,12 +164,17 @@ class RatingService(BaseService):
                 diff=rating_diff,
                 rating=ft_second_p_rating + rating_diff,
                 matches_diff=1,
-                wins_diff=1,
                 matches=(ft_second_p_history.matches if ft_second_p_history else 0) + 1,
                 wins=(ft_second_p_history.wins if ft_second_p_history else 0) + (
                     1 if not match.is_draw and match.first_team_score > match.second_team_score else 0
                 ),
+                wins_diff=(
+                    1 if not match.is_draw and match.first_team_score > match.second_team_score else 0
+                ),
                 losses=(ft_second_p_history.losses if ft_second_p_history else 0) + (
+                    1 if not match.is_draw and match.first_team_score < match.second_team_score else 0
+                ),
+                losses_diff= (
                     1 if not match.is_draw and match.first_team_score < match.second_team_score else 0
                 )
             ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.first_team.second_player_id, 'match_id': match.id})
@@ -177,14 +193,15 @@ class RatingService(BaseService):
                 diff=-rating_diff,
                 rating=st_second_p_rating - rating_diff,
                 matches_diff=1,
-                losses_diff=1,
                 matches=(st_second_p_history.matches if st_second_p_history else 0) + 1,
                 wins=(st_second_p_history.wins if st_second_p_history else 0) + (
                     1 if not match.is_draw and match.second_team_score > match.first_team_score else 0
                 ),
+                wins_diff= 1 if not match.is_draw and match.second_team_score > match.first_team_score else 0,
                 losses=(st_second_p_history.losses if st_second_p_history else 0) + (
                     1 if not match.is_draw and match.second_team_score < match.first_team_score else 0
-                )
+                ),
+                losses_diff= 1 if not match.is_draw and match.second_team_score < match.first_team_score else 0,
             ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.second_team.second_player_id, 'match_id': match.id})
             self.store.set_history(match.second_team.second_player_id, st_second_player_history)
             self.store.add_history(match.competition_id, st_second_player_history)

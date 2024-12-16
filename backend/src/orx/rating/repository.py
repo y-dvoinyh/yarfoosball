@@ -40,6 +40,7 @@ class RatingRepository(
 
         stmt = (
             select(
+                rating.player_id,
                 PlayerModel.id,
                 func.concat_ws(' ', PlayerModel.first_name, PlayerModel.last_name).label('full_name'),
                 rating.number,

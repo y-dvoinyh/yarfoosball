@@ -6,6 +6,14 @@ const routes = [
       { path: '', component: () => import('pages/IndexPage.vue') }
     ]
   },
+  {
+    path: '/player/:id',
+    props: true,
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {name: 'player_page_route', path: '', props: true, component: () => import('pages/PlayerPage.vue') }
+    ]
+  },
 
   // Always leave this as last one,
   // but you can also remove it

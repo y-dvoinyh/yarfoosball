@@ -26,6 +26,16 @@
             class="q-ml-md"
           />
         </template>
+        <template v-slot:body-cell="props">
+          <q-td :props="props" v-if="props.col.name === 'full_name'">
+            <q-btn
+              flat color="primary"
+              :label="props.value"
+              :to="{ name: 'player_page_route', params: {id: props.row.player_id}}"
+            />
+          </q-td>
+          <q-td :props="props" v-else> {{props.value}} </q-td>
+        </template>
 
       </q-table>
     </div>
@@ -44,7 +54,7 @@ export default defineComponent({
 
     const columns = [
       { name: 'number', label: '№', align: 'left', field: 'number', sortable: false },
-      { name: 'full_name', label: 'Фамилия Имя', align: 'left', field: 'full_name', sortable: false },
+      { name: 'full_name', label: 'Фамилия Имя', align: 'left', field: 'full_name', sortable: false},
       { name: 'rating', label: 'Рейтинг', align: 'left', field: 'rating', sortable: false },
       { name: 'last_diff', label: ' ', align: 'left', field: 'last_diff', sortable: false,
         format: (val, row) => `${val && val > 0 ? '+' : ''}${val || val === 0 ? val : ''}`,
@@ -113,8 +123,6 @@ export default defineComponent({
       console.log('onMounted')
       fetchRating(pagination.value.page, pagination.value.rowsPerPage, filter.value);
     });
-
-
 
     return {
       columns,

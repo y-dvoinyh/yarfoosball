@@ -1,4 +1,4 @@
-FROM dockerhub.timeweb.cloud/library/python:3.11
+FROM python:3.11
 
 RUN mkdir /app
 

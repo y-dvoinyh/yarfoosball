@@ -1,5 +1,5 @@
 # этап сборки (build stage)
-FROM dockerhub.timeweb.cloud/library/node:lts-alpine as build-stage
+FROM node:lts-alpine as build-stage
 WORKDIR /app
 
 # создаем слой пакетов, чтобы не переустанавливать в каждом релизе
