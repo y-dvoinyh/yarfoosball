@@ -17,6 +17,12 @@ export default (axios) => {
     },
     async get_player_info(player_id) {
       return axios.get(`${base_url}/${player_id}`);
+    },
+    async get_player_competition(player_id, competition_id){
+      return axios.get(`${base_url}/player/${player_id}/competition/${competition_id}`);
+    },
+    async get_competition_info(competition_id){
+      return axios.get(`/competition/${competition_id}`);
     }
   };
 };

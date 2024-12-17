@@ -34,3 +34,9 @@ class PartialCompetition(BaseCompetition):
     json_data: Optional[Json[Any]] = None
     tournament_id: Optional[int] = None
     external_id: Optional[str] = None
+
+
+class ResponceCompetitionInfo(BaseModel):
+    id: int
+    name: str
+    date: date

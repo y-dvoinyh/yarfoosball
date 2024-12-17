@@ -49,3 +49,20 @@ class ResponcePlayerInfo(BaseModel):
     losses: int
     first_name: str
     last_name: str
+
+
+class ResponceMatchRow(BaseModel):
+    id: int
+    is_qualification: bool
+    rating: int
+    diff: Optional[int]
+    score: Optional[str]
+    color: Optional[str]
+    left_team_first_id: Optional[int]
+    left_team_first: Optional[str]
+    left_team_second_id: Optional[int]
+    left_team_second: Optional[str]
+    right_team_first_id: Optional[int]
+    right_team_first: Optional[str]
+    right_second_id: Optional[int]
+    right_second: Optional[str]

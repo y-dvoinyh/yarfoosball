@@ -11,23 +11,21 @@
         row-key="id"
         :columns="columns"
         :rows="rows"
-
+        ref="tableRef"
         :loading="loading"
         v-model:pagination="pagination"
-        @request="onRequest">
-<!--          <template v-slot:top-right="props">-->
-<!--            <q-input borderless dense debounce="300" v-model="filter" placeholder="Поиск">-->
-<!--              <template v-slot:append>-->
-<!--                <q-icon name="search" />-->
-<!--              </template>-->
-<!--            </q-input>-->
-<!--            <q-btn-->
-<!--              flat round dense-->
-<!--              :icon="props.inFullscreen ? 'fullscreen_exit' : 'fullscreen'"-->
-<!--              @click="props.toggleFullscreen"-->
-<!--              class="q-ml-md"-->
-<!--            />-->
-<!--          </template>-->
+        @request="onRequest"
+      >
+        <template v-slot:body-cell="props">
+          <q-td :props="props" v-if="props.col.name === 'name'">
+            <q-btn
+              flat color="primary"
+              :label="props.value"
+              :to="{ name: 'competition_page_route', params: {id: props.row.player_id, competition_id: props.row.id}}"
+            />
+          </q-td>
+          <q-td :props="props" v-else> {{props.value}} </q-td>
+        </template>
       </q-table>
     </div>
   </q-page>
@@ -37,6 +35,7 @@
 import {defineComponent, onMounted, ref} from 'vue'
 import ApexCharts from 'apexcharts'
 import api from 'src/api'
+import {useQuasar} from "quasar";
 
 export default defineComponent({
   props: {
@@ -44,12 +43,14 @@ export default defineComponent({
   },
   name: 'PlayerPage',
   setup (props) {
+    const $q = useQuasar()
     const player_id = props.id;
+    const tableRef = ref()
     const columns = [
       { name: 'name', label: 'Соревнование', align: 'left', field: 'name', sortable: false},
       { name: 'date', label: 'Дата', align: 'left', field: 'date', sortable: false},
       { name: 'rating', label: 'Рейтинг', align: 'left', field: 'rating', sortable: false },
-      { name: 'diff', label: ' ', align: 'left', field: 'diff', sortable: false,
+      { name: 'diff', label: '+/-', align: 'left', field: 'diff', sortable: false,
         format: (val, row) => `${val && val > 0 ? '+' : ''}${val || val === 0 ? val : ''}`,
         style: row => (row.diff > 0 ? 'color: green' : 'color: red')
       },
@@ -114,7 +115,7 @@ export default defineComponent({
         const chart_options = {
           chart: {
             type: 'line',
-            height: '300px'
+            height: '250px'
           },
           series: [{
             name: 'rating',
@@ -201,7 +202,8 @@ export default defineComponent({
       pagination,
       filter,
       player_info,
-      onRequest
+      onRequest,
+      tableRef
     }
   }
 })

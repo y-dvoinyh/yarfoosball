@@ -14,6 +14,14 @@ const routes = [
       {name: 'player_page_route', path: '', props: true, component: () => import('pages/PlayerPage.vue') }
     ]
   },
+  {
+    path: '/players/:id/competition/::competition_id/',
+    props: true,
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {name: 'competition_page_route', path: '', props: true, component: () => import('pages/CompetitionPage.vue') }
+    ]
+  },
 
   // Always leave this as last one,
   // but you can also remove it
