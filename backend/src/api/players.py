@@ -1,7 +1,8 @@
 from typing import List, Optional
 from fastapi import APIRouter
 
-from src.orx.player.schemas import CreatePlayer, ResponsePlayer, UpdatePlayer, ResponsePlayerCompetitionList, ResponcePlayerInfo, ResponceMatchRow
+from src.orx.player.schemas import CreatePlayer, ResponsePlayer, UpdatePlayer, ResponsePlayerCompetitionList, \
+    ResponcePlayerInfo, ResponceMatchRow, PartnerResponce
 from src.orx.player.depends import PlayersDep
 
 
@@ -54,3 +55,13 @@ async def get_player_competition(
 @router.get('/{player_id}')
 async def get_player_info(service: PlayersDep, player_id: int) -> ResponcePlayerInfo:
     return await service.get_player_info(player_id)
+
+
+@router.get('/partners/{player_id}')
+async def get_partners(service: PlayersDep, player_id: int) -> List[PartnerResponce]:
+    return await service.get_partners(player_id)
+
+
+@router.get('/opponents/{player_id}')
+async def get_popponents(service: PlayersDep, player_id: int) -> List[PartnerResponce]:
+    return await service.get_opponents(player_id)

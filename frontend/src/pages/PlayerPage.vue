@@ -6,6 +6,55 @@
         <q-breadcrumbs-el :label="player_info.first_name ? player_info.first_name + ' ' + player_info.last_name : ''" />
       </q-breadcrumbs>
       <div id="chart"/>
+
+      <div class="q-pa-md">
+        <div class="row">
+        <div class="q-layout-padding" style="width: 450px">
+          <q-table
+            title="Больше всего выиграл матчей"
+            row-key="id"
+            :columns="parners_opponents_columns_win"
+            :rows="opponents_rows_win"
+            :rows-per-page-options="[0]"
+          >
+            <template v-slot:pagination=""></template>
+          </q-table>
+        </div>
+        <div class="q-layout-padding" style="width: 450px">
+          <q-table
+            title="Больше всего проиграл матчей"
+            row-key="id"
+            :columns="parners_opponents_columns_loss"
+            :rows="opponents_rows_loss"
+            :rows-per-page-options="[0]"
+          >
+            <template v-slot:pagination=""></template>
+          </q-table>
+        </div>
+        <div class="q-layout-padding" style="width: 450px">
+          <q-table
+            title="Лучший напарник"
+            row-key="id"
+            :columns="parners_opponents_columns_win"
+            :rows="partners_rows_win"
+            :rows-per-page-options="[0]"
+          >
+            <template v-slot:pagination=""></template>
+          </q-table>
+        </div>
+        <div class="q-layout-padding" style="width: 450px">
+          <q-table
+            title="Худший напарник"
+            row-key="id"
+            :columns="parners_opponents_columns_loss"
+            :rows="partners_rows_loss"
+            :rows-per-page-options="[0]"
+          >
+            <template v-slot:pagination=""></template>
+          </q-table>
+        </div>
+      </div>
+      </div>
       <q-table
         :title="player_info.first_name ? player_info.first_name + ' ' + player_info.last_name + ' ' + player_info.rating : ''"
         row-key="id"
@@ -61,8 +110,20 @@ export default defineComponent({
       { name: 'percent_win', label: 'Процент побед', align: 'left', field: 'wins_diff', sortable: false,
         format: (val, row) => `${Math.round((val/row.matches_diff) * 100)}%`},
     ]
+    const parners_opponents_columns_win = [
+      { name: 'name', label: 'Игрок', align: 'left', field: 'name', sortable: false},
+      { name: 'count', label: 'Матчей выиграно', align: 'left', field: 'count', sortable: false}
+    ];
+    const parners_opponents_columns_loss = [
+      { name: 'name', label: 'Игрок', align: 'left', field: 'name', sortable: false},
+      { name: 'count', label: 'Матчей проиграно', align: 'left', field: 'count', sortable: false}
+    ];
     const loading = ref(true);
     const rows = ref([]);
+    const partners_rows_win = ref([]);
+    const partners_rows_loss = ref([]);
+    const opponents_rows_win = ref([]);
+    const opponents_rows_loss = ref([]);
     const filter = ref('')
 
     const pagination = ref({
@@ -81,6 +142,44 @@ export default defineComponent({
       first_name: null,
       last_name: null,
     })
+
+    const fetchPartners = () => {
+      api.players.get_partners(player_id)
+      .then((response) => {
+        const responce_data = response.data
+        const partners_win = responce_data.filter(function (item){return item.is_win});
+        partners_rows_win.value.splice(0, partners_rows_win.value.length, ...partners_win)
+        const partners_loss = responce_data.filter(function (item){return item.is_losse});
+        partners_rows_loss.value.splice(0, partners_rows_loss.value.length, ...partners_loss)
+      })
+      .catch(() => {
+        $q.notify({
+          color: 'negative',
+          position: 'top',
+          message: 'Ошибка загрузки',
+          icon: 'report_problem'
+        });
+      });
+    }
+
+    const fetchOpponents = () => {
+      api.players.get_opponents(player_id)
+      .then((response) => {
+        const responce_data = response.data
+        const opponents_win = responce_data.filter(function (item){return item.is_win});
+        opponents_rows_win.value.splice(0, opponents_rows_win.value.length, ...opponents_win)
+        const opponents_loss = responce_data.filter(function (item){return item.is_losse});
+        opponents_rows_loss.value.splice(0, opponents_rows_loss.value.length, ...opponents_loss)
+      })
+      .catch(() => {
+        $q.notify({
+          color: 'negative',
+          position: 'top',
+          message: 'Ошибка загрузки',
+          icon: 'report_problem'
+        });
+      });
+    }
 
     const fetchCompetitions = (page, rowsPerPage, searchString) => {
 
@@ -183,16 +282,14 @@ export default defineComponent({
       fetchCompetitions(page, rowsPerPage, player_id, filter);
     }
 
-
-
-
-
     // Загрузка данных при инициализации таблицы
     onMounted(() => {
-      console.log('onMounted')
-      fetchPlayerInfo(player_id)
+      console.log('onMounted');
+      fetchPlayerInfo(player_id);
+      fetchPartners();
+      fetchOpponents();
       fetchCompetitions(pagination.value.page, pagination.value.rowsPerPage, player_id, filter.value);
-      fetchChart()
+      fetchChart();
     });
 
     return {
@@ -203,7 +300,13 @@ export default defineComponent({
       filter,
       player_info,
       onRequest,
-      tableRef
+      tableRef,
+      parners_opponents_columns_win,
+      parners_opponents_columns_loss,
+      partners_rows_win,
+      partners_rows_loss,
+      opponents_rows_win,
+      opponents_rows_loss
     }
   }
 })

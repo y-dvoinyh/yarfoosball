@@ -66,3 +66,11 @@ class ResponceMatchRow(BaseModel):
     right_team_first: Optional[str]
     right_second_id: Optional[int]
     right_second: Optional[str]
+
+
+class PartnerResponce(BaseModel):
+    id: int
+    is_win: bool
+    is_losse: bool
+    count: int
+    name: str

@@ -19,3 +19,9 @@ class PlayersService(BaseService):
 
     async def player_competition(self, player_id: int, competition_id: int):
         return await self.repository.player_competition(player_id, competition_id)
+
+    async def get_partners(self, player_id):
+        return await self.repository.get_partners(player_id)
+
+    async def get_opponents(self, player_id):
+        return await self.repository.get_opponents(player_id)

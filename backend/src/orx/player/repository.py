@@ -2,7 +2,7 @@ from typing import Optional, Sequence
 from src.core.repository import SqlAlchemyRepository
 from src.models import PlayerModel, RatingHistoryModel, CompetitionModel, RatingModel, MatchModel, MatchSetModel, TeamModel
 
-from sqlalchemy import select, func, and_, String, literal_column, case
+from sqlalchemy import select, func, and_, String, literal_column, case, union_all
 from sqlalchemy.orm import aliased
 
 from .schemas import CreatePlayer, UpdatePlayer, PartialPlayer
@@ -155,4 +155,112 @@ class PlayersRepository(SqlAlchemyRepository[PlayerModel, CreatePlayer, UpdatePl
             .order_by(MatchModel.order)
         )
         result = await self._session.execute(query)
+        return result.all()
+
+    async def get_partners(self, player_id: int):
+        partners = select(
+            (RatingHistoryModel.wins_diff > 0).label('is_win'),
+            (RatingHistoryModel.losses_diff > 0).label('is_losse'),
+            case(
+               (RatingHistoryModel.player_id == TeamModel.first_player_id, TeamModel.second_player_id),
+                else_=TeamModel.first_player_id
+            ).label('id')
+        ).select_from(RatingHistoryModel)\
+            .join(MatchModel, MatchModel.id == RatingHistoryModel.match_id) \
+            .join(TeamModel, and_(
+                TeamModel.id.in_([MatchModel.first_team_id, MatchModel.second_team_id]),
+                RatingHistoryModel.player_id.in_([TeamModel.first_player_id, TeamModel.second_player_id])
+            )) \
+            .where(
+                RatingHistoryModel.player_id == player_id,
+                RatingHistoryModel.level == 'MATCH',
+                RatingHistoryModel.type == 'PLAYER',
+                TeamModel.second_player_id.isnot(None)
+            ).subquery()
+
+        groupped_wins = select(
+            partners.c.id,
+            partners.c.is_win,
+            partners.c.is_losse,
+            func.count().label('count')
+        ).where(partners.c.is_win.is_(True)) \
+            .group_by(partners.c.id, partners.c.is_win, partners.c.is_losse) \
+            .order_by(func.count().desc(), partners.c.id) \
+            .limit(3)
+
+        groupped_losses = select(
+            partners.c.id,
+            partners.c.is_win,
+            partners.c.is_losse,
+            func.count().label('count')
+        ).where(partners.c.is_losse.is_(True)) \
+            .group_by(partners.c.id, partners.c.is_win, partners.c.is_losse) \
+            .order_by(func.count().desc(), partners.c.id) \
+            .limit(3)
+
+        limited = union_all(groupped_wins, groupped_losses)
+
+        final_query = select(
+            PlayerModel.id,
+            limited.c.is_win,
+            limited.c.is_losse,
+            limited.c.count,
+            func.concat(PlayerModel.first_name, ' ', PlayerModel.last_name).label('name')
+        ).outerjoin(PlayerModel, PlayerModel.id == limited.c.id) \
+            .order_by(limited.c.is_win.desc(), limited.c.count.desc())
+        result = await self._session.execute(final_query)
+        return result.all()
+
+    async def get_opponents(self, player_id: int):
+        opponents = select(
+            PlayerModel.id,
+            (RatingHistoryModel.wins_diff > 0).label('is_win'),
+            (RatingHistoryModel.losses_diff > 0).label('is_losse'),
+        ).select_from(RatingHistoryModel) \
+            .join(MatchModel, MatchModel.id == RatingHistoryModel.match_id) \
+            .join(
+                TeamModel,
+                and_(
+                    TeamModel.id.in_([MatchModel.first_team_id, MatchModel.second_team_id]),
+                    RatingHistoryModel.player_id.not_in([TeamModel.first_player_id, TeamModel.second_player_id])
+                )
+            ) \
+            .join(PlayerModel, PlayerModel.id.in_([TeamModel.first_player_id, TeamModel.second_player_id])) \
+            .where(
+                RatingHistoryModel.player_id == player_id,
+                RatingHistoryModel.level == 'MATCH',
+                RatingHistoryModel.type == 'PLAYER'
+            ).subquery()
+
+        groupped_wins = select(
+            opponents.c.id,
+            opponents.c.is_win,
+            opponents.c.is_losse,
+            func.count().label('count')
+        ).where(opponents.c.is_win.is_(True)) \
+            .group_by(opponents.c.id, opponents.c.is_win, opponents.c.is_losse) \
+            .order_by(func.count().desc(), opponents.c.id) \
+            .limit(3)
+
+        groupped_losses = select(
+            opponents.c.id,
+            opponents.c.is_win,
+            opponents.c.is_losse,
+            func.count().label('count')
+        ).where(opponents.c.is_losse.is_(True)) \
+            .group_by(opponents.c.id, opponents.c.is_win, opponents.c.is_losse) \
+            .order_by(func.count().desc(), opponents.c.id) \
+            .limit(3)
+
+        limited = union_all(groupped_wins, groupped_losses)
+
+        final_query = select(
+            PlayerModel.id,
+            limited.c.is_win,
+            limited.c.is_losse,
+            limited.c.count,
+            func.concat(PlayerModel.first_name, ' ', PlayerModel.last_name).label('name')
+        ).outerjoin(PlayerModel, PlayerModel.id == limited.c.id) \
+            .order_by(limited.c.is_win.desc(), limited.c.count.desc())
+        result = await self._session.execute(final_query)
         return result.all()

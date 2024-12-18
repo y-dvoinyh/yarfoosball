@@ -23,6 +23,12 @@ export default (axios) => {
     },
     async get_competition_info(competition_id){
       return axios.get(`/competition/${competition_id}`);
+    },
+    async get_partners(player_id){
+      return axios.get(`${base_url}/partners/${player_id}`)
+    },
+    async get_opponents(player_id){
+      return axios.get(`${base_url}/opponents/${player_id}`)
     }
   };
 };
