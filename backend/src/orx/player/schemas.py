@@ -74,3 +74,19 @@ class PartnerResponce(BaseModel):
     is_losse: bool
     count: int
     name: str
+
+
+class PlayerStatisticResponce(BaseModel):
+    id: int
+    name: str
+    rating: int
+    matches: Optional[int] = 0
+    wins: Optional[int] = 0
+    losses: Optional[int] = 0
+    draws: Optional[int] = 0
+    percent_wins: Optional[int] = 0
+    competitions_count: Optional[int] = 0
+    gold: Optional[int] = 0
+    silver: Optional[int] = 0
+    bronze: Optional[int] = 0
+

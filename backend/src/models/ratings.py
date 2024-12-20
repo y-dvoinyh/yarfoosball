@@ -78,3 +78,4 @@ class RatingHistoryModel(BaseModel):
     losses: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
     losses_diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
 
+    place: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)

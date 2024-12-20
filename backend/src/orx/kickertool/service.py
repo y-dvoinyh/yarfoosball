@@ -206,3 +206,28 @@ class KickerToolDYPService(BaseService):
                     **{'external_id': s.id}
                 )
                 dyp.add(s.id, set_model)
+
+    async def update_competitition_standins(self):
+        competitions = await self.uow.competitions.all(order="date")
+        for competition in competitions:
+            dyp = DYP(DYPScheme(**competition.json_data))
+            for elimination in dyp.scheme.eliminations:
+                for standing in elimination.standings:
+                    if not standing.stats:
+                        continue
+                    first_name, last_name = standing.name.split(' ')
+                    p_dict = {'first_name': first_name, 'last_name': last_name}
+                    # Игрок
+                    player = await self.uow.players.update_or_create(UpdatePlayer(**p_dict), **p_dict)
+                    print(player.id, player.first_name, player.last_name, standing.stats.place)
+                    rating_history = await self.uow.rating_history.get_single(**{
+                        'type': 'PLAYER',
+                        'level': 'COMPETITION',
+                        'competition_id': competition.id,
+                        'player_id': player.id
+                    })
+                    if not rating_history:
+                        continue
+                    rating_history.place = standing.stats.place
+        await self.uow.commit()
+        return True

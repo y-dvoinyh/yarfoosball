@@ -25,3 +25,6 @@ class PlayersService(BaseService):
 
     async def get_opponents(self, player_id):
         return await self.repository.get_opponents(player_id)
+
+    async def get_player_statistic(self, player_id: int):
+        return await self.repository.get_player_statictic(player_id)

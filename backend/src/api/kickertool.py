@@ -28,3 +28,6 @@ async def list_competitions(service: KickerToolDep) -> List[ResponseDYPCompetiti
     filters = {'type': CompetitionType.DYP}
     return await service.list(**filters)
 
+@router.post('/dyp/update_standins')
+async def update_standings(service: KickerToolDep) -> bool:
+    return await service.update_competitition_standins()

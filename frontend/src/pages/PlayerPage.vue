@@ -3,60 +3,156 @@
     <div class="q-pa-md">
       <q-breadcrumbs>
         <q-breadcrumbs-el to="/" label="Главная" icon="home" />
-        <q-breadcrumbs-el :label="player_info.first_name ? player_info.first_name + ' ' + player_info.last_name : ''" />
+        <q-breadcrumbs-el :label="player_info.name" />
       </q-breadcrumbs>
-      <div id="chart"/>
-
       <div class="q-pa-md">
-        <div class="row">
-        <div class="q-layout-padding" style="width: 450px">
-          <q-table
-            title="Больше всего выиграл матчей"
-            row-key="id"
-            :columns="parners_opponents_columns_win"
-            :rows="opponents_rows_win"
-            :rows-per-page-options="[0]"
-          >
-            <template v-slot:pagination=""></template>
-          </q-table>
-        </div>
-        <div class="q-layout-padding" style="width: 450px">
-          <q-table
-            title="Больше всего проиграл матчей"
-            row-key="id"
-            :columns="parners_opponents_columns_loss"
-            :rows="opponents_rows_loss"
-            :rows-per-page-options="[0]"
-          >
-            <template v-slot:pagination=""></template>
-          </q-table>
-        </div>
-        <div class="q-layout-padding" style="width: 450px">
-          <q-table
-            title="Лучший напарник"
-            row-key="id"
-            :columns="parners_opponents_columns_win"
-            :rows="partners_rows_win"
-            :rows-per-page-options="[0]"
-          >
-            <template v-slot:pagination=""></template>
-          </q-table>
-        </div>
-        <div class="q-layout-padding" style="width: 450px">
-          <q-table
-            title="Худший напарник"
-            row-key="id"
-            :columns="parners_opponents_columns_loss"
-            :rows="partners_rows_loss"
-            :rows-per-page-options="[0]"
-          >
-            <template v-slot:pagination=""></template>
-          </q-table>
-        </div>
+        <q-card class="my-card" flat bordered>
+          <q-card-section>
+            <div class="text-h6">{{ player_info.name }}</div>
+            <div class="text-subtitle2">Текущий рейтинг: {{player_info.rating}}</div>
+          </q-card-section>
+        </q-card>
       </div>
+
+      <div class="q-pa-md row items-start q-gutter-md">
+        <q-card class="my-card" style="width: 400px">
+          <q-card-section>
+            <div class="text-subtitle2">Статистика</div>
+          </q-card-section>
+          <q-card-section>
+            <q-markup-table>
+              <tbody>
+                <tr v-for="row in statistic_rows" :key="row.id">
+                   <td class="text-left">{{ row.name  }}</td>
+                   <td class="text-left">{{ row.value  }}</td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </q-card-section>
+        </q-card>
+
+        <q-card class="my-card" style="width: 400px">
+          <q-card-section>
+            <div class="text-subtitle2">Медали</div>
+          </q-card-section>
+          <q-card-section>
+            <q-markup-table>
+              <tbody>
+                <tr v-for="row in medal_rows" :key="row.id">
+                   <td class="text-left">{{ row.name  }}</td>
+                   <td class="text-left">{{ row.value  }}</td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </q-card-section>
+        </q-card>
+
+        <q-card class="my-card" style="width: 815px">
+          <q-card-section>
+            <div class="text-subtitle2">График рейтинга</div>
+          </q-card-section>
+          <q-card-section>
+            <div id="chart"/>
+          </q-card-section>
+        </q-card>
+
+        <q-card class="my-card" style="width: 400px">
+          <q-card-section>
+            <div class="text-subtitle2">Больше всего выиграл матчей</div>
+          </q-card-section>
+          <q-card-section>
+            <q-markup-table>
+              <thead>
+                  <tr>
+                    <th class="text-left">Противник</th>
+                    <th class="text-right">Выиграно матчей</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr v-for="row in opponents_rows_win" :key="row.id">
+                   <td class="text-left">{{ row.name  }}</td>
+                   <td class="text-right">{{ row.count  }}</td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </q-card-section>
+        </q-card>
+
+
+        <q-card class="my-card" style="width: 400px">
+          <q-card-section>
+            <div class="text-subtitle2">Больше всего проиграл матчей</div>
+          </q-card-section>
+          <q-card-section>
+            <q-markup-table>
+              <thead>
+                  <tr>
+                    <th class="text-left">Противник</th>
+                    <th class="text-right">Проиграно матчей</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr v-for="row in opponents_rows_loss" :key="row.id">
+                   <td class="text-left">{{ row.name  }}</td>
+                   <td class="text-right">{{ row.count  }}</td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </q-card-section>
+        </q-card>
+
+        <q-card class="my-card" style="width: 400px">
+          <q-card-section>
+            <div class="text-subtitle2">Напарник с которым больше всего выиграно матчей</div>
+          </q-card-section>
+          <q-card-section>
+            <q-markup-table>
+              <thead>
+                  <tr>
+                    <th class="text-left">Напарник</th>
+                    <th class="text-right">Выиграно матчей</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr v-for="row in partners_rows_win" :key="row.id">
+                   <td class="text-left">{{ row.name  }}</td>
+                   <td class="text-right">{{ row.count  }}</td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </q-card-section>
+        </q-card>
+
+        <q-card class="my-card" style="width: 400px">
+          <q-card-section>
+            <div class="text-subtitle2">Напарник с которым больше всего проиграно матчей</div>
+          </q-card-section>
+          <q-card-section>
+            <q-markup-table>
+              <thead>
+                  <tr>
+                    <th class="text-left">Напарник</th>
+                    <th class="text-right">Проиграно матчей</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr v-for="row in partners_rows_loss" :key="row.id">
+                   <td class="text-left">{{ row.name  }}</td>
+                   <td class="text-right">{{ row.count  }}</td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </q-card-section>
+        </q-card>
       </div>
+
+
+
+<!--      <div class="q-pa-md">-->
+<!--        <div id="chart"/>-->
+<!--      </div>-->
       <q-table
-        :title="player_info.first_name ? player_info.first_name + ' ' + player_info.last_name + ' ' + player_info.rating : ''"
+        :title="player_info.name"
         row-key="id"
         :columns="columns"
         :rows="rows"
@@ -81,7 +177,7 @@
 </template>
 
 <script>
-import {defineComponent, onMounted, ref} from 'vue'
+import {defineComponent, onMounted, reactive, ref, watch} from 'vue'
 import ApexCharts from 'apexcharts'
 import api from 'src/api'
 import {useQuasar} from "quasar";
@@ -89,6 +185,12 @@ import {useQuasar} from "quasar";
 export default defineComponent({
   props: {
     id: String
+  },
+  watch: {
+    // эта функция запускается при изменении id
+    id: function (id) {
+      console.log('---------------------')
+    }
   },
   name: 'PlayerPage',
   setup (props) {
@@ -110,16 +212,10 @@ export default defineComponent({
       { name: 'percent_win', label: 'Процент побед', align: 'left', field: 'wins_diff', sortable: false,
         format: (val, row) => `${Math.round((val/row.matches_diff) * 100)}%`},
     ]
-    const parners_opponents_columns_win = [
-      { name: 'name', label: 'Игрок', align: 'left', field: 'name', sortable: false},
-      { name: 'count', label: 'Матчей выиграно', align: 'left', field: 'count', sortable: false}
-    ];
-    const parners_opponents_columns_loss = [
-      { name: 'name', label: 'Игрок', align: 'left', field: 'name', sortable: false},
-      { name: 'count', label: 'Матчей проиграно', align: 'left', field: 'count', sortable: false}
-    ];
     const loading = ref(true);
     const rows = ref([]);
+    const statistic_rows = ref([]);
+    const medal_rows = ref([]);
     const partners_rows_win = ref([]);
     const partners_rows_loss = ref([]);
     const opponents_rows_win = ref([]);
@@ -135,12 +231,18 @@ export default defineComponent({
     });
 
     const player_info = ref({
+      id: null,
+      name: null,
       rating: null,
+      competitions_count: null,
       matches: null,
       wins: null,
       losses: null,
-      first_name: null,
-      last_name: null,
+      draws: null,
+      percent_wins: null,
+      gold: null,
+      silver: null,
+      bronze: null
     })
 
     const fetchPartners = () => {
@@ -244,18 +346,31 @@ export default defineComponent({
 
     const fetchPlayerInfo = () => {
 
-      api.players.get_player_info(player_id)
+      api.players.get_player_statistic(player_id)
       .then((response) => {
         const responce_data = response.data
-
-        player_info.value = {
-          rating: responce_data.rating,
-          matches: responce_data.matches,
-          wins: responce_data.wins,
-          losses: responce_data.losses,
-          first_name: responce_data.first_name,
-          last_name: responce_data.last_name,
-        }
+        player_info.value = {...response.data}
+        statistic_rows.value.splice(
+          0,
+          statistic_rows.value.length, ...[
+            //{name: 'Рейтинг', value: player_info.value.rating},
+            {name: 'Турниров сыграно', value: player_info.value.competitions_count},
+            {name: 'Матчей сыграно', value: player_info.value.matches},
+            {name: 'Матчей выиграно', value: player_info.value.wins},
+            {name: 'Матчей проиграно', value: player_info.value.losses},
+            {name: 'Ничья', value: player_info.value.draws},
+            {name: 'Процент побед', value: player_info.value.percent_wins ? `${player_info.value.percent_wins}%`: null},
+            //{name: 'Золотых медалей', value: player_info.value.gold},
+            //{name: 'Серебряных медалей', value: player_info.value.silver},
+            //{name: 'Бронзовых медалей', value: player_info.value.bronze},
+          ]);
+          medal_rows.value.splice(
+          0,
+            medal_rows.value.length, ...[
+              {name: 'Золотых медалей', value: player_info.value.gold},
+              {name: 'Серебряных медалей', value: player_info.value.silver},
+              {name: 'Бронзовых медалей', value: player_info.value.bronze},
+            ]);
       })
       .catch(() => {
         $q.notify({
@@ -301,12 +416,12 @@ export default defineComponent({
       player_info,
       onRequest,
       tableRef,
-      parners_opponents_columns_win,
-      parners_opponents_columns_loss,
       partners_rows_win,
       partners_rows_loss,
       opponents_rows_win,
-      opponents_rows_loss
+      opponents_rows_loss,
+      statistic_rows,
+      medal_rows
     }
   }
 })

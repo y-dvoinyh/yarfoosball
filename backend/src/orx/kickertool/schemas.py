@@ -22,6 +22,7 @@ class Player(BaseScheme):
 
 class Standings(Player):
     """Турнирная таблица"""
+    name: str
     stats: Stats
 
 

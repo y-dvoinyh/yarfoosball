@@ -2,7 +2,7 @@ from typing import Optional, Sequence
 from src.core.repository import SqlAlchemyRepository
 from src.models import PlayerModel, RatingHistoryModel, CompetitionModel, RatingModel, MatchModel, MatchSetModel, TeamModel
 
-from sqlalchemy import select, func, and_, String, literal_column, case, union_all
+from sqlalchemy import select, func, and_, String, literal_column, case, union_all, Float, Integer
 from sqlalchemy.orm import aliased
 
 from .schemas import CreatePlayer, UpdatePlayer, PartialPlayer
@@ -264,3 +264,40 @@ class PlayersRepository(SqlAlchemyRepository[PlayerModel, CreatePlayer, UpdatePl
             .order_by(limited.c.is_win.desc(), limited.c.count.desc())
         result = await self._session.execute(final_query)
         return result.all()
+
+    async def get_player_statictic(self, player_id: int):
+        # Подзапрос для статистики
+        statistic = select(
+            RatingHistoryModel.player_id,
+            func.count().label('competitions_count'),
+            func.count().filter(RatingHistoryModel.place == 1).label('gold'),
+            func.count().filter(RatingHistoryModel.place == 2).label('silver'),
+            func.count().filter(RatingHistoryModel.place == 3).label('bronze')
+        ).select_from(RatingHistoryModel).where(
+            RatingHistoryModel.player_id == player_id,
+            RatingHistoryModel.type == 'PLAYER',
+            RatingHistoryModel.level == 'COMPETITION'
+        ).group_by(RatingHistoryModel.player_id).alias('statistic')
+
+        # Основной запрос
+        query = select(
+            PlayerModel.id,
+            func.concat(PlayerModel.first_name, ' ', PlayerModel.last_name).label('name'),
+            RatingModel.rating,
+            RatingModel.matches,
+            RatingModel.wins,
+            RatingModel.losses,
+            case((RatingModel.wins > 0,
+                  (RatingModel.wins.cast(Float) / RatingModel.matches.cast(Float) * 100).cast(Integer)),
+                 else_=0).label('percent_wins'),
+            (RatingModel.matches - (RatingModel.wins + RatingModel.losses)).label('draws'),
+            statistic.c.competitions_count,
+            statistic.c.gold,
+            statistic.c.silver,
+            statistic.c.bronze
+        ).select_from(PlayerModel)\
+            .outerjoin(statistic, statistic.c.player_id == PlayerModel.id) \
+            .outerjoin(RatingModel, and_((RatingModel.player_id == PlayerModel.id), (RatingModel.type == 'PLAYER'))) \
+            .where(PlayerModel.id == player_id)
+        row = await self._session.execute(query)
+        return row.first()

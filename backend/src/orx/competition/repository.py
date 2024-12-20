@@ -15,9 +15,10 @@ class CompetitionsRepository(
         stmt = select(
             self.model.id,
             self.model.name,
-            self.model.date
+            self.model.date,
+            self.model.json_data
         ).where(
-                self.model.id == competition_id
+            self.model.id == competition_id
         )
         row = await self._session.execute(stmt)
         return row.first()

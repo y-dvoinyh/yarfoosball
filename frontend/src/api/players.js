@@ -29,6 +29,9 @@ export default (axios) => {
     },
     async get_opponents(player_id){
       return axios.get(`${base_url}/opponents/${player_id}`)
-    }
+    },
+    async get_player_statistic(player_id) {
+      return axios.get(`${base_url}/statistic/${player_id}`);
+    },
   };
 };
