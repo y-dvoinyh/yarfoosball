@@ -15,7 +15,7 @@
       </div>
 
       <div class="q-pa-md row items-start q-gutter-md">
-        <q-card class="my-card" style="width: 400px">
+        <q-card class="my-card" style="width: 260px">
           <q-card-section>
             <div class="text-subtitle2">Статистика</div>
           </q-card-section>
@@ -31,7 +31,7 @@
           </q-card-section>
         </q-card>
 
-        <q-card class="my-card" style="width: 400px">
+        <q-card class="my-card" style="width: 260px; height: 375px">
           <q-card-section>
             <div class="text-subtitle2">Медали</div>
           </q-card-section>
@@ -47,7 +47,23 @@
           </q-card-section>
         </q-card>
 
-        <q-card class="my-card" style="width: 815px">
+        <q-card class="my-card" style="width: 260px; height: 375px">
+          <q-card-section>
+            <div class="text-subtitle2">Серии</div>
+          </q-card-section>
+          <q-card-section>
+            <q-markup-table>
+              <tbody>
+                <tr v-for="row in series_rows" :key="row.id">
+                   <td class="text-left">{{ row.name  }}</td>
+                   <td class="text-left">{{ row.value  }}</td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </q-card-section>
+        </q-card>
+
+        <q-card class="my-card" style="width: 815px; height: 375px">
           <q-card-section>
             <div class="text-subtitle2">График рейтинга</div>
           </q-card-section>
@@ -216,6 +232,7 @@ export default defineComponent({
     const rows = ref([]);
     const statistic_rows = ref([]);
     const medal_rows = ref([]);
+    const series_rows = ref([]);
     const partners_rows_win = ref([]);
     const partners_rows_loss = ref([]);
     const opponents_rows_win = ref([]);
@@ -344,6 +361,29 @@ export default defineComponent({
       });
     };
 
+    const fetchSeries = () => {
+      api.players.get_series(player_id)
+      .then((response) => {
+        const responce_data = response.data
+
+        series_rows.value.splice(
+          0,
+          series_rows.value.length, ...[
+            {name: 'Побед подряд', value: responce_data.s_wins},
+            {name: 'Поражений подряд', value: responce_data.s_loss},
+            {name: 'Ничья подряд', value: responce_data.s_draws}
+          ]);
+      })
+      .catch(() => {
+        $q.notify({
+          color: 'negative',
+          position: 'top',
+          message: 'Ошибка загрузки',
+          icon: 'report_problem'
+        });
+      });
+    }
+
     const fetchPlayerInfo = () => {
 
       api.players.get_player_statistic(player_id)
@@ -353,16 +393,12 @@ export default defineComponent({
         statistic_rows.value.splice(
           0,
           statistic_rows.value.length, ...[
-            //{name: 'Рейтинг', value: player_info.value.rating},
             {name: 'Турниров сыграно', value: player_info.value.competitions_count},
             {name: 'Матчей сыграно', value: player_info.value.matches},
             {name: 'Матчей выиграно', value: player_info.value.wins},
             {name: 'Матчей проиграно', value: player_info.value.losses},
             {name: 'Ничья', value: player_info.value.draws},
             {name: 'Процент побед', value: player_info.value.percent_wins ? `${player_info.value.percent_wins}%`: null},
-            //{name: 'Золотых медалей', value: player_info.value.gold},
-            //{name: 'Серебряных медалей', value: player_info.value.silver},
-            //{name: 'Бронзовых медалей', value: player_info.value.bronze},
           ]);
           medal_rows.value.splice(
           0,
@@ -405,6 +441,7 @@ export default defineComponent({
       fetchOpponents();
       fetchCompetitions(pagination.value.page, pagination.value.rowsPerPage, player_id, filter.value);
       fetchChart();
+      fetchSeries();
     });
 
     return {
@@ -421,7 +458,8 @@ export default defineComponent({
       opponents_rows_win,
       opponents_rows_loss,
       statistic_rows,
-      medal_rows
+      medal_rows,
+      series_rows
     }
   }
 })

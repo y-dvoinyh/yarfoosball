@@ -301,3 +301,62 @@ class PlayersRepository(SqlAlchemyRepository[PlayerModel, CreatePlayer, UpdatePl
             .where(PlayerModel.id == player_id)
         row = await self._session.execute(query)
         return row.first()
+
+    async def get_series(self, player_id: int):
+        # Используем SQLAlchemy для составления запроса
+        competition_alias = aliased(CompetitionModel)
+        match_alias = aliased(MatchModel)
+
+        query = (
+            select(
+                func.row_number().over().label('order_num'),
+                RatingHistoryModel.wins_diff,
+                RatingHistoryModel.losses_diff
+            )
+            .select_from(RatingHistoryModel)
+            .outerjoin(competition_alias, competition_alias.id == RatingHistoryModel.competition_id)
+            .outerjoin(match_alias, match_alias.id == RatingHistoryModel.match_id)
+            .filter(
+                RatingHistoryModel.player_id == player_id,
+                RatingHistoryModel.type == 'PLAYER',
+                RatingHistoryModel.level == 'MATCH'
+            )
+            .order_by(competition_alias.date, match_alias.order)
+        )
+
+        result = await self._session.execute(query)
+
+        max_wins = 0
+        max_loss = 0
+        max_draws = 0
+        draws = 0
+        wins = 0
+        loss = 0
+
+        for row in result:
+
+            if row.wins_diff:
+                loss = 0
+                draws = 0
+                wins += 1
+                if wins > max_wins:
+                    max_wins = wins
+            elif row.losses_diff:
+                wins = 0
+                draws = 0
+                loss += 1
+                if loss > max_loss:
+                    max_loss = loss
+            else:
+                loss = 0
+                wins = 0
+
+                draws += 1
+                if draws > max_draws:
+                    max_draws = draws
+
+        return {
+            's_wins': max_wins,
+            's_loss': max_loss,
+            's_draws': max_draws
+        }

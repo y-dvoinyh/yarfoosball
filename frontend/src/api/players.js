@@ -33,5 +33,8 @@ export default (axios) => {
     async get_player_statistic(player_id) {
       return axios.get(`${base_url}/statistic/${player_id}`);
     },
+    async get_series(player_id) {
+      return axios.get(`${base_url}/series/${player_id}`);
+    }
   };
 };

@@ -90,3 +90,9 @@ class PlayerStatisticResponce(BaseModel):
     silver: Optional[int] = 0
     bronze: Optional[int] = 0
 
+
+class SeriesResponce(BaseModel):
+    s_wins: int
+    s_loss: int
+    s_draws: int
+

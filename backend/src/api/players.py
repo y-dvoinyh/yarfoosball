@@ -70,3 +70,8 @@ async def get_popponents(service: PlayersDep, player_id: int) -> List[PartnerRes
 @router.get('/statistic/{player_id}')
 async def get_statistic(service: PlayersDep, player_id: int) -> PlayerStatisticResponce:
     return await service.get_player_statistic(player_id)
+
+
+@router.get('/series/{player_id}')
+async def get_series(service: PlayersDep, player_id: int):
+    return await service.get_series(player_id)
