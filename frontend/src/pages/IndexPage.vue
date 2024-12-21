@@ -1,7 +1,7 @@
 <template>
   <q-page>
-    <div class="q-pa-md">
-      <q-table
+    <div class="q-pa-md ">
+      <q-table class="shadow-5"
         title="Рейтинг игроков"
         row-key="id"
         :columns="columns"
@@ -56,7 +56,7 @@ export default defineComponent({
       { name: 'number', label: '№', align: 'left', field: 'number', sortable: false },
       { name: 'full_name', label: 'Фамилия Имя', align: 'left', field: 'full_name', sortable: false},
       { name: 'rating', label: 'Рейтинг', align: 'left', field: 'rating', sortable: false },
-      { name: 'last_diff', label: ' ', align: 'left', field: 'last_diff', sortable: false,
+      { name: 'last_diff', label: '+/-', align: 'left', field: 'last_diff', sortable: false,
         format: (val, row) => `${val && val > 0 ? '+' : ''}${val || val === 0 ? val : ''}`,
         style: row => (row.last_diff > 0 ? 'color: green' : 'color: red')
       },

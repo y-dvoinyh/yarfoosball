@@ -5,7 +5,7 @@
         <q-breadcrumbs-el to="/" label="Главная" icon="home" />
         <q-breadcrumbs-el :label="player_info.name" />
       </q-breadcrumbs>
-      <div class="q-pa-md">
+      <div class="q-pa-md ">
         <q-card class="my-card" flat bordered>
           <q-card-section>
             <div class="text-h6">{{ player_info.name }}</div>
@@ -15,7 +15,7 @@
       </div>
 
       <div class="q-pa-md row items-start q-gutter-md">
-        <q-card class="my-card" style="width: 260px">
+        <q-card class="my-card col-grow"  style="height: 375px">
           <q-card-section>
             <div class="text-subtitle2">Статистика</div>
           </q-card-section>
@@ -31,7 +31,7 @@
           </q-card-section>
         </q-card>
 
-        <q-card class="my-card" style="width: 260px; height: 375px">
+        <q-card class="my-card col-grow" style="height: 375px">
           <q-card-section>
             <div class="text-subtitle2">Медали</div>
           </q-card-section>
@@ -47,7 +47,7 @@
           </q-card-section>
         </q-card>
 
-        <q-card class="my-card" style="width: 260px; height: 375px">
+        <q-card class="my-card col-grow" style="height: 375px">
           <q-card-section>
             <div class="text-subtitle2">Серии</div>
           </q-card-section>
@@ -63,7 +63,7 @@
           </q-card-section>
         </q-card>
 
-        <q-card class="my-card" style="width: 815px; height: 375px">
+        <q-card class="my-card col-grow" style="width: 800px; height: 375px">
           <q-card-section>
             <div class="text-subtitle2">График рейтинга</div>
           </q-card-section>
@@ -72,7 +72,7 @@
           </q-card-section>
         </q-card>
 
-        <q-card class="my-card" style="width: 400px">
+        <q-card class="my-card col-grow" >
           <q-card-section>
             <div class="text-subtitle2">Больше всего выиграл матчей</div>
           </q-card-section>
@@ -87,6 +87,14 @@
               <tbody>
                 <tr v-for="row in opponents_rows_win" :key="row.id">
                    <td class="text-left">{{ row.name  }}</td>
+
+<!--                    <td class="text-left">-->
+<!--                      <q-btn-->
+<!--                        flat color="primary"-->
+<!--                        :label="row.name"-->
+<!--                        :to="{ name: 'player_page_route', params: {id: row.id}}"-->
+<!--                      />-->
+<!--                    </td>-->
                    <td class="text-right">{{ row.count  }}</td>
                 </tr>
               </tbody>
@@ -94,8 +102,7 @@
           </q-card-section>
         </q-card>
 
-
-        <q-card class="my-card" style="width: 400px">
+        <q-card class="my-card col-grow">
           <q-card-section>
             <div class="text-subtitle2">Больше всего проиграл матчей</div>
           </q-card-section>
@@ -117,7 +124,7 @@
           </q-card-section>
         </q-card>
 
-        <q-card class="my-card" style="width: 400px">
+        <q-card class="my-card col-grow">
           <q-card-section>
             <div class="text-subtitle2">Напарник с которым больше всего выиграно матчей</div>
           </q-card-section>
@@ -139,7 +146,7 @@
           </q-card-section>
         </q-card>
 
-        <q-card class="my-card" style="width: 400px">
+        <q-card class="my-card col-grow">
           <q-card-section>
             <div class="text-subtitle2">Напарник с которым больше всего проиграно матчей</div>
           </q-card-section>
@@ -161,14 +168,9 @@
           </q-card-section>
         </q-card>
       </div>
-
-
-
-<!--      <div class="q-pa-md">-->
-<!--        <div id="chart"/>-->
-<!--      </div>-->
-      <q-table
-        :title="player_info.name"
+      <div class="q-pa-md">
+        <q-table
+        title="Список соревнований"
         row-key="id"
         :columns="columns"
         :rows="rows"
@@ -188,6 +190,7 @@
           <q-td :props="props" v-else> {{props.value}} </q-td>
         </template>
       </q-table>
+      </div>
     </div>
   </q-page>
 </template>
@@ -215,7 +218,7 @@ export default defineComponent({
     const tableRef = ref()
     const columns = [
       { name: 'name', label: 'Соревнование', align: 'left', field: 'name', sortable: false},
-      { name: 'date', label: 'Дата', align: 'left', field: 'date', sortable: false},
+      { name: 'date', label: 'Дата', align: 'left', field: 'date_str', sortable: false},
       { name: 'rating', label: 'Рейтинг', align: 'left', field: 'rating', sortable: false },
       { name: 'diff', label: '+/-', align: 'left', field: 'diff', sortable: false,
         format: (val, row) => `${val && val > 0 ? '+' : ''}${val || val === 0 ? val : ''}`,
@@ -343,7 +346,7 @@ export default defineComponent({
           }],
           xaxis: {
             categories: [...['Старт'], ...chart_data.map(function(item) {
-                return item.date;
+                return item.date_str;
             })]
           },
 

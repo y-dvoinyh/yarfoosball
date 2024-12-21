@@ -11,16 +11,37 @@
           :label="`${competition_info.name} (${competition_info.date})`"
         />
       </q-breadcrumbs>
-      <div id="chart"/>
-        <q-table
-          :title="null"
-          row-key="id"
-          :columns="columns"
-          :rows="rows"
-          :rows-per-page-options="[0 ]"
-          :loading="loading">
-          <template v-slot:pagination=""></template>
-        </q-table>
+
+      <div class="q-pa-md row items-start q-gutter-md">
+
+         <q-card class="my-card col-grow">
+          <q-card-section>
+            <div class="text-subtitle2">График рейтинга</div>
+          </q-card-section>
+          <q-card-section>
+            <div id="chart"/>
+          </q-card-section>
+        </q-card>
+
+        <q-card class="my-card col-grow">
+          <q-card-section>
+            <div class="text-subtitle2">Матчи с участием игрока</div>
+          </q-card-section>
+          <q-card-section>
+            <q-table
+              :title="null"
+              row-key="id"
+              :columns="columns"
+              :rows="rows"
+              :rows-per-page-options="[0 ]"
+              :loading="loading">
+              <template v-slot:pagination=""></template>
+            </q-table>
+          </q-card-section>
+        </q-card>
+
+
+      </div>
     </div>
   </q-page>
 </template>
@@ -66,12 +87,7 @@ export default defineComponent({
       { name: 'score', label: 'Счет', align: 'center', field: 'score', sortable: false },
 
       { name: 'right_team', label: ' ', align: 'left', field: 'right_team_first', sortable: false,
-        format: (val, row) => `${val}  ${row.right_second_id? '/': ''} ${row.right_second}`},
-
-
-
-      // { name: 'percent_win', label: 'Процент побед', align: 'left', field: 'wins_diff', sortable: false,
-      //   format: (val, row) => `${Math.round((val/row.matches_diff) * 100)}%`},
+        format: (val, row) => `${val}  ${row.right_second_id? '/': ''} ${row.right_second}`}
     ];
     const loading = ref(true);
     const rows = ref([]);

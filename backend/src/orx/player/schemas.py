@@ -1,6 +1,6 @@
 from datetime import date
 from typing import Optional, List
-from pydantic import BaseModel
+from pydantic import BaseModel, computed_field
 
 
 class BasePlayer(BaseModel):
@@ -34,6 +34,11 @@ class ResponsePlayerCompetition(BaseModel):
     matches_diff: Optional[int]
     wins_diff: Optional[int]
     losses_diff: Optional[int]
+
+    @computed_field
+    def date_str(self) -> str:
+
+        return self.date.strftime('%d.%m.%Y')
 
 
 class ResponsePlayerCompetitionList(BaseModel):
