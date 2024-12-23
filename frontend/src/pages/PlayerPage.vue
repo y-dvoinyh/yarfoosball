@@ -81,7 +81,7 @@
               <thead>
                   <tr>
                     <th class="text-left">Противник</th>
-                    <th class="text-right">Выиграно матчей</th>
+                    <th class="text-left">Матчей</th>
                   </tr>
               </thead>
               <tbody>
@@ -93,7 +93,7 @@
                         :to="{ name: 'player_page_route', params: {id: row.id}}"
                       />
                     </td>
-                   <td class="text-right">{{ row.count  }}</td>
+                   <td class="text-left">{{ row.count  }}</td>
                 </tr>
               </tbody>
             </q-markup-table>
@@ -109,7 +109,7 @@
               <thead>
                   <tr>
                     <th class="text-left">Противник</th>
-                    <th class="text-right">Проиграно матчей</th>
+                    <th class="text-left">Матчей</th>
                   </tr>
               </thead>
               <tbody>
@@ -121,7 +121,7 @@
                         :to="{ name: 'player_page_route', params: {id: row.id}}"
                       />
                     </td>
-                   <td class="text-right">{{ row.count  }}</td>
+                   <td class="text-left">{{ row.count  }}</td>
                 </tr>
               </tbody>
             </q-markup-table>
@@ -137,7 +137,7 @@
               <thead>
                   <tr>
                     <th class="text-left">Напарник</th>
-                    <th class="text-right">Выиграно матчей</th>
+                    <th class="text-left">Матчей</th>
                   </tr>
               </thead>
               <tbody>
@@ -149,7 +149,7 @@
                         :to="{ name: 'player_page_route', params: {id: row.id}}"
                       />
                     </td>
-                   <td class="text-right">{{ row.count  }}</td>
+                   <td class="text-left">{{ row.count  }}</td>
                 </tr>
               </tbody>
             </q-markup-table>
@@ -165,7 +165,7 @@
               <thead>
                   <tr>
                     <th class="text-left">Напарник</th>
-                    <th class="text-right">Проиграно матчей</th>
+                    <th class="text-left">Матчей</th>
                   </tr>
               </thead>
               <tbody>
@@ -177,7 +177,7 @@
                         :to="{ name: 'player_page_route', params: {id: row.id}}"
                       />
                     </td>
-                   <td class="text-right">{{ row.count  }}</td>
+                   <td class="text-left">{{ row.count  }}</td>
                 </tr>
               </tbody>
             </q-markup-table>
