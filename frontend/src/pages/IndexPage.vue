@@ -28,11 +28,9 @@
         </template>
         <template v-slot:body-cell="props">
           <q-td :props="props" v-if="props.col.name === 'full_name'">
-            <q-btn
-              flat color="primary"
-              :label="props.value"
-              :to="{ name: 'player_page_route', params: {id: props.row.player_id}}"
-            />
+            <q-item :to="{ name: 'player_page_route', params: {id: props.row.player_id}}" dense>
+              <q-item-section class="cursor-pointer text-primary">{{props.value}}</q-item-section>
+            </q-item>
           </q-td>
           <q-td :props="props" v-else> {{props.value}} </q-td>
         </template>

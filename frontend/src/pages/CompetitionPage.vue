@@ -38,33 +38,23 @@
               <template v-slot:pagination=""></template>
 
               <template v-slot:body-cell="props">
-                <q-td :props="props" v-if="(props.col.name === 'left_team_sp')">
-                  <q-btn
-                    flat color="primary"
-                    :label="props.value"
-                    :to="{ name: 'competition_page_route', params: {id: props.row.left_team_second_id, competition_id: competition_info.id}}"
-                  />
+                <q-td :props="props" v-if="(props.col.name === 'left_team')">
+                  <q-item :to="{ name: 'competition_page_route', params: {id: props.row.left_team_first_id, competition_id: competition_info.id}}" dense>
+                    <q-item-section :class="`cursor-pointer ${props.row.left_team_first_id == player_id ? 'text-green': 'text-primary'}`">{{props.row.left_team_first}}</q-item-section>
+                  </q-item>
+                  <q-item :class="`${!props.row.left_team_second_id ? 'hidden' : ''}`"  :to="{ name: 'competition_page_route', params: {id: props.row.left_team_second_id, competition_id: competition_info.id}}" dense>
+                    <q-item-section :class="`cursor-pointer ${props.row.left_team_second_id == player_id ? 'text-green': 'text-primary'}`">{{props.row.left_team_second}}</q-item-section>
+                  </q-item>
                 </q-td>
-                <q-td :props="props" v-else-if="props.col.name === 'left_team_fp'">
-                  <q-btn
-                    flat color="primary"
-                    :label="props.value"
-                    :to="{ name: 'competition_page_route', params: {id: props.row.left_team_first_id, competition_id: competition_info.id}}"
-                  />
-                </q-td>
-                <q-td :props="props" v-else-if="props.col.name === 'right_team_fp'">
-                  <q-btn
-                    flat color="primary"
-                    :label="props.value"
-                    :to="{ name: 'competition_page_route', params: {id: props.row.right_team_first_id, competition_id: competition_info.id}}"
-                  />
-                </q-td>
-                <q-td :props="props" v-else-if="props.col.name === 'right_team_sp'">
-                  <q-btn
-                    flat color="primary"
-                    :label="props.value"
-                    :to="{ name: 'competition_page_route', params: {id: props.row.right_second_id, competition_id: competition_info.id}}"
-                  />
+
+
+                <q-td :props="props" v-else-if="props.col.name === 'right_team'">
+                  <q-item :to="{ name: 'competition_page_route', params: {id: props.row.right_team_first_id, competition_id: competition_info.id}}" dense>
+                    <q-item-section :class="`cursor-pointer ${props.row.right_team_first_id == player_id ? 'text-green': 'text-primary'}`">{{props.row.right_team_first}}</q-item-section>
+                  </q-item>
+                  <q-item :class="`${!props.row.right_second_id ? 'hidden' : ''}`" :to="{ name: 'competition_page_route', params: {id: props.row.right_second_id, competition_id: competition_info.id}}" dense>
+                    <q-item-section :class="`cursor-pointer ${props.row.right_second_id == player_id ? 'text-green': 'text-primary'}`">{{props.row.right_second}}</q-item-section>
+                  </q-item>
                 </q-td>
                 <q-td :props="props" v-else> {{props.value}} </q-td>
               </template>
@@ -115,13 +105,10 @@ export default defineComponent({
         format: (val, row) => `${val && val > 0 ? '+' : ''}${val || val === 0 ? val : ''}`,
         style: row => (row.diff > 0 ? 'color: green' : 'color: red')
       },
-      { name: 'left_team_sp', label: ' ', align: 'right', field: 'left_team_second', sortable: false},
-      { name: 'left_team_fp', label: ' ', align: 'left', field: 'left_team_first', sortable: false},
+      { name: 'left_team', label: 'Команда 1', align: 'right', field: 'left_team_first', sortable: false},
 
       { name: 'score', label: 'Счет', align: 'center', field: 'score', sortable: false },
-
-      { name: 'right_team_fp', label: ' ', align: 'right', field: 'right_team_first', sortable: false},
-      { name: 'right_team_sp', label: ' ', align: 'left', field: 'right_second', sortable: false}
+      { name: 'right_team', label: 'Команда 2', align: 'left', field: 'right_team_first', sortable: false}
     ];
     const loading = ref(true);
     const rows = ref([]);

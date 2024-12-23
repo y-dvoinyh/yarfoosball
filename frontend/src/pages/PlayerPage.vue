@@ -63,7 +63,7 @@
           </q-card-section>
         </q-card>
 
-        <q-card class="my-card col-grow" style="width: 800px; height: 375px">
+        <q-card class="my-card col-grow" style="width: 830px; height: 375px">
           <q-card-section>
             <div class="text-subtitle2">График рейтинга</div>
           </q-card-section>
@@ -87,11 +87,9 @@
               <tbody>
                 <tr v-for="row in opponents_rows_win" :key="row.id">
                     <td class="text-left">
-                      <q-btn
-                        flat color="primary"
-                        :label="row.name"
-                        :to="{ name: 'player_page_route', params: {id: row.id}}"
-                      />
+                      <q-item :to="{ name: 'player_page_route', params: {id: row.id}}" dense>
+                        <q-item-section class="cursor-pointer text-primary">{{row.name}}</q-item-section>
+                      </q-item>
                     </td>
                    <td class="text-left">{{ row.count  }}</td>
                 </tr>
@@ -115,11 +113,9 @@
               <tbody>
                 <tr v-for="row in opponents_rows_loss" :key="row.id">
                    <td class="text-left">
-                      <q-btn
-                        flat color="primary"
-                        :label="row.name"
-                        :to="{ name: 'player_page_route', params: {id: row.id}}"
-                      />
+                     <q-item :to="{ name: 'player_page_route', params: {id: row.id}}" dense>
+                        <q-item-section class="cursor-pointer text-primary">{{row.name}}</q-item-section>
+                      </q-item>
                     </td>
                    <td class="text-left">{{ row.count  }}</td>
                 </tr>
@@ -143,11 +139,9 @@
               <tbody>
                 <tr v-for="row in partners_rows_win" :key="row.id">
                    <td class="text-left">
-                      <q-btn
-                        flat color="primary"
-                        :label="row.name"
-                        :to="{ name: 'player_page_route', params: {id: row.id}}"
-                      />
+                     <q-item :to="{ name: 'player_page_route', params: {id: row.id}}" dense>
+                        <q-item-section class="cursor-pointer text-primary">{{row.name}}</q-item-section>
+                      </q-item>
                     </td>
                    <td class="text-left">{{ row.count  }}</td>
                 </tr>
@@ -171,11 +165,9 @@
               <tbody>
                 <tr v-for="row in partners_rows_loss" :key="row.id">
                    <td class="text-left">
-                      <q-btn
-                        flat color="primary"
-                        :label="row.name"
-                        :to="{ name: 'player_page_route', params: {id: row.id}}"
-                      />
+                     <q-item :to="{ name: 'player_page_route', params: {id: row.id}}" dense>
+                        <q-item-section class="cursor-pointer text-primary">{{row.name}}</q-item-section>
+                      </q-item>
                     </td>
                    <td class="text-left">{{ row.count  }}</td>
                 </tr>
@@ -197,11 +189,9 @@
       >
         <template v-slot:body-cell="props">
           <q-td :props="props" v-if="props.col.name === 'name'">
-            <q-btn
-              flat color="primary"
-              :label="props.value"
-              :to="{ name: 'competition_page_route', params: {id: props.row.player_id, competition_id: props.row.id}}"
-            />
+            <q-item :to="{ name: 'competition_page_route', params: {id: props.row.player_id, competition_id: props.row.id}}" dense>
+              <q-item-section class="cursor-pointer text-primary">{{props.value}}</q-item-section>
+            </q-item>
           </q-td>
           <q-td :props="props" v-else> {{props.value}} </q-td>
         </template>
