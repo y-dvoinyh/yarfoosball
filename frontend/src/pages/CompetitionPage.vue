@@ -5,7 +5,7 @@
         <q-breadcrumbs-el to="/" label="Главная" icon="home" />
         <q-breadcrumbs-el
           :label="player_info.first_name ? player_info.first_name + ' ' + player_info.last_name : ''"
-          :to="{ name: 'player_page_route', params: {id: player_id}}"
+          :to="{ name: 'player_page_route', params: {id: player_info.id}}"
         />
         <q-breadcrumbs-el
           :label="`${competition_info.name} (${competition_info.date})`"
@@ -36,6 +36,40 @@
               :rows-per-page-options="[0 ]"
               :loading="loading">
               <template v-slot:pagination=""></template>
+
+              <template v-slot:body-cell="props">
+                <q-td :props="props" v-if="(props.col.name === 'left_team_sp')">
+                  <q-btn
+                    flat color="primary"
+                    :label="props.value"
+                    :to="{ name: 'competition_page_route', params: {id: props.row.left_team_second_id, competition_id: competition_info.id}}"
+                  />
+                </q-td>
+                <q-td :props="props" v-else-if="props.col.name === 'left_team_fp'">
+                  <q-btn
+                    flat color="primary"
+                    :label="props.value"
+                    :to="{ name: 'competition_page_route', params: {id: props.row.left_team_first_id, competition_id: competition_info.id}}"
+                  />
+                </q-td>
+                <q-td :props="props" v-else-if="props.col.name === 'right_team_fp'">
+                  <q-btn
+                    flat color="primary"
+                    :label="props.value"
+                    :to="{ name: 'competition_page_route', params: {id: props.row.right_team_first_id, competition_id: competition_info.id}}"
+                  />
+                </q-td>
+                <q-td :props="props" v-else-if="props.col.name === 'right_team_sp'">
+                  <q-btn
+                    flat color="primary"
+                    :label="props.value"
+                    :to="{ name: 'competition_page_route', params: {id: props.row.right_second_id, competition_id: competition_info.id}}"
+                  />
+                </q-td>
+                <q-td :props="props" v-else> {{props.value}} </q-td>
+              </template>
+
+
             </q-table>
           </q-card-section>
         </q-card>
@@ -47,7 +81,7 @@
 </template>
 
 <script>
-import {defineComponent, onMounted, ref} from "vue";
+import {defineComponent, onMounted, ref, watch} from "vue";
 import api from 'src/api'
 import {useQuasar} from "quasar";
 import ApexCharts from 'apexcharts'
@@ -68,8 +102,8 @@ export default defineComponent({
       first_name: null,
       last_name: null,
     })
-    const player_id = props.id;
-    const competition_id = props.competition_id;
+    const player_id = ref();
+    player_id.value = props.id;
     const competition_info = ref({
       id: null,
       name: null,
@@ -81,19 +115,19 @@ export default defineComponent({
         format: (val, row) => `${val && val > 0 ? '+' : ''}${val || val === 0 ? val : ''}`,
         style: row => (row.diff > 0 ? 'color: green' : 'color: red')
       },
-      { name: 'left_team', label: ' ', align: 'right', field: 'left_team_first', sortable: false,
-        format: (val, row) => `${val} ${row.left_team_second_id? '/': ''} ${row.left_team_second}`},
+      { name: 'left_team_sp', label: ' ', align: 'right', field: 'left_team_second', sortable: false},
+      { name: 'left_team_fp', label: ' ', align: 'left', field: 'left_team_first', sortable: false},
 
       { name: 'score', label: 'Счет', align: 'center', field: 'score', sortable: false },
 
-      { name: 'right_team', label: ' ', align: 'left', field: 'right_team_first', sortable: false,
-        format: (val, row) => `${val}  ${row.right_second_id? '/': ''} ${row.right_second}`}
+      { name: 'right_team_fp', label: ' ', align: 'right', field: 'right_team_first', sortable: false},
+      { name: 'right_team_sp', label: ' ', align: 'left', field: 'right_second', sortable: false}
     ];
     const loading = ref(true);
     const rows = ref([]);
 
     const fetchMatches = () => {
-      api.players.get_player_competition(player_id, competition_id)
+      api.players.get_player_competition(props.id, props.competition_id)
       .then((response) => {
         const responce_data = response.data
         rows.value.splice(0, rows.value.length, ...responce_data)
@@ -131,7 +165,7 @@ export default defineComponent({
     };
     const fetchPlayerInfo = () => {
 
-      api.players.get_player_info(player_id)
+      api.players.get_player_info(props.id)
       .then((response) => {
         const responce_data = response.data
 
@@ -156,7 +190,7 @@ export default defineComponent({
 
     const fetchCompetitionInfo = () => {
 
-      api.players.get_competition_info(competition_id)
+      api.players.get_competition_info(props.competition_id)
       .then((response) => {
         const responce_data = response.data
 
@@ -182,11 +216,20 @@ export default defineComponent({
       fetchMatches();
     }
 
-    // Загрузка данных при инициализации таблицы
-    onMounted(() => {
+    function load_data(){
       fetchPlayerInfo();
       fetchCompetitionInfo();
       fetchMatches()
+    }
+
+    watch(() => props.id, (new_id, prev_id) => {
+      player_id.value = new_id;
+      load_data();
+    });
+
+    // Загрузка данных при инициализации таблицы
+    onMounted(() => {
+      load_data()
     });
 
     return {
@@ -194,8 +237,8 @@ export default defineComponent({
       rows,
       loading,
       player_info,
-      player_id,
-      competition_info
+      competition_info,
+      player_id
     }
   }
 });

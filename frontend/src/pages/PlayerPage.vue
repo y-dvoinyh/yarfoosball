@@ -86,15 +86,13 @@
               </thead>
               <tbody>
                 <tr v-for="row in opponents_rows_win" :key="row.id">
-                   <td class="text-left">{{ row.name  }}</td>
-
-<!--                    <td class="text-left">-->
-<!--                      <q-btn-->
-<!--                        flat color="primary"-->
-<!--                        :label="row.name"-->
-<!--                        :to="{ name: 'player_page_route', params: {id: row.id}}"-->
-<!--                      />-->
-<!--                    </td>-->
+                    <td class="text-left">
+                      <q-btn
+                        flat color="primary"
+                        :label="row.name"
+                        :to="{ name: 'player_page_route', params: {id: row.id}}"
+                      />
+                    </td>
                    <td class="text-right">{{ row.count  }}</td>
                 </tr>
               </tbody>
@@ -116,7 +114,13 @@
               </thead>
               <tbody>
                 <tr v-for="row in opponents_rows_loss" :key="row.id">
-                   <td class="text-left">{{ row.name  }}</td>
+                   <td class="text-left">
+                      <q-btn
+                        flat color="primary"
+                        :label="row.name"
+                        :to="{ name: 'player_page_route', params: {id: row.id}}"
+                      />
+                    </td>
                    <td class="text-right">{{ row.count  }}</td>
                 </tr>
               </tbody>
@@ -138,7 +142,13 @@
               </thead>
               <tbody>
                 <tr v-for="row in partners_rows_win" :key="row.id">
-                   <td class="text-left">{{ row.name  }}</td>
+                   <td class="text-left">
+                      <q-btn
+                        flat color="primary"
+                        :label="row.name"
+                        :to="{ name: 'player_page_route', params: {id: row.id}}"
+                      />
+                    </td>
                    <td class="text-right">{{ row.count  }}</td>
                 </tr>
               </tbody>
@@ -160,7 +170,13 @@
               </thead>
               <tbody>
                 <tr v-for="row in partners_rows_loss" :key="row.id">
-                   <td class="text-left">{{ row.name  }}</td>
+                   <td class="text-left">
+                      <q-btn
+                        flat color="primary"
+                        :label="row.name"
+                        :to="{ name: 'player_page_route', params: {id: row.id}}"
+                      />
+                    </td>
                    <td class="text-right">{{ row.count  }}</td>
                 </tr>
               </tbody>
@@ -205,16 +221,9 @@ export default defineComponent({
   props: {
     id: String
   },
-  watch: {
-    // эта функция запускается при изменении id
-    id: function (id) {
-      console.log('---------------------')
-    }
-  },
   name: 'PlayerPage',
   setup (props) {
     const $q = useQuasar()
-    const player_id = props.id;
     const tableRef = ref()
     const columns = [
       { name: 'name', label: 'Соревнование', align: 'left', field: 'name', sortable: false},
@@ -241,7 +250,6 @@ export default defineComponent({
     const opponents_rows_win = ref([]);
     const opponents_rows_loss = ref([]);
     const filter = ref('')
-
     const pagination = ref({
       sortBy: null,
       descending: null,
@@ -249,7 +257,6 @@ export default defineComponent({
       rowsPerPage: 10,
       rowsNumber: null
     });
-
     const player_info = ref({
       id: null,
       name: null,
@@ -266,7 +273,7 @@ export default defineComponent({
     })
 
     const fetchPartners = () => {
-      api.players.get_partners(player_id)
+      api.players.get_partners(props.id)
       .then((response) => {
         const responce_data = response.data
         const partners_win = responce_data.filter(function (item){return item.is_win});
@@ -285,7 +292,7 @@ export default defineComponent({
     }
 
     const fetchOpponents = () => {
-      api.players.get_opponents(player_id)
+      api.players.get_opponents(props.id)
       .then((response) => {
         const responce_data = response.data
         const opponents_win = responce_data.filter(function (item){return item.is_win});
@@ -305,7 +312,7 @@ export default defineComponent({
 
     const fetchCompetitions = (page, rowsPerPage, searchString) => {
 
-      api.players.get_competitions(page, rowsPerPage, player_id, searchString)
+      api.players.get_competitions(page, rowsPerPage, props.id, searchString)
       .then((response) => {
         const responce_data = response.data
         pagination.value.rowsNumber = responce_data.count
@@ -328,7 +335,7 @@ export default defineComponent({
 
     const fetchChart = () => {
 
-      api.players.get_competitions(0, 0, player_id, null)
+      api.players.get_competitions(0, 0, props.id, null)
       .then((response) => {
         const responce_data = response.data
         const chart_data = responce_data.competitions.reverse()
@@ -365,7 +372,7 @@ export default defineComponent({
     };
 
     const fetchSeries = () => {
-      api.players.get_series(player_id)
+      api.players.get_series(props.id)
       .then((response) => {
         const responce_data = response.data
 
@@ -389,7 +396,7 @@ export default defineComponent({
 
     const fetchPlayerInfo = () => {
 
-      api.players.get_player_statistic(player_id)
+      api.players.get_player_statistic(props.id)
       .then((response) => {
         const responce_data = response.data
         player_info.value = {...response.data}
@@ -433,18 +440,24 @@ export default defineComponent({
 
       loading.value = true
       // Загрузка данных
-      fetchCompetitions(page, rowsPerPage, player_id, filter);
+      fetchCompetitions(page, rowsPerPage, props.id, filter);
     }
+
+    function load_data() {
+      fetchPlayerInfo(props.id);
+      fetchPartners();
+      fetchOpponents();
+      fetchCompetitions(pagination.value.page, pagination.value.rowsPerPage, props.id, filter.value);
+      fetchChart();
+      fetchSeries();
+    }
+    watch(() => props.id, (new_id, prev_id) => {
+      load_data();
+    });
 
     // Загрузка данных при инициализации таблицы
     onMounted(() => {
-      console.log('onMounted');
-      fetchPlayerInfo(player_id);
-      fetchPartners();
-      fetchOpponents();
-      fetchCompetitions(pagination.value.page, pagination.value.rowsPerPage, player_id, filter.value);
-      fetchChart();
-      fetchSeries();
+      load_data();
     });
 
     return {
@@ -462,7 +475,8 @@ export default defineComponent({
       opponents_rows_loss,
       statistic_rows,
       medal_rows,
-      series_rows
+      series_rows,
+      fetchPartners
     }
   }
 })
