@@ -10,24 +10,26 @@
           <q-card-section>
             <div class="text-h6">{{ player_info.name }}</div>
             <div class="text-subtitle2">Текущий рейтинг: {{player_info.rating}}</div>
+            <div class="text-subtitle2">Турниров сыграно: {{player_info.competitions_count}}</div>
+            <div class="text-subtitle2">Матчей сыграно: {{player_info.matches}}</div>
           </q-card-section>
         </q-card>
       </div>
 
       <div class="q-pa-md row items-start q-gutter-md">
-        <q-card class="my-card col-grow"  style="height: 375px">
+
+         <q-card class="my-card col-grow" style="height: 375px">
           <q-card-section>
-            <div class="text-subtitle2">Статистика</div>
+            <div class="text-subtitle2">Матчи</div>
           </q-card-section>
           <q-card-section>
-            <q-markup-table>
-              <tbody>
-                <tr v-for="row in statistic_rows" :key="row.id">
-                   <td class="text-left">{{ row.name  }}</td>
-                   <td class="text-left">{{ row.value  }}</td>
-                </tr>
-              </tbody>
-            </q-markup-table>
+            <apexchart
+              height="250"
+              width="400"
+              type="donut"
+              :options="chart_mathes_options"
+              :series="chart_mathes_series"
+            />
           </q-card-section>
         </q-card>
 
@@ -234,7 +236,6 @@ export default defineComponent({
     const chart_series = ref([]);
     const chart_options = ref({});
     const rows = ref([]);
-    const statistic_rows = ref([]);
     const medal_rows = ref([]);
     const series_rows = ref([]);
     const partners_rows_win = ref([]);
@@ -325,6 +326,33 @@ export default defineComponent({
       });
     };
 
+    const chart_mathes_options = ref({
+      chart: {
+        name: 'matches_chart',
+        type: 'donut',
+        height: '200px',
+        width: '200px'
+      },
+      labels: ['Побед', 'Поражений', 'Ничья'],
+
+      plotOptions: {
+        pie: {
+          donut: {
+            labels: {
+              show: true,
+              total: {
+                label: "Матчей",
+                showAlways: true,
+                show: true
+              }
+            }
+          }
+        }
+      }
+
+    })
+    const chart_mathes_series = ref([]);
+
     const fetchChart = () => {
 
       api.players.get_competitions(0, 0, props.id, null)
@@ -394,23 +422,16 @@ export default defineComponent({
       .then((response) => {
         const responce_data = response.data
         player_info.value = {...response.data}
-        statistic_rows.value.splice(
-          0,
-          statistic_rows.value.length, ...[
-            {name: 'Турниров сыграно', value: player_info.value.competitions_count},
-            {name: 'Матчей сыграно', value: player_info.value.matches},
-            {name: 'Матчей выиграно', value: player_info.value.wins},
-            {name: 'Матчей проиграно', value: player_info.value.losses},
-            {name: 'Ничья', value: player_info.value.draws},
-            {name: 'Процент побед', value: player_info.value.percent_wins ? `${player_info.value.percent_wins}%`: null},
+
+        chart_mathes_series.value = [player_info.value.wins, player_info.value.losses, player_info.value.draws]
+
+        medal_rows.value.splice(
+        0,
+          medal_rows.value.length, ...[
+            {name: 'Золотых медалей', value: player_info.value.gold},
+            {name: 'Серебряных медалей', value: player_info.value.silver},
+            {name: 'Бронзовых медалей', value: player_info.value.bronze},
           ]);
-          medal_rows.value.splice(
-          0,
-            medal_rows.value.length, ...[
-              {name: 'Золотых медалей', value: player_info.value.gold},
-              {name: 'Серебряных медалей', value: player_info.value.silver},
-              {name: 'Бронзовых медалей', value: player_info.value.bronze},
-            ]);
       })
       .catch(() => {
         $q.notify({
@@ -467,11 +488,12 @@ export default defineComponent({
       partners_rows_loss,
       opponents_rows_win,
       opponents_rows_loss,
-      statistic_rows,
       medal_rows,
       series_rows,
       chart_series,
-      chart_options
+      chart_options,
+      chart_mathes_options,
+      chart_mathes_series
     }
   }
 })
