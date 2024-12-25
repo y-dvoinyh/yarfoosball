@@ -68,7 +68,7 @@
             <div class="text-subtitle2">График рейтинга</div>
           </q-card-section>
           <q-card-section>
-            <div id="chart"/>
+            <apexchart height="300" type="line" :options="chart_options" :series="chart_series"></apexchart>
           </q-card-section>
         </q-card>
 
@@ -231,6 +231,8 @@ export default defineComponent({
         format: (val, row) => `${Math.round((val/row.matches_diff) * 100)}%`},
     ]
     const loading = ref(true);
+    const chart_series = ref([]);
+    const chart_options = ref({});
     const rows = ref([]);
     const statistic_rows = ref([]);
     const medal_rows = ref([]);
@@ -330,26 +332,28 @@ export default defineComponent({
         const responce_data = response.data
         const chart_data = responce_data.competitions.reverse()
 
-        const chart_options = {
+        chart_series.value = [{
+          name: 'rating',
+          data: [...[1100], ...chart_data.map(function(item) {
+              return item.rating;
+          })]
+        }];
+
+        chart_options.value = {
           chart: {
             type: 'line',
             height: '250px'
           },
-          series: [{
-            name: 'rating',
-            data: [...[1100], ...chart_data.map(function(item) {
-                return item.rating;
-            })]
-          }],
+
           xaxis: {
             categories: [...['Старт'], ...chart_data.map(function(item) {
                 return item.date_str;
             })]
-          },
+          }
 
         }
-        const chart = new ApexCharts(document.querySelector("#chart"), chart_options);
-        chart.render();
+
+
       })
       .catch(() => {
         $q.notify({
@@ -466,7 +470,8 @@ export default defineComponent({
       statistic_rows,
       medal_rows,
       series_rows,
-      fetchPartners
+      chart_series,
+      chart_options
     }
   }
 })

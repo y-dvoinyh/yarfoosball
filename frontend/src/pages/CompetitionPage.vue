@@ -19,7 +19,7 @@
             <div class="text-subtitle2">График рейтинга</div>
           </q-card-section>
           <q-card-section>
-            <div id="chart"/>
+            <apexchart type="line" :options="chart_options" :series="chart_series"></apexchart>
           </q-card-section>
         </q-card>
 
@@ -74,7 +74,6 @@
 import {defineComponent, onMounted, ref, watch} from "vue";
 import api from 'src/api'
 import {useQuasar} from "quasar";
-import ApexCharts from 'apexcharts'
 
 export default defineComponent({
   props: {
@@ -84,6 +83,8 @@ export default defineComponent({
   name: 'CompetitionPage',
   setup (props) {
     const $q = useQuasar()
+    const chart_series = ref([]);
+    const chart_options = ref({});
     const player_info = ref({
       rating: null,
       matches: null,
@@ -120,17 +121,11 @@ export default defineComponent({
         rows.value.splice(0, rows.value.length, ...responce_data)
         loading.value = false;
 
-        const chart_options = {
+        chart_options.value = {
           chart: {
             type: 'line',
             height: '250px'
           },
-          series: [{
-            name: 'rating',
-            data: responce_data.map(function(item) {
-                return item.rating;
-            })
-          }],
           xaxis: {
             categories: responce_data.map(function(item) {
                 return item.diff;
@@ -138,8 +133,14 @@ export default defineComponent({
           },
 
         }
-        const chart = new ApexCharts(document.querySelector("#chart"), chart_options);
-        chart.render();
+
+        chart_series.value = [{
+          name: 'rating',
+          data: responce_data.map(function(item) {
+              return item.rating;
+          })
+        }]
+
       })
       .catch(() => {
         $q.notify({
@@ -225,7 +226,9 @@ export default defineComponent({
       loading,
       player_info,
       competition_info,
-      player_id
+      player_id,
+      chart_options,
+      chart_series
     }
   }
 });
