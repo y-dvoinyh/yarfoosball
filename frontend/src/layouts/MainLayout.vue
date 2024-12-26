@@ -5,7 +5,7 @@
         <q-toolbar-title>
           Рейтинг неофициальных соревнований
         </q-toolbar-title>
-        <div>Версия 1.6</div>
+        <div>Версия 1.7</div>
       </q-toolbar>
     </q-header>
     <q-page-container>

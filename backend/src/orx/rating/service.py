@@ -54,7 +54,6 @@ class RatingService(BaseService):
             league = tournament.league
             for match in competition.matches:
                 await self.__calculate_match_rating(match, league, tournament)
-                # await MatchRating(match, self.store, self.uow).calculate()
             await self.__update_competition_rating(competition)
         await self.__update_rating()
         await self.uow.commit()

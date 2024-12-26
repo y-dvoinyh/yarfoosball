@@ -11,18 +11,36 @@
           :label="`${competition_info.name} (${competition_info.date})`"
         />
       </q-breadcrumbs>
-
       <div class="q-pa-md row items-start q-gutter-md">
 
-         <q-card class="my-card col-grow">
+        <q-card class="my-card col-grow" style="height: 350px">
+          <q-card-section>
+            <div class="text-subtitle2">Матчи</div>
+          </q-card-section>
+          <q-card-section>
+            <apexchart
+              height="250"
+              type="donut"
+              :options="chart_mathes_options"
+              :series="chart_mathes_series"
+            />
+          </q-card-section>
+        </q-card>
+
+         <q-card class="my-card col-grow" style="height: 350px">
           <q-card-section>
             <div class="text-subtitle2">График рейтинга</div>
           </q-card-section>
           <q-card-section>
-            <apexchart type="line" :options="chart_options" :series="chart_series"></apexchart>
+            <apexchart height="250" type="line" :options="chart_options" :series="chart_series"></apexchart>
           </q-card-section>
         </q-card>
 
+
+
+
+      </div>
+      <div class="q-pa-md row items-start q-gutter-md">
         <q-card class="my-card col-grow">
           <q-card-section>
             <div class="text-subtitle2">Матчи с участием игрока</div>
@@ -63,8 +81,6 @@
             </q-table>
           </q-card-section>
         </q-card>
-
-
       </div>
     </div>
   </q-page>
@@ -114,6 +130,33 @@ export default defineComponent({
     const loading = ref(true);
     const rows = ref([]);
 
+    const chart_mathes_options = ref({
+      chart: {
+        name: 'matches_chart',
+        type: 'donut',
+        height: '200px',
+        width: '200px'
+      },
+      labels: ['Побед', 'Поражений', 'Ничья'],
+
+      plotOptions: {
+        pie: {
+          donut: {
+            labels: {
+              show: true,
+              total: {
+                label: "Матчей",
+                showAlways: true,
+                show: true
+              }
+            }
+          }
+        }
+      }
+
+    })
+    const chart_mathes_series = ref([]);
+
     const fetchMatches = () => {
       api.players.get_player_competition(props.id, props.competition_id)
       .then((response) => {
@@ -141,8 +184,24 @@ export default defineComponent({
           })
         }]
 
+        const series = responce_data.reduce((acc, el)=>{
+            const name = el.wins_diff === 1 ? 'Побед' : el.losses_diff === 1 ? 'Поражений' : 'Ничья'
+            if (!acc.hasOwnProperty(name)) {
+              acc[name] = 1
+            }
+            else {
+              acc[name] += 1
+            }
+            return acc;
+          },
+          {}
+        );
+
+        chart_mathes_series.value = [series['Побед'] | 0, series['Поражений'] | 0, series['Ничья'] | 0]
+
       })
-      .catch(() => {
+      .catch((e) => {
+        console.log(e)
         $q.notify({
           color: 'negative',
           position: 'top',
@@ -228,7 +287,9 @@ export default defineComponent({
       competition_info,
       player_id,
       chart_options,
-      chart_series
+      chart_series,
+      chart_mathes_options,
+      chart_mathes_series
     }
   }
 });

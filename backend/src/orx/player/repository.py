@@ -119,6 +119,8 @@ class PlayersRepository(SqlAlchemyRepository[PlayerModel, CreatePlayer, UpdatePl
                 MatchModel.is_qualification,
                 RatingHistoryModel.rating,
                 RatingHistoryModel.diff,
+                RatingHistoryModel.wins_diff,
+                RatingHistoryModel.losses_diff,
                 match_sets_subquery.c.score,
                 case(
                     (RatingHistoryModel.wins_diff > 0, 'green'),

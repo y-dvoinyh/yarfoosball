@@ -61,6 +61,8 @@ class ResponceMatchRow(BaseModel):
     is_qualification: bool
     rating: int
     diff: Optional[int]
+    wins_diff: Optional[int]
+    losses_diff: Optional[int]
     score: Optional[str]
     color: Optional[str]
     left_team_first_id: Optional[int]
