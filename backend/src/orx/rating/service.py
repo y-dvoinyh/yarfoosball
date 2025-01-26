@@ -293,7 +293,7 @@ class RatingService(BaseService):
             if k == 0:
                 k = 3
         else:
-            k = (max(ft_score, st_score) - min(ft_score, st_score)) * 24
+            k = (max(ft_score, st_score) - min(ft_score, st_score)) * 16
 
         # n = 1 if winner_score > looser_score else 0.1
         n = 1
