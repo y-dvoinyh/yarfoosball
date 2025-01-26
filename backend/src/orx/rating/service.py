@@ -86,6 +86,7 @@ class RatingService(BaseService):
         rating_diff = self.__calculate_rating_diff(
             match.first_team_score,
             match.second_team_score,
+            match.is_single_set,
             ft_rating,
             st_rating,
             *coefficients
@@ -273,7 +274,7 @@ class RatingService(BaseService):
         return int((2 * max(ratings) + min(ratings)) / 3)
 
     @staticmethod
-    def __calculate_rating_diff(ft_score, st_score, ft_rating, st_rating, *coefficients):
+    def __calculate_rating_diff(ft_score, st_score, is_single_set, ft_rating, st_rating, *coefficients):
         """Изменение рейтинга победителя"""
         winner_rating = ft_rating if ft_score > st_score else st_rating
         looser_rating = st_rating if ft_score > st_score else ft_rating
@@ -285,11 +286,15 @@ class RatingService(BaseService):
             if ft_rating == st_rating:
                 w = 0
 
-        k = math.fabs(ft_score - st_score) * 6
-        if k < 0:
-            k *= -1
-        if k == 0:
-            k = 3
+        if is_single_set:
+            k = math.fabs(ft_score - st_score) * 6
+            if k < 0:
+                k *= -1
+            if k == 0:
+                k = 3
+        else:
+            k = (max(ft_score, st_score) - min(ft_score, st_score)) * 24
+
         # n = 1 if winner_score > looser_score else 0.1
         n = 1
 
