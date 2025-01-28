@@ -3,8 +3,7 @@ from typing import Optional, Any
 from collections import defaultdict
 import math
 from src.core.service import BaseService
-from src.core.uow import UnitOfWork
-from src.core.constants import DEFAULT_RATING, QUALIFICATION_COEFFICIENT
+from src.core.constants import DEFAULT_RATING, QUALIFICATION_COEFFICIENT, K_SINGLE_COEFFICIENT, K_BEST_OF_3_COEFFICIENT
 from src.models import RatingType, HistoryRatingLevel, RatingHistoryModel, MatchModel, CompetitionModel, \
     LeagueModel, TournametModel
 
@@ -91,6 +90,74 @@ class RatingService(BaseService):
             st_rating,
             *coefficients
         )
+
+        # Учет коэффициента достоверности
+        (
+            ft_first_player_rating_diff,
+            st_first_player_rating_diff,
+            ft_second_player_rating_diff,
+            st_second_player_rating_diff
+        ) = [rating_diff] * 4
+
+        (
+            ft_first_player_d,
+            st_first_player_d,
+            ft_second_player_d,
+            st_second_player_d
+        ) = [1] * 4
+
+        def __is_actual(p_h):
+            return p_h and p_h.matches and p_h.matches > 10
+
+        ft_first_player_is_actual = __is_actual(ft_first_p_history)
+        st_first_player_is_actual = __is_actual(st_first_p_history)
+        ft_second_player_is_actual = __is_actual(ft_second_p_history)
+        st_second_player_is_actual = __is_actual(st_second_p_history)
+
+        if match.is_singles:
+            # Если рейтинг участника до матча был предварительным, а рейтинг его
+            # противника – актуальным, D = 2 .
+            if ft_first_player_is_actual != st_first_player_is_actual:
+                ft_first_player_d = 0.5 if ft_first_player_is_actual else 2
+                st_first_player_d = 0.5 if st_first_player_is_actual else 2
+        else:
+            # Если рейтинг участника до матча был предварительным, а рейтинги обоих
+            # его противников – актуальными, D = 2.
+
+            # Если рейтинг участника до матча был актуальным, а рейтинг хотя бы одного
+            # другого участника матча (в том числе его партнера) – предварительным,
+            # D = 0,5 .
+
+            # первый игрок первой команды
+            if not ft_first_player_is_actual and st_first_player_is_actual and st_second_player_is_actual:
+                ft_first_player_d = 2
+            elif ft_first_player_is_actual and (
+                    not st_first_player_is_actual or not ft_second_player_is_actual or not st_second_player_is_actual):
+                ft_first_player_d = 0.5
+            # второй игрок первой команды
+            if not ft_second_player_is_actual and st_first_player_is_actual and st_second_player_is_actual:
+                ft_second_player_d = 2
+            elif ft_second_player_is_actual and (
+                    not st_first_player_is_actual or not ft_first_player_is_actual or not st_second_player_is_actual):
+                ft_second_player_d = 0.5
+            # первый игрок второй команды
+            if not st_first_player_is_actual and ft_first_player_is_actual and ft_second_player_is_actual:
+                st_first_player_d = 2
+            elif st_first_player_is_actual and (
+                    not ft_second_player_is_actual or not ft_first_player_is_actual or not st_second_player_is_actual):
+                st_first_player_d = 0.5
+            # второй игрок второй команды
+            if not st_second_player_is_actual and ft_first_player_is_actual and ft_second_player_is_actual:
+                st_second_player_d = 2
+            elif st_second_player_is_actual and (
+                    not ft_second_player_is_actual or not ft_first_player_is_actual or not st_first_player_is_actual):
+                st_second_player_d = 0.5
+
+        ft_first_player_rating_diff = int(round(ft_first_player_rating_diff * ft_first_player_d))
+        st_first_player_rating_diff = int(round(st_first_player_rating_diff * st_first_player_d))
+        ft_second_player_rating_diff = int(round(ft_second_player_rating_diff * ft_second_player_d))
+        st_second_player_rating_diff = int(round(st_second_player_rating_diff * st_second_player_d))
+
         # Записи в историю
         ft_first_player_history = await self.uow.rating_history.update_or_create(CreateRatingHistory(
             league_id=league.id,
@@ -101,8 +168,8 @@ class RatingService(BaseService):
             player_id=match.first_team.first_player_id,
             competition_id=match.competition_id,
             match_id=match.id,
-            diff=rating_diff,
-            rating=ft_first_p_rating + rating_diff,
+            diff=ft_first_player_rating_diff,
+            rating=ft_first_p_rating + ft_first_player_rating_diff,
             matches_diff=1,
             matches=(ft_first_p_history.matches if ft_first_p_history else 0) + 1,
             wins=(ft_first_p_history.wins if ft_first_p_history else 0) + (
@@ -130,8 +197,8 @@ class RatingService(BaseService):
             player_id=match.second_team.first_player_id,
             competition_id=match.competition_id,
             match_id=match.id,
-            diff=-rating_diff,
-            rating=st_first_p_rating - rating_diff,
+            diff=-st_first_player_rating_diff,
+            rating=st_first_p_rating - st_first_player_rating_diff,
             matches_diff=1,
 
             matches=(st_first_p_history.matches if st_first_p_history else 0) + 1,
@@ -161,8 +228,8 @@ class RatingService(BaseService):
                 player_id=match.first_team.second_player_id,
                 competition_id=match.competition_id,
                 match_id=match.id,
-                diff=rating_diff,
-                rating=ft_second_p_rating + rating_diff,
+                diff=ft_second_player_rating_diff,
+                rating=ft_second_p_rating + ft_second_player_rating_diff,
                 matches_diff=1,
                 matches=(ft_second_p_history.matches if ft_second_p_history else 0) + 1,
                 wins=(ft_second_p_history.wins if ft_second_p_history else 0) + (
@@ -190,8 +257,8 @@ class RatingService(BaseService):
                 player_id=match.second_team.second_player_id,
                 competition_id=match.competition_id,
                 match_id=match.id,
-                diff=-rating_diff,
-                rating=st_second_p_rating - rating_diff,
+                diff=-st_second_player_rating_diff,
+                rating=st_second_p_rating - st_second_player_rating_diff,
                 matches_diff=1,
                 matches=(st_second_p_history.matches if st_second_p_history else 0) + 1,
                 wins=(st_second_p_history.wins if st_second_p_history else 0) + (
@@ -287,22 +354,20 @@ class RatingService(BaseService):
                 w = 0
 
         if is_single_set:
-            k = math.fabs(ft_score - st_score) * 6
+            k = math.fabs(ft_score - st_score) * K_SINGLE_COEFFICIENT
             if k < 0:
                 k *= -1
             if k == 0:
                 k = 3
         else:
-            k = (max(ft_score, st_score) - min(ft_score, st_score)) * 16
-
-        # n = 1 if winner_score > looser_score else 0.1
+            k = (max(ft_score, st_score) - min(ft_score, st_score)) * K_BEST_OF_3_COEFFICIENT
         n = 1
 
         result = w * k * (1 - (1 / (10 ** ((looser_rating - winner_rating) / 400) + 1))) * n
         if coefficients:
             for c in coefficients:
                 result *= c
-        return int(round(result))
+        return result
 
     async def rating_list_with_count(self, limit: int, offset: int, search_string: Optional[str]):
         if search_string is not None:
