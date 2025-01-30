@@ -34,6 +34,7 @@ class ResponsePlayerCompetition(BaseModel):
     matches_diff: Optional[int]
     wins_diff: Optional[int]
     losses_diff: Optional[int]
+    goals_diff: Optional[int] = 0
 
     @computed_field
     def date_str(self) -> str:

@@ -31,9 +31,12 @@ class RatingModel(BaseModel):
     tournament: Mapped["TournametModel"] = relationship(foreign_keys="RatingModel.tournament_id")
 
     rating: Mapped[int] = mapped_column(Integer, default=DEFAULT_RATING, nullable=False)
+
+    tournaments: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
     matches: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
     wins: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
     losses: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+    goals: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
 
     last_diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
 
@@ -71,11 +74,14 @@ class RatingHistoryModel(BaseModel):
     rating: Mapped[int] = mapped_column(Integer, unique=False, nullable=False)
     diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=False)
 
+    tournaments: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
     matches: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
     matches_diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
     wins: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
     wins_diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
     losses: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
     losses_diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+    goals: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+    goals_diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
 
     place: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)

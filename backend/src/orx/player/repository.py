@@ -26,7 +26,8 @@ class PlayersRepository(SqlAlchemyRepository[PlayerModel, CreatePlayer, UpdatePl
                 RatingHistoryModel.diff,
                 RatingHistoryModel.matches_diff,
                 RatingHistoryModel.wins_diff,
-                RatingHistoryModel.losses_diff
+                RatingHistoryModel.losses_diff,
+                RatingHistoryModel.goals_diff
             )
             .where(and_(
                 RatingHistoryModel.level == 'COMPETITION',
@@ -47,7 +48,8 @@ class PlayersRepository(SqlAlchemyRepository[PlayerModel, CreatePlayer, UpdatePl
                 rating.diff,
                 rating.matches_diff,
                 rating.wins_diff,
-                rating.losses_diff
+                rating.losses_diff,
+                rating.goals_diff
             )
             .select_from(CompetitionModel)
             .join(rating_subquery, rating.competition_id == CompetitionModel.id)
@@ -121,6 +123,7 @@ class PlayersRepository(SqlAlchemyRepository[PlayerModel, CreatePlayer, UpdatePl
                 RatingHistoryModel.diff,
                 RatingHistoryModel.wins_diff,
                 RatingHistoryModel.losses_diff,
+                RatingHistoryModel.goals_diff,
                 match_sets_subquery.c.score,
                 case(
                     (RatingHistoryModel.wins_diff > 0, 'green'),

@@ -11,6 +11,7 @@
         :rows-per-page-options="[10, 15, 20, 25, 50, 0 ]"
         ref="tableRef"
         v-model:pagination="pagination"
+        binary-state-sort
         @request="onRequest"
        >
         <template v-slot:top-right="props">
@@ -53,16 +54,18 @@ export default defineComponent({
     const columns = [
       { name: 'number', label: '№', align: 'left', field: 'number', sortable: false },
       { name: 'full_name', label: 'Фамилия Имя', align: 'left', field: 'full_name', sortable: false},
-      { name: 'rating', label: 'Рейтинг', align: 'left', field: 'rating', sortable: false },
+      { name: 'rating', label: 'Рейтинг', align: 'left', field: 'rating', sortable: true },
       { name: 'last_diff', label: '+/-', align: 'left', field: 'last_diff', sortable: false,
         format: (val, row) => `${val && val > 0 ? '+' : ''}${val || val === 0 ? val : ''}`,
         style: row => (row.last_diff > 0 ? 'color: green' : 'color: red')
       },
 
-      { name: 'matches', label: 'Матчей', align: 'left', field: 'matches', sortable: false },
-      { name: 'wins', label: 'Побед', align: 'left', field: 'wins', sortable: false },
-      { name: 'losses', label: 'Поражений', align: 'left', field: 'losses', sortable: false },
-      { name: 'percent_win', label: 'Процент побед', align: 'left', field: 'wins', sortable: false, format: (val, row) => `${Math.round((val/row.matches) * 100)}%`},
+      { name: 'tournaments', label: 'Турниров', align: 'left', field: 'tournaments', sortable: true },
+      { name: 'matches', label: 'Матчей', align: 'left', field: 'matches', sortable: true },
+      { name: 'goals', label: 'Голов', align: 'left', field: 'goals', sortable: true },
+      { name: 'wins', label: 'Побед', align: 'left', field: 'wins', sortable: true },
+      { name: 'losses', label: 'Поражений', align: 'left', field: 'losses', sortable: true },
+      { name: 'percent_win', label: 'Процент побед', align: 'left', field: 'wins', sortable: true, format: (val, row) => `${Math.round((val/row.matches) * 100)}%`},
     ]
 
     const tableRef = ref()
@@ -71,16 +74,16 @@ export default defineComponent({
     const filter = ref('')
 
     const pagination = ref({
-      sortBy: null,
-      descending: null,
+      sortBy: 'rating',
+      descending: true,
       page: 1,
       rowsPerPage: 10,
       rowsNumber: null
     })
 
 
-    const fetchRating = (page, rowsPerPage, searchString) => {
-      api.rating.get_list(page, rowsPerPage, searchString)
+    const fetchRating = (page, rowsPerPage, searchString, sortBy, descending) => {
+      api.rating.get_list(page, rowsPerPage, searchString, sortBy, descending)
       .then((response) => {
         const responce_data = response.data
         pagination.value.rowsNumber = responce_data.count
@@ -88,6 +91,9 @@ export default defineComponent({
         rows.value.splice(0, rows.value.length, ...responce_data.players)
         pagination.value.page = page
         pagination.value.rowsPerPage = rowsPerPage
+
+        pagination.value.sortBy = sortBy
+        pagination.value.descending = descending
 
         loading.value = false;
       })
@@ -103,7 +109,7 @@ export default defineComponent({
 
     async function onRequest (props) {
 
-      const { page, rowsPerPage } = props.pagination
+      const { page, rowsPerPage, sortBy, descending} = props.pagination
 
       const filter = props.filter
 
@@ -113,13 +119,19 @@ export default defineComponent({
 
       loading.value = true
       // Загрузка данных
-      fetchRating(page, rowsPerPage, filter);
+      fetchRating(page, rowsPerPage, filter, sortBy, descending);
     }
 
     // Загрузка данных при инициализации таблицы
     onMounted(() => {
       console.log('onMounted')
-      fetchRating(pagination.value.page, pagination.value.rowsPerPage, filter.value);
+      fetchRating(
+        pagination.value.page,
+        pagination.value.rowsPerPage,
+        filter.value,
+        pagination.value.sortBy,
+        pagination.value.descending
+      );
     });
 
     return {

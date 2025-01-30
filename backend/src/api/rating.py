@@ -18,12 +18,14 @@ async def list_ratings(
         service: RatingDep,
         limit: Optional[int] = 10,
         offset: Optional[int] = 0,
-        search_string: Optional[str] = None
+        search_string: Optional[str] = None,
+        sort_by: Optional[str] = 'rating',
+        descending: Optional[bool] = True
 ) -> ResponseRatingList:
     """Список рейтингов"""
     if limit == 0:
         limit = None
-    return await service.rating_list_with_count(limit, offset, search_string)
+    return await service.rating_list_with_count(limit, offset, search_string, sort_by, descending)
 
 
 @router.get("/calculate")

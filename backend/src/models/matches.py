@@ -84,10 +84,18 @@ class MatchModel(BaseModel):
         return sum([1 if set_.first_team_score > set_.second_team_score else 0 for set_ in self.__sets])
 
     @property
+    def first_team_goals(self):
+        return sum([s.first_team_score for s in self.__sets])
+
+    @property
     def second_team_score(self):
         if self.is_single_set:
             return self.sets[0].second_team_score
         return sum([1 if set_.second_team_score > set_.first_team_score else 0 for set_ in self.sets])
+
+    @property
+    def second_team_goals(self):
+        return sum([s.second_team_score for s in self.__sets])
 
     def __str__(self):
         return f'Match: {str(self.order)} - {self.id}: {str(self.time_start)}"'

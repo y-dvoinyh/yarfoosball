@@ -226,6 +226,7 @@ export default defineComponent({
         style: row => (row.diff > 0 ? 'color: green' : 'color: red')
       },
       { name: 'matches_diff', label: 'Матчей', align: 'left', field: 'matches_diff', sortable: false },
+      { name: 'goals_diff', label: 'Голов', align: 'left', field: 'goals_diff', sortable: false },
       { name: 'wins_diff', label: 'Побед', align: 'left', field: 'wins_diff', sortable: false },
       { name: 'losses_diff', label: 'Поражений', align: 'left', field: 'losses_diff', sortable: false },
 

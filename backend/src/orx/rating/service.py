@@ -183,7 +183,9 @@ class RatingService(BaseService):
             ),
             losses_diff=(
                 1 if not match.is_draw and match.first_team_score < match.second_team_score else 0
-            )
+            ),
+            goals=(ft_first_p_history.goals if ft_first_p_history else 0) + match.first_team_goals,
+            goals_diff=match.first_team_goals
         ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.first_team.first_player_id, 'match_id': match.id})
         self.store.set_history(match.first_team.first_player_id, ft_first_player_history)
         self.store.add_history(match.competition_id, ft_first_player_history)
@@ -214,6 +216,8 @@ class RatingService(BaseService):
             losses_diff=(
                 1 if not match.is_draw and match.second_team_score < match.first_team_score else 0
             ),
+            goals=(st_first_p_history.goals if st_first_p_history else 0) + match.second_team_goals,
+            goals_diff=match.second_team_goals
         ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.second_team.first_player_id, 'match_id': match.id})
         self.store.set_history(match.second_team.first_player_id, st_first_player_history)
         self.store.add_history(match.competition_id, st_first_player_history)
@@ -241,9 +245,11 @@ class RatingService(BaseService):
                 losses=(ft_second_p_history.losses if ft_second_p_history else 0) + (
                     1 if not match.is_draw and match.first_team_score < match.second_team_score else 0
                 ),
-                losses_diff= (
+                losses_diff=(
                     1 if not match.is_draw and match.first_team_score < match.second_team_score else 0
-                )
+                ),
+                goals=(ft_second_p_history.goals if ft_second_p_history else 0) + match.first_team_goals,
+                goals_diff=match.first_team_goals
             ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.first_team.second_player_id, 'match_id': match.id})
             self.store.set_history(match.first_team.second_player_id, ft_second_player_history)
             self.store.add_history(match.competition_id, ft_second_player_history)
@@ -269,6 +275,8 @@ class RatingService(BaseService):
                     1 if not match.is_draw and match.second_team_score < match.first_team_score else 0
                 ),
                 losses_diff= 1 if not match.is_draw and match.second_team_score < match.first_team_score else 0,
+                goals=(st_second_p_history.goals if st_second_p_history else 0) + match.second_team_goals,
+                goals_diff=match.second_team_goals
             ), **{'level': HistoryRatingLevel.MATCH, 'player_id': match.second_team.second_player_id, 'match_id': match.id})
             self.store.set_history(match.second_team.second_player_id, st_second_player_history)
             self.store.add_history(match.competition_id, st_second_player_history)
@@ -286,7 +294,9 @@ class RatingService(BaseService):
                 matches=rating_history.matches,
                 wins=rating_history.wins,
                 losses=rating_history.losses,
-                last_diff=last_history.diff if last_history else None
+                goals=rating_history.goals,
+                last_diff=last_history.diff if last_history else None,
+                tournaments=last_history.tournaments
             ), **{'type': RatingType.PLAYER, 'player_id': player_id})
 
     async def __update_competition_rating(self, competition: CompetitionModel):
@@ -307,7 +317,8 @@ class RatingService(BaseService):
                 competition_id=competition.id,
 
                 rating=DEFAULT_RATING,
-                diff=0
+                diff=0,
+                tournaments=(last_history.tournaments + 1) if last_history else 1
             )
 
         for rating_history in competition_ratings:
@@ -320,10 +331,12 @@ class RatingService(BaseService):
             competition_history.matches = rating_history.matches
             competition_history.wins = rating_history.wins
             competition_history.losses = rating_history.losses
+            competition_history.goals = rating_history.goals
             competition_history.diff += rating_history.diff or 0
             competition_history.matches_diff += rating_history.matches_diff or 0
             competition_history.wins_diff += rating_history.wins_diff or 0
             competition_history.losses_diff += rating_history.losses_diff or 0
+            competition_history.goals_diff += rating_history.goals_diff or 0
 
         for history_scheme in history.values():
             competition_history_model = await self.uow.rating_history.update_or_create(
@@ -369,11 +382,11 @@ class RatingService(BaseService):
                 result *= c
         return result
 
-    async def rating_list_with_count(self, limit: int, offset: int, search_string: Optional[str]):
+    async def rating_list_with_count(self, limit: int, offset: int, search_string: Optional[str], sort_by, desc):
         if search_string is not None:
             search_string = search_string.lower()
         count = await self.repository.rating_list_count(search_string)
-        ratings = await self.repository.rating_list(limit, offset, search_string)
+        ratings = await self.repository.rating_list(limit, offset, search_string, sort_by, desc)
         return {'count': count, 'players': ratings}
 
 
