@@ -44,3 +44,12 @@ class HistoryRatingLevel(Enum):
     START = 'START'
     MATCH = 'MATCH'
     COMPETITION = 'COMPETITION'
+
+
+class Rank(Enum):
+    beginner = 'beginner'
+    novice = 'novice'   # 1000
+    amateur = 'amateur' # 1250
+    semipro = 'semi-pro'    # 1500
+    pro = 'pro'     # 1750
+    master = 'master' # 2000

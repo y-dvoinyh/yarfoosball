@@ -33,6 +33,11 @@
               <q-item-section class="cursor-pointer text-primary">{{props.value}}</q-item-section>
             </q-item>
           </q-td>
+          <q-td :props="props" v-else-if="props.col.name === 'rank'">
+            <q-badge :color="props.row.color">
+              {{ props.row.rank }}
+            </q-badge>
+          </q-td>
           <q-td :props="props" v-else> {{props.value}} </q-td>
         </template>
 
@@ -54,6 +59,7 @@ export default defineComponent({
     const columns = [
       { name: 'number', label: '№', align: 'left', field: 'number', sortable: false },
       { name: 'full_name', label: 'Фамилия Имя', align: 'left', field: 'full_name', sortable: false},
+      { name: 'rank', label: 'Ранг', align: 'left', field: 'rank', sortable: true },
       { name: 'rating', label: 'Рейтинг', align: 'left', field: 'rating', sortable: true },
       { name: 'last_diff', label: '+/-', align: 'left', field: 'last_diff', sortable: false,
         format: (val, row) => `${val && val > 0 ? '+' : ''}${val || val === 0 ? val : ''}`,

@@ -9,6 +9,11 @@
         <q-card class="my-card" flat bordered>
           <q-card-section>
             <div class="text-h6">{{ player_info.name }}</div>
+            <div class="text-subtitle2">Ранг:
+              <q-badge :color="player_info.color">
+                {{ player_info.rank }}
+              </q-badge>
+            </div>
             <div class="text-subtitle2">Текущий рейтинг: {{player_info.rating}}</div>
             <div class="text-subtitle2">Турниров сыграно: {{player_info.competitions_count}}</div>
             <div class="text-subtitle2">Матчей сыграно: {{player_info.matches}}</div>
@@ -263,7 +268,8 @@ export default defineComponent({
       percent_wins: null,
       gold: null,
       silver: null,
-      bronze: null
+      bronze: null,
+      rank: ''
     })
 
     const fetchPartners = () => {

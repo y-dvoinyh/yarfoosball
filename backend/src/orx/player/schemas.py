@@ -97,6 +97,8 @@ class PlayerStatisticResponce(BaseModel):
     gold: Optional[int] = 0
     silver: Optional[int] = 0
     bronze: Optional[int] = 0
+    rank: Optional[str] = ''
+    color: Optional[str] = ''
 
 
 class SeriesResponce(BaseModel):

@@ -1,11 +1,11 @@
 from typing import TYPE_CHECKING
-from sqlalchemy import ForeignKey, Integer, Enum, Boolean
+from sqlalchemy import ForeignKey, Integer, Enum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from src.core.constants import DEFAULT_RATING
 from src.core.model import BaseModel
 
-from .enums import RatingType, HistoryRatingLevel
+from .enums import RatingType, HistoryRatingLevel, Rank
 
 if TYPE_CHECKING:
     from .players import PlayerModel
@@ -29,6 +29,8 @@ class RatingModel(BaseModel):
 
     tournament_id: Mapped[int] = mapped_column(ForeignKey('tournaments.id'), nullable=True)
     tournament: Mapped["TournametModel"] = relationship(foreign_keys="RatingModel.tournament_id")
+
+    rank: Mapped[Rank] = mapped_column(Enum(Rank, name='rank_enum'), nullable=True)
 
     rating: Mapped[int] = mapped_column(Integer, default=DEFAULT_RATING, nullable=False)
 
@@ -85,3 +87,4 @@ class RatingHistoryModel(BaseModel):
     goals_diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
 
     place: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+    rank: Mapped[Rank] = mapped_column(Enum(Rank, name='rank_enum'), nullable=True)

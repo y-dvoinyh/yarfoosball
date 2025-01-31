@@ -1,7 +1,7 @@
 from typing import Optional, List
 from pydantic import BaseModel
 
-from src.models import HistoryRatingLevel, RatingType
+from src.models import HistoryRatingLevel, RatingType, Rank
 from src.core.constants import DEFAULT_RATING
 
 
@@ -18,6 +18,7 @@ class BaseRating(BaseModel):
     losses: Optional[int] = 0
     goals: Optional[int] = 0
     last_diff: Optional[int] = 0
+    rank: Optional[Rank] = Rank.beginner
 
 
 class ResponseRating(BaseRating):
@@ -64,6 +65,8 @@ class BaseRatingHistory(BaseModel):
 
     tournaments: Optional[int] = 0
 
+    rank: Optional[Rank] = Rank.beginner
+
 
 class ResponseRatingHistory(BaseRatingHistory):
     id: int
@@ -100,6 +103,8 @@ class ResponseRatingPlayer(BaseModel):
     last_diff: Optional[int] = 0
     goals: Optional[int] = 0
     tournaments: Optional[int] = 0
+    rank: Optional[str] = 'novice'
+    color: Optional[str] = 'grey'
 
 
 class ResponseRatingList(BaseModel):

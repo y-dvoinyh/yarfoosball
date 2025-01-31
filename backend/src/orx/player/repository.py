@@ -1,6 +1,6 @@
 from typing import Optional, Sequence
 from src.core.repository import SqlAlchemyRepository
-from src.models import PlayerModel, RatingHistoryModel, CompetitionModel, RatingModel, MatchModel, MatchSetModel, TeamModel
+from src.models import PlayerModel, RatingHistoryModel, CompetitionModel, RatingModel, MatchModel, MatchSetModel, TeamModel, Rank
 
 from sqlalchemy import select, func, and_, String, literal_column, case, union_all, Float, Integer
 from sqlalchemy.orm import aliased
@@ -292,6 +292,15 @@ class PlayersRepository(SqlAlchemyRepository[PlayerModel, CreatePlayer, UpdatePl
             RatingModel.matches,
             RatingModel.wins,
             RatingModel.losses,
+            RatingModel.rank,
+            case(
+                (RatingModel.rank == Rank.beginner, 'grey'),
+                (RatingModel.rank == Rank.novice, 'blue'),
+                (RatingModel.rank == Rank.amateur, 'green'),
+                (RatingModel.rank == Rank.semipro, 'light-blue'),
+                (RatingModel.rank == Rank.pro, 'amber'),
+                (RatingModel.rank == Rank.master, 'red'),
+            ).label('color'),
             case((RatingModel.wins > 0,
                   (RatingModel.wins.cast(Float) / RatingModel.matches.cast(Float) * 100).cast(Integer)),
                  else_=0).label('percent_wins'),

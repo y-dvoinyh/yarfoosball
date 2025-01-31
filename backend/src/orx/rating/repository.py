@@ -1,7 +1,7 @@
 from typing import Optional, Sequence
 from sqlalchemy import select, func, or_, case
 from src.core.repository import SqlAlchemyRepository
-from src.models import RatingModel, RatingHistoryModel, PlayerModel, RatingType
+from src.models import RatingModel, RatingHistoryModel, PlayerModel, RatingType, Rank
 
 from .schemas import (
     CreateRating,
@@ -32,10 +32,19 @@ class RatingRepository(
                 self.model.last_diff,
                 self.model.goals,
                 self.model.tournaments,
+                self.model.rank,
                 case(
                     (self.model.matches > 0, (100*((self.model.wins or 0) / (self.model.matches or 1)))),
                     else_=0
                 ).label('percent'),
+                case(
+                    ( self.model.rank == Rank.beginner, 0),
+                    ( self.model.rank == Rank.novice, 1),
+                    ( self.model.rank == Rank.amateur, 2),
+                    ( self.model.rank == Rank.semipro, 3),
+                    ( self.model.rank == Rank.pro, 4),
+                    ( self.model.rank == Rank.master, 5),
+                ).label('rank_sort')
 
             )
             .where(self.model.type == RatingType.PLAYER)
@@ -57,7 +66,16 @@ class RatingRepository(
                 rating.losses,
                 rating.last_diff,
                 rating.goals,
-                rating.tournaments
+                rating.tournaments,
+                rating.rank,
+                case(
+                    (rating.rank == Rank.beginner, 'grey'),
+                    (rating.rank == Rank.novice, 'blue'),
+                    (rating.rank == Rank.amateur, 'green'),
+                    (rating.rank == Rank.semipro, 'light-blue'),
+                    (rating.rank == Rank.pro, 'amber'),
+                    (rating.rank == Rank.master, 'red'),
+                ).label('color')
             )
             .select_from(PlayerModel)
             .join(rating_subquery, rating.player_id == PlayerModel.id, isouter=True)
@@ -80,8 +98,10 @@ class RatingRepository(
             order_by_first = rating.percent.desc() if desc else rating.percent
         elif sort_by == 'tournaments':
             order_by_first = rating.tournaments.desc() if desc else rating.tournaments
+        elif sort_by == 'rank':
+            order_by_first = rating.rank_sort.desc() if desc else rating.rank_sort
 
-        stmt = stmt.order_by(order_by_first, rating.player_id)
+        stmt = stmt.order_by(order_by_first, rating.number if desc else rating.number.desc())
 
         result = await self._session.execute(stmt)
         return result.all()

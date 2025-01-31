@@ -11,5 +11,6 @@ from .enums import (
     RatingType,
     TournamentType,
     CompetitionType,
-    HistoryRatingLevel
+    HistoryRatingLevel,
+    Rank
 )
