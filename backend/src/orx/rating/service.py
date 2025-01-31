@@ -62,7 +62,10 @@ class RatingService(BaseService):
         if rating >= 1000 or (cerrent_rank == Rank.novice and rating >= 900):
             return Rank.novice
 
-        return Rank.novice
+        if rating < 1000:
+            return Rank.beginner
+
+        return Rank.beginner
 
     async def calculate_rating(self, competition_id: Optional[int]) -> bool:
         competitions = await self.uow.competitions.all(order="date")
