@@ -80,6 +80,7 @@ class RatingRepository(
             )
             .select_from(PlayerModel)
             .join(rating_subquery, rating.player_id == PlayerModel.id, isouter=True)
+            .where(rating.player_id is not None)
             .limit(limit)
             .offset(offset)
         )
