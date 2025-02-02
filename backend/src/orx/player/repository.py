@@ -60,7 +60,7 @@ class PlayersRepository(SqlAlchemyRepository[PlayerModel, CreatePlayer, UpdatePl
             .select_from(CompetitionModel)
             .join(rating_subquery, rating.competition_id == CompetitionModel.id)
 
-            .order_by(CompetitionModel.date.desc())
+            .order_by(CompetitionModel.date.desc(), CompetitionModel.id.desc())
             .limit(limit)
             .offset(offset)
         )
