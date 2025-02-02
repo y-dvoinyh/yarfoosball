@@ -1,5 +1,5 @@
 from typing import Optional, Sequence
-from sqlalchemy import select, func, or_, case
+from sqlalchemy import select, func, or_, case, and_
 from src.core.repository import SqlAlchemyRepository
 from src.models import RatingModel, RatingHistoryModel, PlayerModel, RatingType, Rank
 
@@ -47,7 +47,7 @@ class RatingRepository(
                 ).label('rank_sort'),
                 self.model.cumulative
             )
-            .where(self.model.type == RatingType.PLAYER)
+            .where(and_(self.model.player_id is not None, self.model.type == RatingType.PLAYER))
             .order_by(self.model.rating.desc(), self.model.id)
             .subquery()
         )
