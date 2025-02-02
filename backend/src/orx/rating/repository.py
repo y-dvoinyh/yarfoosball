@@ -44,8 +44,8 @@ class RatingRepository(
                     ( self.model.rank == Rank.semipro, 3),
                     ( self.model.rank == Rank.pro, 4),
                     ( self.model.rank == Rank.master, 5),
-                ).label('rank_sort')
-
+                ).label('rank_sort'),
+                self.model.cumulative
             )
             .where(self.model.type == RatingType.PLAYER)
             .order_by(self.model.rating.desc(), self.model.id)
@@ -75,7 +75,8 @@ class RatingRepository(
                     (rating.rank == Rank.semipro, 'light-blue'),
                     (rating.rank == Rank.pro, 'amber'),
                     (rating.rank == Rank.master, 'red'),
-                ).label('color')
+                ).label('color'),
+                rating.cumulative
             )
             .select_from(PlayerModel)
             .join(rating_subquery, rating.player_id == PlayerModel.id, isouter=True)
@@ -100,6 +101,8 @@ class RatingRepository(
             order_by_first = rating.tournaments.desc() if desc else rating.tournaments
         elif sort_by == 'rank':
             order_by_first = rating.rank_sort.desc() if desc else rating.rank_sort
+        elif sort_by == 'cumulative':
+            order_by_first = rating.cumulative.desc() if desc else rating.cumulative
 
         stmt = stmt.order_by(order_by_first, rating.number if desc else rating.number.desc())
 

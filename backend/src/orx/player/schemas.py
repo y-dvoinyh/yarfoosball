@@ -35,6 +35,9 @@ class ResponsePlayerCompetition(BaseModel):
     wins_diff: Optional[int]
     losses_diff: Optional[int]
     goals_diff: Optional[int] = 0
+    place: Optional[int] = 0
+    cumulative: Optional[int] = 0
+    cumulative_diff: Optional[int] = 0
 
     @computed_field
     def date_str(self) -> str:

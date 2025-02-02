@@ -9,11 +9,11 @@
         <q-card class="my-card" flat bordered>
           <q-card-section>
             <div class="text-h6">{{ player_info.name }}</div>
-            <div class="text-subtitle2">Ранг:
-              <q-badge :color="player_info.color">
-                {{ player_info.rank }}
-              </q-badge>
-            </div>
+            <q-avatar size="150px" color="primary" text-color="white">
+              {{player_info.name.split(/\s+/).map(word => word !== '' ? word[0][0].toUpperCase(): '').join('')}}
+<!--              <img src="https://cdn.quasar.dev/img/avatar.png">-->
+              <q-badge floating :color="player_info.color">{{ player_info.rank }}</q-badge>
+            </q-avatar>
             <div class="text-subtitle2">Текущий рейтинг: {{player_info.rating}}</div>
             <div class="text-subtitle2">Турниров сыграно: {{player_info.competitions_count}}</div>
             <div class="text-subtitle2">Матчей сыграно: {{player_info.matches}}</div>
@@ -225,11 +225,19 @@ export default defineComponent({
     const columns = [
       { name: 'name', label: 'Соревнование', align: 'left', field: 'name', sortable: false},
       { name: 'date', label: 'Дата', align: 'left', field: 'date_str', sortable: false},
+      { name: 'place', label: 'Место', align: 'left', field: 'place', sortable: false },
       { name: 'rating', label: 'Рейтинг', align: 'left', field: 'rating', sortable: false },
       { name: 'diff', label: '+/-', align: 'left', field: 'diff', sortable: false,
         format: (val, row) => `${val && val > 0 ? '+' : ''}${val || val === 0 ? val : ''}`,
         style: row => (row.diff > 0 ? 'color: green' : 'color: red')
       },
+
+      { name: 'cumulative', label: 'Накоп', align: 'left', field: 'cumulative', sortable: false },
+      { name: 'cumulative_diff', label: '+ Накоп', align: 'left', field: 'cumulative_diff', sortable: false,
+        format: (val, row) => `${val && val > 0 ? '+' : ''}${val || val === 0 ? val : ''}`,
+        style: row => (row.cumulative_diff > 0 ? 'color: green' : 'color: red')
+      },
+
       { name: 'matches_diff', label: 'Матчей', align: 'left', field: 'matches_diff', sortable: false },
       { name: 'goals_diff', label: 'Голов', align: 'left', field: 'goals_diff', sortable: false },
       { name: 'wins_diff', label: 'Побед', align: 'left', field: 'wins_diff', sortable: false },
@@ -258,7 +266,7 @@ export default defineComponent({
     });
     const player_info = ref({
       id: null,
-      name: null,
+      name: '',
       rating: null,
       competitions_count: null,
       matches: null,

@@ -42,6 +42,8 @@ class RatingModel(BaseModel):
 
     last_diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
 
+    cumulative: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+
 
 class RatingHistoryModel(BaseModel):
     """История изменения рейтинга"""
@@ -53,7 +55,7 @@ class RatingHistoryModel(BaseModel):
 
     prev_history_id: Mapped[int] = mapped_column(ForeignKey('rating_history.id'), nullable=True)
     prev_history: Mapped["RatingHistoryModel"] = relationship(
-        foreign_keys="RatingHistoryModel.prev_history_id")
+        foreign_keys="RatingHistoryModel.prev_history_id", lazy='joined')
 
     league_id: Mapped[int] = mapped_column(ForeignKey('leagues.id'), nullable=True)
     league: Mapped["LeagueModel"] = relationship(foreign_keys="RatingHistoryModel.league_id")
@@ -88,3 +90,5 @@ class RatingHistoryModel(BaseModel):
 
     place: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
     rank: Mapped[Rank] = mapped_column(Enum(Rank, name='rank_enum'), nullable=True)
+    cumulative: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)
+    cumulative_diff: Mapped[int] = mapped_column(Integer, unique=False, nullable=True)

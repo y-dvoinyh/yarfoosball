@@ -19,6 +19,7 @@ class BaseRating(BaseModel):
     goals: Optional[int] = 0
     last_diff: Optional[int] = 0
     rank: Optional[Rank] = Rank.beginner
+    cumulative: Optional[int] = 0
 
 
 class ResponseRating(BaseRating):
@@ -67,6 +68,9 @@ class BaseRatingHistory(BaseModel):
 
     rank: Optional[Rank] = Rank.beginner
 
+    cumulative: Optional[int] = 0
+    cumulative_diff: Optional[int] = 0
+
 
 class ResponseRatingHistory(BaseRatingHistory):
     id: int
@@ -105,6 +109,7 @@ class ResponseRatingPlayer(BaseModel):
     tournaments: Optional[int] = 0
     rank: Optional[str] = 'novice'
     color: Optional[str] = 'grey'
+    cumulative: Optional[int] = 0
 
 
 class ResponseRatingList(BaseModel):

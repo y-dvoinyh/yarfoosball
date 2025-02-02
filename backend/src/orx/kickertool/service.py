@@ -1,5 +1,6 @@
 import json
 from typing import Optional, List, Any
+from collections import defaultdict
 from src.core.service import BaseService
 
 from src.models import CompetitionType, CompetitionModel, RatingType, PlayerModel
@@ -209,17 +210,16 @@ class KickerToolDYPService(BaseService):
 
     async def update_competitition_standins(self):
         competitions = await self.uow.competitions.all(order="date")
+
+        playears_cumulative = defaultdict(int)
+
         for competition in competitions:
             dyp = DYP(DYPScheme(**competition.json_data))
-            for elimination in dyp.scheme.eliminations:
-                for standing in elimination.standings:
-                    if not standing.stats:
-                        continue
-                    first_name, last_name = standing.name.split(' ')
+            for qualifying in dyp.scheme.qualifying:
+                for standing in qualifying.standings:
+                    first_name, last_name, *_ = standing.name.split(' ')
                     p_dict = {'first_name': first_name, 'last_name': last_name}
-                    # Игрок
                     player = await self.uow.players.update_or_create(UpdatePlayer(**p_dict), **p_dict)
-                    print(player.id, player.first_name, player.last_name, standing.stats.place)
                     rating_history = await self.uow.rating_history.get_single(**{
                         'type': 'PLAYER',
                         'level': 'COMPETITION',
@@ -228,6 +228,64 @@ class KickerToolDYPService(BaseService):
                     })
                     if not rating_history:
                         continue
+                    prev = await self.uow.rating_history.get_single(**{
+                        'id': rating_history.prev_history_id
+                    })
+                    rating_history.cumulative_diff = 0
+                    rating_history.cumulative = 0
+                    if prev:
+                        rating_history.cumulative = prev.cumulative or 0
+                        playears_cumulative[player.id] = rating_history.cumulative
+
+            for elimination in dyp.scheme.eliminations:
+                for standing in elimination.standings:
+                    first_name, last_name = standing.name.split(' ')
+                    p_dict = {'first_name': first_name, 'last_name': last_name}
+                    # Игрок
+                    player = await self.uow.players.update_or_create(UpdatePlayer(**p_dict), **p_dict)
+                    rating_history = await self.uow.rating_history.get_single(**{
+                        'type': 'PLAYER',
+                        'level': 'COMPETITION',
+                        'competition_id': competition.id,
+                        'player_id': player.id
+                    })
+                    if not rating_history:
+                        continue
+                    if not standing.stats:
+                        prev = await self.uow.rating_history.get_single(**{
+                            'id': rating_history.prev_history_id
+                        })
+                        if prev:
+                            rating_history.cumulative = prev.cumulative
+                            if rating_history.cumulative:
+                                playears_cumulative[player.id] = rating_history.cumulative
+
+                        continue
+
                     rating_history.place = standing.stats.place
+                    diff = ((100 - (standing.stats.place - 1) * 10) if standing.stats.place < 11 else 5) or 0
+                    rating_history.cumulative_diff = diff
+
+                    if rating_history.prev_history_id is None:
+                        rating_history.cumulative = rating_history.cumulative_diff
+                        if rating_history.cumulative:
+                            playears_cumulative[player.id] = rating_history.cumulative
+                    else:
+                        prev = await self.uow.rating_history.get_single(**{
+                            'id': rating_history.prev_history_id
+                        })
+                        rating_history.cumulative = (prev.cumulative or 0) + rating_history.cumulative_diff
+                        if rating_history.cumulative:
+                            playears_cumulative[player.id] = rating_history.cumulative
+
+        for player_id, cumulative in playears_cumulative.items():
+            print('****************', player_id, cumulative)
+            rating = await self.uow.ratings.get_single(**{
+                'type': 'PLAYER',
+                'player_id': player_id
+            })
+            if rating:
+                rating.cumulative = cumulative
+
         await self.uow.commit()
         return True

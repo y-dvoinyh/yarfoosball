@@ -27,20 +27,28 @@
             class="q-ml-md"
           />
         </template>
-        <template v-slot:body-cell="props">
-          <q-td :props="props" v-if="props.col.name === 'full_name'">
+        <template v-slot:body-cell-avatar="props">
+          <q-td :props="props">
+            <q-avatar size="34px" color="primary" text-color="white">
+              {{props.row.full_name.split(/\s+/).map(word => word !== '' ? word[0][0].toUpperCase(): '').join('')}}
+<!--              <img src="https://cdn.quasar.dev/img/avatar.png">-->
+            </q-avatar>
+          </q-td>
+        </template>
+        <template v-slot:body-cell-full_name="props">
+          <q-td :props="props">
             <q-item :to="{ name: 'player_page_route', params: {id: props.row.player_id}}" dense>
               <q-item-section class="cursor-pointer text-primary">{{props.value}}</q-item-section>
             </q-item>
           </q-td>
-          <q-td :props="props" v-else-if="props.col.name === 'rank'">
+        </template>
+        <template v-slot:body-cell-rank="props">
+          <q-td :props="props">
             <q-badge :color="props.row.color">
               {{ props.row.rank }}
             </q-badge>
           </q-td>
-          <q-td :props="props" v-else> {{props.value}} </q-td>
         </template>
-
       </q-table>
     </div>
   </q-page>
@@ -58,6 +66,7 @@ export default defineComponent({
 
     const columns = [
       { name: 'number', label: '№', align: 'left', field: 'number', sortable: false },
+      { name: 'avatar', label: ' ', align: 'right', field: 'full_name', sortable: false},
       { name: 'full_name', label: 'Фамилия Имя', align: 'left', field: 'full_name', sortable: false},
       { name: 'rank', label: 'Ранг', align: 'left', field: 'rank', sortable: true },
       { name: 'rating', label: 'Рейтинг', align: 'left', field: 'rating', sortable: true },
@@ -65,6 +74,8 @@ export default defineComponent({
         format: (val, row) => `${val && val > 0 ? '+' : ''}${val || val === 0 ? val : ''}`,
         style: row => (row.last_diff > 0 ? 'color: green' : 'color: red')
       },
+      { name: 'cumulative', label: 'Накоп', align: 'left', field: 'cumulative', sortable: true },
+
 
       { name: 'tournaments', label: 'Турниров', align: 'left', field: 'tournaments', sortable: true },
       { name: 'matches', label: 'Матчей', align: 'left', field: 'matches', sortable: true },
