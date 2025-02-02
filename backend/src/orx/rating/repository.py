@@ -47,7 +47,7 @@ class RatingRepository(
                 ).label('rank_sort'),
                 self.model.cumulative
             )
-            .where(and_(self.model.player_id is not None, self.model.type == RatingType.PLAYER))
+            .where(and_(self.model.player_id.isnot(None), self.model.type == RatingType.PLAYER))
             .order_by(self.model.rating.desc(), self.model.id)
             .subquery()
         )
@@ -80,7 +80,7 @@ class RatingRepository(
             )
             .select_from(PlayerModel)
             .join(rating_subquery, rating.player_id == PlayerModel.id, isouter=True)
-            .where(rating.player_id is not None)
+            .where(rating.player_id.isnot(None))
             .limit(limit)
             .offset(offset)
         )
