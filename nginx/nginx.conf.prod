@@ -2,9 +2,9 @@ server {
     listen                      80;
     listen                      443 ssl;
 
-    server_name                 yarfoosball.ru;
-    ssl_certificate             /etc/ssl/yarfoosball.ru.crt;
-    ssl_certificate_key         /etc/ssl/yarfoosball.ru.key;
+    server_name                 kickerwave.ru;
+    ssl_certificate             /etc/ssl/kickerwave.ru.crt;
+    ssl_certificate_key         /etc/ssl/kickerwave.ru.key;
     ssl_session_cache           shared:SSL:10m;
     ssl_session_timeout         10m;
     keepalive_timeout           70;
