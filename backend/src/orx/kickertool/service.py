@@ -49,7 +49,9 @@ class KickerToolDYPService(BaseService):
             print('***************', json_url)
             json_data = requests.get(json_url, verify=False)
             #json_data = json.loads(json_data_text.text)
-
+            competition = await self.get(**{'external_id': __id})
+            if competition is not None:
+                continue
             await self.load_from_json(1, json_data.text)
         return True
 
