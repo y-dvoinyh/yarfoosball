@@ -1,4 +1,6 @@
 import json
+import requests
+from bs4 import BeautifulSoup
 from typing import Optional, List, Any
 from collections import defaultdict
 from src.core.service import BaseService
@@ -36,6 +38,21 @@ class KickerToolDYPService(BaseService):
         super().__init__(*args, **kwargs)
         self.repository = self.uow.competitions
 
+    async def load_by_live_link(self, link: str):
+        page = requests.get(link, verify=False)
+        content = page.text
+        soup = BeautifulSoup(content, "lxml")
+        allfd = soup.find_all('a', class_="svelte-8ynhhq", href=True)
+        for h in allfd:
+            __id = h["href"].split('/')[3]
+            json_url = f'https://live.kickertool.de/api/table_soccer/tournaments/{__id}.json'
+            print('***************', json_url)
+            json_data = requests.get(json_url, verify=False)
+            #json_data = json.loads(json_data_text.text)
+
+            await self.load_from_json(1, json_data.text)
+        return True
+
     async def load_from_json(self, tournament_id: int, json_data) -> CompetitionModel:
         """Загрузка дипа из JSON kickertools"""
         dyp = DYP(DYPScheme(**json.loads(json_data)))
@@ -70,7 +87,16 @@ class KickerToolDYPService(BaseService):
                         yield p
 
         for p in __participants():
-            first_name, last_name = p.name.split(' ')
+            try:
+                last_name, first_name = filter(None, p.name.strip().split(' '))
+            except:
+                print(p.name)
+                continue
+            last_name.strip()
+            first_name.strip()
+            first_name.replace('ё', 'е')
+            last_name.replace('ё', 'е')
+
             p_dict = {'first_name': first_name, 'last_name': last_name}
             # Игрок
             player = await self.uow.players.update_or_create(UpdatePlayer(**p_dict), **p_dict)
@@ -217,7 +243,11 @@ class KickerToolDYPService(BaseService):
             dyp = DYP(DYPScheme(**competition.json_data))
             for qualifying in dyp.scheme.qualifying:
                 for standing in qualifying.standings:
-                    first_name, last_name, *_ = standing.name.split(' ')
+                    last_name, first_name, *_ = filter(None, standing.name.strip().split(' '))
+                    last_name.strip()
+                    first_name.strip()
+                    first_name.replace('ё', 'е')
+                    last_name.replace('ё', 'е')
                     p_dict = {'first_name': first_name, 'last_name': last_name}
                     player = await self.uow.players.update_or_create(UpdatePlayer(**p_dict), **p_dict)
                     rating_history = await self.uow.rating_history.get_single(**{
@@ -239,7 +269,11 @@ class KickerToolDYPService(BaseService):
 
             for elimination in dyp.scheme.eliminations:
                 for standing in elimination.standings:
-                    first_name, last_name = standing.name.split(' ')
+                    last_name, first_name = filter(None, standing.name.strip().split(' '))
+                    last_name.strip()
+                    first_name.strip()
+                    first_name.replace('ё', 'е')
+                    last_name.replace('ё', 'е')
                     p_dict = {'first_name': first_name, 'last_name': last_name}
                     # Игрок
                     player = await self.uow.players.update_or_create(UpdatePlayer(**p_dict), **p_dict)
