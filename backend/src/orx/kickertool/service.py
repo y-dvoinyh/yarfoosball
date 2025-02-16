@@ -245,7 +245,10 @@ class KickerToolDYPService(BaseService):
             dyp = DYP(DYPScheme(**competition.json_data))
             for qualifying in dyp.scheme.qualifying:
                 for standing in qualifying.standings:
-                    last_name, first_name, *_ = filter(None, standing.name.strip().split(' '))
+                    try:
+                        last_name, first_name, *_ = filter(None, standing.name.strip().split(' '))
+                    except:
+                        continue
                     last_name.strip()
                     first_name.strip()
                     first_name.replace('ё', 'е')
@@ -271,7 +274,10 @@ class KickerToolDYPService(BaseService):
 
             for elimination in dyp.scheme.eliminations:
                 for standing in elimination.standings:
-                    last_name, first_name = filter(None, standing.name.strip().split(' '))
+                    try:
+                        last_name, first_name = filter(None, standing.name.strip().split(' '))
+                    except:
+                        continue
                     last_name.strip()
                     first_name.strip()
                     first_name.replace('ё', 'е')
