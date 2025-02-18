@@ -34,6 +34,7 @@ class ResponsePlayerCompetition(BaseModel):
     matches_diff: Optional[int]
     wins_diff: Optional[int]
     losses_diff: Optional[int]
+    description: Optional[str] = None
     goals_diff: Optional[int] = 0
     place: Optional[int] = 0
     cumulative: Optional[int] = 0
