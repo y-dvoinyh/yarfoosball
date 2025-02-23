@@ -47,6 +47,7 @@ class PlayersRepository(SqlAlchemyRepository[PlayerModel, CreatePlayer, UpdatePl
                 CompetitionModel.id,
                 CompetitionModel.name,
                 CompetitionModel.date,
+                CompetitionModel.description,
                 rating.rating,
                 rating.diff,
                 rating.matches_diff,

@@ -194,13 +194,25 @@
         v-model:pagination="pagination"
         @request="onRequest"
       >
-        <template v-slot:body-cell="props">
-          <q-td :props="props" v-if="props.col.name === 'name'">
+        <template v-slot:body-cell-name="props">
+          <q-td :props="props">
             <q-item :to="{ name: 'competition_page_route', params: {id: props.row.player_id, competition_id: props.row.id}}" dense>
               <q-item-section class="cursor-pointer text-primary">{{props.value}}</q-item-section>
             </q-item>
           </q-td>
-          <q-td :props="props" v-else> {{props.value}} </q-td>
+        </template>
+        <template v-slot:body-cell-live="props">
+          <q-td :props="props">
+            <q-btn
+              :href="props.row.description"
+              v-if="props.row.description !== null"
+              target="_blank"
+              round
+              size="sm"
+              icon="link"
+              color="primary"
+            />
+          </q-td>
         </template>
       </q-table>
       </div>
@@ -223,6 +235,7 @@ export default defineComponent({
     const $q = useQuasar()
     const tableRef = ref()
     const columns = [
+      { name: 'live', label: 'Live', align: 'right', field: 'description', sortable: false},
       { name: 'name', label: 'Соревнование', align: 'left', field: 'name', sortable: false},
       { name: 'date', label: 'Дата', align: 'left', field: 'date_str', sortable: false},
       { name: 'place', label: 'Место', align: 'left', field: 'place', sortable: false },
