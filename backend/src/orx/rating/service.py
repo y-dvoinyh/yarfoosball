@@ -51,19 +51,33 @@ class RatingService(BaseService):
         if not rating:
             return Rank.beginner
 
-        if rating >= 2000 or (cerrent_rank == Rank.master and rating >= 1900):
-            return Rank.master
-        if rating >= 1750 or (cerrent_rank == Rank.pro and rating >= 1650):
-            return Rank.pro
-        if rating >= 1500 or (cerrent_rank == Rank.semipro and rating >= 1400):
-            return Rank.semipro
-        if rating >= 1250 or (cerrent_rank == Rank.amateur and rating >= 1150):
-            return Rank.amateur
-        if rating >= 1000 or (cerrent_rank == Rank.novice and rating >= 900):
-            return Rank.novice
-
-        if rating < 1000:
+        elif rating < 1000:
             return Rank.beginner
+        elif rating < 1250:
+            return Rank.novice
+        elif rating < 1500:
+            return Rank.amateur
+        elif rating < 1750:
+            return Rank.semipro
+        elif rating < 2000:
+            return Rank.pro
+        elif rating >= 2000:
+            return Rank.master
+        return Rank.beginner
+
+        # if rating >= 2000 or (cerrent_rank == Rank.master and rating >= 1900):
+        #     return Rank.master
+        # if rating >= 1750 or (cerrent_rank == Rank.pro and rating >= 1650):
+        #     return Rank.pro
+        # if rating >= 1500 or (cerrent_rank == Rank.semipro and rating >= 1400):
+        #     return Rank.semipro
+        # if rating >= 1250 or (cerrent_rank == Rank.amateur and rating >= 1150):
+        #     return Rank.amateur
+        # if rating >= 1000 or (cerrent_rank == Rank.novice and rating >= 900):
+        #     return Rank.novice
+        #
+        # if rating < 1000:
+        #     return Rank.beginner
 
         return Rank.beginner
 

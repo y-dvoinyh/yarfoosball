@@ -22,6 +22,11 @@ async def upload_file_json(
     return await service.load_from_json(tournament_id, file_bytes)
 
 
+@router.get("/dyp/load_by_link")
+async def load_by_live_link(service: KickerToolDep, link: str) -> bool:
+    return await service.load_by_live_link(link)
+
+
 @router.get("")
 async def list_competitions(service: KickerToolDep) -> List[ResponseDYPCompetition]:
     """Список игроков"""
