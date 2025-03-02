@@ -193,6 +193,7 @@ class KickerToolDYPService(BaseService):
                 result.append(None)
                 continue
             team = dyp.get(f'Match_Team-{team_scheme.id}')
+            print('--------------------team_scheme.id:', team_scheme.id)
 
             if team is None:
                 external_second_player_id = None
