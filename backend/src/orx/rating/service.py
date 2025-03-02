@@ -51,7 +51,7 @@ class RatingService(BaseService):
         if not rating:
             return Rank.beginner
 
-        elif rating < 100:
+        elif rating < 1000:
             return Rank.beginner
         elif rating < 1250:
             return Rank.novice
