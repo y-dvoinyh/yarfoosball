@@ -161,7 +161,7 @@ class KickerToolDYPService(BaseService):
         """Синхронизация списка матчей"""
         for match_scheme in matches:
             print(match_scheme)
-            if match_scheme.deactivated:
+            if match_scheme.deactivated or match_scheme.team2 is None:
                 continue
             team1, team2 = await self.__sync_teams(dyp, [match_scheme.team1, match_scheme.team2])
 
