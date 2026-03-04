@@ -1,6 +1,7 @@
 from datetime import date
+from enum import Enum
 from typing import Optional, List
-from pydantic import BaseModel, computed_field
+from pydantic import BaseModel, computed_field, Field
 
 
 class BasePlayer(BaseModel):
@@ -110,3 +111,43 @@ class SeriesResponce(BaseModel):
     s_loss: int
     s_draws: int
 
+
+class DTFBLicence(Enum):
+    A = 'A'
+    B = 'B'
+    C = 'C'
+
+
+class SportCategory(Enum):
+    JUNIOR = 'junior'
+    SENIOR = 'senior'
+    MAN = 'men'
+    WOMEN = 'women'
+    DIVERS = 'non-binary'
+
+
+class MembershipState(Enum):
+    ACTIVE = 'active'
+    INACTIVE = 'inactive'
+    PENDING = 'pending'
+
+
+class ClubMembership(BaseModel):
+    club: str
+    clubCity: str
+    membershipState: MembershipState
+    association: str
+
+
+class KTPlayer(BaseModel):
+    id: str = Field(..., alias='_id')
+    first_name: str = Field(..., alias='firstName')
+    last_name: str = Field(..., alias='lastName')
+    categories: list[SportCategory]
+    club_memberships: list[ClubMembership] = Field(..., alias='clubMemberships')
+
+    birth_year: Optional[int] = Field(None, alias='birthYear')
+    country: Optional[str] = 'RF'
+    national_id: Optional[str] = Field(None, alias='nationalId')
+    international_id: Optional[str] = Field(None, alias='internationalId')
+    national_licence: Optional[DTFBLicence] = Field(None, alias='nationalLicence')

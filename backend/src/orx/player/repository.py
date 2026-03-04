@@ -381,3 +381,7 @@ class PlayersRepository(SqlAlchemyRepository[PlayerModel, CreatePlayer, UpdatePl
             's_loss': max_loss,
             's_draws': max_draws
         }
+
+
+    async def get_kt_players(self):
+        ...

@@ -31,3 +31,6 @@ class PlayersService(BaseService):
 
     async def get_series(self, player_id: int):
         return await self.repository.get_series(player_id)
+
+    async def get_kt_players(self):
+        return await self.repository.get_kt_players()

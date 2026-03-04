@@ -41,6 +41,7 @@ services:
     volumes:
       - ./backend/src:/app/src
       - ./backend/migrations:/app/migrations
+      - ./backend/certs:/app/certs
     env_file:
       - ./.env-dev
     networks:

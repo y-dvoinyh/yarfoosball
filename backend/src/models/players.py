@@ -13,6 +13,7 @@ class PlayerModel(BaseModel):
 
     @property
     def full_name(self) -> str:
+        """Полное имя"""
         return f"{self.first_name} {self.last_name}"
 
     def __str__(self):

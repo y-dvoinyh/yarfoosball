@@ -1,4 +1,3 @@
-from asyncio import current_task
 from contextlib import asynccontextmanager
 
 from sqlalchemy.ext.asyncio import (
@@ -20,12 +19,6 @@ class DatabaseHelper:
             autoflush=False,
             autocommit=False,
             expire_on_commit=False
-        )
-
-    def get_scope_session(self):
-        return async_scoped_session(
-            session_factory=self.session_factory,
-            scopefunc=current_task
         )
 
     @asynccontextmanager

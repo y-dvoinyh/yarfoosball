@@ -2,7 +2,7 @@ from typing import List, Optional
 from fastapi import APIRouter
 
 from src.orx.player.schemas import CreatePlayer, ResponsePlayer, UpdatePlayer, ResponsePlayerCompetitionList, \
-    ResponcePlayerInfo, ResponceMatchRow, PartnerResponce, PlayerStatisticResponce
+    ResponcePlayerInfo, ResponceMatchRow, PartnerResponce, PlayerStatisticResponce, KTPlayer
 from src.orx.player.depends import PlayersDep
 
 
@@ -28,6 +28,12 @@ async def update_player(player_id: int, player_data: UpdatePlayer, service: Play
 async def list_players(service: PlayersDep) -> List[ResponsePlayer]:
     """Список игроков"""
     return await service.list()
+
+
+@router.get("/kt")
+async def kt_players(service: PlayersDep) -> List[KTPlayer]:
+    """Список игроков"""
+    return await service.get_kt_players()
 
 
 @router.get('/competitions')
