@@ -53,3 +53,15 @@ class Rank(Enum):
     semipro = 'semi-pro'    # 1500
     pro = 'pro'     # 1750
     master = 'master' # 2000
+
+    low_minus = 'Low-'      # -500
+    low = 'Low'             # 500-700
+    low_plus = 'Low+'       # 700-1000
+    mid_minus = 'Mid-'      # 1000-1100
+    mid = 'Mid'             # 1100-1200
+    mid_plus = 'Mid+'       # 1200-1300
+    high_minus = 'High-'    # 1300-1400
+    high = 'High'           # 1400-1500
+    high_plus = 'High+'     # 1500-1600
+    new_pro = 'Pro'         # 1600-1700
+    pro_plus = 'Pro+'       # 1700+

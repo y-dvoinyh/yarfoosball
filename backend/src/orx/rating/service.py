@@ -49,21 +49,53 @@ class RatingService(BaseService):
     @staticmethod
     def get_rank(cerrent_rank, rating):
         if not rating:
-            return Rank.beginner
+            return Rank.mid_minus
 
-        elif rating < 1000:
-            return Rank.beginner
-        elif rating < 1250:
-            return Rank.novice
-        elif rating < 1500:
-            return Rank.amateur
-        elif rating < 1750:
-            return Rank.semipro
-        elif rating < 2000:
-            return Rank.pro
-        elif rating >= 2000:
-            return Rank.master
-        return Rank.beginner
+        if rating < 500:
+            return Rank.low_minus
+        if rating < 700:
+            return Rank.low
+        if rating < 1000:
+            return Rank.low_plus
+        if rating < 1100:
+            return Rank.mid_minus
+        if rating < 1200:
+            return Rank.mid
+        if rating < 1300:
+            return Rank.mid_plus
+
+        if rating < 1400:
+            return Rank.high_minus
+        if rating < 1500:
+            return Rank.high
+        if rating < 1600:
+            return Rank.high_plus
+
+        if rating < 1700:
+            return Rank.new_pro
+        if rating >= 1700:
+            return Rank.pro_plus
+
+        return Rank.mid_minus
+
+
+
+        # if not rating:
+        #     return Rank.beginner
+        #
+        # elif rating < 1000:
+        #     return Rank.beginner
+        # elif rating < 1250:
+        #     return Rank.novice
+        # elif rating < 1500:
+        #     return Rank.amateur
+        # elif rating < 1750:
+        #     return Rank.semipro
+        # elif rating < 2000:
+        #     return Rank.pro
+        # elif rating >= 2000:
+        #     return Rank.master
+        # return Rank.beginner
 
         # if rating >= 2000 or (cerrent_rank == Rank.master and rating >= 1900):
         #     return Rank.master

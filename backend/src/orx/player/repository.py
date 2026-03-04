@@ -301,6 +301,21 @@ class PlayersRepository(SqlAlchemyRepository[PlayerModel, CreatePlayer, UpdatePl
             RatingModel.losses,
             RatingModel.rank,
             case(
+                (RatingModel.rank == Rank.low, 'green'),
+                (RatingModel.rank == Rank.low_plus, 'green'),
+                (RatingModel.rank == Rank.low_minus, 'green'),
+
+                (RatingModel.rank == Rank.mid, 'orange'),
+                (RatingModel.rank == Rank.mid_plus, 'orange'),
+                (RatingModel.rank == Rank.mid_minus, 'orange'),
+
+                (RatingModel.rank == Rank.high, 'red'),
+                (RatingModel.rank == Rank.high_plus, 'red'),
+                (RatingModel.rank == Rank.high_minus, 'red'),
+
+                (RatingModel.rank == Rank.new_pro, 'black'),
+                (RatingModel.rank == Rank.pro_plus, 'black'),
+
                 (RatingModel.rank == Rank.beginner, 'grey'),
                 (RatingModel.rank == Rank.novice, 'blue'),
                 (RatingModel.rank == Rank.amateur, 'green'),

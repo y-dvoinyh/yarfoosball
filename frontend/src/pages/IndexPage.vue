@@ -44,7 +44,7 @@
         </template>
         <template v-slot:body-cell-rank="props">
           <q-td :props="props">
-            <q-badge :color="props.row.color">
+            <q-badge :color="props.row.color" :class="{'text-weight-bold': isBoldRank(props.row.rank)}">
               {{ props.row.rank }}
             </q-badge>
           </q-td>
@@ -84,6 +84,11 @@ export default defineComponent({
       { name: 'losses', label: 'Поражений', align: 'left', field: 'losses', sortable: true },
       { name: 'percent_win', label: 'Процент побед', align: 'left', field: 'wins', sortable: true, format: (val, row) => `${Math.round((val/row.matches) * 100)}%`},
     ]
+
+    const boldRanks = ['Low+', 'Mid+', 'High+']  // список рангов, которые хотим сделать жирными
+    const isBoldRank = (rank) => {
+      return boldRanks.includes(rank)
+    }
 
     const tableRef = ref()
     const loading = ref(true);
@@ -158,7 +163,8 @@ export default defineComponent({
       pagination,
       tableRef,
       filter,
-      onRequest
+      onRequest,
+      isBoldRank
     }
   }
 })

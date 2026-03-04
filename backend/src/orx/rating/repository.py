@@ -38,6 +38,22 @@ class RatingRepository(
                     else_=0
                 ).label('percent'),
                 case(
+                    (self.model.rank == Rank.low_minus, 0),
+                    (self.model.rank == Rank.low, 1),
+                    (self.model.rank == Rank.low_plus, 2),
+
+                    (self.model.rank == Rank.mid_minus, 3),
+                    (self.model.rank == Rank.mid, 4),
+                    (self.model.rank == Rank.mid_plus, 5),
+
+                    (self.model.rank == Rank.high_minus, 6),
+                    (self.model.rank == Rank.high, 7),
+                    (self.model.rank == Rank.high_plus, 8),
+
+                    (self.model.rank == Rank.new_pro, 9),
+                    (self.model.rank == Rank.pro_plus, 10),
+
+
                     ( self.model.rank == Rank.beginner, 0),
                     ( self.model.rank == Rank.novice, 1),
                     ( self.model.rank == Rank.amateur, 2),
@@ -69,6 +85,22 @@ class RatingRepository(
                 rating.tournaments,
                 rating.rank,
                 case(
+
+                    (rating.rank == Rank.low, 'green'),
+                    (rating.rank == Rank.low_plus, 'green'),
+                    (rating.rank == Rank.low_minus, 'green'),
+
+                    (rating.rank == Rank.mid, 'orange'),
+                    (rating.rank == Rank.mid_plus, 'orange'),
+                    (rating.rank == Rank.mid_minus, 'orange'),
+
+                    (rating.rank == Rank.high, 'red'),
+                    (rating.rank == Rank.high_plus, 'red'),
+                    (rating.rank == Rank.high_minus, 'red'),
+
+                    (rating.rank == Rank.new_pro, 'black'),
+                    (rating.rank == Rank.pro_plus, 'black'),
+
                     (rating.rank == Rank.beginner, 'grey'),
                     (rating.rank == Rank.novice, 'blue'),
                     (rating.rank == Rank.amateur, 'green'),
