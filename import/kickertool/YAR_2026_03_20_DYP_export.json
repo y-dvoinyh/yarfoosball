@@ -1,0 +1,5321 @@
+{
+  "_id": "0V4LZPLrDsxb7_JYHpm3e",
+  "name": "A-trip 20.03",
+  "options": {
+    "_id": "C9Tn3M1ssDwe_lMDJWgGQ",
+    "numPoints": 6,
+    "fastInput": false,
+    "numSets": 1,
+    "twoAhead": true,
+    "pointsWin": 2,
+    "pointsDraw": 1,
+    "tablesPerPlay": 1,
+    "maxLostGames": 3,
+    "draw": true,
+    "byeRating": false,
+    "multiTableTournament": false,
+    "useCloseGameRating": false,
+    "closeGameDifference": 1,
+    "closeGamePointsWin": 2,
+    "closeGamePointsLoose": 1,
+    "numPlayersPerTeam": 2,
+    "dypMode": false,
+    "tables": [
+      {
+        "_id": "2HE9NZR4AfYlq0fZcbipu",
+        "name": "1",
+        "deactivated": false
+      }
+    ],
+    "numTables": 1,
+    "hasDisciplines": false,
+    "disciplines": [
+      {
+        "_id": "rCulWMTC-P_7KoWJZievK",
+        "name": null,
+        "numPoints": 6,
+        "fastInput": false,
+        "numSets": 1,
+        "twoAhead": true,
+        "draw": true
+      }
+    ],
+    "tableConfig": [
+      {
+        "_id": "cppg",
+        "property": "corrected_points_per_game",
+        "visible": true,
+        "ignoreSort": false,
+        "renderer": "corrected"
+      },
+      {
+        "_id": "bh1",
+        "property": "bh1",
+        "visible": true,
+        "ignoreSort": false,
+        "renderer": "float"
+      },
+      {
+        "_id": "bh2",
+        "property": "bh2",
+        "visible": false,
+        "ignoreSort": false,
+        "renderer": "float"
+      },
+      {
+        "_id": "goals_diff",
+        "property": "goal_diff",
+        "visible": true,
+        "ignoreSort": false
+      },
+      {
+        "_id": "games",
+        "property": "matches",
+        "visible": true,
+        "ignoreSort": true
+      },
+      {
+        "_id": "player",
+        "property": "name",
+        "visible": true,
+        "ignoreSort": true,
+        "renderer": "name"
+      }
+    ],
+    "startElimination": false,
+    "eliminationThirdPlace": true,
+    "maxParticipants": null,
+    "automaticMode": false,
+    "primaryColor": null,
+    "fairPlayRating": false,
+    "disablePlannedMatchEditing": false,
+    "displayConfigId": null,
+    "attachTablesToGroups": false,
+    "automaticTableScheduling": true,
+    "preventByes": false,
+    "ignoreRemovedParticipantsInStandings": false,
+    "crossGroupSeeding": false,
+    "combinedEliminationStandings": false,
+    "numRoundsPlanned": null,
+    "hash": "59ae550d3b5b14a68ee570f9d525782b1a18ab05"
+  },
+  "mode": "monster_dyp",
+  "nameType": "monster_dyp",
+  "createdAt": "2026-03-20T16:51:57.955Z",
+  "updatedAt": "2026-03-20T22:22:29.128Z",
+  "eliminations": [
+    {
+      "_id": "jG0SChhM4ZabraUvtsYD-",
+      "name": "Сетка 1",
+      "double": true,
+      "nameType": "dyp",
+      "finished": true,
+      "size": 8,
+      "thirdPlace": false,
+      "leftLevels": [
+        {
+          "_id": "fmsEdXWyvjxfF0CWYeJPM",
+          "name": "THIRD",
+          "matches": [
+            {
+              "_id": "CBV2jxvzGdp2n6Xrzaw2C",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "CBV2jxvzGdp2n6Xrzaw2C-0",
+                  "playId": "CBV2jxvzGdp2n6Xrzaw2C",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "CBV2jxvzGdp2n6Xrzaw2C-0-0",
+                      "scores": [
+                        7,
+                        5
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "fmsEdXWyvjxfF0CWYeJPM",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774044794942,
+              "timeStart": 1774044116268,
+              "valid": true,
+              "team1": {
+                "_id": "uNFN-x_Q7g4rHYCmdhkfT",
+                "name": "Павел Горбунов | Дмитрий Тараканов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  },
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "82534195de05e32eeaaa6f4e474f0ffba3b70039"
+              },
+              "team2": {
+                "_id": "8eaP3A9mIbiv8gXnk8eFf",
+                "name": "Геннадий Кокурин | Денис Шахов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "TR5uRWt0m5SH1y5pMXr_l",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "f80ae1230c5c4611640e083a8d964530332ffa53"
+                  },
+                  {
+                    "_id": "JP4b8n82UNhW5RJQVPMgo",
+                    "name": "Денис Шахов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "bfbec9f6d21d584515318e33b33ae2d26114a8e2"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "0bbb35bab906f7a94f81f5c44b64e645cd130813"
+              },
+              "result": [
+                7,
+                5
+              ],
+              "eliminationMatch": true,
+              "hash": "457b5173b67ebd65a7ed7c81364ccb7e47ffa407"
+            }
+          ],
+          "hash": "5f24be1412791e0b44c9782d91773383e484d0fc"
+        },
+        {
+          "_id": "UbrXu3suYWGZR76yWf7Mt",
+          "name": "3. Loser",
+          "matches": [
+            {
+              "_id": "AdERSXkQtGMoBwJbB2U5V",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "AdERSXkQtGMoBwJbB2U5V-0",
+                  "playId": "AdERSXkQtGMoBwJbB2U5V",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "AdERSXkQtGMoBwJbB2U5V-0-0",
+                      "scores": [
+                        7,
+                        4
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "UbrXu3suYWGZR76yWf7Mt",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774043434956,
+              "timeStart": 1774042866545,
+              "valid": true,
+              "team1": {
+                "_id": "uNFN-x_Q7g4rHYCmdhkfT",
+                "name": "Павел Горбунов | Дмитрий Тараканов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  },
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "82534195de05e32eeaaa6f4e474f0ffba3b70039"
+              },
+              "team2": {
+                "_id": "kYRWp7bOevApQUd3uwK3N",
+                "name": "Артём Красавин | Сергей Бараев",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+                    "name": "Артём Красавин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+                  },
+                  {
+                    "_id": "S9CMrtjflz11SGKS29Iyq",
+                    "name": "Сергей Бараев",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "121845d4be8417bb8abe49f2c7383813120b92b2"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "3fd48da7cc109d8367a08e5fdf0f9df0c57068ba"
+              },
+              "result": [
+                7,
+                4
+              ],
+              "eliminationMatch": true,
+              "hash": "d6b84f725e1ad57007233f2ac3bf53611f8d5244"
+            }
+          ],
+          "hash": "8aa16992dda9c826867bd4e5a2e0c568039085b4"
+        },
+        {
+          "_id": "hDqdA_jbqrYDMxpnzA3W1",
+          "name": "2. Loser",
+          "matches": [
+            {
+              "_id": "nKS6AiCeb1y4CkEyLqL74",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "nKS6AiCeb1y4CkEyLqL74-0",
+                  "playId": "nKS6AiCeb1y4CkEyLqL74",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "nKS6AiCeb1y4CkEyLqL74-0-0",
+                      "scores": [
+                        0,
+                        7
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "hDqdA_jbqrYDMxpnzA3W1",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774041559207,
+              "timeStart": 1774041189823,
+              "valid": true,
+              "team1": {
+                "_id": "3mfxVHuMBr6Tmnwe_io8m",
+                "name": "Андрей Торицын | Мария Королькова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "E1Mt6NQmQIP73dRzAufKu",
+                    "name": "Андрей Торицын",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0cd54b70ac7c176d215ca841303944286931c050"
+                  },
+                  {
+                    "_id": "0zpdkhcaY0xMpIYcNgClZ",
+                    "name": "Мария Королькова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "7f64cc6207a8ae8018c0b2328088fbc2eed716c8"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "48d1bb905d0bb6cea5f327afe4d642fa5a55fefb"
+              },
+              "team2": {
+                "_id": "uNFN-x_Q7g4rHYCmdhkfT",
+                "name": "Павел Горбунов | Дмитрий Тараканов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  },
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "82534195de05e32eeaaa6f4e474f0ffba3b70039"
+              },
+              "result": [
+                0,
+                7
+              ],
+              "eliminationMatch": true,
+              "hash": "f2d4ec2877d6e43d141687efce267672207fbce4"
+            },
+            {
+              "_id": "eXPOXtKK6HW-eXW3hVZVg",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "eXPOXtKK6HW-eXW3hVZVg-0",
+                  "playId": "eXPOXtKK6HW-eXW3hVZVg",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "eXPOXtKK6HW-eXW3hVZVg-0-0",
+                      "scores": [
+                        2,
+                        7
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "hDqdA_jbqrYDMxpnzA3W1",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774042866532,
+              "timeStart": 1774041559217,
+              "valid": true,
+              "team1": {
+                "_id": "VlAwP4LzWsqZAIa5qeQeb",
+                "name": "Елизавета Разгуляева | Роман Писаренко",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "p3BvOLBh22TH_i1RKJS63",
+                    "name": "Елизавета Разгуляева",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "ffbab8d6aa0721539959ee0fd6b8a07b9b5dffae"
+                  },
+                  {
+                    "_id": "000QdRDdU64vGl5O9MUuu",
+                    "name": "Роман Писаренко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "2e4766acc48fd0f0a8256dca3f9ddeaa4835565b"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "eed765cec687f8eebfe6fbe809e76279ee1216b9"
+              },
+              "team2": {
+                "_id": "kYRWp7bOevApQUd3uwK3N",
+                "name": "Артём Красавин | Сергей Бараев",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+                    "name": "Артём Красавин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+                  },
+                  {
+                    "_id": "S9CMrtjflz11SGKS29Iyq",
+                    "name": "Сергей Бараев",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "121845d4be8417bb8abe49f2c7383813120b92b2"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "3fd48da7cc109d8367a08e5fdf0f9df0c57068ba"
+              },
+              "result": [
+                2,
+                7
+              ],
+              "eliminationMatch": true,
+              "hash": "1e294dad2c52c8be43d5e2c1bd4d92064324667c"
+            }
+          ],
+          "hash": "c6b639b9409689c6fc876849416e4fcdc6d7795a"
+        },
+        {
+          "_id": "Tkq_8HQiRW3s3tSv_pVST",
+          "name": "1. Loser",
+          "matches": [
+            {
+              "_id": "HrRVGbpAVvW4YwVIS9wf3",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "HrRVGbpAVvW4YwVIS9wf3-0",
+                  "playId": "HrRVGbpAVvW4YwVIS9wf3",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "Tkq_8HQiRW3s3tSv_pVST",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": true,
+              "timeEnd": null,
+              "timeStart": null,
+              "valid": true,
+              "team1": {
+                "_id": "3mfxVHuMBr6Tmnwe_io8m",
+                "name": "Андрей Торицын | Мария Королькова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "E1Mt6NQmQIP73dRzAufKu",
+                    "name": "Андрей Торицын",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0cd54b70ac7c176d215ca841303944286931c050"
+                  },
+                  {
+                    "_id": "0zpdkhcaY0xMpIYcNgClZ",
+                    "name": "Мария Королькова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "7f64cc6207a8ae8018c0b2328088fbc2eed716c8"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "48d1bb905d0bb6cea5f327afe4d642fa5a55fefb"
+              },
+              "team2": null,
+              "result": [
+                0,
+                0
+              ],
+              "eliminationMatch": true,
+              "hash": "a168cf4c1d8e986dfc63c420fd7e80bc7b07bf38"
+            },
+            {
+              "_id": "N-Dg4QRzFw1D-4P84zKhp",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "N-Dg4QRzFw1D-4P84zKhp-0",
+                  "playId": "N-Dg4QRzFw1D-4P84zKhp",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "Tkq_8HQiRW3s3tSv_pVST",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": true,
+              "timeEnd": null,
+              "timeStart": null,
+              "valid": true,
+              "team1": {
+                "_id": "VlAwP4LzWsqZAIa5qeQeb",
+                "name": "Елизавета Разгуляева | Роман Писаренко",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "p3BvOLBh22TH_i1RKJS63",
+                    "name": "Елизавета Разгуляева",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "ffbab8d6aa0721539959ee0fd6b8a07b9b5dffae"
+                  },
+                  {
+                    "_id": "000QdRDdU64vGl5O9MUuu",
+                    "name": "Роман Писаренко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "2e4766acc48fd0f0a8256dca3f9ddeaa4835565b"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "eed765cec687f8eebfe6fbe809e76279ee1216b9"
+              },
+              "team2": null,
+              "result": [
+                0,
+                0
+              ],
+              "eliminationMatch": true,
+              "hash": "c3808a5c49374a59f215d637eaf141d5f05376a6"
+            }
+          ],
+          "hash": "410269813b3b0648d4361dbe498c239e5bfd9f3a"
+        }
+      ],
+      "levels": [
+        {
+          "_id": "frIw8EdbzHYBZNina989F",
+          "name": "BASE_ROUND",
+          "matches": [
+            {
+              "_id": "cQqo4oMpitAYSmxbqd4IC",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "cQqo4oMpitAYSmxbqd4IC-0",
+                  "playId": "cQqo4oMpitAYSmxbqd4IC",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "frIw8EdbzHYBZNina989F",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": null,
+              "timeStart": null,
+              "valid": true,
+              "team1": {
+                "_id": "_tdYX0SQAiLnYnElLlG4y",
+                "name": "Ярослав Двойных | Дмитрий Молчанов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  },
+                  {
+                    "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+                    "name": "Дмитрий Молчанов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "1e53b0b04557c7c014852ed9d961c5f4d266d3ea"
+              },
+              "team2": null,
+              "result": [
+                0,
+                0
+              ],
+              "eliminationMatch": true,
+              "hash": "cd19a10664b9ec5d7bf30099be43ca566ed9fbc4"
+            },
+            {
+              "_id": "TXCrcwl2e-Xc-TcubWDT8",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "TXCrcwl2e-Xc-TcubWDT8-0",
+                  "playId": "TXCrcwl2e-Xc-TcubWDT8",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "TXCrcwl2e-Xc-TcubWDT8-0-0",
+                      "scores": [
+                        7,
+                        3
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "frIw8EdbzHYBZNina989F",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774039230013,
+              "timeStart": 1774038546887,
+              "valid": true,
+              "team1": {
+                "_id": "kYRWp7bOevApQUd3uwK3N",
+                "name": "Артём Красавин | Сергей Бараев",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+                    "name": "Артём Красавин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+                  },
+                  {
+                    "_id": "S9CMrtjflz11SGKS29Iyq",
+                    "name": "Сергей Бараев",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "121845d4be8417bb8abe49f2c7383813120b92b2"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "3fd48da7cc109d8367a08e5fdf0f9df0c57068ba"
+              },
+              "team2": {
+                "_id": "3mfxVHuMBr6Tmnwe_io8m",
+                "name": "Андрей Торицын | Мария Королькова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "E1Mt6NQmQIP73dRzAufKu",
+                    "name": "Андрей Торицын",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0cd54b70ac7c176d215ca841303944286931c050"
+                  },
+                  {
+                    "_id": "0zpdkhcaY0xMpIYcNgClZ",
+                    "name": "Мария Королькова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "7f64cc6207a8ae8018c0b2328088fbc2eed716c8"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "48d1bb905d0bb6cea5f327afe4d642fa5a55fefb"
+              },
+              "result": [
+                7,
+                3
+              ],
+              "eliminationMatch": true,
+              "hash": "fada2b3fc1a34b535df4a352593f61d7eae5b0dd"
+            },
+            {
+              "_id": "K2h1jnevvEGzRXpiAuV65",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "K2h1jnevvEGzRXpiAuV65-0",
+                  "playId": "K2h1jnevvEGzRXpiAuV65",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "K2h1jnevvEGzRXpiAuV65-0-0",
+                      "scores": [
+                        2,
+                        7
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "frIw8EdbzHYBZNina989F",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774040092132,
+              "timeStart": 1774039230027,
+              "valid": true,
+              "team1": {
+                "_id": "VlAwP4LzWsqZAIa5qeQeb",
+                "name": "Елизавета Разгуляева | Роман Писаренко",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "p3BvOLBh22TH_i1RKJS63",
+                    "name": "Елизавета Разгуляева",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "ffbab8d6aa0721539959ee0fd6b8a07b9b5dffae"
+                  },
+                  {
+                    "_id": "000QdRDdU64vGl5O9MUuu",
+                    "name": "Роман Писаренко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "2e4766acc48fd0f0a8256dca3f9ddeaa4835565b"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "eed765cec687f8eebfe6fbe809e76279ee1216b9"
+              },
+              "team2": {
+                "_id": "8eaP3A9mIbiv8gXnk8eFf",
+                "name": "Геннадий Кокурин | Денис Шахов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "TR5uRWt0m5SH1y5pMXr_l",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "f80ae1230c5c4611640e083a8d964530332ffa53"
+                  },
+                  {
+                    "_id": "JP4b8n82UNhW5RJQVPMgo",
+                    "name": "Денис Шахов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "bfbec9f6d21d584515318e33b33ae2d26114a8e2"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "0bbb35bab906f7a94f81f5c44b64e645cd130813"
+              },
+              "result": [
+                2,
+                7
+              ],
+              "eliminationMatch": true,
+              "hash": "1c0d4ced29e6637a3b580c702c19aad62b9d1680"
+            },
+            {
+              "_id": "FquiLc4TTq8ovqOMRXpI7",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "FquiLc4TTq8ovqOMRXpI7-0",
+                  "playId": "FquiLc4TTq8ovqOMRXpI7",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "frIw8EdbzHYBZNina989F",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": null,
+              "timeStart": null,
+              "valid": true,
+              "team1": {
+                "_id": "uNFN-x_Q7g4rHYCmdhkfT",
+                "name": "Павел Горбунов | Дмитрий Тараканов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  },
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "82534195de05e32eeaaa6f4e474f0ffba3b70039"
+              },
+              "team2": null,
+              "result": [
+                0,
+                0
+              ],
+              "eliminationMatch": true,
+              "hash": "314c62cb7ed8d79683732a52e68f1d80000cf4f2"
+            }
+          ],
+          "hash": "bb9f01ff8af2fa9015c27400446e01212b9678aa"
+        },
+        {
+          "_id": "DVVbNxp4MGCOeIW6PRkpx",
+          "name": "1. Winner",
+          "matches": [
+            {
+              "_id": "FVrPJS65T8P6o7BphSM0_",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "FVrPJS65T8P6o7BphSM0_-0",
+                  "playId": "FVrPJS65T8P6o7BphSM0_",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "FVrPJS65T8P6o7BphSM0_-0-0",
+                      "scores": [
+                        7,
+                        4
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "DVVbNxp4MGCOeIW6PRkpx",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774040545862,
+              "timeStart": 1774040092154,
+              "valid": true,
+              "team1": {
+                "_id": "_tdYX0SQAiLnYnElLlG4y",
+                "name": "Ярослав Двойных | Дмитрий Молчанов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  },
+                  {
+                    "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+                    "name": "Дмитрий Молчанов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "1e53b0b04557c7c014852ed9d961c5f4d266d3ea"
+              },
+              "team2": {
+                "_id": "kYRWp7bOevApQUd3uwK3N",
+                "name": "Артём Красавин | Сергей Бараев",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+                    "name": "Артём Красавин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+                  },
+                  {
+                    "_id": "S9CMrtjflz11SGKS29Iyq",
+                    "name": "Сергей Бараев",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "121845d4be8417bb8abe49f2c7383813120b92b2"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "3fd48da7cc109d8367a08e5fdf0f9df0c57068ba"
+              },
+              "result": [
+                7,
+                4
+              ],
+              "eliminationMatch": true,
+              "hash": "c5e884a81486f54c9ac229ea2324d9a1e0cfda88"
+            },
+            {
+              "_id": "FXhRCWoBEP9bK_-5W2ekK",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "FXhRCWoBEP9bK_-5W2ekK-0",
+                  "playId": "FXhRCWoBEP9bK_-5W2ekK",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "FXhRCWoBEP9bK_-5W2ekK-0-0",
+                      "scores": [
+                        7,
+                        3
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "DVVbNxp4MGCOeIW6PRkpx",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774041189809,
+              "timeStart": 1774040545875,
+              "valid": true,
+              "team1": {
+                "_id": "8eaP3A9mIbiv8gXnk8eFf",
+                "name": "Геннадий Кокурин | Денис Шахов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "TR5uRWt0m5SH1y5pMXr_l",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "f80ae1230c5c4611640e083a8d964530332ffa53"
+                  },
+                  {
+                    "_id": "JP4b8n82UNhW5RJQVPMgo",
+                    "name": "Денис Шахов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "bfbec9f6d21d584515318e33b33ae2d26114a8e2"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "0bbb35bab906f7a94f81f5c44b64e645cd130813"
+              },
+              "team2": {
+                "_id": "uNFN-x_Q7g4rHYCmdhkfT",
+                "name": "Павел Горбунов | Дмитрий Тараканов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  },
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "82534195de05e32eeaaa6f4e474f0ffba3b70039"
+              },
+              "result": [
+                7,
+                3
+              ],
+              "eliminationMatch": true,
+              "hash": "df6a99cfe994a82d0b8fb30a12c7850f10ddd24e"
+            }
+          ],
+          "hash": "40cf4f3220e2628e4b305ebfa8395f5eeb340fbe"
+        },
+        {
+          "_id": "CGRb5Rk-089vn7PVt6P-S",
+          "name": "2. Winner",
+          "matches": [
+            {
+              "_id": "o7wcNcRrEj2JMEMH6O29k",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "o7wcNcRrEj2JMEMH6O29k-0",
+                  "playId": "o7wcNcRrEj2JMEMH6O29k",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "o7wcNcRrEj2JMEMH6O29k-0-0",
+                      "scores": [
+                        7,
+                        3
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "CGRb5Rk-089vn7PVt6P-S",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774044116256,
+              "timeStart": 1774043434969,
+              "valid": true,
+              "team1": {
+                "_id": "_tdYX0SQAiLnYnElLlG4y",
+                "name": "Ярослав Двойных | Дмитрий Молчанов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  },
+                  {
+                    "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+                    "name": "Дмитрий Молчанов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "1e53b0b04557c7c014852ed9d961c5f4d266d3ea"
+              },
+              "team2": {
+                "_id": "8eaP3A9mIbiv8gXnk8eFf",
+                "name": "Геннадий Кокурин | Денис Шахов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "TR5uRWt0m5SH1y5pMXr_l",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "f80ae1230c5c4611640e083a8d964530332ffa53"
+                  },
+                  {
+                    "_id": "JP4b8n82UNhW5RJQVPMgo",
+                    "name": "Денис Шахов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "bfbec9f6d21d584515318e33b33ae2d26114a8e2"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "0bbb35bab906f7a94f81f5c44b64e645cd130813"
+              },
+              "result": [
+                7,
+                3
+              ],
+              "eliminationMatch": true,
+              "hash": "8d63da0d5c1c4d093a4980bac0e1a3e796f5514a"
+            }
+          ],
+          "hash": "081d2dfb6fca914a53b9ce2d47eabd48332c9ee4"
+        },
+        {
+          "_id": "QMFMcRqJylUavczn5N9DZ",
+          "name": "FINALS-1-1",
+          "matches": [
+            {
+              "_id": "bJvO6fVjEjaXAedS6lCLB",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "bJvO6fVjEjaXAedS6lCLB-0",
+                  "playId": "bJvO6fVjEjaXAedS6lCLB",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "bJvO6fVjEjaXAedS6lCLB-0-0",
+                      "scores": [
+                        4,
+                        7
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "jG0SChhM4ZabraUvtsYD-",
+              "roundId": "QMFMcRqJylUavczn5N9DZ",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774045348914,
+              "timeStart": 1774044794949,
+              "valid": true,
+              "team1": {
+                "_id": "_tdYX0SQAiLnYnElLlG4y",
+                "name": "Ярослав Двойных | Дмитрий Молчанов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  },
+                  {
+                    "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+                    "name": "Дмитрий Молчанов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "1e53b0b04557c7c014852ed9d961c5f4d266d3ea"
+              },
+              "team2": {
+                "_id": "uNFN-x_Q7g4rHYCmdhkfT",
+                "name": "Павел Горбунов | Дмитрий Тараканов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  },
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "82534195de05e32eeaaa6f4e474f0ffba3b70039"
+              },
+              "result": [
+                4,
+                7
+              ],
+              "eliminationMatch": true,
+              "hash": "f88d5b4af0b3f7e023e7fa7fd8d9a0f60533ce72"
+            }
+          ],
+          "hash": "ac2547d8f8219fca3a510f252e80b2eba6407d5f"
+        }
+      ],
+      "third": {
+        "_id": "irikiMuB725pcd8aie8GM",
+        "name": "THIRD",
+        "matches": [
+          {
+            "_id": "i5DnDou5HNNDplZ_ubeoC",
+            "deactivated": false,
+            "tables": null,
+            "forcedTables": null,
+            "disciplines": [
+              {
+                "_id": "i5DnDou5HNNDplZ_ubeoC-0",
+                "playId": "i5DnDou5HNNDplZ_ubeoC",
+                "team1Confirmed": false,
+                "team2Confirmed": false
+              }
+            ],
+            "groupId": "jG0SChhM4ZabraUvtsYD-",
+            "roundId": "irikiMuB725pcd8aie8GM",
+            "skipped": false,
+            "team1bye": false,
+            "team2bye": false,
+            "timeEnd": null,
+            "timeStart": null,
+            "valid": false,
+            "team1": null,
+            "team2": null,
+            "result": [
+              0,
+              0
+            ],
+            "eliminationMatch": true,
+            "hash": "a6d9f310e6f04fbebe0b1ed99e091fccba7f1af9"
+          }
+        ],
+        "hash": "28d637f9fafa7b66454e537f912e91649eb437c3"
+      },
+      "standings": [
+        {
+          "_id": "9yy38Z1SN9MW2MCwFApt_",
+          "name": "Павел Горбунов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 1,
+            "finalResult": true,
+            "matches": 5,
+            "points": 8,
+            "won": 4,
+            "lost": 1,
+            "draws": 0,
+            "sets_won": 4,
+            "sets_lost": 1,
+            "sets_diff": 3,
+            "dis_won": 4,
+            "dis_lost": 1,
+            "dis_draw": 0,
+            "dis_diff": 3,
+            "goals": 31,
+            "goals_in": 20,
+            "w_l": 0,
+            "goal_diff": 11,
+            "lives": 2,
+            "bh1": 0,
+            "bh2": 0,
+            "bh1_plain": 0,
+            "bh2_plain": 0,
+            "sb": 0,
+            "points_per_game": 1.6,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "jG0SChhM4ZabraUvtsYD-",
+          "hash": "46555c5fb4fd5197262e53c0db7b8ad03b7cbd44"
+        },
+        {
+          "_id": "jlj-xTsR0XuKnWvwSExfT",
+          "name": "Дмитрий Тараканов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 1,
+            "finalResult": true,
+            "matches": 5,
+            "points": 8,
+            "won": 4,
+            "lost": 1,
+            "draws": 0,
+            "sets_won": 4,
+            "sets_lost": 1,
+            "sets_diff": 3,
+            "dis_won": 4,
+            "dis_lost": 1,
+            "dis_draw": 0,
+            "dis_diff": 3,
+            "goals": 31,
+            "goals_in": 20,
+            "w_l": 0,
+            "goal_diff": 11,
+            "lives": 2,
+            "bh1": 0,
+            "bh2": 0,
+            "bh1_plain": 0,
+            "bh2_plain": 0,
+            "sb": 0,
+            "points_per_game": 1.6,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "jG0SChhM4ZabraUvtsYD-",
+          "hash": "e5b94ecc543b3247b3f56318cd8ab767a72ff99d"
+        },
+        {
+          "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+          "name": "Дмитрий Молчанов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 2,
+            "finalResult": true,
+            "matches": 3,
+            "points": 4,
+            "won": 2,
+            "lost": 1,
+            "draws": 0,
+            "sets_won": 2,
+            "sets_lost": 1,
+            "sets_diff": 1,
+            "dis_won": 2,
+            "dis_lost": 1,
+            "dis_draw": 0,
+            "dis_diff": 1,
+            "goals": 18,
+            "goals_in": 14,
+            "w_l": 0,
+            "goal_diff": 4,
+            "lives": 2,
+            "bh1": 0,
+            "bh2": 0,
+            "bh1_plain": 0,
+            "bh2_plain": 0,
+            "sb": 0,
+            "points_per_game": 1.33,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "jG0SChhM4ZabraUvtsYD-",
+          "hash": "d812dd3ad1df51d085324110ade9aa0bcbea2510"
+        },
+        {
+          "_id": "yga7HMbPgFnJm_d_K6Jd7",
+          "name": "Ярослав Двойных",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 2,
+            "finalResult": true,
+            "matches": 3,
+            "points": 4,
+            "won": 2,
+            "lost": 1,
+            "draws": 0,
+            "sets_won": 2,
+            "sets_lost": 1,
+            "sets_diff": 1,
+            "dis_won": 2,
+            "dis_lost": 1,
+            "dis_draw": 0,
+            "dis_diff": 1,
+            "goals": 18,
+            "goals_in": 14,
+            "w_l": 0,
+            "goal_diff": 4,
+            "lives": 2,
+            "bh1": 0,
+            "bh2": 0,
+            "bh1_plain": 0,
+            "bh2_plain": 0,
+            "sb": 0,
+            "points_per_game": 1.33,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "jG0SChhM4ZabraUvtsYD-",
+          "hash": "e5772a794b7d7b076072f24e5b56ec5a1e975463"
+        },
+        {
+          "_id": "JP4b8n82UNhW5RJQVPMgo",
+          "name": "Денис Шахов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 3,
+            "finalResult": true,
+            "matches": 4,
+            "points": 4,
+            "won": 2,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 2,
+            "sets_lost": 2,
+            "sets_diff": 0,
+            "dis_won": 2,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": 0,
+            "goals": 22,
+            "goals_in": 19,
+            "w_l": 0,
+            "goal_diff": 3,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "bh1_plain": 0,
+            "bh2_plain": 0,
+            "sb": 0,
+            "points_per_game": 1,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "jG0SChhM4ZabraUvtsYD-",
+          "hash": "42e4edc279589dc9041d250f7ff8a24f50e94074"
+        },
+        {
+          "_id": "TR5uRWt0m5SH1y5pMXr_l",
+          "name": "Геннадий Кокурин",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 3,
+            "finalResult": true,
+            "matches": 4,
+            "points": 4,
+            "won": 2,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 2,
+            "sets_lost": 2,
+            "sets_diff": 0,
+            "dis_won": 2,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": 0,
+            "goals": 22,
+            "goals_in": 19,
+            "w_l": 0,
+            "goal_diff": 3,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "bh1_plain": 0,
+            "bh2_plain": 0,
+            "sb": 0,
+            "points_per_game": 1,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "jG0SChhM4ZabraUvtsYD-",
+          "hash": "8e7d50adca02494b1554dddc6ed421cc552bb031"
+        },
+        {
+          "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+          "name": "Артём Красавин",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 4,
+            "finalResult": true,
+            "matches": 4,
+            "points": 4,
+            "won": 2,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 2,
+            "sets_lost": 2,
+            "sets_diff": 0,
+            "dis_won": 2,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": 0,
+            "goals": 22,
+            "goals_in": 19,
+            "w_l": 0,
+            "goal_diff": 3,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "bh1_plain": 0,
+            "bh2_plain": 0,
+            "sb": 0,
+            "points_per_game": 1,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "jG0SChhM4ZabraUvtsYD-",
+          "hash": "28ab366824183379a540ab433aca061251438070"
+        },
+        {
+          "_id": "S9CMrtjflz11SGKS29Iyq",
+          "name": "Сергей Бараев",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 4,
+            "finalResult": true,
+            "matches": 4,
+            "points": 4,
+            "won": 2,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 2,
+            "sets_lost": 2,
+            "sets_diff": 0,
+            "dis_won": 2,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": 0,
+            "goals": 22,
+            "goals_in": 19,
+            "w_l": 0,
+            "goal_diff": 3,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "bh1_plain": 0,
+            "bh2_plain": 0,
+            "sb": 0,
+            "points_per_game": 1,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "jG0SChhM4ZabraUvtsYD-",
+          "hash": "20f221a60a939d1ca32da84b3ff1122f29acb0dd"
+        },
+        {
+          "_id": "p3BvOLBh22TH_i1RKJS63",
+          "name": "Елизавета Разгуляева",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 5,
+            "finalResult": true,
+            "matches": 2,
+            "points": 0,
+            "won": 0,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 0,
+            "sets_lost": 2,
+            "sets_diff": -2,
+            "dis_won": 0,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": -2,
+            "goals": 4,
+            "goals_in": 14,
+            "w_l": 0,
+            "goal_diff": -10,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "bh1_plain": 0,
+            "bh2_plain": 0,
+            "sb": 0,
+            "points_per_game": 0,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "jG0SChhM4ZabraUvtsYD-",
+          "hash": "3fdbb989165f5b6e985e1ce8a30cccde4ce4a816"
+        },
+        {
+          "_id": "000QdRDdU64vGl5O9MUuu",
+          "name": "Роман Писаренко",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 5,
+            "finalResult": true,
+            "matches": 2,
+            "points": 0,
+            "won": 0,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 0,
+            "sets_lost": 2,
+            "sets_diff": -2,
+            "dis_won": 0,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": -2,
+            "goals": 4,
+            "goals_in": 14,
+            "w_l": 0,
+            "goal_diff": -10,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "bh1_plain": 0,
+            "bh2_plain": 0,
+            "sb": 0,
+            "points_per_game": 0,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "jG0SChhM4ZabraUvtsYD-",
+          "hash": "03360d7338e48e82d1bb2fa64f198f64e3002924"
+        },
+        {
+          "_id": "0zpdkhcaY0xMpIYcNgClZ",
+          "name": "Мария Королькова",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 5,
+            "finalResult": true,
+            "matches": 2,
+            "points": 0,
+            "won": 0,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 0,
+            "sets_lost": 2,
+            "sets_diff": -2,
+            "dis_won": 0,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": -2,
+            "goals": 3,
+            "goals_in": 14,
+            "w_l": 0,
+            "goal_diff": -11,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "bh1_plain": 0,
+            "bh2_plain": 0,
+            "sb": 0,
+            "points_per_game": 0,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "jG0SChhM4ZabraUvtsYD-",
+          "hash": "e285fbca8d3504be72771035b724f5f9a54ec9f7"
+        },
+        {
+          "_id": "E1Mt6NQmQIP73dRzAufKu",
+          "name": "Андрей Торицын",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 5,
+            "finalResult": true,
+            "matches": 2,
+            "points": 0,
+            "won": 0,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 0,
+            "sets_lost": 2,
+            "sets_diff": -2,
+            "dis_won": 0,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": -2,
+            "goals": 3,
+            "goals_in": 14,
+            "w_l": 0,
+            "goal_diff": -11,
+            "lives": 1,
+            "bh1": 0,
+            "bh2": 0,
+            "bh1_plain": 0,
+            "bh2_plain": 0,
+            "sb": 0,
+            "points_per_game": 0,
+            "corrected_points_per_game": 0,
+            "lastRound": -1
+          },
+          "groupId": "jG0SChhM4ZabraUvtsYD-",
+          "hash": "6a8657ed9ed108c03e09f19ffd84083e4714c356"
+        }
+      ],
+      "options": {
+        "_id": "ZjMkh1fQgiDdPjEIoduXk",
+        "numPoints": 7,
+        "fastInput": false,
+        "numSets": 1,
+        "twoAhead": true,
+        "pointsWin": 2,
+        "pointsDraw": 1,
+        "tablesPerPlay": 1,
+        "maxLostGames": 3,
+        "draw": false,
+        "byeRating": false,
+        "multiTableTournament": false,
+        "useCloseGameRating": false,
+        "closeGameDifference": 1,
+        "closeGamePointsWin": 2,
+        "closeGamePointsLoose": 1,
+        "numPlayersPerTeam": 2,
+        "dypMode": true,
+        "tables": [],
+        "numTables": 0,
+        "hasDisciplines": false,
+        "disciplines": [
+          {
+            "_id": "mobcxcygX7HHVTP_GfBf6",
+            "name": null,
+            "numPoints": 7,
+            "fastInput": false,
+            "numSets": 1,
+            "twoAhead": true,
+            "draw": true
+          }
+        ],
+        "tableConfig": [],
+        "startElimination": false,
+        "eliminationThirdPlace": true,
+        "maxParticipants": null,
+        "automaticMode": false,
+        "primaryColor": null,
+        "fairPlayRating": false,
+        "disablePlannedMatchEditing": false,
+        "displayConfigId": null,
+        "attachTablesToGroups": false,
+        "automaticTableScheduling": true,
+        "preventByes": false,
+        "ignoreRemovedParticipantsInStandings": false,
+        "crossGroupSeeding": false,
+        "combinedEliminationStandings": false,
+        "numRoundsPlanned": null,
+        "hash": "b3c63abb9dfa6bfa35d0ef85528b734384fa9240"
+      },
+      "hash": "60912f04b2247c88f8d18e17e958ba059abe5a19"
+    }
+  ],
+  "stage": 1,
+  "sport": "table_soccer",
+  "qualifying": [
+    {
+      "_id": "gQaObzp8ezENuCzv2eBzF",
+      "name": null,
+      "standings": [
+        {
+          "_id": "yga7HMbPgFnJm_d_K6Jd7",
+          "name": "Ярослав Двойных",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 1,
+            "finalResult": false,
+            "matches": 10,
+            "points": 20,
+            "won": 10,
+            "lost": 0,
+            "draws": 0,
+            "sets_won": 10,
+            "sets_lost": 0,
+            "sets_diff": 10,
+            "dis_won": 10,
+            "dis_lost": 0,
+            "dis_draw": 0,
+            "dis_diff": 10,
+            "goals": 60,
+            "goals_in": 26,
+            "w_l": 0,
+            "goal_diff": 34,
+            "lives": 3,
+            "bh1": 1.67,
+            "bh2": 33.11,
+            "bh1_plain": 144,
+            "bh2_plain": 1429,
+            "sb": 144,
+            "points_per_game": 2,
+            "corrected_points_per_game": 2,
+            "lastRound": 10
+          },
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "hash": "65873849ef4d3d29f07953426e60ff0673b33bd5"
+        },
+        {
+          "_id": "TR5uRWt0m5SH1y5pMXr_l",
+          "name": "Геннадий Кокурин",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 2,
+            "finalResult": false,
+            "matches": 4,
+            "points": 6,
+            "won": 3,
+            "lost": 1,
+            "draws": 0,
+            "sets_won": 3,
+            "sets_lost": 1,
+            "sets_diff": 2,
+            "dis_won": 3,
+            "dis_lost": 1,
+            "dis_draw": 0,
+            "dis_diff": 2,
+            "goals": 20,
+            "goals_in": 16,
+            "w_l": 0,
+            "goal_diff": 4,
+            "lives": 2,
+            "bh1": 1.65,
+            "bh2": 27.42,
+            "bh1_plain": 60,
+            "bh2_plain": 0,
+            "sb": 30,
+            "points_per_game": 1.5,
+            "corrected_points_per_game": 1.5,
+            "lastRound": 10
+          },
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "hash": "aeeb264dd5d26aece8766db8ab54e4033ce8d81e"
+        },
+        {
+          "_id": "9yy38Z1SN9MW2MCwFApt_",
+          "name": "Павел Горбунов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 3,
+            "finalResult": false,
+            "matches": 10,
+            "points": 13,
+            "won": 6,
+            "lost": 3,
+            "draws": 1,
+            "sets_won": 6,
+            "sets_lost": 3,
+            "sets_diff": 3,
+            "dis_won": 6,
+            "dis_lost": 3,
+            "dis_draw": 1,
+            "dis_diff": 3,
+            "goals": 50,
+            "goals_in": 37,
+            "w_l": 0,
+            "goal_diff": 13,
+            "lives": 0,
+            "bh1": 1.94,
+            "bh2": 33.52,
+            "bh1_plain": 171,
+            "bh2_plain": 1497,
+            "sb": 80,
+            "points_per_game": 1.3,
+            "corrected_points_per_game": 1.3,
+            "lastRound": 10
+          },
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "hash": "46c9ec8e7c4a1eb9b05e2db3183e04a62e326d12"
+        },
+        {
+          "_id": "p3BvOLBh22TH_i1RKJS63",
+          "name": "Елизавета Разгуляева",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 4,
+            "finalResult": false,
+            "matches": 9,
+            "points": 10,
+            "won": 5,
+            "lost": 4,
+            "draws": 0,
+            "sets_won": 5,
+            "sets_lost": 4,
+            "sets_diff": 1,
+            "dis_won": 5,
+            "dis_lost": 4,
+            "dis_draw": 0,
+            "dis_diff": 1,
+            "goals": 40,
+            "goals_in": 37,
+            "w_l": 0,
+            "goal_diff": 3,
+            "lives": -1,
+            "bh1": 2.01,
+            "bh2": 34.55,
+            "bh1_plain": 159,
+            "bh2_plain": 1387,
+            "sb": 69,
+            "points_per_game": 1.11,
+            "corrected_points_per_game": 1.11,
+            "lastRound": 9
+          },
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "hash": "d74665b1b65aa98454262aad791cdddaae7c815c"
+        },
+        {
+          "_id": "E1Mt6NQmQIP73dRzAufKu",
+          "name": "Андрей Торицын",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 5,
+            "finalResult": false,
+            "matches": 9,
+            "points": 9,
+            "won": 4,
+            "lost": 4,
+            "draws": 1,
+            "sets_won": 4,
+            "sets_lost": 4,
+            "sets_diff": 0,
+            "dis_won": 4,
+            "dis_lost": 4,
+            "dis_draw": 1,
+            "dis_diff": 0,
+            "goals": 37,
+            "goals_in": 40,
+            "w_l": 0,
+            "goal_diff": -3,
+            "lives": -1,
+            "bh1": 2.11,
+            "bh2": 33.39,
+            "bh1_plain": 163,
+            "bh2_plain": 1176,
+            "sb": 60,
+            "points_per_game": 1,
+            "corrected_points_per_game": 1,
+            "lastRound": 10
+          },
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "hash": "f499029076cdd7fffe676761b882648749c92e4d"
+        },
+        {
+          "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+          "name": "Артём Красавин",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 6,
+            "finalResult": false,
+            "matches": 9,
+            "points": 9,
+            "won": 4,
+            "lost": 4,
+            "draws": 1,
+            "sets_won": 4,
+            "sets_lost": 4,
+            "sets_diff": 0,
+            "dis_won": 4,
+            "dis_lost": 4,
+            "dis_draw": 1,
+            "dis_diff": 0,
+            "goals": 41,
+            "goals_in": 38,
+            "w_l": 0,
+            "goal_diff": 3,
+            "lives": -1,
+            "bh1": 1.93,
+            "bh2": 33.17,
+            "bh1_plain": 153,
+            "bh2_plain": 890,
+            "sb": 50,
+            "points_per_game": 1,
+            "corrected_points_per_game": 1,
+            "lastRound": 10
+          },
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "hash": "84301536f32c2d25a589d9fcb430df032aff8b0a"
+        },
+        {
+          "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+          "name": "Дмитрий Молчанов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 7,
+            "finalResult": false,
+            "matches": 9,
+            "points": 7,
+            "won": 3,
+            "lost": 5,
+            "draws": 1,
+            "sets_won": 3,
+            "sets_lost": 5,
+            "sets_diff": -2,
+            "dis_won": 3,
+            "dis_lost": 5,
+            "dis_draw": 1,
+            "dis_diff": -2,
+            "goals": 36,
+            "goals_in": 43,
+            "w_l": 0,
+            "goal_diff": -7,
+            "lives": -2,
+            "bh1": 2.11,
+            "bh2": 35.55,
+            "bh1_plain": 177,
+            "bh2_plain": 1808,
+            "sb": 54,
+            "points_per_game": 0.78,
+            "corrected_points_per_game": 0.78,
+            "lastRound": 10
+          },
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "hash": "0702f7233fd252b4f1f0151fd40005e176328a86"
+        },
+        {
+          "_id": "jlj-xTsR0XuKnWvwSExfT",
+          "name": "Дмитрий Тараканов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 8,
+            "finalResult": false,
+            "matches": 9,
+            "points": 6,
+            "won": 3,
+            "lost": 6,
+            "draws": 0,
+            "sets_won": 3,
+            "sets_lost": 6,
+            "sets_diff": -3,
+            "dis_won": 3,
+            "dis_lost": 6,
+            "dis_draw": 0,
+            "dis_diff": -3,
+            "goals": 34,
+            "goals_in": 40,
+            "w_l": 0,
+            "goal_diff": -6,
+            "lives": -3,
+            "bh1": 1.99,
+            "bh2": 32.94,
+            "bh1_plain": 160,
+            "bh2_plain": 535,
+            "sb": 28,
+            "points_per_game": 0.67,
+            "corrected_points_per_game": 0.67,
+            "lastRound": 10
+          },
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "hash": "bf01921c6dc0383e0003a786e355235c905bf845"
+        },
+        {
+          "_id": "000QdRDdU64vGl5O9MUuu",
+          "name": "Роман Писаренко",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 9,
+            "finalResult": false,
+            "matches": 9,
+            "points": 4,
+            "won": 2,
+            "lost": 7,
+            "draws": 0,
+            "sets_won": 2,
+            "sets_lost": 7,
+            "sets_diff": -5,
+            "dis_won": 2,
+            "dis_lost": 7,
+            "dis_draw": 0,
+            "dis_diff": -5,
+            "goals": 25,
+            "goals_in": 47,
+            "w_l": 0,
+            "goal_diff": -22,
+            "lives": -4,
+            "bh1": 2.26,
+            "bh2": 33.65,
+            "bh1_plain": 172,
+            "bh2_plain": 2098,
+            "sb": 27,
+            "points_per_game": 0.44,
+            "corrected_points_per_game": 0.44,
+            "lastRound": 10
+          },
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "hash": "d1791b5cf774126c00266c308fb5a220fd6d3624"
+        },
+        {
+          "_id": "0zpdkhcaY0xMpIYcNgClZ",
+          "name": "Мария Королькова",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 10,
+            "finalResult": false,
+            "matches": 4,
+            "points": 2,
+            "won": 1,
+            "lost": 3,
+            "draws": 0,
+            "sets_won": 1,
+            "sets_lost": 3,
+            "sets_diff": -2,
+            "dis_won": 1,
+            "dis_lost": 3,
+            "dis_draw": 0,
+            "dis_diff": -2,
+            "goals": 15,
+            "goals_in": 20,
+            "w_l": 0,
+            "goal_diff": -5,
+            "lives": 0,
+            "bh1": 2.03,
+            "bh2": 31.35,
+            "bh1_plain": 69,
+            "bh2_plain": 556,
+            "sb": 7,
+            "points_per_game": 0.5,
+            "corrected_points_per_game": -0.32,
+            "lastRound": 10
+          },
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "hash": "9c102963e37bac4e2b4d4f642b276fc8ea6fef53"
+        },
+        {
+          "_id": "aDQOBUkHElNCeJ-MMFjrJ",
+          "name": "Алёна Шашкова",
+          "guest": false,
+          "deactivated": true,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 11,
+            "finalResult": false,
+            "matches": 3,
+            "points": 0,
+            "won": 0,
+            "lost": 3,
+            "draws": 0,
+            "sets_won": 0,
+            "sets_lost": 3,
+            "sets_diff": -3,
+            "dis_won": 0,
+            "dis_lost": 3,
+            "dis_draw": 0,
+            "dis_diff": -3,
+            "goals": 7,
+            "goals_in": 18,
+            "w_l": 0,
+            "goal_diff": -11,
+            "lives": 0,
+            "bh1": 2.66,
+            "bh2": 28.46,
+            "bh1_plain": 67,
+            "bh2_plain": 748,
+            "sb": 0,
+            "points_per_game": 0,
+            "corrected_points_per_game": -1.45,
+            "lastRound": 10
+          },
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "hash": "3b035ea8e2df86d287449ec96e4e5e7c7bf82f7a"
+        },
+        {
+          "_id": "S9CMrtjflz11SGKS29Iyq",
+          "name": "Сергей Бараев",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 12,
+            "finalResult": false,
+            "matches": 2,
+            "points": 0,
+            "won": 0,
+            "lost": 2,
+            "draws": 0,
+            "sets_won": 0,
+            "sets_lost": 2,
+            "sets_diff": -2,
+            "dis_won": 0,
+            "dis_lost": 2,
+            "dis_draw": 0,
+            "dis_diff": -2,
+            "goals": 3,
+            "goals_in": 12,
+            "w_l": 0,
+            "goal_diff": -9,
+            "lives": 1,
+            "bh1": 2.09,
+            "bh2": 30.42,
+            "bh1_plain": 30,
+            "bh2_plain": 536,
+            "sb": 0,
+            "points_per_game": 0,
+            "corrected_points_per_game": -2.72,
+            "lastRound": 10
+          },
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "hash": "42f0add5ca562442587306fbafbd72940499fd41"
+        },
+        {
+          "_id": "JP4b8n82UNhW5RJQVPMgo",
+          "name": "Денис Шахов",
+          "guest": false,
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "stats": {
+            "place": 13,
+            "finalResult": false,
+            "matches": 1,
+            "points": 2,
+            "won": 1,
+            "lost": 0,
+            "draws": 0,
+            "sets_won": 1,
+            "sets_lost": 0,
+            "sets_diff": 1,
+            "dis_won": 1,
+            "dis_lost": 0,
+            "dis_draw": 0,
+            "dis_diff": 1,
+            "goals": 6,
+            "goals_in": 0,
+            "w_l": 0,
+            "goal_diff": 6,
+            "lives": 3,
+            "bh1": 1.44,
+            "bh2": 39.31,
+            "bh1_plain": 13,
+            "bh2_plain": 0,
+            "sb": 13,
+            "points_per_game": 2,
+            "corrected_points_per_game": -4.53,
+            "lastRound": 10
+          },
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "hash": "1e9cec53744da5537e1f1772e4c64cf4c8f934ca"
+        }
+      ],
+      "participants": [
+        {
+          "_id": "yga7HMbPgFnJm_d_K6Jd7",
+          "name": "Ярослав Двойных",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+        },
+        {
+          "_id": "TR5uRWt0m5SH1y5pMXr_l",
+          "name": "Геннадий Кокурин",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "f80ae1230c5c4611640e083a8d964530332ffa53"
+        },
+        {
+          "_id": "9yy38Z1SN9MW2MCwFApt_",
+          "name": "Павел Горбунов",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+        },
+        {
+          "_id": "p3BvOLBh22TH_i1RKJS63",
+          "name": "Елизавета Разгуляева",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "ffbab8d6aa0721539959ee0fd6b8a07b9b5dffae"
+        },
+        {
+          "_id": "E1Mt6NQmQIP73dRzAufKu",
+          "name": "Андрей Торицын",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "0cd54b70ac7c176d215ca841303944286931c050"
+        },
+        {
+          "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+          "name": "Артём Красавин",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+        },
+        {
+          "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+          "name": "Дмитрий Молчанов",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+        },
+        {
+          "_id": "jlj-xTsR0XuKnWvwSExfT",
+          "name": "Дмитрий Тараканов",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "d623ed95ddb662625405022072cce547a0146faf"
+        },
+        {
+          "_id": "000QdRDdU64vGl5O9MUuu",
+          "name": "Роман Писаренко",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "2e4766acc48fd0f0a8256dca3f9ddeaa4835565b"
+        },
+        {
+          "_id": "0zpdkhcaY0xMpIYcNgClZ",
+          "name": "Мария Королькова",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "7f64cc6207a8ae8018c0b2328088fbc2eed716c8"
+        },
+        {
+          "_id": "aDQOBUkHElNCeJ-MMFjrJ",
+          "name": "Алёна Шашкова",
+          "deactivated": true,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "5a35531969fcf9ade9e293cb35d5027d19888b5f"
+        },
+        {
+          "_id": "S9CMrtjflz11SGKS29Iyq",
+          "name": "Сергей Бараев",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "121845d4be8417bb8abe49f2c7383813120b92b2"
+        },
+        {
+          "_id": "JP4b8n82UNhW5RJQVPMgo",
+          "name": "Денис Шахов",
+          "deactivated": false,
+          "removed": false,
+          "markedForRemoval": false,
+          "players": [],
+          "guest": false,
+          "avatar": null,
+          "external": null,
+          "hash": "bfbec9f6d21d584515318e33b33ae2d26114a8e2"
+        }
+      ],
+      "rounds": [
+        {
+          "_id": "w7TC0-4B3oo4ANfOL5u6-",
+          "roundId": "P7yY-SjIHyWOZRUbOujGE",
+          "name": "1",
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "matches": [
+            {
+              "_id": "6fv_bBi4Tmjkwayd7Ey88",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "6fv_bBi4Tmjkwayd7Ey88-0",
+                  "playId": "6fv_bBi4Tmjkwayd7Ey88",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "6fv_bBi4Tmjkwayd7Ey88-0-0",
+                      "scores": [
+                        3,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "P7yY-SjIHyWOZRUbOujGE",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774027107049,
+              "timeStart": 1774026715255,
+              "valid": true,
+              "team1": {
+                "_id": "7FhGda-i-q2IWtnCtc7lT",
+                "name": "Павел Горбунов | Роман Писаренко",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  },
+                  {
+                    "_id": "000QdRDdU64vGl5O9MUuu",
+                    "name": "Роман Писаренко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "2e4766acc48fd0f0a8256dca3f9ddeaa4835565b"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "e0b343244bbc33520e6aa254920862ed06177031"
+              },
+              "team2": {
+                "_id": "gYgmEpmDS-XRnKGu01DHz",
+                "name": "Ярослав Двойных | Дмитрий Молчанов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  },
+                  {
+                    "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+                    "name": "Дмитрий Молчанов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "eac044a8c91e90b2faf35267f7f45d0ee6274a6f"
+              },
+              "result": [
+                3,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "cbb6af03e8d19430beda5f7ea92faa028bab9dd8"
+            },
+            {
+              "_id": "Ej6j9iBVMhf5cd8Du-_DC",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "Ej6j9iBVMhf5cd8Du-_DC-0",
+                  "playId": "Ej6j9iBVMhf5cd8Du-_DC",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "Ej6j9iBVMhf5cd8Du-_DC-0-0",
+                      "scores": [
+                        4,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "P7yY-SjIHyWOZRUbOujGE",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774027741229,
+              "timeStart": 1774027107359,
+              "valid": true,
+              "team1": {
+                "_id": "p7MFd9662pSsTNuRc3qE1",
+                "name": "Дмитрий Тараканов | Артём Красавин",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  },
+                  {
+                    "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+                    "name": "Артём Красавин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "197c3edc94f60339936c1e39d39e45cdd88ef4e1"
+              },
+              "team2": {
+                "_id": "jFbLo0PkhhfTmeB9M-eMq",
+                "name": "Елизавета Разгуляева | Андрей Торицын",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "p3BvOLBh22TH_i1RKJS63",
+                    "name": "Елизавета Разгуляева",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "ffbab8d6aa0721539959ee0fd6b8a07b9b5dffae"
+                  },
+                  {
+                    "_id": "E1Mt6NQmQIP73dRzAufKu",
+                    "name": "Андрей Торицын",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0cd54b70ac7c176d215ca841303944286931c050"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "e1b0496e9ccb4c2646771b3bf9fe19e8f73c427b"
+              },
+              "result": [
+                4,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "1a4b7a0a10b32da8e8e31760e4108647a7896a80"
+            }
+          ],
+          "hash": "241a365c27046b1cd074ac979b893f3fe3cf7685"
+        },
+        {
+          "_id": "35KlJuSedpCcy2B8dJfdp",
+          "roundId": "aDhxZoCKMAAC_9ZO74kXt",
+          "name": "2",
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "matches": [
+            {
+              "_id": "guFJP9rP0ReGJqd85j_Za",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "guFJP9rP0ReGJqd85j_Za-0",
+                  "playId": "guFJP9rP0ReGJqd85j_Za",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "guFJP9rP0ReGJqd85j_Za-0-0",
+                      "scores": [
+                        6,
+                        2
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "aDhxZoCKMAAC_9ZO74kXt",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774028064525,
+              "timeStart": 1774027744850,
+              "valid": true,
+              "team1": {
+                "_id": "_45SXPGwGx6lE2M5W5QMT",
+                "name": "Ярослав Двойных | Роман Писаренко",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  },
+                  {
+                    "_id": "000QdRDdU64vGl5O9MUuu",
+                    "name": "Роман Писаренко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "2e4766acc48fd0f0a8256dca3f9ddeaa4835565b"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "56ddcf3c2236a0b99548a92d6e367e493afb6fbf"
+              },
+              "team2": {
+                "_id": "lUqLNVaWiZGipE2Aw_cJN",
+                "name": "Артём Красавин | Андрей Торицын",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+                    "name": "Артём Красавин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+                  },
+                  {
+                    "_id": "E1Mt6NQmQIP73dRzAufKu",
+                    "name": "Андрей Торицын",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0cd54b70ac7c176d215ca841303944286931c050"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "41f286041effa44595e2a689faab70ee01f8b42a"
+              },
+              "result": [
+                6,
+                2
+              ],
+              "eliminationMatch": false,
+              "hash": "c5fc61715721b5435743b1cff7ebd831e688821c"
+            },
+            {
+              "_id": "ue-RK3ynGN639zKxx1srt",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "ue-RK3ynGN639zKxx1srt-0",
+                  "playId": "ue-RK3ynGN639zKxx1srt",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "ue-RK3ynGN639zKxx1srt-0-0",
+                      "scores": [
+                        6,
+                        3
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "aDhxZoCKMAAC_9ZO74kXt",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774028730689,
+              "timeStart": 1774028064837,
+              "valid": true,
+              "team1": {
+                "_id": "5X1uqSo9JPuoNZCtZYaCh",
+                "name": "Дмитрий Молчанов | Павел Горбунов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+                    "name": "Дмитрий Молчанов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+                  },
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "1be3a8774c1564f2d401e818e57238567ab64ee8"
+              },
+              "team2": {
+                "_id": "UAPlu1FuSOO62gA2faLTa",
+                "name": "Дмитрий Тараканов | Елизавета Разгуляева",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  },
+                  {
+                    "_id": "p3BvOLBh22TH_i1RKJS63",
+                    "name": "Елизавета Разгуляева",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "ffbab8d6aa0721539959ee0fd6b8a07b9b5dffae"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "282b74551280d9bd4c3b76cc2542be2dd9db73d7"
+              },
+              "result": [
+                6,
+                3
+              ],
+              "eliminationMatch": false,
+              "hash": "5eb6c7e5e8bf589743f3f01ac5a518a7dafcfbd8"
+            }
+          ],
+          "hash": "7347eedaa3443123a0c77fcbf56911f0d789d57e"
+        },
+        {
+          "_id": "hI2QRzWm3r8eFbwVmCQ6_",
+          "roundId": "DKTELVIxVslr_eK6capgf",
+          "name": "3",
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "matches": [
+            {
+              "_id": "4yaGPlNLWWMPKu9hkGsPR",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "4yaGPlNLWWMPKu9hkGsPR-0",
+                  "playId": "4yaGPlNLWWMPKu9hkGsPR",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "4yaGPlNLWWMPKu9hkGsPR-0-0",
+                      "scores": [
+                        3,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "DKTELVIxVslr_eK6capgf",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774029150644,
+              "timeStart": 1774028739514,
+              "valid": true,
+              "team1": {
+                "_id": "pWFQiwW-ZjST-5_wBYcak",
+                "name": "Роман Писаренко | Андрей Торицын",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "000QdRDdU64vGl5O9MUuu",
+                    "name": "Роман Писаренко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "2e4766acc48fd0f0a8256dca3f9ddeaa4835565b"
+                  },
+                  {
+                    "_id": "E1Mt6NQmQIP73dRzAufKu",
+                    "name": "Андрей Торицын",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0cd54b70ac7c176d215ca841303944286931c050"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "b1e2e73b387d72d039f9b4b4cafabb1aed1531f4"
+              },
+              "team2": {
+                "_id": "XHt5x6pHUXw18PRNXtdPI",
+                "name": "Павел Горбунов | Елизавета Разгуляева",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  },
+                  {
+                    "_id": "p3BvOLBh22TH_i1RKJS63",
+                    "name": "Елизавета Разгуляева",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "ffbab8d6aa0721539959ee0fd6b8a07b9b5dffae"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "f6aeed1ea8bd563f108a76b3a390287cea948630"
+              },
+              "result": [
+                3,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "f5a0040405ec98eb4786c81996a278fd364621d1"
+            },
+            {
+              "_id": "gBUob0qxWNkcm9otgQ5BJ",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "gBUob0qxWNkcm9otgQ5BJ-0",
+                  "playId": "gBUob0qxWNkcm9otgQ5BJ",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "gBUob0qxWNkcm9otgQ5BJ-0-0",
+                      "scores": [
+                        6,
+                        2
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "DKTELVIxVslr_eK6capgf",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774029504280,
+              "timeStart": 1774029150950,
+              "valid": true,
+              "team1": {
+                "_id": "0e1NrDp_2D5vnhIJyUgzf",
+                "name": "Артём Красавин | Ярослав Двойных",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+                    "name": "Артём Красавин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+                  },
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "192c2401569e82e36619110cfe59bd93b40e80ea"
+              },
+              "team2": {
+                "_id": "zOIUrNqCnljr5OHCrSCtK",
+                "name": "Дмитрий Молчанов | Дмитрий Тараканов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+                    "name": "Дмитрий Молчанов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+                  },
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "ee59730dcb5536c864cb4956841e9ff6fe2880c3"
+              },
+              "result": [
+                6,
+                2
+              ],
+              "eliminationMatch": false,
+              "hash": "ba3bf5a45776521905dbc3a956e49a73cf42e5c1"
+            }
+          ],
+          "hash": "87bc281792c7e5ffafca184fa2fa0fa1f88f1bbf"
+        },
+        {
+          "_id": "9M2RHjofn2WRbioORsLEs",
+          "roundId": "agQP0KXTa9BACv5vqFP-B",
+          "name": "4",
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "matches": [
+            {
+              "_id": "YA4wIJg6xhwVUw-dasn0e",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "YA4wIJg6xhwVUw-dasn0e-0",
+                  "playId": "YA4wIJg6xhwVUw-dasn0e",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "YA4wIJg6xhwVUw-dasn0e-0-0",
+                      "scores": [
+                        5,
+                        5
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "agQP0KXTa9BACv5vqFP-B",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774030020596,
+              "timeStart": 1774029509804,
+              "valid": true,
+              "team1": {
+                "_id": "e2XjwMW5owI3lW3IJCB0x",
+                "name": "Андрей Торицын | Павел Горбунов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "E1Mt6NQmQIP73dRzAufKu",
+                    "name": "Андрей Торицын",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0cd54b70ac7c176d215ca841303944286931c050"
+                  },
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "a15900bd6777bf8ccbb9beeb1a87ab2ffb06abc1"
+              },
+              "team2": {
+                "_id": "esgdqygV_QHz9uIrupmaS",
+                "name": "Артём Красавин | Дмитрий Молчанов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+                    "name": "Артём Красавин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+                  },
+                  {
+                    "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+                    "name": "Дмитрий Молчанов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "7b5a6baf873a3cfb57a40799bb602af45b05ae1f"
+              },
+              "result": [
+                5,
+                5
+              ],
+              "eliminationMatch": false,
+              "hash": "3b229a5b7821b4f5021b398b2dfcf247c4cb9039"
+            },
+            {
+              "_id": "F_iJlbkrST98m9dlAMDD8",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "F_iJlbkrST98m9dlAMDD8-0",
+                  "playId": "F_iJlbkrST98m9dlAMDD8",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "F_iJlbkrST98m9dlAMDD8-0-0",
+                      "scores": [
+                        2,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "agQP0KXTa9BACv5vqFP-B",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774030473099,
+              "timeStart": 1774030020901,
+              "valid": true,
+              "team1": {
+                "_id": "eOA0QyAQjgzTis0bnXWag",
+                "name": "Роман Писаренко | Елизавета Разгуляева",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "000QdRDdU64vGl5O9MUuu",
+                    "name": "Роман Писаренко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "2e4766acc48fd0f0a8256dca3f9ddeaa4835565b"
+                  },
+                  {
+                    "_id": "p3BvOLBh22TH_i1RKJS63",
+                    "name": "Елизавета Разгуляева",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "ffbab8d6aa0721539959ee0fd6b8a07b9b5dffae"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "a665773c397013cf871be40d32040739d3482766"
+              },
+              "team2": {
+                "_id": "cxIDYPJPGJfk7QXZtQuWc",
+                "name": "Дмитрий Тараканов | Ярослав Двойных",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  },
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "ec7ae36cb62343bb96b33abcff57cdf4e2967be4"
+              },
+              "result": [
+                2,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "6652341b4280928cc3b591c0b001313f8d5646f2"
+            }
+          ],
+          "hash": "c28b5505c55198f65e3c74573084698c7cb0d7d5"
+        },
+        {
+          "_id": "LsAoMpiJF3rwzlXZMMQXi",
+          "roundId": "dxbabT5uauhcgD1ABooYS",
+          "name": "5",
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "matches": [
+            {
+              "_id": "xMhjCCR1CL6jbYosipoCc",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "xMhjCCR1CL6jbYosipoCc-0",
+                  "playId": "xMhjCCR1CL6jbYosipoCc",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "xMhjCCR1CL6jbYosipoCc-0-0",
+                      "scores": [
+                        2,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "dxbabT5uauhcgD1ABooYS",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774030947397,
+              "timeStart": 1774030474133,
+              "valid": true,
+              "team1": {
+                "_id": "wHoPNpunHgCDrBGYlvA40",
+                "name": "Дмитрий Молчанов | Роман Писаренко",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+                    "name": "Дмитрий Молчанов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+                  },
+                  {
+                    "_id": "000QdRDdU64vGl5O9MUuu",
+                    "name": "Роман Писаренко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "2e4766acc48fd0f0a8256dca3f9ddeaa4835565b"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "a0550347a317d329f6bcf2e9c45ac728a36dc44c"
+              },
+              "team2": {
+                "_id": "5q9dfsz_-_uX2kRTbEA5T",
+                "name": "Елизавета Разгуляева | Артём Красавин",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "p3BvOLBh22TH_i1RKJS63",
+                    "name": "Елизавета Разгуляева",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "ffbab8d6aa0721539959ee0fd6b8a07b9b5dffae"
+                  },
+                  {
+                    "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+                    "name": "Артём Красавин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "034b0337ab3edb433e222fc3745a9dba97b238bd"
+              },
+              "result": [
+                2,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "5bd9afb6eeb2a43b14c8c4fe7895c9ea83c9900e"
+            },
+            {
+              "_id": "7RXceXGcQufYfkkDh5vf6",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "7RXceXGcQufYfkkDh5vf6-0",
+                  "playId": "7RXceXGcQufYfkkDh5vf6",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "7RXceXGcQufYfkkDh5vf6-0-0",
+                      "scores": [
+                        6,
+                        3
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "dxbabT5uauhcgD1ABooYS",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774031719686,
+              "timeStart": 1774030947704,
+              "valid": true,
+              "team1": {
+                "_id": "YQYUgFYOup9eRXw-U8Ged",
+                "name": "Ярослав Двойных | Павел Горбунов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  },
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "1ebc1b2f53518f0dc22cce06972ba39a814dfc09"
+              },
+              "team2": {
+                "_id": "5EbOcMcurkXbQjMvgNx62",
+                "name": "Андрей Торицын | Дмитрий Тараканов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "E1Mt6NQmQIP73dRzAufKu",
+                    "name": "Андрей Торицын",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0cd54b70ac7c176d215ca841303944286931c050"
+                  },
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "086f6a100f5ece09192839cbcafc07bfcb473d3d"
+              },
+              "result": [
+                6,
+                3
+              ],
+              "eliminationMatch": false,
+              "hash": "ed0e04f7688d2d6594527801985a9f4ba6df7022"
+            }
+          ],
+          "hash": "068d09b46bb2e0f0c51cb0ef8cbe065486b41cea"
+        },
+        {
+          "_id": "bIip7fDo3UljVUgcOugDn",
+          "roundId": "7veHuagPoWwD_XKIHu7_n",
+          "name": "6",
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "matches": [
+            {
+              "_id": "5rohdYfxjx7hyfJkxg8zD",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "5rohdYfxjx7hyfJkxg8zD-0",
+                  "playId": "5rohdYfxjx7hyfJkxg8zD",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "5rohdYfxjx7hyfJkxg8zD-0-0",
+                      "scores": [
+                        6,
+                        2
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "7veHuagPoWwD_XKIHu7_n",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774032291949,
+              "timeStart": 1774031721056,
+              "valid": true,
+              "team1": {
+                "_id": "T610U3e-vD2UiILrLCHb9",
+                "name": "Елизавета Разгуляева | Ярослав Двойных",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "p3BvOLBh22TH_i1RKJS63",
+                    "name": "Елизавета Разгуляева",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "ffbab8d6aa0721539959ee0fd6b8a07b9b5dffae"
+                  },
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "949071d03a37ae1af2a7b787bcf4bd109ae80d28"
+              },
+              "team2": {
+                "_id": "YijMIry7uKbzT0OEU293q",
+                "name": "Павел Горбунов | Артём Красавин",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  },
+                  {
+                    "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+                    "name": "Артём Красавин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "7ae5fea00899b12123cc55dee06047c9bcc73c5c"
+              },
+              "result": [
+                6,
+                2
+              ],
+              "eliminationMatch": false,
+              "hash": "36d6c61cd56edbbcbf07eca5dfbf8ba71c77995b"
+            },
+            {
+              "_id": "hKEyiyFjA_Z7zZiLhnjEM",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "hKEyiyFjA_Z7zZiLhnjEM-0",
+                  "playId": "hKEyiyFjA_Z7zZiLhnjEM",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "hKEyiyFjA_Z7zZiLhnjEM-0-0",
+                      "scores": [
+                        6,
+                        2
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "7veHuagPoWwD_XKIHu7_n",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774033200459,
+              "timeStart": 1774032292255,
+              "valid": true,
+              "team1": {
+                "_id": "PKO3NZMkOQNAJacOw4GMt",
+                "name": "Дмитрий Молчанов | Андрей Торицын",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+                    "name": "Дмитрий Молчанов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+                  },
+                  {
+                    "_id": "E1Mt6NQmQIP73dRzAufKu",
+                    "name": "Андрей Торицын",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0cd54b70ac7c176d215ca841303944286931c050"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "2a0e9d2f22a50e08a16f35e32902b759486f2661"
+              },
+              "team2": {
+                "_id": "Ap0JA9NsxpQCjDB2GqQrk",
+                "name": "Дмитрий Тараканов | Роман Писаренко",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  },
+                  {
+                    "_id": "000QdRDdU64vGl5O9MUuu",
+                    "name": "Роман Писаренко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "2e4766acc48fd0f0a8256dca3f9ddeaa4835565b"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "bde1f62ff514d04765ef8a37260a86d7e92d11d6"
+              },
+              "result": [
+                6,
+                2
+              ],
+              "eliminationMatch": false,
+              "hash": "e0bac7e7ad9c28a9a3352d8d2753c27834a7a30b"
+            }
+          ],
+          "hash": "214d73300346b40643b4e5e702d2729212208dad"
+        },
+        {
+          "_id": "52uz2i7zgOSoiv9lQ8z_e",
+          "roundId": "g0gEiegrMPEbpf3bIJBXD",
+          "name": "7",
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "matches": [
+            {
+              "_id": "Zk2nVbosyGJYpsVVKt0DX",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "Zk2nVbosyGJYpsVVKt0DX-0",
+                  "playId": "Zk2nVbosyGJYpsVVKt0DX",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "Zk2nVbosyGJYpsVVKt0DX-0-0",
+                      "scores": [
+                        4,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "g0gEiegrMPEbpf3bIJBXD",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774033682645,
+              "timeStart": 1774033203909,
+              "valid": true,
+              "team1": {
+                "_id": "0H61E-2L96gff2-2f5XHG",
+                "name": "Артём Красавин | Мария Королькова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+                    "name": "Артём Красавин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+                  },
+                  {
+                    "_id": "0zpdkhcaY0xMpIYcNgClZ",
+                    "name": "Мария Королькова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "7f64cc6207a8ae8018c0b2328088fbc2eed716c8"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "7dff6fadf2261f658f9c21ad68d2d4222697ce5f"
+              },
+              "team2": {
+                "_id": "w-eaL9eoQhqAsf8dWnUrD",
+                "name": "Павел Горбунов | Геннадий Кокурин",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  },
+                  {
+                    "_id": "TR5uRWt0m5SH1y5pMXr_l",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "f80ae1230c5c4611640e083a8d964530332ffa53"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "01d53400ec36cb273a9cd004511e69e2f8d8ec89"
+              },
+              "result": [
+                4,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "246ee0b1e0b466374088e671fdaf7195b74cc3b8"
+            },
+            {
+              "_id": "zgYXitIvvHZzaCE4zX09V",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "zgYXitIvvHZzaCE4zX09V-0",
+                  "playId": "zgYXitIvvHZzaCE4zX09V",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "zgYXitIvvHZzaCE4zX09V-0-0",
+                      "scores": [
+                        4,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "g0gEiegrMPEbpf3bIJBXD",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774034229670,
+              "timeStart": 1774033682949,
+              "valid": true,
+              "team1": {
+                "_id": "6cMj_N0AsCFRjcsyCxgxC",
+                "name": "Елизавета Разгуляева | Дмитрий Молчанов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "p3BvOLBh22TH_i1RKJS63",
+                    "name": "Елизавета Разгуляева",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "ffbab8d6aa0721539959ee0fd6b8a07b9b5dffae"
+                  },
+                  {
+                    "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+                    "name": "Дмитрий Молчанов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "e6eccf4be8a33ead25d65aa655cdc6c9cb3289ba"
+              },
+              "team2": {
+                "_id": "Q_GLBrRWgj6266tCXOxvy",
+                "name": "Ярослав Двойных | Андрей Торицын",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  },
+                  {
+                    "_id": "E1Mt6NQmQIP73dRzAufKu",
+                    "name": "Андрей Торицын",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0cd54b70ac7c176d215ca841303944286931c050"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "a50c15151fdcf7eaef63287b90b3052cb5ec6e6d"
+              },
+              "result": [
+                4,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "e045bb523a0f67b04fbef8ae8b45070ef659bae3"
+            }
+          ],
+          "hash": "38055624c38da864a06138e9c34c744872fad382"
+        },
+        {
+          "_id": "m4fzvNWQZQ6tkyuBXABDb",
+          "roundId": "nr7q523hV_r25XoVH0M0h",
+          "name": "8",
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "matches": [
+            {
+              "_id": "te8BjBrm8PtBDOFthQv8O",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "te8BjBrm8PtBDOFthQv8O-0",
+                  "playId": "te8BjBrm8PtBDOFthQv8O",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "te8BjBrm8PtBDOFthQv8O-0-0",
+                      "scores": [
+                        1,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "nr7q523hV_r25XoVH0M0h",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774035043729,
+              "timeStart": 1774034230711,
+              "valid": true,
+              "team1": {
+                "_id": "4fuxGlGY98X5w2y-0cKf0",
+                "name": "Алёна Шашкова | Роман Писаренко",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "aDQOBUkHElNCeJ-MMFjrJ",
+                    "name": "Алёна Шашкова",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5a35531969fcf9ade9e293cb35d5027d19888b5f"
+                  },
+                  {
+                    "_id": "000QdRDdU64vGl5O9MUuu",
+                    "name": "Роман Писаренко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "2e4766acc48fd0f0a8256dca3f9ddeaa4835565b"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "4848613889628943e25cb27fa4ab876d5b2167a4"
+              },
+              "team2": {
+                "_id": "v0icHuvukzOj0xVVG-B2D",
+                "name": "Павел Горбунов | Дмитрий Тараканов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  },
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "e15ef9047277d22653df9a8581581fec0b37d3a8"
+              },
+              "result": [
+                1,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "a0fb7793d990ac6fa2974813c10356fc8f7580f1"
+            },
+            {
+              "_id": "lsGahTOZEiH_LYvUNMS65",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "lsGahTOZEiH_LYvUNMS65-0",
+                  "playId": "lsGahTOZEiH_LYvUNMS65",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "lsGahTOZEiH_LYvUNMS65-0-0",
+                      "scores": [
+                        6,
+                        2
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "nr7q523hV_r25XoVH0M0h",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774035457507,
+              "timeStart": 1774035044035,
+              "valid": true,
+              "team1": {
+                "_id": "VZTmwGsK_42nzQUT8KS50",
+                "name": "Ярослав Двойных | Елизавета Разгуляева",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  },
+                  {
+                    "_id": "p3BvOLBh22TH_i1RKJS63",
+                    "name": "Елизавета Разгуляева",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "ffbab8d6aa0721539959ee0fd6b8a07b9b5dffae"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "d0546e9768504ff478a85c291603027bf1d63f79"
+              },
+              "team2": {
+                "_id": "kYpjNhyidisGLZjd7636s",
+                "name": "Геннадий Кокурин | Мария Королькова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "TR5uRWt0m5SH1y5pMXr_l",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "f80ae1230c5c4611640e083a8d964530332ffa53"
+                  },
+                  {
+                    "_id": "0zpdkhcaY0xMpIYcNgClZ",
+                    "name": "Мария Королькова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "7f64cc6207a8ae8018c0b2328088fbc2eed716c8"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "557e92c915bdbe2c441c1ef21b50da01ca1c2599"
+              },
+              "result": [
+                6,
+                2
+              ],
+              "eliminationMatch": false,
+              "hash": "13771189e9a09b30c4bab1fada39f132470156a7"
+            }
+          ],
+          "hash": "5b10217d91276abd33a4be2251422383f75bb452"
+        },
+        {
+          "_id": "mdi-FgsIeP_ZPE5g7SBIF",
+          "roundId": "qlfPpoRJP1HWlYqNzIfu1",
+          "name": "9",
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "matches": [
+            {
+              "_id": "JaUrhI6zFKI6l_Iecj3nW",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "JaUrhI6zFKI6l_Iecj3nW-0",
+                  "playId": "JaUrhI6zFKI6l_Iecj3nW",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "JaUrhI6zFKI6l_Iecj3nW-0-0",
+                      "scores": [
+                        3,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "qlfPpoRJP1HWlYqNzIfu1",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774036096774,
+              "timeStart": 1774035459829,
+              "valid": true,
+              "team1": {
+                "_id": "WICvxt8Z3JVhuJ6TUcdTp",
+                "name": "Дмитрий Молчанов | Мария Королькова",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+                    "name": "Дмитрий Молчанов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+                  },
+                  {
+                    "_id": "0zpdkhcaY0xMpIYcNgClZ",
+                    "name": "Мария Королькова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "7f64cc6207a8ae8018c0b2328088fbc2eed716c8"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "7e532b0204157f89a5b1e01ce24dd362d0ad72d2"
+              },
+              "team2": {
+                "_id": "DyzLQmErKuh4bO0WINfIl",
+                "name": "Артём Красавин | Роман Писаренко",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+                    "name": "Артём Красавин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+                  },
+                  {
+                    "_id": "000QdRDdU64vGl5O9MUuu",
+                    "name": "Роман Писаренко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "2e4766acc48fd0f0a8256dca3f9ddeaa4835565b"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "9a439d7e7df41fbe62744849286baba16846492e"
+              },
+              "result": [
+                3,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "ed86a27e64811407e0bb74ffe5916fbbaf003c9d"
+            },
+            {
+              "_id": "Z9w1Wg-fTUaZ4Si_dro3l",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "Z9w1Wg-fTUaZ4Si_dro3l-0",
+                  "playId": "Z9w1Wg-fTUaZ4Si_dro3l",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "Z9w1Wg-fTUaZ4Si_dro3l-0-0",
+                      "scores": [
+                        1,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "qlfPpoRJP1HWlYqNzIfu1",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774036728357,
+              "timeStart": 1774036097081,
+              "valid": true,
+              "team1": {
+                "_id": "87uptK6TH5duVtyQ83sf9",
+                "name": "Елизавета Разгуляева | Сергей Бараев",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "p3BvOLBh22TH_i1RKJS63",
+                    "name": "Елизавета Разгуляева",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "ffbab8d6aa0721539959ee0fd6b8a07b9b5dffae"
+                  },
+                  {
+                    "_id": "S9CMrtjflz11SGKS29Iyq",
+                    "name": "Сергей Бараев",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "121845d4be8417bb8abe49f2c7383813120b92b2"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "dca5a07991bba2bf5a4b99790af152deb186611c"
+              },
+              "team2": {
+                "_id": "ZgqXkQzRlbVs8PN0svB-x",
+                "name": "Андрей Торицын | Дмитрий Тараканов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "E1Mt6NQmQIP73dRzAufKu",
+                    "name": "Андрей Торицын",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0cd54b70ac7c176d215ca841303944286931c050"
+                  },
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "aeb2e98d6743763515235cd284e5f1b4a15d0aa4"
+              },
+              "result": [
+                1,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "6e6b473a3a3f1b0aace2e7d01a7b0ac6c1b2d8ad"
+            },
+            {
+              "_id": "b7MNu2V1OXg40meR7GRqr",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "b7MNu2V1OXg40meR7GRqr-0",
+                  "playId": "b7MNu2V1OXg40meR7GRqr",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "b7MNu2V1OXg40meR7GRqr-0-0",
+                      "scores": [
+                        4,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "qlfPpoRJP1HWlYqNzIfu1",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774037075791,
+              "timeStart": 1774036728663,
+              "valid": true,
+              "team1": {
+                "_id": "eHC1pBttqE_PkVrj4eHmO",
+                "name": "Алёна Шашкова | Павел Горбунов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "aDQOBUkHElNCeJ-MMFjrJ",
+                    "name": "Алёна Шашкова",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5a35531969fcf9ade9e293cb35d5027d19888b5f"
+                  },
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "5f10ebc9ac00f58a5835ca0316e70badb85727da"
+              },
+              "team2": {
+                "_id": "QBwJCPAE2X-oGaXD6G9G3",
+                "name": "Геннадий Кокурин | Ярослав Двойных",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "TR5uRWt0m5SH1y5pMXr_l",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "f80ae1230c5c4611640e083a8d964530332ffa53"
+                  },
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "a23698636a0aac090513f42c32d927616014d662"
+              },
+              "result": [
+                4,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "996aee0dea66230e9086e45cf15ae4c38db17b0c"
+            }
+          ],
+          "hash": "14d6009b74c9996c31763e12e459b29b83acccb4"
+        },
+        {
+          "_id": "zTIrcf4LZAa26DhO0S1My",
+          "roundId": "c1jG3VHAbxCDOCM-5Phh-",
+          "name": "10",
+          "groupId": "gQaObzp8ezENuCzv2eBzF",
+          "matches": [
+            {
+              "_id": "4yfwjlOrUxc34DmzaoFdp",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "4yfwjlOrUxc34DmzaoFdp-0",
+                  "playId": "4yfwjlOrUxc34DmzaoFdp",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "4yfwjlOrUxc34DmzaoFdp-0-0",
+                      "scores": [
+                        2,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "c1jG3VHAbxCDOCM-5Phh-",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774037557245,
+              "timeStart": 1774037076944,
+              "valid": true,
+              "team1": {
+                "_id": "YZQWyi6Wz8EeN-WsuV-WV",
+                "name": "Алёна Шашкова | Дмитрий Молчанов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "aDQOBUkHElNCeJ-MMFjrJ",
+                    "name": "Алёна Шашкова",
+                    "deactivated": true,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "5a35531969fcf9ade9e293cb35d5027d19888b5f"
+                  },
+                  {
+                    "_id": "_Wq8GTZ_udk3yKEWhnMeZ",
+                    "name": "Дмитрий Молчанов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0d5e5a1fcf01837b3dd47fb9c76e1b0d28b8add5"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "af22bd5d01a170fbff0bdf4349ea6a627c91a3a9"
+              },
+              "team2": {
+                "_id": "PE8tksDxQ7bhWSkolqOoO",
+                "name": "Мария Королькова | Ярослав Двойных",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "0zpdkhcaY0xMpIYcNgClZ",
+                    "name": "Мария Королькова",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "7f64cc6207a8ae8018c0b2328088fbc2eed716c8"
+                  },
+                  {
+                    "_id": "yga7HMbPgFnJm_d_K6Jd7",
+                    "name": "Ярослав Двойных",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "3f0d8699c0f1490019430d51a8093bdf146466e4"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "10a8c94580461261f4dde28acc4ed13dd51e576a"
+              },
+              "result": [
+                2,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "2670cacd2a1566215867615ab3c356cb7375ff39"
+            },
+            {
+              "_id": "MW0c_-7vyoueanh9pbGqc",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "MW0c_-7vyoueanh9pbGqc-0",
+                  "playId": "MW0c_-7vyoueanh9pbGqc",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "MW0c_-7vyoueanh9pbGqc-0-0",
+                      "scores": [
+                        2,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "c1jG3VHAbxCDOCM-5Phh-",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774038138301,
+              "timeStart": 1774037557552,
+              "valid": true,
+              "team1": {
+                "_id": "xVqWToxRMfokZPLI7Svn2",
+                "name": "Сергей Бараев | Дмитрий Тараканов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "S9CMrtjflz11SGKS29Iyq",
+                    "name": "Сергей Бараев",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "121845d4be8417bb8abe49f2c7383813120b92b2"
+                  },
+                  {
+                    "_id": "jlj-xTsR0XuKnWvwSExfT",
+                    "name": "Дмитрий Тараканов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "d623ed95ddb662625405022072cce547a0146faf"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "adfbd768f0610aa6b46033b5aa96cf9c521be129"
+              },
+              "team2": {
+                "_id": "jnYk7LfSi7bqavsRmGtXM",
+                "name": "Артём Красавин | Геннадий Кокурин",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "KY_RNE6FgCXATJkB1Z5Qn",
+                    "name": "Артём Красавин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "6a3b4ff8571a4535c41e8237109c6e89c07dbe06"
+                  },
+                  {
+                    "_id": "TR5uRWt0m5SH1y5pMXr_l",
+                    "name": "Геннадий Кокурин",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "f80ae1230c5c4611640e083a8d964530332ffa53"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "788fc6fcaf779f08953ab50f6429adb5f9a76503"
+              },
+              "result": [
+                2,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "7e541a272ba718bad1240bac340d87e59026d42b"
+            },
+            {
+              "_id": "6Z724JNPVCdRAdG5A8ggc",
+              "deactivated": false,
+              "tables": null,
+              "forcedTables": null,
+              "disciplines": [
+                {
+                  "_id": "6Z724JNPVCdRAdG5A8ggc-0",
+                  "playId": "6Z724JNPVCdRAdG5A8ggc",
+                  "team1Confirmed": false,
+                  "team2Confirmed": false,
+                  "sets": [
+                    {
+                      "_id": "6Z724JNPVCdRAdG5A8ggc-0-0",
+                      "scores": [
+                        0,
+                        6
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "groupId": "gQaObzp8ezENuCzv2eBzF",
+              "roundId": "c1jG3VHAbxCDOCM-5Phh-",
+              "skipped": false,
+              "team1bye": false,
+              "team2bye": false,
+              "timeEnd": 1774038479939,
+              "timeStart": 1774038138608,
+              "valid": true,
+              "team1": {
+                "_id": "rYL4OuICgqupDPoi2d7XZ",
+                "name": "Роман Писаренко | Андрей Торицын",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "000QdRDdU64vGl5O9MUuu",
+                    "name": "Роман Писаренко",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "2e4766acc48fd0f0a8256dca3f9ddeaa4835565b"
+                  },
+                  {
+                    "_id": "E1Mt6NQmQIP73dRzAufKu",
+                    "name": "Андрей Торицын",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "0cd54b70ac7c176d215ca841303944286931c050"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "944dbc3d560fc0f58a27eae7fbecc6926838327a"
+              },
+              "team2": {
+                "_id": "MoHnsFYveQYCYxTI2zEdP",
+                "name": "Павел Горбунов | Денис Шахов",
+                "deactivated": false,
+                "removed": false,
+                "markedForRemoval": false,
+                "players": [
+                  {
+                    "_id": "9yy38Z1SN9MW2MCwFApt_",
+                    "name": "Павел Горбунов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "b32f8d2247f9fd4bedaf1a686d26113cb7b2077d"
+                  },
+                  {
+                    "_id": "JP4b8n82UNhW5RJQVPMgo",
+                    "name": "Денис Шахов",
+                    "deactivated": false,
+                    "removed": false,
+                    "markedForRemoval": false,
+                    "players": [],
+                    "guest": false,
+                    "avatar": null,
+                    "external": null,
+                    "hash": "bfbec9f6d21d584515318e33b33ae2d26114a8e2"
+                  }
+                ],
+                "guest": false,
+                "avatar": null,
+                "external": null,
+                "hash": "8a662148a659a3259a41b6965548e31f761e77ea"
+              },
+              "result": [
+                0,
+                6
+              ],
+              "eliminationMatch": false,
+              "hash": "86456135106fa863f19e880d4f9099a5299e1411"
+            }
+          ],
+          "hash": "127ce2108bae744c893b27cb09fb54db9aa6e09c"
+        }
+      ],
+      "hash": "ae2368260489d35e6b990c16d5249a62b60c594b"
+    }
+  ],
+  "version": 14
+}
