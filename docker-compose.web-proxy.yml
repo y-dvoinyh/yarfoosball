@@ -1,0 +1,38 @@
+services:
+  nginx:
+    volumes:
+      - ./nginx/nginx.conf.web-proxy:/etc/nginx/conf.d/nginx.conf:ro
+
+  web-proxy:
+    build:
+      context: ./web-proxy
+      args:
+        TPROXY_COMMIT: 2873a08806d6e4d84830b9b5c4b0ec0f46af91f8
+        MTPROXY_COMMIT: f36d8af769ffaeac36978d38c2c0f6d1104c2137
+    container_name: yarfoosball-web-proxy-container
+    restart: always
+    network_mode: service:nginx
+    environment:
+      TPROXY_CARRIER_MODE: ${TPROXY_CARRIER_MODE:-websocket}
+      MTPROXY_WORKERS: ${MTPROXY_WORKERS:-1}
+      MTPROXY_MAX_CONNECTIONS: ${MTPROXY_MAX_CONNECTIONS:-4096}
+    secrets:
+      - source: web_proxy_secret
+        target: tproxy_secret
+    volumes:
+      - mtproxy-data:/var/lib/mtproxy
+    depends_on:
+      - nginx
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://127.0.0.1:8081/readyz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  mtproxy-data:
+
+secrets:
+  web_proxy_secret:
+    environment: TPROXY_SECRET
